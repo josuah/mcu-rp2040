@@ -1,5 +1,3 @@
-DEVICE = rp2040
-
 OBJCOPY = arm-none-eabi-objcopy
 OBJDUMP = arm-none-eabi-objdump
 CC = arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -msoft-float --specs=nosys.specs
