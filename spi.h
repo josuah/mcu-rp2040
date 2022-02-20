@@ -31,7 +31,7 @@ struct zmcu_spi {
 	uint32_t volatile SSPDMACR;
 
 	/* 0x028-0x0FDC */
-	uint32_t volatile RESERVED1[1006];
+	uint8_t volatile RESERVED1[1006];
 
 	/* 0xFE0: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID[4];
