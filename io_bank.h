@@ -12,7 +12,7 @@ struct zmcu_io_bank {
 
 		/* 0x004: GPIO control including function select and overrides */
 		uint32_t volatile CTRL;
-#define IO_BANK_GPIO_CTRL_FUNCSEL(x)			((x) << 0)
+#define IO_BANK_GPIO_CTRL_FUNCSEL(x)		((x) << 0)
 
 	} GPIO[30];
 

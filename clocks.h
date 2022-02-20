@@ -58,11 +58,11 @@ struct zmcu_clocks {
 	uint32_t volatile CLK_SYS_RESUS_CTRL;
 	uint32_t volatile CLK_SYS_RESUS_STATUS;
 
-#define CLOCKS_CLK_CTRL_NUDGE		(1u << 20)
-#define CLOCKS_CLK_CTRL_PHASE(x)	((x) << 16)
-#define CLOCKS_CLK_CTRL_ENABLE		(1u << 11)
-#define CLOCKS_CLK_CTRL_KILL		(1u << 10)
-#define CLOCKS_CLK_CTRL_AUXSRC(x)	((x) << 5)
+#define CLOCKS_CLK_CTRL_NUDGE			(1u << 20)
+#define CLOCKS_CLK_CTRL_PHASE(x)		((x) << 16)
+#define CLOCKS_CLK_CTRL_ENABLE			(1u << 11)
+#define CLOCKS_CLK_CTRL_KILL			(1u << 10)
+#define CLOCKS_CLK_CTRL_AUXSRC(x)		((x) << 5)
 
 	/* 0x80: Reference clock, minimum, maximum frequency in kHz and status */
 	uint32_t volatile FC0_REF_KHZ;
