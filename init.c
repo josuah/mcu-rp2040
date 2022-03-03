@@ -42,35 +42,46 @@ char __bootloader[] = {
 void *__stack_pointer = &__stack_top;	/* 0x00 */
 
 void (*__vectors[])(void) = {
-	&__reset_handler,		/* 0x04 */
-	&__stop_program,		/* 0x08: nmi */
-	&__stop_program,		/* 0x0C: hardfault */
-	&__stop_program,		/* 0x10: memorymanagement */
-	&__stop_program,		/* 0x14: busfault */
-	&__stop_program,		/* 0x18: usagefault */
-	NULL,				/* 0x1C */
-	NULL,				/* 0x20 */
-	NULL,				/* 0x24 */
-	NULL,				/* 0x28 */
-	&__stop_program,		/* 0x2C: svc */
-	&__stop_program,		/* 0x30: debugmon */
-	NULL,				/* 0x34 */
-	&__stop_program,		/* 0x38: pendsv */
-	&__stop_program,		/* 0x3C: systick */
-	&__stop_program,		/* 0x40: powerclock */
-	&__stop_program,		/* 0x44: radio */
-	&__stop_program,		/* 0x48: uarte0uart0 */
-	&__stop_program,		/* 0x4C: spim0spis0twim0twis0spi0twi0 */
-	&__stop_program,		/* 0x50: spim1spis1twim1twis1spi1twi1 */
-	&__stop_program,		/* 0x54: nfct */
-	&__stop_program,		/* 0x58: gpiote */
-	&__stop_program,		/* 0x5C: saadc */
-	&__stop_program,		/* 0x60: timer0 */
-	&__stop_program,		/* 0x64: timer1 */
-	&__stop_program,		/* 0x68: timer2 */
-	&__stop_program,		/* 0x6C: rtc0 */
-	&__stop_program,		/* 0x70: temp */
-	&__stop_program,		/* 0x74: srng */
+	&__reset_handler,		/* 0x04 -15 ARM Reset */
+	&__stop_program,		/* 0x08 -14 ARM NonMaskableInt */
+	&__stop_program,		/* 0x0C -13 ARM HardFault */
+	&__stop_program,		/* 0x10 -12 ARM MemoryManagement */
+	&__stop_program,		/* 0x14 -11 ARM BusFault */
+	&__stop_program,		/* 0x18 -10 ARM UsageFault */
+	&__stop_program,		/* 0x1C -9 ARM SecureFault */
+	&__stop_program,		/* 0x20 -8 Reserved */
+	&__stop_program,		/* 0x24 -7 Reserved */
+	&__stop_program,		/* 0x28 -6 Reserved */
+	&__stop_program,		/* 0x2C -5 ARM SVCall */
+	&__stop_program,		/* 0x30 -4 ARM DebugMonitor */
+	&__stop_program,		/* 0x34 -2 ARM PendSV */
+	&__stop_program,		/* 0x38 -1 ARM SysTick */
+	&__stop_program,		/* 0x3C #0 TIMER_IRQ_0 */
+	&__stop_program,		/* 0x40 #1 TIMER_IRQ_1 */
+	&__stop_program,		/* 0x44 #2 TIMER_IRQ_2 */
+	&__stop_program,		/* 0x48 #3 TIMER_IRQ_3 */
+	&__stop_program,		/* 0x4C #4 PWM_IRQ_WRAP */
+	&__stop_program,		/* 0x50 #5 USBCTRL_IRQ */
+	&__stop_program,		/* 0x54 #6 XIP_IRQ */
+	&__stop_program,		/* 0x58 #7 PIO0_IRQ_0 */
+	&__stop_program,		/* 0x5C #8 PIO0_IRQ_1 */
+	&__stop_program,		/* 0x60 #9 PIO1_IRQ_0 */
+	&__stop_program,		/* 0x64 #10 PIO1_IRQ_1 */
+	&__stop_program,		/* 0x68 #11 DMA_IRQ_0 */
+	&__stop_program,		/* 0x6C #12 DMA_IRQ_1 */
+	&__stop_program,		/* 0x70 #13 IO_IRQ_BANK0 */
+	&__stop_program,		/* 0x74 #14 IO_IRQ_QSPI */
+	&__stop_program,		/* 0x78 #15 SIO_IRQ_PROC0 */
+	&__stop_program,		/* 0x7C #16 SIO_IRQ_PROC1 */
+	&__stop_program,		/* 0x80 #17 CLOCKS_IRQ */
+	&__stop_program,		/* 0x84 #18 SPI0_IRQ */
+	&__stop_program,		/* 0x88 #19 SPI1_IRQ */
+	&__stop_program,		/* 0x8C #20 UART0_IRQ */
+	&__stop_program,		/* 0x90 #21 UART1_IRQ */
+	&__stop_program,		/* 0x94 #22 ADC_IRQ_FIFO */
+	&__stop_program,		/* 0x98 #23 I2C0_IRQ */
+	&__stop_program,		/* 0x9C #24 I2C1_IRQ */
+	&__stop_program,		/* 0xA0 #25 RTC_IRQ */
 };
 
 void
