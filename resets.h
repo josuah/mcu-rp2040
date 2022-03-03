@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define RESETS ((struct zmcu_resets *)0x4000C000)
+#define RESETS ((struct sdk_resets *)0x4000C000)
 
-struct zmcu_resets {
+struct sdk_resets {
 
 	/* 0x0: Reset control */
 	uint32_t volatile RESET;

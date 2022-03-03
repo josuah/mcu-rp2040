@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define TIMER ((struct zmcu_timer *)0x40054000)
+#define TIMER ((struct sdk_timer *)0x40054000)
 
-struct zmcu_timer {
+struct sdk_timer {
 
 	/* 0x00: Write to bits 63:32 of time */
 	uint32_t volatile TIMEHW;

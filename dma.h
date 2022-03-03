@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define DMA ((struct zmcu_dma *)0x50000000)
+#define DMA ((struct sdk_dma *)0x50000000)
 
-struct zmcu_dma {
+struct sdk_dma {
 
 	struct {
 

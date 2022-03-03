@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define RTC ((struct zmcu_rtc *)0x4005C000)
+#define RTC ((struct sdk_rtc *)0x4005C000)
 
-struct zmcu_rtc {
+struct sdk_rtc {
 
 	/* 0x00: Divider minus 1 for the 1 second counter */
 	uint32_t volatile CLKDIV_M1;

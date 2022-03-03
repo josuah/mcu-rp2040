@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define ADC ((struct zmcu_adc *)0x4004C000)
+#define ADC ((struct sdk_adc *)0x4004C000)
 
-struct zmcu_adc {
+struct sdk_adc {
 
 	/* 0x00: ADC Control and Status */
 	uint32_t volatile CS;

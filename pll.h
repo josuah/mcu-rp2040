@@ -1,10 +1,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define PLL_SYS ((struct zmcu_pll *)0x40028000)
-#define PLL_USB ((struct zmcu_pll *)0x4002C000)
+#define PLL_SYS ((struct sdk_pll *)0x40028000)
+#define PLL_USB ((struct sdk_pll *)0x4002C000)
 
-struct zmcu_pll {
+struct sdk_pll {
 
 	/* 0x0: Control and Status */
 	uint32_t volatile CS;

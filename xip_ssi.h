@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define XIP_SSI ((struct zmcu_xip_ssi *)0x18000000)
+#define XIP_SSI ((struct sdk_xip_ssi *)0x18000000)
 
-struct zmcu_xip_ssi {
+struct sdk_xip_ssi {
 
 	/* 0x00: Control register */
 	uint32_t volatile CTRLR[2];

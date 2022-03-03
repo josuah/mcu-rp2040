@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define ROSC ((struct zmcu_rosc *)0x40060000)
+#define ROSC ((struct sdk_rosc *)0x40060000)
 
-struct zmcu_rosc {
+struct sdk_rosc {
 
 	/* 0x00: Ring Oscillator control */
 	uint32_t volatile CTRL;

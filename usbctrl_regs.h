@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define USBCTRL_REGS ((struct zmcu_usbctrl_regs *)0x50110000)
+#define USBCTRL_REGS ((struct sdk_usbctrl_regs *)0x50110000)
 
-struct zmcu_usbctrl_regs {
+struct sdk_usbctrl_regs {
 
 	/* 0x00: Device address and endpoint control */
 	uint32_t volatile ADDR_ENDP_CTRL;

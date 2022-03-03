@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define BUSCTRL ((struct zmcu_busctrl *)0x40030000)
+#define BUSCTRL ((struct sdk_busctrl *)0x40030000)
 
-struct zmcu_busctrl {
+struct sdk_busctrl {
 
 	/* 0x00: Set the priority of each master for bus arbitration */
 	uint32_t volatile BUS_PRIORITY;

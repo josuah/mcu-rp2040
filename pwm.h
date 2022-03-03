@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define PWM ((struct zmcu_pwm *)0x40050000)
+#define PWM ((struct sdk_pwm *)0x40050000)
 
-struct zmcu_pwm {
+struct sdk_pwm {
 
 	struct {
 

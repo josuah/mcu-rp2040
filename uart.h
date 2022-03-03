@@ -1,10 +1,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define UART0 ((struct zmcu_uart *)0x40034000)
-#define UART1 ((struct zmcu_uart *)0x40038000)
+#define UART0 ((struct sdk_uart *)0x40034000)
+#define UART1 ((struct sdk_uart *)0x40038000)
 
-struct zmcu_uart {
+struct sdk_uart {
 
 	/* 0x000: Data Register, UARTDR */
 	uint32_t volatile UARTDR;

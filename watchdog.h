@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define WATCHDOG ((struct zmcu_watchdog *)0x40058000)
+#define WATCHDOG ((struct sdk_watchdog *)0x40058000)
 
-struct zmcu_watchdog {
+struct sdk_watchdog {
 
 	/* 0x00: Watchdog control */
 	uint32_t volatile CTRL;

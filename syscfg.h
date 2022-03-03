@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define SYSCFG ((struct zmcu_syscfg *)0x40004000)
+#define SYSCFG ((struct sdk_syscfg *)0x40004000)
 
-struct zmcu_syscfg {
+struct sdk_syscfg {
 
 	/* 0x00: Processor core 0 NMI source mask */
 	uint32_t volatile PROC0_NMI_MASK;

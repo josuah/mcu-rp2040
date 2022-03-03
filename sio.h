@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define SIO ((struct zmcu_sio *)0xD0000000)
+#define SIO ((struct sdk_sio *)0xD0000000)
 
-struct zmcu_sio {
+struct sdk_sio {
 
 	/* 0x000: Processor core identifier */
 	uint32_t volatile CPUID;

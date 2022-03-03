@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define IO_QSPI ((struct zmcu_io_qspi *)0x40018000)
+#define IO_QSPI ((struct sdk_io_qspi *)0x40018000)
 
-struct zmcu_io_qspi {
+struct sdk_io_qspi {
 
 	/* 0x00: GPIO status */
 	uint32_t volatile GPIO_QSPI_SCLK_STATUS;

@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-struct zmcu_spi {
+struct sdk_spi {
 
 	/* 0x000: Control register, SSPCR on page 3-4 */
 	uint32_t volatile SSPCR[2];

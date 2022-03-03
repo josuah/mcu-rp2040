@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define PPB ((struct zmcu_ppb *)0xE0000000)
+#define PPB ((struct sdk_ppb *)0xE0000000)
 
-struct zmcu_ppb {
+struct sdk_ppb {
 
 	/* 0xE010: SysTick Control and Status Register */
 	uint32_t volatile SYST_CSR;

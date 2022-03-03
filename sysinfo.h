@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define SYSINFO ((struct zmcu_sysinfo *)0x40000000)
+#define SYSINFO ((struct sdk_sysinfo *)0x40000000)
 
-struct zmcu_sysinfo {
+struct sdk_sysinfo {
 
 	/* 0x00: JEDEC JEP-106 compliant chip identifier */
 	uint32_t volatile CHIP_ID;

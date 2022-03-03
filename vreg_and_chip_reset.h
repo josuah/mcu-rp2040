@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define VREG_AND_CHIP_RESET ((struct zmcu_vreg_and_chip_reset *)0x40064000)
+#define VREG_AND_CHIP_RESET ((struct sdk_vreg_and_chip_reset *)0x40064000)
 
-struct zmcu_vreg_and_chip_reset {
+struct sdk_vreg_and_chip_reset {
 
 	/* 0x0: Voltage regulator control and statu */
 	uint32_t volatile VREG;

@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define PIO0 ((struct zmcu_pio0 *)0x50300000)
+#define PIO0 ((struct sdk_pio0 *)0x50300000)
 
-struct zmcu_pio0 {
+struct sdk_pio0 {
 
 	/* 0x000: PIO control register */
 	uint32_t volatile CTRL;

@@ -1,10 +1,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define I2C0 ((struct zmcu_i2c *)0x40044000)
-#define I2C1 ((struct zmcu_i2c *)0x40048000)
+#define I2C0 ((struct sdk_i2c *)0x40044000)
+#define I2C1 ((struct sdk_i2c *)0x40048000)
 
-struct zmcu_i2c {
+struct sdk_i2c {
 
 	/* 0x04: I2C Target Address Register */
 	uint32_t volatile IC_TAR;

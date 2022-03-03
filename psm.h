@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define PSM ((struct zmcu_psm *)0x40010000)
+#define PSM ((struct sdk_psm *)0x40010000)
 
-struct zmcu_psm {
+struct sdk_psm {
 
 	/* 0x0: Force block out of reset (i.e. power it on) */
 	uint32_t volatile FRCE_ON;

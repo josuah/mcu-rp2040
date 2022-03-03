@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define XOSC ((struct zmcu_xosc *)0x40024000)
+#define XOSC ((struct sdk_xosc *)0x40024000)
 
-struct zmcu_xosc {
+struct sdk_xosc {
 
 	/* 0x00: Crystal Oscillator Control */
 	uint32_t volatile CTRL;

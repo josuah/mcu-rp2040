@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define XIP_CTRL ((struct zmcu_xip_ctrl *)0x14000000)
+#define XIP_CTRL ((struct sdk_xip_ctrl *)0x14000000)
 
-struct zmcu_xip_ctrl {
+struct sdk_xip_ctrl {
 
 	/* 0x00: Cache contro */
 	uint32_t volatile CTRL;

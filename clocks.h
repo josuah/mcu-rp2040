@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define CLOCKS ((struct zmcu_clocks *)0x40008000)
+#define CLOCKS ((struct sdk_clocks *)0x40008000)
 
-struct zmcu_clocks {
+struct sdk_clocks {
 
 	/* 0x00: Clock control, divisor, selector */
 	uint32_t volatile CLK_GPOUT0_CTRL;

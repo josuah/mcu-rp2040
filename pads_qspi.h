@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define PADS_QSPI ((struct zmcu_pads_qspi *)0x40020000)
+#define PADS_QSPI ((struct sdk_pads_qspi *)0x40020000)
 
-struct zmcu_pads_qspi {
+struct sdk_pads_qspi {
 
 	/* 0x00: Voltage select. Per bank control */
 	uint32_t volatile VOLTAGE_SELECT;

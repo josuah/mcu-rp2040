@@ -1,9 +1,9 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define IO_BANK0 ((struct zmcu_io_bank *)0x40014000)
+#define IO_BANK0 ((struct sdk_io_bank *)0x40014000)
 
-struct zmcu_io_bank {
+struct sdk_io_bank {
 
 	struct {
 
