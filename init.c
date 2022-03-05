@@ -1,8 +1,6 @@
-#include "resets.h"
-#include "pll.h"
-#include "clocks.h"
-#include "xosc.h"
-#include "main.h"
+#include "libc.h"
+#include "registers.h"
+#include "functions.h"
 
 extern int main(void);
 extern void __reset_handler(void);
@@ -84,6 +82,8 @@ void (*__vectors[])(void) = {
 	&__stop_program,		/* 0xA0 #25 RTC_IRQ */
 };
 
+#define XOSC_MHZ 12
+
 void
 __reset_handler(void)
 {
@@ -95,21 +95,23 @@ __reset_handler(void)
 	for (dst = &__bss_start; dst < &__bss_end; *dst++ = 0);
 
 	/* configure the PLL to the SDK's default */
-	RESETS->RESET |= RESETS_PLL_USB;
-	RESETS->RESET &= ~RESETS_PLL_USB;
+	RESETS->RESET |= BIT(RESETS_RESET_PLL_USB);
+	RESETS->RESET &= ~BIT(RESETS_RESET_PLL_USB);
 	PLL_USB->CS = 1;
 	PLL_USB->FBDIV_INT = 400 / XOSC_MHZ;
 	PLL_USB->PWR &= ~(PLL_PWR_PD | PLL_PWR_VCOPD);
 	while (!(PLL_USB->CS & PLL_CS_LOCK));
-	PLL_USB->PRIM = PLL_PRIM_POSTDIV1(6) | PLL_PRIM_POSTDIV2(2);
-	PLL_USB->PWR &= ~PLL_PWR_POSTDIVPD(1);
+	PLL_USB->PRIM = BITS(PLL_PRIM_POSTDIV1, 6) | BITS(PLL_PRIM_POSTDIV2, 2);
+	PLL_USB->PWR &= ~BIT(PLL_PWR_POSTDIVPD);
 
 	/* configure `usb`, `adc` and `peri` clocks */
-	CLOCKS->CLK_USB_CTRL |= CLOCKS_CLK_CTRL_ENABLE;
-	CLOCKS->CLK_ADC_CTRL |= CLOCKS_CLK_CTRL_ENABLE;
-	CLOCKS->CLK_PERI_CTRL |= CLOCKS_CLK_CTRL_ENABLE;
-	RESETS->RESET &= ~RESETS_MASK;
-	while (~RESETS->RESET_DONE & RESETS_MASK);
+	CLOCKS->CLK_USB_CTRL |= CLOCKS_CLK_USB_CTRL_ENABLE;
+	CLOCKS->CLK_ADC_CTRL |= CLOCKS_CLK_ADC_CTRL_ENABLE;
+	CLOCKS->CLK_PERI_CTRL |= CLOCKS_CLK_PERI_CTRL_ENABLE;
+
+	/* reset goddamn everything! */
+	RESETS->RESET &= 0xFFFFFFFF;
+	while (!RESETS->RESET_DONE);
 
 	main();
 	__stop_program();
