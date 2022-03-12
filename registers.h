@@ -38,14 +38,14 @@ struct sdk_xip_ctrl {
 	/* 0x14: FIFO stream address */
 	uint32_t volatile STREAM_ADDR;
 	/* The address of the next word to be streamed from flash to the streaming FIFO. */
-#define XIP_CTRL_STREAM_ADDR_STREAM_ADDR_msb			31u
-#define XIP_CTRL_STREAM_ADDR_STREAM_ADDR_lsb			2u
+#define XIP_CTRL_STREAM_ADDR_STREAM_ADDR_Msb			31u
+#define XIP_CTRL_STREAM_ADDR_STREAM_ADDR_Lsb			2u
 
 	/* 0x18: FIFO stream control */
 	uint32_t volatile STREAM_CTR;
 	/* Write a nonzero value to start a streaming read. */
-#define XIP_CTRL_STREAM_CTR_STREAM_CTR_msb			21u
-#define XIP_CTRL_STREAM_CTR_STREAM_CTR_lsb			0u
+#define XIP_CTRL_STREAM_CTR_STREAM_CTR_Msb			21u
+#define XIP_CTRL_STREAM_CTR_STREAM_CTR_Lsb			0u
 
 	/* 0x1C: FIFO stream data */
 	uint32_t volatile STREAM_FIFO;
@@ -62,24 +62,24 @@ struct sdk_xip_ssi {
 	/* Slave select toggle enable */
 #define XIP_SSI_CTRLR0_SSTE					24u
 	/* SPI frame format */
-#define XIP_SSI_CTRLR0_SPI_FRF_msb				22u
-#define XIP_SSI_CTRLR0_SPI_FRF_lsb				21u
+#define XIP_SSI_CTRLR0_SPI_FRF_Msb				22u
+#define XIP_SSI_CTRLR0_SPI_FRF_Lsb				21u
 #define XIP_SSI_CTRLR0_SPI_FRF_STD				0u
 #define XIP_SSI_CTRLR0_SPI_FRF_DUAL				1u
 #define XIP_SSI_CTRLR0_SPI_FRF_QUAD				2u
 	/* Data frame size in 32b transfer mode */
-#define XIP_SSI_CTRLR0_DFS_32_msb				20u
-#define XIP_SSI_CTRLR0_DFS_32_lsb				16u
+#define XIP_SSI_CTRLR0_DFS_32_Msb				20u
+#define XIP_SSI_CTRLR0_DFS_32_Lsb				16u
 	/* Control frame size */
-#define XIP_SSI_CTRLR0_CFS_msb					15u
-#define XIP_SSI_CTRLR0_CFS_lsb					12u
+#define XIP_SSI_CTRLR0_CFS_Msb					15u
+#define XIP_SSI_CTRLR0_CFS_Lsb					12u
 	/* Shift register loop (test mode) */
 #define XIP_SSI_CTRLR0_SRL					11u
 	/* Slave output enable */
 #define XIP_SSI_CTRLR0_SLV_OE					10u
 	/* Transfer mode */
-#define XIP_SSI_CTRLR0_TMOD_msb					9u
-#define XIP_SSI_CTRLR0_TMOD_lsb					8u
+#define XIP_SSI_CTRLR0_TMOD_Msb					9u
+#define XIP_SSI_CTRLR0_TMOD_Lsb					8u
 #define XIP_SSI_CTRLR0_TMOD_TX_AND_RX				0u
 #define XIP_SSI_CTRLR0_TMOD_TX_ONLY				1u
 #define XIP_SSI_CTRLR0_TMOD_RX_ONLY				2u
@@ -89,17 +89,17 @@ struct sdk_xip_ssi {
 	/* Serial clock phase */
 #define XIP_SSI_CTRLR0_SCPH					6u
 	/* Frame format */
-#define XIP_SSI_CTRLR0_FRF_msb					5u
-#define XIP_SSI_CTRLR0_FRF_lsb					4u
+#define XIP_SSI_CTRLR0_FRF_Msb					5u
+#define XIP_SSI_CTRLR0_FRF_Lsb					4u
 	/* Data frame size */
-#define XIP_SSI_CTRLR0_DFS_msb					3u
-#define XIP_SSI_CTRLR0_DFS_lsb					0u
+#define XIP_SSI_CTRLR0_DFS_Msb					3u
+#define XIP_SSI_CTRLR0_DFS_Lsb					0u
 
 	/* 0x04: Master Control register 1 */
 	uint32_t volatile CTRLR1;
 	/* Number of data frames */
-#define XIP_SSI_CTRLR1_NDF_msb					15u
-#define XIP_SSI_CTRLR1_NDF_lsb					0u
+#define XIP_SSI_CTRLR1_NDF_Msb					15u
+#define XIP_SSI_CTRLR1_NDF_Lsb					0u
 
 	/* 0x08: SSI Enable */
 	uint32_t volatile SSIENR;
@@ -123,32 +123,32 @@ struct sdk_xip_ssi {
 	/* 0x14: Baud rate */
 	uint32_t volatile BAUDR;
 	/* SSI clock divider */
-#define XIP_SSI_BAUDR_SCKDV_msb					15u
-#define XIP_SSI_BAUDR_SCKDV_lsb					0u
+#define XIP_SSI_BAUDR_SCKDV_Msb					15u
+#define XIP_SSI_BAUDR_SCKDV_Lsb					0u
 
 	/* 0x18: TX FIFO threshold level */
 	uint32_t volatile TXFTLR;
 	/* Transmit FIFO threshold */
-#define XIP_SSI_TXFTLR_TFT_msb					7u
-#define XIP_SSI_TXFTLR_TFT_lsb					0u
+#define XIP_SSI_TXFTLR_TFT_Msb					7u
+#define XIP_SSI_TXFTLR_TFT_Lsb					0u
 
 	/* 0x1C: RX FIFO threshold level */
 	uint32_t volatile RXFTLR;
 	/* Receive FIFO threshold */
-#define XIP_SSI_RXFTLR_RFT_msb					7u
-#define XIP_SSI_RXFTLR_RFT_lsb					0u
+#define XIP_SSI_RXFTLR_RFT_Msb					7u
+#define XIP_SSI_RXFTLR_RFT_Lsb					0u
 
 	/* 0x20: TX FIFO level */
 	uint32_t volatile TXFLR;
 	/* Transmit FIFO level */
-#define XIP_SSI_TXFLR_TFTFL_msb					7u
-#define XIP_SSI_TXFLR_TFTFL_lsb					0u
+#define XIP_SSI_TXFLR_TFTFL_Msb					7u
+#define XIP_SSI_TXFLR_TFTFL_Lsb					0u
 
 	/* 0x24: RX FIFO level */
 	uint32_t volatile RXFLR;
 	/* Receive FIFO level */
-#define XIP_SSI_RXFLR_RXTFL_msb					7u
-#define XIP_SSI_RXFLR_RXTFL_lsb					0u
+#define XIP_SSI_RXFLR_RXTFL_Msb					7u
+#define XIP_SSI_RXFLR_RXTFL_Lsb					0u
 
 	/* 0x28: Status register */
 	uint32_t volatile SR;
@@ -247,32 +247,32 @@ struct sdk_xip_ssi {
 	/* 0x50: DMA TX data level */
 	uint32_t volatile DMATDLR;
 	/* Transmit data watermark level */
-#define XIP_SSI_DMATDLR_DMATDL_msb				7u
-#define XIP_SSI_DMATDLR_DMATDL_lsb				0u
+#define XIP_SSI_DMATDLR_DMATDL_Msb				7u
+#define XIP_SSI_DMATDLR_DMATDL_Lsb				0u
 
 	/* 0x54: DMA RX data level */
 	uint32_t volatile DMARDLR;
 	/* Receive data watermark level (DMARDLR+1) */
-#define XIP_SSI_DMARDLR_DMARDL_msb				7u
-#define XIP_SSI_DMARDLR_DMARDL_lsb				0u
+#define XIP_SSI_DMARDLR_DMARDL_Msb				7u
+#define XIP_SSI_DMARDLR_DMARDL_Lsb				0u
 
 	/* 0x58: Identification register */
 	uint32_t volatile IDR;
 	/* Peripheral dentification code */
-#define XIP_SSI_IDR_IDCODE_msb					31u
-#define XIP_SSI_IDR_IDCODE_lsb					0u
+#define XIP_SSI_IDR_IDCODE_Msb					31u
+#define XIP_SSI_IDR_IDCODE_Lsb					0u
 
 	/* 0x5C: Version ID */
 	uint32_t volatile SSI_VERSION_ID;
 	/* SNPS component version (format X.YY) */
-#define XIP_SSI_SSI_VERSION_ID_SSI_COMP_VERSION_msb		31u
-#define XIP_SSI_SSI_VERSION_ID_SSI_COMP_VERSION_lsb		0u
+#define XIP_SSI_SSI_VERSION_ID_SSI_COMP_VERSION_Msb		31u
+#define XIP_SSI_SSI_VERSION_ID_SSI_COMP_VERSION_Lsb		0u
 
 	/* 0x60: Data Register 0 (of 36) */
 	uint32_t volatile DR0;
 	/* First data register of 36 */
-#define XIP_SSI_DR0_DR_msb					31u
-#define XIP_SSI_DR0_DR_lsb					0u
+#define XIP_SSI_DR0_DR_Msb					31u
+#define XIP_SSI_DR0_DR_Lsb					0u
 
 	/* 0x64 */
 	uint8_t RESERVED0[0xF0-0x64];
@@ -280,14 +280,14 @@ struct sdk_xip_ssi {
 	/* 0xF0: RX sample delay */
 	uint32_t volatile RX_SAMPLE_DLY;
 	/* RXD sample delay (in SCLK cycles) */
-#define XIP_SSI_RX_SAMPLE_DLY_RSD_msb				7u
-#define XIP_SSI_RX_SAMPLE_DLY_RSD_lsb				0u
+#define XIP_SSI_RX_SAMPLE_DLY_RSD_Msb				7u
+#define XIP_SSI_RX_SAMPLE_DLY_RSD_Lsb				0u
 
 	/* 0xF4: SPI control */
 	uint32_t volatile SPI_CTRLR0;
 	/* SPI Command to send in XIP mode (INST_L = 8-bit) or to append to Address (INST_L = 0-bit) */
-#define XIP_SSI_SPI_CTRLR0_XIP_CMD_msb				31u
-#define XIP_SSI_SPI_CTRLR0_XIP_CMD_lsb				24u
+#define XIP_SSI_SPI_CTRLR0_XIP_CMD_Msb				31u
+#define XIP_SSI_SPI_CTRLR0_XIP_CMD_Lsb				24u
 	/* Read data strobe enable */
 #define XIP_SSI_SPI_CTRLR0_SPI_RXDS_EN				18u
 	/* Instruction DDR transfer enable */
@@ -295,21 +295,21 @@ struct sdk_xip_ssi {
 	/* SPI DDR transfer enable */
 #define XIP_SSI_SPI_CTRLR0_SPI_DDR_EN				16u
 	/* Wait cycles between control frame transmit and data reception (in SCLK cycles) */
-#define XIP_SSI_SPI_CTRLR0_WAIT_CYCLES_msb			15u
-#define XIP_SSI_SPI_CTRLR0_WAIT_CYCLES_lsb			11u
+#define XIP_SSI_SPI_CTRLR0_WAIT_CYCLES_Msb			15u
+#define XIP_SSI_SPI_CTRLR0_WAIT_CYCLES_Lsb			11u
 	/* Instruction length (0/4/8/16b) */
-#define XIP_SSI_SPI_CTRLR0_INST_L_msb				9u
-#define XIP_SSI_SPI_CTRLR0_INST_L_lsb				8u
+#define XIP_SSI_SPI_CTRLR0_INST_L_Msb				9u
+#define XIP_SSI_SPI_CTRLR0_INST_L_Lsb				8u
 #define XIP_SSI_SPI_CTRLR0_INST_L_NONE				0u
 #define XIP_SSI_SPI_CTRLR0_INST_L_4B				1u
 #define XIP_SSI_SPI_CTRLR0_INST_L_8B				2u
 #define XIP_SSI_SPI_CTRLR0_INST_L_16B				3u
 	/* Address length (0b-60b in 4b increments) */
-#define XIP_SSI_SPI_CTRLR0_ADDR_L_msb				5u
-#define XIP_SSI_SPI_CTRLR0_ADDR_L_lsb				2u
+#define XIP_SSI_SPI_CTRLR0_ADDR_L_Msb				5u
+#define XIP_SSI_SPI_CTRLR0_ADDR_L_Lsb				2u
 	/* Address and instruction transfer format */
-#define XIP_SSI_SPI_CTRLR0_TRANS_TYPE_msb			1u
-#define XIP_SSI_SPI_CTRLR0_TRANS_TYPE_lsb			0u
+#define XIP_SSI_SPI_CTRLR0_TRANS_TYPE_Msb			1u
+#define XIP_SSI_SPI_CTRLR0_TRANS_TYPE_Lsb			0u
 #define XIP_SSI_SPI_CTRLR0_TRANS_TYPE_1C1A			0u
 #define XIP_SSI_SPI_CTRLR0_TRANS_TYPE_1C2A			1u
 #define XIP_SSI_SPI_CTRLR0_TRANS_TYPE_2C2A			2u
@@ -317,8 +317,8 @@ struct sdk_xip_ssi {
 	/* 0xF8: TX drive edge */
 	uint32_t volatile TXD_DRIVE_EDGE;
 	/* TXD drive edge */
-#define XIP_SSI_TXD_DRIVE_EDGE_TDE_msb				7u
-#define XIP_SSI_TXD_DRIVE_EDGE_TDE_lsb				0u
+#define XIP_SSI_TXD_DRIVE_EDGE_TDE_Msb				7u
+#define XIP_SSI_TXD_DRIVE_EDGE_TDE_Lsb				0u
 
 };
 
@@ -330,14 +330,14 @@ struct sdk_sysinfo {
 	/* 0x00: JEDEC JEP-106 compliant chip identifier. */
 	uint32_t volatile CHIP_ID;
 	/*  */
-#define SYSINFO_CHIP_ID_REVISION_msb				31u
-#define SYSINFO_CHIP_ID_REVISION_lsb				28u
+#define SYSINFO_CHIP_ID_REVISION_Msb				31u
+#define SYSINFO_CHIP_ID_REVISION_Lsb				28u
 	/*  */
-#define SYSINFO_CHIP_ID_PART_msb				27u
-#define SYSINFO_CHIP_ID_PART_lsb				12u
+#define SYSINFO_CHIP_ID_PART_Msb				27u
+#define SYSINFO_CHIP_ID_PART_Lsb				12u
 	/*  */
-#define SYSINFO_CHIP_ID_MANUFACTURER_msb			11u
-#define SYSINFO_CHIP_ID_MANUFACTURER_lsb			0u
+#define SYSINFO_CHIP_ID_MANUFACTURER_Msb			11u
+#define SYSINFO_CHIP_ID_MANUFACTURER_Lsb			0u
 
 	/* 0x04: Platform register. */
 	uint32_t volatile PLATFORM;
@@ -368,11 +368,11 @@ struct sdk_syscfg {
 	/* 0x08: Configuration for processors */
 	uint32_t volatile PROC_CONFIG;
 	/* Configure proc1 DAP instance ID. */
-#define SYSCFG_PROC_CONFIG_PROC1_DAP_INSTID_msb			31u
-#define SYSCFG_PROC_CONFIG_PROC1_DAP_INSTID_lsb			28u
+#define SYSCFG_PROC_CONFIG_PROC1_DAP_INSTID_Msb			31u
+#define SYSCFG_PROC_CONFIG_PROC1_DAP_INSTID_Lsb			28u
 	/* Configure proc0 DAP instance ID. */
-#define SYSCFG_PROC_CONFIG_PROC0_DAP_INSTID_msb			27u
-#define SYSCFG_PROC_CONFIG_PROC0_DAP_INSTID_lsb			24u
+#define SYSCFG_PROC_CONFIG_PROC0_DAP_INSTID_Msb			27u
+#define SYSCFG_PROC_CONFIG_PROC0_DAP_INSTID_Lsb			24u
 	/* Indication that proc1 has halted */
 #define SYSCFG_PROC_CONFIG_PROC1_HALTED				1u
 	/* Indication that proc0 has halted */
@@ -381,14 +381,14 @@ struct sdk_syscfg {
 	/* 0x0C: For each bit, if 1, bypass the input synchronizer between that GPIO */
 	uint32_t volatile PROC_IN_SYNC_BYPASS;
 	/*  */
-#define SYSCFG_PROC_IN_SYNC_BYPASS_PROC_IN_SYNC_BYPASS_msb	29u
-#define SYSCFG_PROC_IN_SYNC_BYPASS_PROC_IN_SYNC_BYPASS_lsb	0u
+#define SYSCFG_PROC_IN_SYNC_BYPASS_PROC_IN_SYNC_BYPASS_Msb	29u
+#define SYSCFG_PROC_IN_SYNC_BYPASS_PROC_IN_SYNC_BYPASS_Lsb	0u
 
 	/* 0x10: For each bit, if 1, bypass the input synchronizer between that GPIO */
 	uint32_t volatile PROC_IN_SYNC_BYPASS_HI;
 	/*  */
-#define SYSCFG_PROC_IN_SYNC_BYPASS_HI_PROC_IN_SYNC_BYPASS_HI_msb	5u
-#define SYSCFG_PROC_IN_SYNC_BYPASS_HI_PROC_IN_SYNC_BYPASS_HI_lsb	0u
+#define SYSCFG_PROC_IN_SYNC_BYPASS_HI_PROC_IN_SYNC_BYPASS_HI_Msb	5u
+#define SYSCFG_PROC_IN_SYNC_BYPASS_HI_PROC_IN_SYNC_BYPASS_HI_Lsb	0u
 
 	/* 0x14: Directly control the SWD debug port of either processor */
 	uint32_t volatile DBGFORCE;
@@ -440,8 +440,8 @@ struct sdk_clocks {
 	/* An edge on this signal shifts the phase of the output by 1 cycle of the input clock */
 #define CLOCKS_CLK_GPOUT0_CTRL_NUDGE				20u
 	/* This delays the enable signal by up to 3 cycles of the input clock */
-#define CLOCKS_CLK_GPOUT0_CTRL_PHASE_msb			17u
-#define CLOCKS_CLK_GPOUT0_CTRL_PHASE_lsb			16u
+#define CLOCKS_CLK_GPOUT0_CTRL_PHASE_Msb			17u
+#define CLOCKS_CLK_GPOUT0_CTRL_PHASE_Lsb			16u
 	/* Enables duty cycle correction for odd divisors */
 #define CLOCKS_CLK_GPOUT0_CTRL_DC50				12u
 	/* Starts and stops the clock generator cleanly */
@@ -449,8 +449,8 @@ struct sdk_clocks {
 	/* Asynchronously kills the clock generator */
 #define CLOCKS_CLK_GPOUT0_CTRL_KILL				10u
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_GPOUT0_CTRL_AUXSRC_msb			8u
-#define CLOCKS_CLK_GPOUT0_CTRL_AUXSRC_lsb			5u
+#define CLOCKS_CLK_GPOUT0_CTRL_AUXSRC_Msb			8u
+#define CLOCKS_CLK_GPOUT0_CTRL_AUXSRC_Lsb			5u
 #define CLOCKS_CLK_GPOUT0_CTRL_AUXSRC_CLKSRC_PLL_SYS		0u
 #define CLOCKS_CLK_GPOUT0_CTRL_AUXSRC_CLKSRC_GPIN0		1u
 #define CLOCKS_CLK_GPOUT0_CTRL_AUXSRC_CLKSRC_GPIN1		2u
@@ -466,11 +466,11 @@ struct sdk_clocks {
 	/* 0x04: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_GPOUT0_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_GPOUT0_DIV_INT_msb				31u
-#define CLOCKS_CLK_GPOUT0_DIV_INT_lsb				8u
+#define CLOCKS_CLK_GPOUT0_DIV_INT_Msb				31u
+#define CLOCKS_CLK_GPOUT0_DIV_INT_Lsb				8u
 	/* Fractional component of the divisor */
-#define CLOCKS_CLK_GPOUT0_DIV_FRAC_msb				7u
-#define CLOCKS_CLK_GPOUT0_DIV_FRAC_lsb				0u
+#define CLOCKS_CLK_GPOUT0_DIV_FRAC_Msb				7u
+#define CLOCKS_CLK_GPOUT0_DIV_FRAC_Lsb				0u
 
 	/* 0x08: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_GPOUT0_SELECTED;
@@ -480,8 +480,8 @@ struct sdk_clocks {
 	/* An edge on this signal shifts the phase of the output by 1 cycle of the input clock */
 #define CLOCKS_CLK_GPOUT1_CTRL_NUDGE				20u
 	/* This delays the enable signal by up to 3 cycles of the input clock */
-#define CLOCKS_CLK_GPOUT1_CTRL_PHASE_msb			17u
-#define CLOCKS_CLK_GPOUT1_CTRL_PHASE_lsb			16u
+#define CLOCKS_CLK_GPOUT1_CTRL_PHASE_Msb			17u
+#define CLOCKS_CLK_GPOUT1_CTRL_PHASE_Lsb			16u
 	/* Enables duty cycle correction for odd divisors */
 #define CLOCKS_CLK_GPOUT1_CTRL_DC50				12u
 	/* Starts and stops the clock generator cleanly */
@@ -489,8 +489,8 @@ struct sdk_clocks {
 	/* Asynchronously kills the clock generator */
 #define CLOCKS_CLK_GPOUT1_CTRL_KILL				10u
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_GPOUT1_CTRL_AUXSRC_msb			8u
-#define CLOCKS_CLK_GPOUT1_CTRL_AUXSRC_lsb			5u
+#define CLOCKS_CLK_GPOUT1_CTRL_AUXSRC_Msb			8u
+#define CLOCKS_CLK_GPOUT1_CTRL_AUXSRC_Lsb			5u
 #define CLOCKS_CLK_GPOUT1_CTRL_AUXSRC_CLKSRC_PLL_SYS		0u
 #define CLOCKS_CLK_GPOUT1_CTRL_AUXSRC_CLKSRC_GPIN0		1u
 #define CLOCKS_CLK_GPOUT1_CTRL_AUXSRC_CLKSRC_GPIN1		2u
@@ -506,11 +506,11 @@ struct sdk_clocks {
 	/* 0x10: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_GPOUT1_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_GPOUT1_DIV_INT_msb				31u
-#define CLOCKS_CLK_GPOUT1_DIV_INT_lsb				8u
+#define CLOCKS_CLK_GPOUT1_DIV_INT_Msb				31u
+#define CLOCKS_CLK_GPOUT1_DIV_INT_Lsb				8u
 	/* Fractional component of the divisor */
-#define CLOCKS_CLK_GPOUT1_DIV_FRAC_msb				7u
-#define CLOCKS_CLK_GPOUT1_DIV_FRAC_lsb				0u
+#define CLOCKS_CLK_GPOUT1_DIV_FRAC_Msb				7u
+#define CLOCKS_CLK_GPOUT1_DIV_FRAC_Lsb				0u
 
 	/* 0x14: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_GPOUT1_SELECTED;
@@ -520,8 +520,8 @@ struct sdk_clocks {
 	/* An edge on this signal shifts the phase of the output by 1 cycle of the input clock */
 #define CLOCKS_CLK_GPOUT2_CTRL_NUDGE				20u
 	/* This delays the enable signal by up to 3 cycles of the input clock */
-#define CLOCKS_CLK_GPOUT2_CTRL_PHASE_msb			17u
-#define CLOCKS_CLK_GPOUT2_CTRL_PHASE_lsb			16u
+#define CLOCKS_CLK_GPOUT2_CTRL_PHASE_Msb			17u
+#define CLOCKS_CLK_GPOUT2_CTRL_PHASE_Lsb			16u
 	/* Enables duty cycle correction for odd divisors */
 #define CLOCKS_CLK_GPOUT2_CTRL_DC50				12u
 	/* Starts and stops the clock generator cleanly */
@@ -529,8 +529,8 @@ struct sdk_clocks {
 	/* Asynchronously kills the clock generator */
 #define CLOCKS_CLK_GPOUT2_CTRL_KILL				10u
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_GPOUT2_CTRL_AUXSRC_msb			8u
-#define CLOCKS_CLK_GPOUT2_CTRL_AUXSRC_lsb			5u
+#define CLOCKS_CLK_GPOUT2_CTRL_AUXSRC_Msb			8u
+#define CLOCKS_CLK_GPOUT2_CTRL_AUXSRC_Lsb			5u
 #define CLOCKS_CLK_GPOUT2_CTRL_AUXSRC_CLKSRC_PLL_SYS		0u
 #define CLOCKS_CLK_GPOUT2_CTRL_AUXSRC_CLKSRC_GPIN0		1u
 #define CLOCKS_CLK_GPOUT2_CTRL_AUXSRC_CLKSRC_GPIN1		2u
@@ -546,11 +546,11 @@ struct sdk_clocks {
 	/* 0x1C: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_GPOUT2_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_GPOUT2_DIV_INT_msb				31u
-#define CLOCKS_CLK_GPOUT2_DIV_INT_lsb				8u
+#define CLOCKS_CLK_GPOUT2_DIV_INT_Msb				31u
+#define CLOCKS_CLK_GPOUT2_DIV_INT_Lsb				8u
 	/* Fractional component of the divisor */
-#define CLOCKS_CLK_GPOUT2_DIV_FRAC_msb				7u
-#define CLOCKS_CLK_GPOUT2_DIV_FRAC_lsb				0u
+#define CLOCKS_CLK_GPOUT2_DIV_FRAC_Msb				7u
+#define CLOCKS_CLK_GPOUT2_DIV_FRAC_Lsb				0u
 
 	/* 0x20: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_GPOUT2_SELECTED;
@@ -560,8 +560,8 @@ struct sdk_clocks {
 	/* An edge on this signal shifts the phase of the output by 1 cycle of the input clock */
 #define CLOCKS_CLK_GPOUT3_CTRL_NUDGE				20u
 	/* This delays the enable signal by up to 3 cycles of the input clock */
-#define CLOCKS_CLK_GPOUT3_CTRL_PHASE_msb			17u
-#define CLOCKS_CLK_GPOUT3_CTRL_PHASE_lsb			16u
+#define CLOCKS_CLK_GPOUT3_CTRL_PHASE_Msb			17u
+#define CLOCKS_CLK_GPOUT3_CTRL_PHASE_Lsb			16u
 	/* Enables duty cycle correction for odd divisors */
 #define CLOCKS_CLK_GPOUT3_CTRL_DC50				12u
 	/* Starts and stops the clock generator cleanly */
@@ -569,8 +569,8 @@ struct sdk_clocks {
 	/* Asynchronously kills the clock generator */
 #define CLOCKS_CLK_GPOUT3_CTRL_KILL				10u
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_GPOUT3_CTRL_AUXSRC_msb			8u
-#define CLOCKS_CLK_GPOUT3_CTRL_AUXSRC_lsb			5u
+#define CLOCKS_CLK_GPOUT3_CTRL_AUXSRC_Msb			8u
+#define CLOCKS_CLK_GPOUT3_CTRL_AUXSRC_Lsb			5u
 #define CLOCKS_CLK_GPOUT3_CTRL_AUXSRC_CLKSRC_PLL_SYS		0u
 #define CLOCKS_CLK_GPOUT3_CTRL_AUXSRC_CLKSRC_GPIN0		1u
 #define CLOCKS_CLK_GPOUT3_CTRL_AUXSRC_CLKSRC_GPIN1		2u
@@ -586,11 +586,11 @@ struct sdk_clocks {
 	/* 0x28: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_GPOUT3_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_GPOUT3_DIV_INT_msb				31u
-#define CLOCKS_CLK_GPOUT3_DIV_INT_lsb				8u
+#define CLOCKS_CLK_GPOUT3_DIV_INT_Msb				31u
+#define CLOCKS_CLK_GPOUT3_DIV_INT_Lsb				8u
 	/* Fractional component of the divisor */
-#define CLOCKS_CLK_GPOUT3_DIV_FRAC_msb				7u
-#define CLOCKS_CLK_GPOUT3_DIV_FRAC_lsb				0u
+#define CLOCKS_CLK_GPOUT3_DIV_FRAC_Msb				7u
+#define CLOCKS_CLK_GPOUT3_DIV_FRAC_Lsb				0u
 
 	/* 0x2C: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_GPOUT3_SELECTED;
@@ -598,14 +598,14 @@ struct sdk_clocks {
 	/* 0x30: Clock control, can be changed on-the-fly (except for auxsrc) */
 	uint32_t volatile CLK_REF_CTRL;
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_REF_CTRL_AUXSRC_msb				6u
-#define CLOCKS_CLK_REF_CTRL_AUXSRC_lsb				5u
+#define CLOCKS_CLK_REF_CTRL_AUXSRC_Msb				6u
+#define CLOCKS_CLK_REF_CTRL_AUXSRC_Lsb				5u
 #define CLOCKS_CLK_REF_CTRL_AUXSRC_CLKSRC_PLL_USB		0u
 #define CLOCKS_CLK_REF_CTRL_AUXSRC_CLKSRC_GPIN0			1u
 #define CLOCKS_CLK_REF_CTRL_AUXSRC_CLKSRC_GPIN1			2u
 	/* Selects the clock source glitchlessly, can be changed on-the-fly */
-#define CLOCKS_CLK_REF_CTRL_SRC_msb				1u
-#define CLOCKS_CLK_REF_CTRL_SRC_lsb				0u
+#define CLOCKS_CLK_REF_CTRL_SRC_Msb				1u
+#define CLOCKS_CLK_REF_CTRL_SRC_Lsb				0u
 #define CLOCKS_CLK_REF_CTRL_SRC_ROSC_CLKSRC_PH			0u
 #define CLOCKS_CLK_REF_CTRL_SRC_CLKSRC_CLK_REF_AUX		1u
 #define CLOCKS_CLK_REF_CTRL_SRC_XOSC_CLKSRC			2u
@@ -613,8 +613,8 @@ struct sdk_clocks {
 	/* 0x34: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_REF_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_REF_DIV_INT_msb				9u
-#define CLOCKS_CLK_REF_DIV_INT_lsb				8u
+#define CLOCKS_CLK_REF_DIV_INT_Msb				9u
+#define CLOCKS_CLK_REF_DIV_INT_Lsb				8u
 
 	/* 0x38: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_REF_SELECTED;
@@ -622,8 +622,8 @@ struct sdk_clocks {
 	/* 0x3C: Clock control, can be changed on-the-fly (except for auxsrc) */
 	uint32_t volatile CLK_SYS_CTRL;
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_SYS_CTRL_AUXSRC_msb				7u
-#define CLOCKS_CLK_SYS_CTRL_AUXSRC_lsb				5u
+#define CLOCKS_CLK_SYS_CTRL_AUXSRC_Msb				7u
+#define CLOCKS_CLK_SYS_CTRL_AUXSRC_Lsb				5u
 #define CLOCKS_CLK_SYS_CTRL_AUXSRC_CLKSRC_PLL_SYS		0u
 #define CLOCKS_CLK_SYS_CTRL_AUXSRC_CLKSRC_PLL_USB		1u
 #define CLOCKS_CLK_SYS_CTRL_AUXSRC_ROSC_CLKSRC			2u
@@ -638,11 +638,11 @@ struct sdk_clocks {
 	/* 0x40: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_SYS_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_SYS_DIV_INT_msb				31u
-#define CLOCKS_CLK_SYS_DIV_INT_lsb				8u
+#define CLOCKS_CLK_SYS_DIV_INT_Msb				31u
+#define CLOCKS_CLK_SYS_DIV_INT_Lsb				8u
 	/* Fractional component of the divisor */
-#define CLOCKS_CLK_SYS_DIV_FRAC_msb				7u
-#define CLOCKS_CLK_SYS_DIV_FRAC_lsb				0u
+#define CLOCKS_CLK_SYS_DIV_FRAC_Msb				7u
+#define CLOCKS_CLK_SYS_DIV_FRAC_Lsb				0u
 
 	/* 0x44: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_SYS_SELECTED;
@@ -654,8 +654,8 @@ struct sdk_clocks {
 	/* Asynchronously kills the clock generator */
 #define CLOCKS_CLK_PERI_CTRL_KILL				10u
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_PERI_CTRL_AUXSRC_msb				7u
-#define CLOCKS_CLK_PERI_CTRL_AUXSRC_lsb				5u
+#define CLOCKS_CLK_PERI_CTRL_AUXSRC_Msb				7u
+#define CLOCKS_CLK_PERI_CTRL_AUXSRC_Lsb				5u
 #define CLOCKS_CLK_PERI_CTRL_AUXSRC_CLK_SYS			0u
 #define CLOCKS_CLK_PERI_CTRL_AUXSRC_CLKSRC_PLL_SYS		1u
 #define CLOCKS_CLK_PERI_CTRL_AUXSRC_CLKSRC_PLL_USB		2u
@@ -675,15 +675,15 @@ struct sdk_clocks {
 	/* An edge on this signal shifts the phase of the output by 1 cycle of the input clock */
 #define CLOCKS_CLK_USB_CTRL_NUDGE				20u
 	/* This delays the enable signal by up to 3 cycles of the input clock */
-#define CLOCKS_CLK_USB_CTRL_PHASE_msb				17u
-#define CLOCKS_CLK_USB_CTRL_PHASE_lsb				16u
+#define CLOCKS_CLK_USB_CTRL_PHASE_Msb				17u
+#define CLOCKS_CLK_USB_CTRL_PHASE_Lsb				16u
 	/* Starts and stops the clock generator cleanly */
 #define CLOCKS_CLK_USB_CTRL_ENABLE				11u
 	/* Asynchronously kills the clock generator */
 #define CLOCKS_CLK_USB_CTRL_KILL				10u
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_USB_CTRL_AUXSRC_msb				7u
-#define CLOCKS_CLK_USB_CTRL_AUXSRC_lsb				5u
+#define CLOCKS_CLK_USB_CTRL_AUXSRC_Msb				7u
+#define CLOCKS_CLK_USB_CTRL_AUXSRC_Lsb				5u
 #define CLOCKS_CLK_USB_CTRL_AUXSRC_CLKSRC_PLL_USB		0u
 #define CLOCKS_CLK_USB_CTRL_AUXSRC_CLKSRC_PLL_SYS		1u
 #define CLOCKS_CLK_USB_CTRL_AUXSRC_ROSC_CLKSRC_PH		2u
@@ -694,8 +694,8 @@ struct sdk_clocks {
 	/* 0x58: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_USB_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_USB_DIV_INT_msb				9u
-#define CLOCKS_CLK_USB_DIV_INT_lsb				8u
+#define CLOCKS_CLK_USB_DIV_INT_Msb				9u
+#define CLOCKS_CLK_USB_DIV_INT_Lsb				8u
 
 	/* 0x5C: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_USB_SELECTED;
@@ -705,15 +705,15 @@ struct sdk_clocks {
 	/* An edge on this signal shifts the phase of the output by 1 cycle of the input clock */
 #define CLOCKS_CLK_ADC_CTRL_NUDGE				20u
 	/* This delays the enable signal by up to 3 cycles of the input clock */
-#define CLOCKS_CLK_ADC_CTRL_PHASE_msb				17u
-#define CLOCKS_CLK_ADC_CTRL_PHASE_lsb				16u
+#define CLOCKS_CLK_ADC_CTRL_PHASE_Msb				17u
+#define CLOCKS_CLK_ADC_CTRL_PHASE_Lsb				16u
 	/* Starts and stops the clock generator cleanly */
 #define CLOCKS_CLK_ADC_CTRL_ENABLE				11u
 	/* Asynchronously kills the clock generator */
 #define CLOCKS_CLK_ADC_CTRL_KILL				10u
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_ADC_CTRL_AUXSRC_msb				7u
-#define CLOCKS_CLK_ADC_CTRL_AUXSRC_lsb				5u
+#define CLOCKS_CLK_ADC_CTRL_AUXSRC_Msb				7u
+#define CLOCKS_CLK_ADC_CTRL_AUXSRC_Lsb				5u
 #define CLOCKS_CLK_ADC_CTRL_AUXSRC_CLKSRC_PLL_USB		0u
 #define CLOCKS_CLK_ADC_CTRL_AUXSRC_CLKSRC_PLL_SYS		1u
 #define CLOCKS_CLK_ADC_CTRL_AUXSRC_ROSC_CLKSRC_PH		2u
@@ -724,8 +724,8 @@ struct sdk_clocks {
 	/* 0x64: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_ADC_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_ADC_DIV_INT_msb				9u
-#define CLOCKS_CLK_ADC_DIV_INT_lsb				8u
+#define CLOCKS_CLK_ADC_DIV_INT_Msb				9u
+#define CLOCKS_CLK_ADC_DIV_INT_Lsb				8u
 
 	/* 0x68: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_ADC_SELECTED;
@@ -735,15 +735,15 @@ struct sdk_clocks {
 	/* An edge on this signal shifts the phase of the output by 1 cycle of the input clock */
 #define CLOCKS_CLK_RTC_CTRL_NUDGE				20u
 	/* This delays the enable signal by up to 3 cycles of the input clock */
-#define CLOCKS_CLK_RTC_CTRL_PHASE_msb				17u
-#define CLOCKS_CLK_RTC_CTRL_PHASE_lsb				16u
+#define CLOCKS_CLK_RTC_CTRL_PHASE_Msb				17u
+#define CLOCKS_CLK_RTC_CTRL_PHASE_Lsb				16u
 	/* Starts and stops the clock generator cleanly */
 #define CLOCKS_CLK_RTC_CTRL_ENABLE				11u
 	/* Asynchronously kills the clock generator */
 #define CLOCKS_CLK_RTC_CTRL_KILL				10u
 	/* Selects the auxiliary clock source, will glitch when switching */
-#define CLOCKS_CLK_RTC_CTRL_AUXSRC_msb				7u
-#define CLOCKS_CLK_RTC_CTRL_AUXSRC_lsb				5u
+#define CLOCKS_CLK_RTC_CTRL_AUXSRC_Msb				7u
+#define CLOCKS_CLK_RTC_CTRL_AUXSRC_Lsb				5u
 #define CLOCKS_CLK_RTC_CTRL_AUXSRC_CLKSRC_PLL_USB		0u
 #define CLOCKS_CLK_RTC_CTRL_AUXSRC_CLKSRC_PLL_SYS		1u
 #define CLOCKS_CLK_RTC_CTRL_AUXSRC_ROSC_CLKSRC_PH		2u
@@ -754,11 +754,11 @@ struct sdk_clocks {
 	/* 0x70: Clock divisor, can be changed on-the-fly */
 	uint32_t volatile CLK_RTC_DIV;
 	/* Integer component of the divisor, 0 -> divide by 2^16 */
-#define CLOCKS_CLK_RTC_DIV_INT_msb				31u
-#define CLOCKS_CLK_RTC_DIV_INT_lsb				8u
+#define CLOCKS_CLK_RTC_DIV_INT_Msb				31u
+#define CLOCKS_CLK_RTC_DIV_INT_Lsb				8u
 	/* Fractional component of the divisor */
-#define CLOCKS_CLK_RTC_DIV_FRAC_msb				7u
-#define CLOCKS_CLK_RTC_DIV_FRAC_lsb				0u
+#define CLOCKS_CLK_RTC_DIV_FRAC_Msb				7u
+#define CLOCKS_CLK_RTC_DIV_FRAC_Lsb				0u
 
 	/* 0x74: Indicates which SRC is currently selected by the glitchless mux (one-hot). */
 	uint32_t volatile CLK_RTC_SELECTED;
@@ -772,8 +772,8 @@ struct sdk_clocks {
 	/* Enable resus */
 #define CLOCKS_CLK_SYS_RESUS_CTRL_ENABLE			8u
 	/* This is expressed as a number of clk_ref cycles */
-#define CLOCKS_CLK_SYS_RESUS_CTRL_TIMEOUT_msb			7u
-#define CLOCKS_CLK_SYS_RESUS_CTRL_TIMEOUT_lsb			0u
+#define CLOCKS_CLK_SYS_RESUS_CTRL_TIMEOUT_Msb			7u
+#define CLOCKS_CLK_SYS_RESUS_CTRL_TIMEOUT_Lsb			0u
 
 	/* 0x7C:  */
 	uint32_t volatile CLK_SYS_RESUS_STATUS;
@@ -783,38 +783,38 @@ struct sdk_clocks {
 	/* 0x80: Reference clock frequency in kHz */
 	uint32_t volatile FC0_REF_KHZ;
 	/*  */
-#define CLOCKS_FC0_REF_KHZ_FC0_REF_KHZ_msb			19u
-#define CLOCKS_FC0_REF_KHZ_FC0_REF_KHZ_lsb			0u
+#define CLOCKS_FC0_REF_KHZ_FC0_REF_KHZ_Msb			19u
+#define CLOCKS_FC0_REF_KHZ_FC0_REF_KHZ_Lsb			0u
 
 	/* 0x84: Minimum pass frequency in kHz. */
 	uint32_t volatile FC0_MIN_KHZ;
 	/*  */
-#define CLOCKS_FC0_MIN_KHZ_FC0_MIN_KHZ_msb			24u
-#define CLOCKS_FC0_MIN_KHZ_FC0_MIN_KHZ_lsb			0u
+#define CLOCKS_FC0_MIN_KHZ_FC0_MIN_KHZ_Msb			24u
+#define CLOCKS_FC0_MIN_KHZ_FC0_MIN_KHZ_Lsb			0u
 
 	/* 0x88: Maximum pass frequency in kHz. */
 	uint32_t volatile FC0_MAX_KHZ;
 	/*  */
-#define CLOCKS_FC0_MAX_KHZ_FC0_MAX_KHZ_msb			24u
-#define CLOCKS_FC0_MAX_KHZ_FC0_MAX_KHZ_lsb			0u
+#define CLOCKS_FC0_MAX_KHZ_FC0_MAX_KHZ_Msb			24u
+#define CLOCKS_FC0_MAX_KHZ_FC0_MAX_KHZ_Lsb			0u
 
 	/* 0x8C: Delays the start of frequency counting to allow the mux to settle */
 	uint32_t volatile FC0_DELAY;
 	/*  */
-#define CLOCKS_FC0_DELAY_FC0_DELAY_msb				2u
-#define CLOCKS_FC0_DELAY_FC0_DELAY_lsb				0u
+#define CLOCKS_FC0_DELAY_FC0_DELAY_Msb				2u
+#define CLOCKS_FC0_DELAY_FC0_DELAY_Lsb				0u
 
 	/* 0x90: The test interval is 0.98us * 2**interval, but let's call it 1us * 2**interval */
 	uint32_t volatile FC0_INTERVAL;
 	/*  */
-#define CLOCKS_FC0_INTERVAL_FC0_INTERVAL_msb			3u
-#define CLOCKS_FC0_INTERVAL_FC0_INTERVAL_lsb			0u
+#define CLOCKS_FC0_INTERVAL_FC0_INTERVAL_Msb			3u
+#define CLOCKS_FC0_INTERVAL_FC0_INTERVAL_Lsb			0u
 
 	/* 0x94: Clock sent to frequency counter, set to 0 when not required */
 	uint32_t volatile FC0_SRC;
 	/*  */
-#define CLOCKS_FC0_SRC_FC0_SRC_msb				7u
-#define CLOCKS_FC0_SRC_FC0_SRC_lsb				0u
+#define CLOCKS_FC0_SRC_FC0_SRC_Msb				7u
+#define CLOCKS_FC0_SRC_FC0_SRC_Lsb				0u
 #define CLOCKS_FC0_SRC_FC0_SRC_NULL				0u
 #define CLOCKS_FC0_SRC_FC0_SRC_PLL_SYS_CLKSRC_PRIMARY		1u
 #define CLOCKS_FC0_SRC_FC0_SRC_PLL_USB_CLKSRC_PRIMARY		2u
@@ -852,11 +852,11 @@ struct sdk_clocks {
 	/* 0x9C: Result of frequency measurement, only valid when status_done=1 */
 	uint32_t volatile FC0_RESULT;
 	/*  */
-#define CLOCKS_FC0_RESULT_KHZ_msb				29u
-#define CLOCKS_FC0_RESULT_KHZ_lsb				5u
+#define CLOCKS_FC0_RESULT_KHZ_Msb				29u
+#define CLOCKS_FC0_RESULT_KHZ_Lsb				5u
 	/*  */
-#define CLOCKS_FC0_RESULT_FRAC_msb				4u
-#define CLOCKS_FC0_RESULT_FRAC_lsb				0u
+#define CLOCKS_FC0_RESULT_FRAC_Msb				4u
+#define CLOCKS_FC0_RESULT_FRAC_Lsb				0u
 
 	/* 0xA0: enable clock in wake mode */
 	uint32_t volatile WAKE_EN0;
@@ -1528,36 +1528,36 @@ struct sdk_io_bank0 {
 	/* 0x04: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO0_CTRL;
 	/*  */
-#define IO_BANK0_GPIO0_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO0_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO0_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO0_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO0_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO0_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO0_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO0_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO0_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO0_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO0_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO0_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO0_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO0_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO0_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO0_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO0_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO0_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO0_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO0_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO0_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO0_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO0_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO0_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO0_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO0_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO0_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO0_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO0_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO0_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO0_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO0_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO0_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO0_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO0_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO0_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO0_CTRL_FUNCSEL_JTAG_TCK			0u
 #define IO_BANK0_GPIO0_CTRL_FUNCSEL_SPI0_RX			1u
 #define IO_BANK0_GPIO0_CTRL_FUNCSEL_UART0_TX			2u
@@ -1591,36 +1591,36 @@ struct sdk_io_bank0 {
 	/* 0x0C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO1_CTRL;
 	/*  */
-#define IO_BANK0_GPIO1_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO1_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO1_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO1_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO1_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO1_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO1_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO1_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO1_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO1_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO1_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO1_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO1_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO1_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO1_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO1_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO1_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO1_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO1_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO1_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO1_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO1_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO1_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO1_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO1_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO1_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO1_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO1_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO1_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO1_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO1_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO1_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO1_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO1_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO1_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO1_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO1_CTRL_FUNCSEL_JTAG_TMS			0u
 #define IO_BANK0_GPIO1_CTRL_FUNCSEL_SPI0_SS_N			1u
 #define IO_BANK0_GPIO1_CTRL_FUNCSEL_UART0_RX			2u
@@ -1654,36 +1654,36 @@ struct sdk_io_bank0 {
 	/* 0x14: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO2_CTRL;
 	/*  */
-#define IO_BANK0_GPIO2_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO2_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO2_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO2_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO2_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO2_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO2_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO2_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO2_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO2_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO2_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO2_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO2_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO2_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO2_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO2_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO2_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO2_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO2_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO2_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO2_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO2_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO2_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO2_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO2_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO2_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO2_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO2_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO2_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO2_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO2_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO2_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO2_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO2_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO2_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO2_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO2_CTRL_FUNCSEL_JTAG_TDI			0u
 #define IO_BANK0_GPIO2_CTRL_FUNCSEL_SPI0_SCLK			1u
 #define IO_BANK0_GPIO2_CTRL_FUNCSEL_UART0_CTS			2u
@@ -1717,36 +1717,36 @@ struct sdk_io_bank0 {
 	/* 0x1C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO3_CTRL;
 	/*  */
-#define IO_BANK0_GPIO3_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO3_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO3_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO3_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO3_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO3_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO3_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO3_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO3_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO3_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO3_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO3_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO3_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO3_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO3_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO3_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO3_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO3_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO3_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO3_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO3_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO3_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO3_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO3_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO3_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO3_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO3_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO3_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO3_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO3_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO3_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO3_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO3_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO3_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO3_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO3_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO3_CTRL_FUNCSEL_JTAG_TDO			0u
 #define IO_BANK0_GPIO3_CTRL_FUNCSEL_SPI0_TX			1u
 #define IO_BANK0_GPIO3_CTRL_FUNCSEL_UART0_RTS			2u
@@ -1780,36 +1780,36 @@ struct sdk_io_bank0 {
 	/* 0x24: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO4_CTRL;
 	/*  */
-#define IO_BANK0_GPIO4_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO4_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO4_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO4_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO4_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO4_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO4_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO4_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO4_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO4_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO4_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO4_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO4_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO4_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO4_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO4_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO4_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO4_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO4_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO4_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO4_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO4_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO4_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO4_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO4_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO4_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO4_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO4_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO4_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO4_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO4_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO4_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO4_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO4_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO4_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO4_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO4_CTRL_FUNCSEL_SPI0_RX			1u
 #define IO_BANK0_GPIO4_CTRL_FUNCSEL_UART1_TX			2u
 #define IO_BANK0_GPIO4_CTRL_FUNCSEL_I2C0_SDA			3u
@@ -1842,36 +1842,36 @@ struct sdk_io_bank0 {
 	/* 0x2C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO5_CTRL;
 	/*  */
-#define IO_BANK0_GPIO5_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO5_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO5_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO5_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO5_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO5_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO5_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO5_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO5_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO5_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO5_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO5_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO5_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO5_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO5_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO5_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO5_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO5_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO5_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO5_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO5_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO5_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO5_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO5_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO5_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO5_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO5_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO5_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO5_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO5_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO5_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO5_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO5_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO5_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO5_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO5_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO5_CTRL_FUNCSEL_SPI0_SS_N			1u
 #define IO_BANK0_GPIO5_CTRL_FUNCSEL_UART1_RX			2u
 #define IO_BANK0_GPIO5_CTRL_FUNCSEL_I2C0_SCL			3u
@@ -1904,36 +1904,36 @@ struct sdk_io_bank0 {
 	/* 0x34: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO6_CTRL;
 	/*  */
-#define IO_BANK0_GPIO6_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO6_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO6_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO6_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO6_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO6_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO6_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO6_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO6_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO6_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO6_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO6_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO6_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO6_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO6_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO6_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO6_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO6_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO6_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO6_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO6_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO6_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO6_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO6_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO6_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO6_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO6_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO6_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO6_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO6_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO6_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO6_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO6_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO6_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO6_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO6_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO6_CTRL_FUNCSEL_SPI0_SCLK			1u
 #define IO_BANK0_GPIO6_CTRL_FUNCSEL_UART1_CTS			2u
 #define IO_BANK0_GPIO6_CTRL_FUNCSEL_I2C1_SDA			3u
@@ -1967,36 +1967,36 @@ struct sdk_io_bank0 {
 	/* 0x3C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO7_CTRL;
 	/*  */
-#define IO_BANK0_GPIO7_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO7_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO7_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO7_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO7_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO7_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO7_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO7_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO7_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO7_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO7_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO7_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO7_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO7_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO7_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO7_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO7_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO7_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO7_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO7_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO7_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO7_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO7_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO7_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO7_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO7_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO7_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO7_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO7_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO7_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO7_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO7_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO7_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO7_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO7_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO7_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO7_CTRL_FUNCSEL_SPI0_TX			1u
 #define IO_BANK0_GPIO7_CTRL_FUNCSEL_UART1_RTS			2u
 #define IO_BANK0_GPIO7_CTRL_FUNCSEL_I2C1_SCL			3u
@@ -2030,36 +2030,36 @@ struct sdk_io_bank0 {
 	/* 0x44: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO8_CTRL;
 	/*  */
-#define IO_BANK0_GPIO8_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO8_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO8_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO8_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO8_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO8_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO8_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO8_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO8_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO8_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO8_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO8_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO8_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO8_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO8_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO8_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO8_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO8_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO8_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO8_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO8_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO8_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO8_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO8_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO8_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO8_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO8_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO8_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO8_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO8_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO8_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO8_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO8_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO8_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO8_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO8_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO8_CTRL_FUNCSEL_SPI1_RX			1u
 #define IO_BANK0_GPIO8_CTRL_FUNCSEL_UART1_TX			2u
 #define IO_BANK0_GPIO8_CTRL_FUNCSEL_I2C0_SDA			3u
@@ -2093,36 +2093,36 @@ struct sdk_io_bank0 {
 	/* 0x4C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO9_CTRL;
 	/*  */
-#define IO_BANK0_GPIO9_CTRL_IRQOVER_msb				29u
-#define IO_BANK0_GPIO9_CTRL_IRQOVER_lsb				28u
+#define IO_BANK0_GPIO9_CTRL_IRQOVER_Msb				29u
+#define IO_BANK0_GPIO9_CTRL_IRQOVER_Lsb				28u
 #define IO_BANK0_GPIO9_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO9_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO9_CTRL_IRQOVER_LOW				2u
 #define IO_BANK0_GPIO9_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO9_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO9_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO9_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO9_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO9_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO9_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO9_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO9_CTRL_INOVER_HIGH				3u
 	/*  */
-#define IO_BANK0_GPIO9_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO9_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO9_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO9_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO9_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO9_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO9_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO9_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO9_CTRL_OUTOVER_msb				9u
-#define IO_BANK0_GPIO9_CTRL_OUTOVER_lsb				8u
+#define IO_BANK0_GPIO9_CTRL_OUTOVER_Msb				9u
+#define IO_BANK0_GPIO9_CTRL_OUTOVER_Lsb				8u
 #define IO_BANK0_GPIO9_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO9_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO9_CTRL_OUTOVER_LOW				2u
 #define IO_BANK0_GPIO9_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO9_CTRL_FUNCSEL_msb				4u
-#define IO_BANK0_GPIO9_CTRL_FUNCSEL_lsb				0u
+#define IO_BANK0_GPIO9_CTRL_FUNCSEL_Msb				4u
+#define IO_BANK0_GPIO9_CTRL_FUNCSEL_Lsb				0u
 #define IO_BANK0_GPIO9_CTRL_FUNCSEL_SPI1_SS_N			1u
 #define IO_BANK0_GPIO9_CTRL_FUNCSEL_UART1_RX			2u
 #define IO_BANK0_GPIO9_CTRL_FUNCSEL_I2C0_SCL			3u
@@ -2156,36 +2156,36 @@ struct sdk_io_bank0 {
 	/* 0x54: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO10_CTRL;
 	/*  */
-#define IO_BANK0_GPIO10_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO10_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO10_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO10_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO10_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO10_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO10_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO10_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO10_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO10_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO10_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO10_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO10_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO10_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO10_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO10_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO10_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO10_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO10_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO10_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO10_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO10_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO10_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO10_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO10_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO10_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO10_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO10_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO10_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO10_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO10_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO10_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO10_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO10_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO10_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO10_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO10_CTRL_FUNCSEL_SPI1_SCLK			1u
 #define IO_BANK0_GPIO10_CTRL_FUNCSEL_UART1_CTS			2u
 #define IO_BANK0_GPIO10_CTRL_FUNCSEL_I2C1_SDA			3u
@@ -2219,36 +2219,36 @@ struct sdk_io_bank0 {
 	/* 0x5C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO11_CTRL;
 	/*  */
-#define IO_BANK0_GPIO11_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO11_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO11_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO11_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO11_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO11_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO11_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO11_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO11_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO11_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO11_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO11_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO11_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO11_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO11_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO11_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO11_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO11_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO11_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO11_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO11_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO11_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO11_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO11_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO11_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO11_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO11_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO11_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO11_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO11_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO11_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO11_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO11_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO11_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO11_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO11_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO11_CTRL_FUNCSEL_SPI1_TX			1u
 #define IO_BANK0_GPIO11_CTRL_FUNCSEL_UART1_RTS			2u
 #define IO_BANK0_GPIO11_CTRL_FUNCSEL_I2C1_SCL			3u
@@ -2282,36 +2282,36 @@ struct sdk_io_bank0 {
 	/* 0x64: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO12_CTRL;
 	/*  */
-#define IO_BANK0_GPIO12_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO12_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO12_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO12_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO12_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO12_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO12_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO12_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO12_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO12_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO12_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO12_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO12_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO12_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO12_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO12_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO12_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO12_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO12_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO12_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO12_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO12_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO12_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO12_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO12_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO12_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO12_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO12_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO12_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO12_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO12_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO12_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO12_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO12_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO12_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO12_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO12_CTRL_FUNCSEL_SPI1_RX			1u
 #define IO_BANK0_GPIO12_CTRL_FUNCSEL_UART0_TX			2u
 #define IO_BANK0_GPIO12_CTRL_FUNCSEL_I2C0_SDA			3u
@@ -2345,36 +2345,36 @@ struct sdk_io_bank0 {
 	/* 0x6C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO13_CTRL;
 	/*  */
-#define IO_BANK0_GPIO13_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO13_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO13_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO13_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO13_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO13_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO13_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO13_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO13_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO13_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO13_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO13_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO13_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO13_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO13_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO13_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO13_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO13_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO13_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO13_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO13_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO13_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO13_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO13_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO13_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO13_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO13_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO13_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO13_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO13_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO13_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO13_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO13_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO13_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO13_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO13_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO13_CTRL_FUNCSEL_SPI1_SS_N			1u
 #define IO_BANK0_GPIO13_CTRL_FUNCSEL_UART0_RX			2u
 #define IO_BANK0_GPIO13_CTRL_FUNCSEL_I2C0_SCL			3u
@@ -2408,36 +2408,36 @@ struct sdk_io_bank0 {
 	/* 0x74: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO14_CTRL;
 	/*  */
-#define IO_BANK0_GPIO14_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO14_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO14_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO14_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO14_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO14_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO14_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO14_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO14_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO14_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO14_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO14_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO14_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO14_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO14_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO14_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO14_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO14_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO14_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO14_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO14_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO14_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO14_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO14_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO14_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO14_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO14_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO14_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO14_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO14_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO14_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO14_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO14_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO14_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO14_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO14_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO14_CTRL_FUNCSEL_SPI1_SCLK			1u
 #define IO_BANK0_GPIO14_CTRL_FUNCSEL_UART0_CTS			2u
 #define IO_BANK0_GPIO14_CTRL_FUNCSEL_I2C1_SDA			3u
@@ -2471,36 +2471,36 @@ struct sdk_io_bank0 {
 	/* 0x7C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO15_CTRL;
 	/*  */
-#define IO_BANK0_GPIO15_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO15_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO15_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO15_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO15_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO15_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO15_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO15_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO15_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO15_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO15_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO15_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO15_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO15_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO15_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO15_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO15_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO15_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO15_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO15_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO15_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO15_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO15_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO15_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO15_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO15_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO15_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO15_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO15_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO15_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO15_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO15_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO15_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO15_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO15_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO15_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO15_CTRL_FUNCSEL_SPI1_TX			1u
 #define IO_BANK0_GPIO15_CTRL_FUNCSEL_UART0_RTS			2u
 #define IO_BANK0_GPIO15_CTRL_FUNCSEL_I2C1_SCL			3u
@@ -2534,36 +2534,36 @@ struct sdk_io_bank0 {
 	/* 0x84: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO16_CTRL;
 	/*  */
-#define IO_BANK0_GPIO16_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO16_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO16_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO16_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO16_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO16_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO16_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO16_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO16_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO16_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO16_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO16_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO16_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO16_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO16_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO16_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO16_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO16_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO16_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO16_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO16_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO16_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO16_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO16_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO16_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO16_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO16_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO16_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO16_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO16_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO16_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO16_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO16_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO16_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO16_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO16_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO16_CTRL_FUNCSEL_SPI0_RX			1u
 #define IO_BANK0_GPIO16_CTRL_FUNCSEL_UART0_TX			2u
 #define IO_BANK0_GPIO16_CTRL_FUNCSEL_I2C0_SDA			3u
@@ -2597,36 +2597,36 @@ struct sdk_io_bank0 {
 	/* 0x8C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO17_CTRL;
 	/*  */
-#define IO_BANK0_GPIO17_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO17_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO17_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO17_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO17_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO17_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO17_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO17_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO17_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO17_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO17_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO17_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO17_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO17_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO17_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO17_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO17_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO17_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO17_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO17_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO17_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO17_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO17_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO17_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO17_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO17_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO17_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO17_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO17_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO17_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO17_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO17_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO17_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO17_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO17_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO17_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO17_CTRL_FUNCSEL_SPI0_SS_N			1u
 #define IO_BANK0_GPIO17_CTRL_FUNCSEL_UART0_RX			2u
 #define IO_BANK0_GPIO17_CTRL_FUNCSEL_I2C0_SCL			3u
@@ -2659,36 +2659,36 @@ struct sdk_io_bank0 {
 	/* 0x94: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO18_CTRL;
 	/*  */
-#define IO_BANK0_GPIO18_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO18_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO18_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO18_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO18_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO18_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO18_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO18_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO18_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO18_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO18_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO18_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO18_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO18_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO18_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO18_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO18_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO18_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO18_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO18_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO18_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO18_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO18_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO18_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO18_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO18_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO18_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO18_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO18_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO18_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO18_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO18_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO18_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO18_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO18_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO18_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO18_CTRL_FUNCSEL_SPI0_SCLK			1u
 #define IO_BANK0_GPIO18_CTRL_FUNCSEL_UART0_CTS			2u
 #define IO_BANK0_GPIO18_CTRL_FUNCSEL_I2C1_SDA			3u
@@ -2721,36 +2721,36 @@ struct sdk_io_bank0 {
 	/* 0x9C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO19_CTRL;
 	/*  */
-#define IO_BANK0_GPIO19_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO19_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO19_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO19_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO19_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO19_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO19_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO19_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO19_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO19_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO19_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO19_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO19_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO19_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO19_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO19_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO19_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO19_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO19_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO19_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO19_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO19_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO19_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO19_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO19_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO19_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO19_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO19_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO19_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO19_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO19_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO19_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO19_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO19_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO19_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO19_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO19_CTRL_FUNCSEL_SPI0_TX			1u
 #define IO_BANK0_GPIO19_CTRL_FUNCSEL_UART0_RTS			2u
 #define IO_BANK0_GPIO19_CTRL_FUNCSEL_I2C1_SCL			3u
@@ -2783,36 +2783,36 @@ struct sdk_io_bank0 {
 	/* 0xA4: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO20_CTRL;
 	/*  */
-#define IO_BANK0_GPIO20_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO20_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO20_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO20_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO20_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO20_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO20_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO20_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO20_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO20_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO20_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO20_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO20_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO20_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO20_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO20_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO20_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO20_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO20_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO20_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO20_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO20_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO20_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO20_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO20_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO20_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO20_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO20_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO20_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO20_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO20_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO20_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO20_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO20_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO20_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO20_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO20_CTRL_FUNCSEL_SPI0_RX			1u
 #define IO_BANK0_GPIO20_CTRL_FUNCSEL_UART1_TX			2u
 #define IO_BANK0_GPIO20_CTRL_FUNCSEL_I2C0_SDA			3u
@@ -2846,36 +2846,36 @@ struct sdk_io_bank0 {
 	/* 0xAC: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO21_CTRL;
 	/*  */
-#define IO_BANK0_GPIO21_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO21_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO21_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO21_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO21_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO21_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO21_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO21_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO21_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO21_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO21_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO21_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO21_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO21_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO21_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO21_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO21_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO21_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO21_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO21_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO21_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO21_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO21_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO21_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO21_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO21_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO21_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO21_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO21_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO21_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO21_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO21_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO21_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO21_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO21_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO21_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO21_CTRL_FUNCSEL_SPI0_SS_N			1u
 #define IO_BANK0_GPIO21_CTRL_FUNCSEL_UART1_RX			2u
 #define IO_BANK0_GPIO21_CTRL_FUNCSEL_I2C0_SCL			3u
@@ -2909,36 +2909,36 @@ struct sdk_io_bank0 {
 	/* 0xB4: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO22_CTRL;
 	/*  */
-#define IO_BANK0_GPIO22_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO22_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO22_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO22_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO22_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO22_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO22_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO22_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO22_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO22_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO22_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO22_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO22_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO22_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO22_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO22_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO22_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO22_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO22_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO22_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO22_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO22_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO22_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO22_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO22_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO22_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO22_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO22_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO22_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO22_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO22_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO22_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO22_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO22_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO22_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO22_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO22_CTRL_FUNCSEL_SPI0_SCLK			1u
 #define IO_BANK0_GPIO22_CTRL_FUNCSEL_UART1_CTS			2u
 #define IO_BANK0_GPIO22_CTRL_FUNCSEL_I2C1_SDA			3u
@@ -2972,36 +2972,36 @@ struct sdk_io_bank0 {
 	/* 0xBC: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO23_CTRL;
 	/*  */
-#define IO_BANK0_GPIO23_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO23_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO23_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO23_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO23_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO23_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO23_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO23_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO23_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO23_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO23_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO23_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO23_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO23_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO23_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO23_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO23_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO23_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO23_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO23_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO23_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO23_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO23_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO23_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO23_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO23_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO23_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO23_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO23_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO23_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO23_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO23_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO23_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO23_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO23_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO23_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO23_CTRL_FUNCSEL_SPI0_TX			1u
 #define IO_BANK0_GPIO23_CTRL_FUNCSEL_UART1_RTS			2u
 #define IO_BANK0_GPIO23_CTRL_FUNCSEL_I2C1_SCL			3u
@@ -3035,36 +3035,36 @@ struct sdk_io_bank0 {
 	/* 0xC4: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO24_CTRL;
 	/*  */
-#define IO_BANK0_GPIO24_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO24_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO24_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO24_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO24_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO24_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO24_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO24_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO24_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO24_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO24_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO24_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO24_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO24_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO24_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO24_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO24_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO24_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO24_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO24_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO24_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO24_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO24_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO24_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO24_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO24_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO24_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO24_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO24_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO24_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO24_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO24_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO24_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO24_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO24_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO24_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO24_CTRL_FUNCSEL_SPI1_RX			1u
 #define IO_BANK0_GPIO24_CTRL_FUNCSEL_UART1_TX			2u
 #define IO_BANK0_GPIO24_CTRL_FUNCSEL_I2C0_SDA			3u
@@ -3098,36 +3098,36 @@ struct sdk_io_bank0 {
 	/* 0xCC: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO25_CTRL;
 	/*  */
-#define IO_BANK0_GPIO25_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO25_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO25_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO25_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO25_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO25_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO25_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO25_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO25_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO25_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO25_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO25_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO25_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO25_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO25_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO25_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO25_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO25_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO25_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO25_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO25_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO25_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO25_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO25_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO25_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO25_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO25_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO25_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO25_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO25_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO25_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO25_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO25_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO25_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO25_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO25_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO25_CTRL_FUNCSEL_SPI1_SS_N			1u
 #define IO_BANK0_GPIO25_CTRL_FUNCSEL_UART1_RX			2u
 #define IO_BANK0_GPIO25_CTRL_FUNCSEL_I2C0_SCL			3u
@@ -3161,36 +3161,36 @@ struct sdk_io_bank0 {
 	/* 0xD4: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO26_CTRL;
 	/*  */
-#define IO_BANK0_GPIO26_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO26_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO26_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO26_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO26_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO26_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO26_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO26_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO26_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO26_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO26_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO26_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO26_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO26_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO26_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO26_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO26_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO26_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO26_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO26_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO26_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO26_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO26_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO26_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO26_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO26_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO26_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO26_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO26_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO26_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO26_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO26_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO26_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO26_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO26_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO26_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO26_CTRL_FUNCSEL_SPI1_SCLK			1u
 #define IO_BANK0_GPIO26_CTRL_FUNCSEL_UART1_CTS			2u
 #define IO_BANK0_GPIO26_CTRL_FUNCSEL_I2C1_SDA			3u
@@ -3223,36 +3223,36 @@ struct sdk_io_bank0 {
 	/* 0xDC: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO27_CTRL;
 	/*  */
-#define IO_BANK0_GPIO27_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO27_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO27_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO27_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO27_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO27_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO27_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO27_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO27_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO27_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO27_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO27_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO27_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO27_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO27_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO27_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO27_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO27_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO27_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO27_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO27_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO27_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO27_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO27_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO27_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO27_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO27_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO27_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO27_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO27_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO27_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO27_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO27_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO27_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO27_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO27_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO27_CTRL_FUNCSEL_SPI1_TX			1u
 #define IO_BANK0_GPIO27_CTRL_FUNCSEL_UART1_RTS			2u
 #define IO_BANK0_GPIO27_CTRL_FUNCSEL_I2C1_SCL			3u
@@ -3285,36 +3285,36 @@ struct sdk_io_bank0 {
 	/* 0xE4: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO28_CTRL;
 	/*  */
-#define IO_BANK0_GPIO28_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO28_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO28_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO28_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO28_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO28_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO28_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO28_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO28_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO28_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO28_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO28_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO28_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO28_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO28_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO28_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO28_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO28_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO28_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO28_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO28_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO28_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO28_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO28_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO28_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO28_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO28_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO28_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO28_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO28_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO28_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO28_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO28_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO28_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO28_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO28_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO28_CTRL_FUNCSEL_SPI1_RX			1u
 #define IO_BANK0_GPIO28_CTRL_FUNCSEL_UART0_TX			2u
 #define IO_BANK0_GPIO28_CTRL_FUNCSEL_I2C0_SDA			3u
@@ -3347,36 +3347,36 @@ struct sdk_io_bank0 {
 	/* 0xEC: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO29_CTRL;
 	/*  */
-#define IO_BANK0_GPIO29_CTRL_IRQOVER_msb			29u
-#define IO_BANK0_GPIO29_CTRL_IRQOVER_lsb			28u
+#define IO_BANK0_GPIO29_CTRL_IRQOVER_Msb			29u
+#define IO_BANK0_GPIO29_CTRL_IRQOVER_Lsb			28u
 #define IO_BANK0_GPIO29_CTRL_IRQOVER_NORMAL			0u
 #define IO_BANK0_GPIO29_CTRL_IRQOVER_INVERT			1u
 #define IO_BANK0_GPIO29_CTRL_IRQOVER_LOW			2u
 #define IO_BANK0_GPIO29_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO29_CTRL_INOVER_msb				17u
-#define IO_BANK0_GPIO29_CTRL_INOVER_lsb				16u
+#define IO_BANK0_GPIO29_CTRL_INOVER_Msb				17u
+#define IO_BANK0_GPIO29_CTRL_INOVER_Lsb				16u
 #define IO_BANK0_GPIO29_CTRL_INOVER_NORMAL			0u
 #define IO_BANK0_GPIO29_CTRL_INOVER_INVERT			1u
 #define IO_BANK0_GPIO29_CTRL_INOVER_LOW				2u
 #define IO_BANK0_GPIO29_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_BANK0_GPIO29_CTRL_OEOVER_msb				13u
-#define IO_BANK0_GPIO29_CTRL_OEOVER_lsb				12u
+#define IO_BANK0_GPIO29_CTRL_OEOVER_Msb				13u
+#define IO_BANK0_GPIO29_CTRL_OEOVER_Lsb				12u
 #define IO_BANK0_GPIO29_CTRL_OEOVER_NORMAL			0u
 #define IO_BANK0_GPIO29_CTRL_OEOVER_INVERT			1u
 #define IO_BANK0_GPIO29_CTRL_OEOVER_DISABLE			2u
 #define IO_BANK0_GPIO29_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_BANK0_GPIO29_CTRL_OUTOVER_msb			9u
-#define IO_BANK0_GPIO29_CTRL_OUTOVER_lsb			8u
+#define IO_BANK0_GPIO29_CTRL_OUTOVER_Msb			9u
+#define IO_BANK0_GPIO29_CTRL_OUTOVER_Lsb			8u
 #define IO_BANK0_GPIO29_CTRL_OUTOVER_NORMAL			0u
 #define IO_BANK0_GPIO29_CTRL_OUTOVER_INVERT			1u
 #define IO_BANK0_GPIO29_CTRL_OUTOVER_LOW			2u
 #define IO_BANK0_GPIO29_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_BANK0_GPIO29_CTRL_FUNCSEL_msb			4u
-#define IO_BANK0_GPIO29_CTRL_FUNCSEL_lsb			0u
+#define IO_BANK0_GPIO29_CTRL_FUNCSEL_Msb			4u
+#define IO_BANK0_GPIO29_CTRL_FUNCSEL_Lsb			0u
 #define IO_BANK0_GPIO29_CTRL_FUNCSEL_SPI1_SS_N			1u
 #define IO_BANK0_GPIO29_CTRL_FUNCSEL_UART0_RX			2u
 #define IO_BANK0_GPIO29_CTRL_FUNCSEL_I2C0_SCL			3u
@@ -5936,36 +5936,36 @@ struct sdk_io_qspi {
 	/* 0x04: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO_QSPI_SCLK_CTRL;
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_IRQOVER_msb			29u
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_IRQOVER_lsb			28u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_IRQOVER_Msb			29u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_IRQOVER_Lsb			28u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_IRQOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_IRQOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_IRQOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_IRQOVER_HIGH		3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_INOVER_msb			17u
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_INOVER_lsb			16u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_INOVER_Msb			17u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_INOVER_Lsb			16u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_INOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_INOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_INOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OEOVER_msb			13u
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OEOVER_lsb			12u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OEOVER_Msb			13u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OEOVER_Lsb			12u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OEOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OEOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OEOVER_DISABLE		2u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OEOVER_ENABLE		3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OUTOVER_msb			9u
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OUTOVER_lsb			8u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OUTOVER_Msb			9u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OUTOVER_Lsb			8u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OUTOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OUTOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OUTOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_OUTOVER_HIGH		3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_FUNCSEL_msb			4u
-#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_FUNCSEL_lsb			0u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_FUNCSEL_Msb			4u
+#define IO_QSPI_GPIO_QSPI_SCLK_CTRL_FUNCSEL_Lsb			0u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_FUNCSEL_XIP_SCLK		0u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_FUNCSEL_SIO_30		5u
 #define IO_QSPI_GPIO_QSPI_SCLK_CTRL_FUNCSEL_NULL		31u
@@ -5992,36 +5992,36 @@ struct sdk_io_qspi {
 	/* 0x0C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO_QSPI_SS_CTRL;
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_IRQOVER_msb			29u
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_IRQOVER_lsb			28u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_IRQOVER_Msb			29u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_IRQOVER_Lsb			28u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_IRQOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_IRQOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_IRQOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_INOVER_msb			17u
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_INOVER_lsb			16u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_INOVER_Msb			17u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_INOVER_Lsb			16u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_INOVER_NORMAL			0u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_INOVER_INVERT			1u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_INOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_OEOVER_msb			13u
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_OEOVER_lsb			12u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_OEOVER_Msb			13u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_OEOVER_Lsb			12u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_OEOVER_NORMAL			0u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_OEOVER_INVERT			1u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_OEOVER_DISABLE		2u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_OEOVER_ENABLE			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_OUTOVER_msb			9u
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_OUTOVER_lsb			8u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_OUTOVER_Msb			9u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_OUTOVER_Lsb			8u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_OUTOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_OUTOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_OUTOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_FUNCSEL_msb			4u
-#define IO_QSPI_GPIO_QSPI_SS_CTRL_FUNCSEL_lsb			0u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_FUNCSEL_Msb			4u
+#define IO_QSPI_GPIO_QSPI_SS_CTRL_FUNCSEL_Lsb			0u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_FUNCSEL_XIP_SS_N		0u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_FUNCSEL_SIO_31		5u
 #define IO_QSPI_GPIO_QSPI_SS_CTRL_FUNCSEL_NULL			31u
@@ -6048,36 +6048,36 @@ struct sdk_io_qspi {
 	/* 0x14: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO_QSPI_SD0_CTRL;
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_IRQOVER_msb			29u
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_IRQOVER_lsb			28u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_IRQOVER_Msb			29u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_IRQOVER_Lsb			28u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_IRQOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_IRQOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_IRQOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_INOVER_msb			17u
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_INOVER_lsb			16u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_INOVER_Msb			17u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_INOVER_Lsb			16u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_INOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_INOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_INOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_OEOVER_msb			13u
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_OEOVER_lsb			12u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_OEOVER_Msb			13u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_OEOVER_Lsb			12u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_OEOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_OEOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_OEOVER_DISABLE		2u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_OEOVER_ENABLE		3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_OUTOVER_msb			9u
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_OUTOVER_lsb			8u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_OUTOVER_Msb			9u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_OUTOVER_Lsb			8u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_OUTOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_OUTOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_OUTOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_FUNCSEL_msb			4u
-#define IO_QSPI_GPIO_QSPI_SD0_CTRL_FUNCSEL_lsb			0u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_FUNCSEL_Msb			4u
+#define IO_QSPI_GPIO_QSPI_SD0_CTRL_FUNCSEL_Lsb			0u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_FUNCSEL_XIP_SD0		0u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_FUNCSEL_SIO_32		5u
 #define IO_QSPI_GPIO_QSPI_SD0_CTRL_FUNCSEL_NULL			31u
@@ -6104,36 +6104,36 @@ struct sdk_io_qspi {
 	/* 0x1C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO_QSPI_SD1_CTRL;
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_IRQOVER_msb			29u
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_IRQOVER_lsb			28u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_IRQOVER_Msb			29u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_IRQOVER_Lsb			28u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_IRQOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_IRQOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_IRQOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_INOVER_msb			17u
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_INOVER_lsb			16u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_INOVER_Msb			17u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_INOVER_Lsb			16u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_INOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_INOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_INOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_OEOVER_msb			13u
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_OEOVER_lsb			12u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_OEOVER_Msb			13u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_OEOVER_Lsb			12u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_OEOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_OEOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_OEOVER_DISABLE		2u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_OEOVER_ENABLE		3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_OUTOVER_msb			9u
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_OUTOVER_lsb			8u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_OUTOVER_Msb			9u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_OUTOVER_Lsb			8u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_OUTOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_OUTOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_OUTOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_FUNCSEL_msb			4u
-#define IO_QSPI_GPIO_QSPI_SD1_CTRL_FUNCSEL_lsb			0u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_FUNCSEL_Msb			4u
+#define IO_QSPI_GPIO_QSPI_SD1_CTRL_FUNCSEL_Lsb			0u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_FUNCSEL_XIP_SD1		0u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_FUNCSEL_SIO_33		5u
 #define IO_QSPI_GPIO_QSPI_SD1_CTRL_FUNCSEL_NULL			31u
@@ -6160,36 +6160,36 @@ struct sdk_io_qspi {
 	/* 0x24: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO_QSPI_SD2_CTRL;
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_IRQOVER_msb			29u
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_IRQOVER_lsb			28u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_IRQOVER_Msb			29u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_IRQOVER_Lsb			28u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_IRQOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_IRQOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_IRQOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_INOVER_msb			17u
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_INOVER_lsb			16u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_INOVER_Msb			17u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_INOVER_Lsb			16u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_INOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_INOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_INOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_OEOVER_msb			13u
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_OEOVER_lsb			12u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_OEOVER_Msb			13u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_OEOVER_Lsb			12u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_OEOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_OEOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_OEOVER_DISABLE		2u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_OEOVER_ENABLE		3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_OUTOVER_msb			9u
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_OUTOVER_lsb			8u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_OUTOVER_Msb			9u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_OUTOVER_Lsb			8u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_OUTOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_OUTOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_OUTOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_FUNCSEL_msb			4u
-#define IO_QSPI_GPIO_QSPI_SD2_CTRL_FUNCSEL_lsb			0u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_FUNCSEL_Msb			4u
+#define IO_QSPI_GPIO_QSPI_SD2_CTRL_FUNCSEL_Lsb			0u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_FUNCSEL_XIP_SD2		0u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_FUNCSEL_SIO_34		5u
 #define IO_QSPI_GPIO_QSPI_SD2_CTRL_FUNCSEL_NULL			31u
@@ -6216,36 +6216,36 @@ struct sdk_io_qspi {
 	/* 0x2C: GPIO control including function select and overrides. */
 	uint32_t volatile GPIO_QSPI_SD3_CTRL;
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_IRQOVER_msb			29u
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_IRQOVER_lsb			28u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_IRQOVER_Msb			29u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_IRQOVER_Lsb			28u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_IRQOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_IRQOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_IRQOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_IRQOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_INOVER_msb			17u
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_INOVER_lsb			16u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_INOVER_Msb			17u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_INOVER_Lsb			16u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_INOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_INOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_INOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_INOVER_HIGH			3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_OEOVER_msb			13u
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_OEOVER_lsb			12u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_OEOVER_Msb			13u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_OEOVER_Lsb			12u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_OEOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_OEOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_OEOVER_DISABLE		2u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_OEOVER_ENABLE		3u
 	/*  */
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_OUTOVER_msb			9u
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_OUTOVER_lsb			8u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_OUTOVER_Msb			9u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_OUTOVER_Lsb			8u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_OUTOVER_NORMAL		0u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_OUTOVER_INVERT		1u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_OUTOVER_LOW			2u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_OUTOVER_HIGH			3u
 	/* 0-31 -> selects pin function according to the gpio table */
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_FUNCSEL_msb			4u
-#define IO_QSPI_GPIO_QSPI_SD3_CTRL_FUNCSEL_lsb			0u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_FUNCSEL_Msb			4u
+#define IO_QSPI_GPIO_QSPI_SD3_CTRL_FUNCSEL_Lsb			0u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_FUNCSEL_XIP_SD3		0u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_FUNCSEL_SIO_35		5u
 #define IO_QSPI_GPIO_QSPI_SD3_CTRL_FUNCSEL_NULL			31u
@@ -6781,8 +6781,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO0_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO0_DRIVE_msb				5u
-#define PADS_BANK0_GPIO0_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO0_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO0_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO0_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO0_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO0_DRIVE_8MA				2u
@@ -6803,8 +6803,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO1_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO1_DRIVE_msb				5u
-#define PADS_BANK0_GPIO1_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO1_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO1_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO1_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO1_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO1_DRIVE_8MA				2u
@@ -6825,8 +6825,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO2_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO2_DRIVE_msb				5u
-#define PADS_BANK0_GPIO2_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO2_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO2_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO2_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO2_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO2_DRIVE_8MA				2u
@@ -6847,8 +6847,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO3_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO3_DRIVE_msb				5u
-#define PADS_BANK0_GPIO3_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO3_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO3_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO3_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO3_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO3_DRIVE_8MA				2u
@@ -6869,8 +6869,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO4_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO4_DRIVE_msb				5u
-#define PADS_BANK0_GPIO4_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO4_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO4_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO4_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO4_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO4_DRIVE_8MA				2u
@@ -6891,8 +6891,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO5_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO5_DRIVE_msb				5u
-#define PADS_BANK0_GPIO5_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO5_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO5_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO5_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO5_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO5_DRIVE_8MA				2u
@@ -6913,8 +6913,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO6_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO6_DRIVE_msb				5u
-#define PADS_BANK0_GPIO6_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO6_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO6_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO6_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO6_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO6_DRIVE_8MA				2u
@@ -6935,8 +6935,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO7_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO7_DRIVE_msb				5u
-#define PADS_BANK0_GPIO7_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO7_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO7_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO7_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO7_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO7_DRIVE_8MA				2u
@@ -6957,8 +6957,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO8_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO8_DRIVE_msb				5u
-#define PADS_BANK0_GPIO8_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO8_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO8_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO8_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO8_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO8_DRIVE_8MA				2u
@@ -6979,8 +6979,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO9_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO9_DRIVE_msb				5u
-#define PADS_BANK0_GPIO9_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO9_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO9_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO9_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO9_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO9_DRIVE_8MA				2u
@@ -7001,8 +7001,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO10_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO10_DRIVE_msb				5u
-#define PADS_BANK0_GPIO10_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO10_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO10_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO10_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO10_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO10_DRIVE_8MA				2u
@@ -7023,8 +7023,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO11_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO11_DRIVE_msb				5u
-#define PADS_BANK0_GPIO11_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO11_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO11_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO11_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO11_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO11_DRIVE_8MA				2u
@@ -7045,8 +7045,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO12_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO12_DRIVE_msb				5u
-#define PADS_BANK0_GPIO12_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO12_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO12_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO12_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO12_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO12_DRIVE_8MA				2u
@@ -7067,8 +7067,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO13_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO13_DRIVE_msb				5u
-#define PADS_BANK0_GPIO13_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO13_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO13_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO13_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO13_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO13_DRIVE_8MA				2u
@@ -7089,8 +7089,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO14_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO14_DRIVE_msb				5u
-#define PADS_BANK0_GPIO14_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO14_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO14_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO14_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO14_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO14_DRIVE_8MA				2u
@@ -7111,8 +7111,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO15_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO15_DRIVE_msb				5u
-#define PADS_BANK0_GPIO15_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO15_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO15_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO15_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO15_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO15_DRIVE_8MA				2u
@@ -7133,8 +7133,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO16_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO16_DRIVE_msb				5u
-#define PADS_BANK0_GPIO16_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO16_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO16_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO16_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO16_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO16_DRIVE_8MA				2u
@@ -7155,8 +7155,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO17_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO17_DRIVE_msb				5u
-#define PADS_BANK0_GPIO17_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO17_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO17_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO17_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO17_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO17_DRIVE_8MA				2u
@@ -7177,8 +7177,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO18_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO18_DRIVE_msb				5u
-#define PADS_BANK0_GPIO18_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO18_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO18_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO18_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO18_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO18_DRIVE_8MA				2u
@@ -7199,8 +7199,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO19_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO19_DRIVE_msb				5u
-#define PADS_BANK0_GPIO19_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO19_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO19_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO19_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO19_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO19_DRIVE_8MA				2u
@@ -7221,8 +7221,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO20_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO20_DRIVE_msb				5u
-#define PADS_BANK0_GPIO20_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO20_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO20_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO20_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO20_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO20_DRIVE_8MA				2u
@@ -7243,8 +7243,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO21_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO21_DRIVE_msb				5u
-#define PADS_BANK0_GPIO21_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO21_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO21_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO21_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO21_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO21_DRIVE_8MA				2u
@@ -7265,8 +7265,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO22_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO22_DRIVE_msb				5u
-#define PADS_BANK0_GPIO22_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO22_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO22_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO22_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO22_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO22_DRIVE_8MA				2u
@@ -7287,8 +7287,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO23_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO23_DRIVE_msb				5u
-#define PADS_BANK0_GPIO23_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO23_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO23_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO23_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO23_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO23_DRIVE_8MA				2u
@@ -7309,8 +7309,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO24_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO24_DRIVE_msb				5u
-#define PADS_BANK0_GPIO24_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO24_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO24_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO24_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO24_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO24_DRIVE_8MA				2u
@@ -7331,8 +7331,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO25_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO25_DRIVE_msb				5u
-#define PADS_BANK0_GPIO25_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO25_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO25_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO25_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO25_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO25_DRIVE_8MA				2u
@@ -7353,8 +7353,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO26_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO26_DRIVE_msb				5u
-#define PADS_BANK0_GPIO26_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO26_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO26_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO26_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO26_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO26_DRIVE_8MA				2u
@@ -7375,8 +7375,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO27_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO27_DRIVE_msb				5u
-#define PADS_BANK0_GPIO27_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO27_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO27_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO27_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO27_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO27_DRIVE_8MA				2u
@@ -7397,8 +7397,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO28_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO28_DRIVE_msb				5u
-#define PADS_BANK0_GPIO28_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO28_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO28_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO28_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO28_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO28_DRIVE_8MA				2u
@@ -7419,8 +7419,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_GPIO29_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_GPIO29_DRIVE_msb				5u
-#define PADS_BANK0_GPIO29_DRIVE_lsb				4u
+#define PADS_BANK0_GPIO29_DRIVE_Msb				5u
+#define PADS_BANK0_GPIO29_DRIVE_Lsb				4u
 #define PADS_BANK0_GPIO29_DRIVE_2MA				0u
 #define PADS_BANK0_GPIO29_DRIVE_4MA				1u
 #define PADS_BANK0_GPIO29_DRIVE_8MA				2u
@@ -7441,8 +7441,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_SWCLK_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_SWCLK_DRIVE_msb				5u
-#define PADS_BANK0_SWCLK_DRIVE_lsb				4u
+#define PADS_BANK0_SWCLK_DRIVE_Msb				5u
+#define PADS_BANK0_SWCLK_DRIVE_Lsb				4u
 #define PADS_BANK0_SWCLK_DRIVE_2MA				0u
 #define PADS_BANK0_SWCLK_DRIVE_4MA				1u
 #define PADS_BANK0_SWCLK_DRIVE_8MA				2u
@@ -7463,8 +7463,8 @@ struct sdk_pads_bank0 {
 	/* Input enable */
 #define PADS_BANK0_SWD_IE					6u
 	/* Drive strength. */
-#define PADS_BANK0_SWD_DRIVE_msb				5u
-#define PADS_BANK0_SWD_DRIVE_lsb				4u
+#define PADS_BANK0_SWD_DRIVE_Msb				5u
+#define PADS_BANK0_SWD_DRIVE_Lsb				4u
 #define PADS_BANK0_SWD_DRIVE_2MA				0u
 #define PADS_BANK0_SWD_DRIVE_4MA				1u
 #define PADS_BANK0_SWD_DRIVE_8MA				2u
@@ -7499,8 +7499,8 @@ struct sdk_pads_qspi {
 	/* Input enable */
 #define PADS_QSPI_GPIO_QSPI_SCLK_IE				6u
 	/* Drive strength. */
-#define PADS_QSPI_GPIO_QSPI_SCLK_DRIVE_msb			5u
-#define PADS_QSPI_GPIO_QSPI_SCLK_DRIVE_lsb			4u
+#define PADS_QSPI_GPIO_QSPI_SCLK_DRIVE_Msb			5u
+#define PADS_QSPI_GPIO_QSPI_SCLK_DRIVE_Lsb			4u
 #define PADS_QSPI_GPIO_QSPI_SCLK_DRIVE_2MA			0u
 #define PADS_QSPI_GPIO_QSPI_SCLK_DRIVE_4MA			1u
 #define PADS_QSPI_GPIO_QSPI_SCLK_DRIVE_8MA			2u
@@ -7521,8 +7521,8 @@ struct sdk_pads_qspi {
 	/* Input enable */
 #define PADS_QSPI_GPIO_QSPI_SD0_IE				6u
 	/* Drive strength. */
-#define PADS_QSPI_GPIO_QSPI_SD0_DRIVE_msb			5u
-#define PADS_QSPI_GPIO_QSPI_SD0_DRIVE_lsb			4u
+#define PADS_QSPI_GPIO_QSPI_SD0_DRIVE_Msb			5u
+#define PADS_QSPI_GPIO_QSPI_SD0_DRIVE_Lsb			4u
 #define PADS_QSPI_GPIO_QSPI_SD0_DRIVE_2MA			0u
 #define PADS_QSPI_GPIO_QSPI_SD0_DRIVE_4MA			1u
 #define PADS_QSPI_GPIO_QSPI_SD0_DRIVE_8MA			2u
@@ -7543,8 +7543,8 @@ struct sdk_pads_qspi {
 	/* Input enable */
 #define PADS_QSPI_GPIO_QSPI_SD1_IE				6u
 	/* Drive strength. */
-#define PADS_QSPI_GPIO_QSPI_SD1_DRIVE_msb			5u
-#define PADS_QSPI_GPIO_QSPI_SD1_DRIVE_lsb			4u
+#define PADS_QSPI_GPIO_QSPI_SD1_DRIVE_Msb			5u
+#define PADS_QSPI_GPIO_QSPI_SD1_DRIVE_Lsb			4u
 #define PADS_QSPI_GPIO_QSPI_SD1_DRIVE_2MA			0u
 #define PADS_QSPI_GPIO_QSPI_SD1_DRIVE_4MA			1u
 #define PADS_QSPI_GPIO_QSPI_SD1_DRIVE_8MA			2u
@@ -7565,8 +7565,8 @@ struct sdk_pads_qspi {
 	/* Input enable */
 #define PADS_QSPI_GPIO_QSPI_SD2_IE				6u
 	/* Drive strength. */
-#define PADS_QSPI_GPIO_QSPI_SD2_DRIVE_msb			5u
-#define PADS_QSPI_GPIO_QSPI_SD2_DRIVE_lsb			4u
+#define PADS_QSPI_GPIO_QSPI_SD2_DRIVE_Msb			5u
+#define PADS_QSPI_GPIO_QSPI_SD2_DRIVE_Lsb			4u
 #define PADS_QSPI_GPIO_QSPI_SD2_DRIVE_2MA			0u
 #define PADS_QSPI_GPIO_QSPI_SD2_DRIVE_4MA			1u
 #define PADS_QSPI_GPIO_QSPI_SD2_DRIVE_8MA			2u
@@ -7587,8 +7587,8 @@ struct sdk_pads_qspi {
 	/* Input enable */
 #define PADS_QSPI_GPIO_QSPI_SD3_IE				6u
 	/* Drive strength. */
-#define PADS_QSPI_GPIO_QSPI_SD3_DRIVE_msb			5u
-#define PADS_QSPI_GPIO_QSPI_SD3_DRIVE_lsb			4u
+#define PADS_QSPI_GPIO_QSPI_SD3_DRIVE_Msb			5u
+#define PADS_QSPI_GPIO_QSPI_SD3_DRIVE_Lsb			4u
 #define PADS_QSPI_GPIO_QSPI_SD3_DRIVE_2MA			0u
 #define PADS_QSPI_GPIO_QSPI_SD3_DRIVE_4MA			1u
 #define PADS_QSPI_GPIO_QSPI_SD3_DRIVE_8MA			2u
@@ -7609,8 +7609,8 @@ struct sdk_pads_qspi {
 	/* Input enable */
 #define PADS_QSPI_GPIO_QSPI_SS_IE				6u
 	/* Drive strength. */
-#define PADS_QSPI_GPIO_QSPI_SS_DRIVE_msb			5u
-#define PADS_QSPI_GPIO_QSPI_SS_DRIVE_lsb			4u
+#define PADS_QSPI_GPIO_QSPI_SS_DRIVE_Msb			5u
+#define PADS_QSPI_GPIO_QSPI_SS_DRIVE_Lsb			4u
 #define PADS_QSPI_GPIO_QSPI_SS_DRIVE_2MA			0u
 #define PADS_QSPI_GPIO_QSPI_SS_DRIVE_4MA			1u
 #define PADS_QSPI_GPIO_QSPI_SS_DRIVE_8MA			2u
@@ -7634,13 +7634,13 @@ struct sdk_xosc {
 	/* 0x00: Crystal Oscillator Control */
 	uint32_t volatile CTRL;
 	/* On power-up this field is initialised to DISABLE and the chip runs from the ROSC. */
-#define XOSC_CTRL_ENABLE_msb					23u
-#define XOSC_CTRL_ENABLE_lsb					12u
+#define XOSC_CTRL_ENABLE_Msb					23u
+#define XOSC_CTRL_ENABLE_Lsb					12u
 #define XOSC_CTRL_ENABLE_DISABLE				3358u
 #define XOSC_CTRL_ENABLE_ENABLE					4011u
 	/* Frequency range. */
-#define XOSC_CTRL_FREQ_RANGE_msb				11u
-#define XOSC_CTRL_FREQ_RANGE_lsb				0u
+#define XOSC_CTRL_FREQ_RANGE_Msb				11u
+#define XOSC_CTRL_FREQ_RANGE_Lsb				0u
 #define XOSC_CTRL_FREQ_RANGE_1_15MHZ				2720u
 #define XOSC_CTRL_FREQ_RANGE_RESERVED_1				2721u
 #define XOSC_CTRL_FREQ_RANGE_RESERVED_2				2722u
@@ -7655,8 +7655,8 @@ struct sdk_xosc {
 	/* Oscillator is enabled but not necessarily running and stable, resets to 0 */
 #define XOSC_STATUS_ENABLED					12u
 	/* The current frequency range setting, always reads 0 */
-#define XOSC_STATUS_FREQ_RANGE_msb				1u
-#define XOSC_STATUS_FREQ_RANGE_lsb				0u
+#define XOSC_STATUS_FREQ_RANGE_Msb				1u
+#define XOSC_STATUS_FREQ_RANGE_Lsb				0u
 #define XOSC_STATUS_FREQ_RANGE_1_15MHZ				0u
 #define XOSC_STATUS_FREQ_RANGE_RESERVED_1			1u
 #define XOSC_STATUS_FREQ_RANGE_RESERVED_2			2u
@@ -7670,8 +7670,8 @@ struct sdk_xosc {
 	/* Multiplies the startup_delay by 4. */
 #define XOSC_STARTUP_X4						20u
 	/* in multiples of 256*xtal_period. */
-#define XOSC_STARTUP_DELAY_msb					13u
-#define XOSC_STARTUP_DELAY_lsb					0u
+#define XOSC_STARTUP_DELAY_Msb					13u
+#define XOSC_STARTUP_DELAY_Lsb					0u
 
 	/* 0x10 */
 	uint8_t RESERVED0[0x1C-0x10];
@@ -7679,8 +7679,8 @@ struct sdk_xosc {
 	/* 0x1C: A down counter running at the xosc frequency which counts to zero and stops. */
 	uint32_t volatile COUNT;
 	/*  */
-#define XOSC_COUNT_COUNT_msb					7u
-#define XOSC_COUNT_COUNT_lsb					0u
+#define XOSC_COUNT_COUNT_Msb					7u
+#define XOSC_COUNT_COUNT_Lsb					0u
 
 };
 
@@ -7697,8 +7697,8 @@ struct sdk_pll {
 	/* Passes the reference clock to the output instead of the divided VCO. */
 #define PLL_CS_BYPASS						8u
 	/* Divides the PLL input reference clock. */
-#define PLL_CS_REFDIV_msb					5u
-#define PLL_CS_REFDIV_lsb					0u
+#define PLL_CS_REFDIV_Msb					5u
+#define PLL_CS_REFDIV_Lsb					0u
 
 	/* 0x04: Controls the PLL power modes. */
 	uint32_t volatile PWR;
@@ -7714,17 +7714,17 @@ struct sdk_pll {
 	/* 0x08: Feedback divisor */
 	uint32_t volatile FBDIV_INT;
 	/* see ctrl reg description for constraints */
-#define PLL_FBDIV_INT_FBDIV_INT_msb				11u
-#define PLL_FBDIV_INT_FBDIV_INT_lsb				0u
+#define PLL_FBDIV_INT_FBDIV_INT_Msb				11u
+#define PLL_FBDIV_INT_FBDIV_INT_Lsb				0u
 
 	/* 0x0C: Controls the PLL post dividers for the primary output */
 	uint32_t volatile PRIM;
 	/* divide by 1-7 */
-#define PLL_PRIM_POSTDIV1_msb					18u
-#define PLL_PRIM_POSTDIV1_lsb					16u
+#define PLL_PRIM_POSTDIV1_Msb					18u
+#define PLL_PRIM_POSTDIV1_Lsb					16u
 	/* divide by 1-7 */
-#define PLL_PRIM_POSTDIV2_msb					14u
-#define PLL_PRIM_POSTDIV2_lsb					12u
+#define PLL_PRIM_POSTDIV2_Msb					14u
+#define PLL_PRIM_POSTDIV2_Lsb					12u
 
 };
 
@@ -7752,14 +7752,14 @@ struct sdk_busctrl {
 	/* 0x08: Bus fabric performance counter 0 */
 	uint32_t volatile PERFCTR0;
 	/* Busfabric saturating performance counter 0 */
-#define BUSCTRL_PERFCTR0_PERFCTR0_msb				23u
-#define BUSCTRL_PERFCTR0_PERFCTR0_lsb				0u
+#define BUSCTRL_PERFCTR0_PERFCTR0_Msb				23u
+#define BUSCTRL_PERFCTR0_PERFCTR0_Lsb				0u
 
 	/* 0x0C: Bus fabric performance event select for PERFCTR0 */
 	uint32_t volatile PERFSEL0;
 	/* Select an event for PERFCTR0. */
-#define BUSCTRL_PERFSEL0_PERFSEL0_msb				4u
-#define BUSCTRL_PERFSEL0_PERFSEL0_lsb				0u
+#define BUSCTRL_PERFSEL0_PERFSEL0_Msb				4u
+#define BUSCTRL_PERFSEL0_PERFSEL0_Lsb				0u
 #define BUSCTRL_PERFSEL0_PERFSEL0_APB_CONTESTED			0u
 #define BUSCTRL_PERFSEL0_PERFSEL0_APB				1u
 #define BUSCTRL_PERFSEL0_PERFSEL0_FASTPERI_CONTESTED		2u
@@ -7784,14 +7784,14 @@ struct sdk_busctrl {
 	/* 0x10: Bus fabric performance counter 1 */
 	uint32_t volatile PERFCTR1;
 	/* Busfabric saturating performance counter 1 */
-#define BUSCTRL_PERFCTR1_PERFCTR1_msb				23u
-#define BUSCTRL_PERFCTR1_PERFCTR1_lsb				0u
+#define BUSCTRL_PERFCTR1_PERFCTR1_Msb				23u
+#define BUSCTRL_PERFCTR1_PERFCTR1_Lsb				0u
 
 	/* 0x14: Bus fabric performance event select for PERFCTR1 */
 	uint32_t volatile PERFSEL1;
 	/* Select an event for PERFCTR1. */
-#define BUSCTRL_PERFSEL1_PERFSEL1_msb				4u
-#define BUSCTRL_PERFSEL1_PERFSEL1_lsb				0u
+#define BUSCTRL_PERFSEL1_PERFSEL1_Msb				4u
+#define BUSCTRL_PERFSEL1_PERFSEL1_Lsb				0u
 #define BUSCTRL_PERFSEL1_PERFSEL1_APB_CONTESTED			0u
 #define BUSCTRL_PERFSEL1_PERFSEL1_APB				1u
 #define BUSCTRL_PERFSEL1_PERFSEL1_FASTPERI_CONTESTED		2u
@@ -7816,14 +7816,14 @@ struct sdk_busctrl {
 	/* 0x18: Bus fabric performance counter 2 */
 	uint32_t volatile PERFCTR2;
 	/* Busfabric saturating performance counter 2 */
-#define BUSCTRL_PERFCTR2_PERFCTR2_msb				23u
-#define BUSCTRL_PERFCTR2_PERFCTR2_lsb				0u
+#define BUSCTRL_PERFCTR2_PERFCTR2_Msb				23u
+#define BUSCTRL_PERFCTR2_PERFCTR2_Lsb				0u
 
 	/* 0x1C: Bus fabric performance event select for PERFCTR2 */
 	uint32_t volatile PERFSEL2;
 	/* Select an event for PERFCTR2. */
-#define BUSCTRL_PERFSEL2_PERFSEL2_msb				4u
-#define BUSCTRL_PERFSEL2_PERFSEL2_lsb				0u
+#define BUSCTRL_PERFSEL2_PERFSEL2_Msb				4u
+#define BUSCTRL_PERFSEL2_PERFSEL2_Lsb				0u
 #define BUSCTRL_PERFSEL2_PERFSEL2_APB_CONTESTED			0u
 #define BUSCTRL_PERFSEL2_PERFSEL2_APB				1u
 #define BUSCTRL_PERFSEL2_PERFSEL2_FASTPERI_CONTESTED		2u
@@ -7848,14 +7848,14 @@ struct sdk_busctrl {
 	/* 0x20: Bus fabric performance counter 3 */
 	uint32_t volatile PERFCTR3;
 	/* Busfabric saturating performance counter 3 */
-#define BUSCTRL_PERFCTR3_PERFCTR3_msb				23u
-#define BUSCTRL_PERFCTR3_PERFCTR3_lsb				0u
+#define BUSCTRL_PERFCTR3_PERFCTR3_Msb				23u
+#define BUSCTRL_PERFCTR3_PERFCTR3_Lsb				0u
 
 	/* 0x24: Bus fabric performance event select for PERFCTR3 */
 	uint32_t volatile PERFSEL3;
 	/* Select an event for PERFCTR3. */
-#define BUSCTRL_PERFSEL3_PERFSEL3_msb				4u
-#define BUSCTRL_PERFSEL3_PERFSEL3_lsb				0u
+#define BUSCTRL_PERFSEL3_PERFSEL3_Msb				4u
+#define BUSCTRL_PERFSEL3_PERFSEL3_Lsb				0u
 #define BUSCTRL_PERFSEL3_PERFSEL3_APB_CONTESTED			0u
 #define BUSCTRL_PERFSEL3_PERFSEL3_APB				1u
 #define BUSCTRL_PERFSEL3_PERFSEL3_FASTPERI_CONTESTED		2u
@@ -7896,8 +7896,8 @@ struct sdk_uart0 {
 	/* Framing error. When set to 1, it indicates that the received character did not have a valid stop bit (a valid stop bit is 1). */
 #define UART0_UARTDR_FE						8u
 	/* Receive (read) data character. Transmit (write) data character. */
-#define UART0_UARTDR_DATA_msb					7u
-#define UART0_UARTDR_DATA_lsb					0u
+#define UART0_UARTDR_DATA_Msb					7u
+#define UART0_UARTDR_DATA_Lsb					0u
 
 	/* 0x04: Receive Status Register/Error Clear Register, UARTRSR/UARTECR */
 	uint32_t volatile UARTRSR;
@@ -7940,28 +7940,28 @@ struct sdk_uart0 {
 	/* 0x20: IrDA Low-Power Counter Register, UARTILPR */
 	uint32_t volatile UARTILPR;
 	/* 8-bit low-power divisor value. */
-#define UART0_UARTILPR_ILPDVSR_msb				7u
-#define UART0_UARTILPR_ILPDVSR_lsb				0u
+#define UART0_UARTILPR_ILPDVSR_Msb				7u
+#define UART0_UARTILPR_ILPDVSR_Lsb				0u
 
 	/* 0x24: Integer Baud Rate Register, UARTIBRD */
 	uint32_t volatile UARTIBRD;
 	/* The integer baud rate divisor. */
-#define UART0_UARTIBRD_BAUD_DIVINT_msb				15u
-#define UART0_UARTIBRD_BAUD_DIVINT_lsb				0u
+#define UART0_UARTIBRD_BAUD_DIVINT_Msb				15u
+#define UART0_UARTIBRD_BAUD_DIVINT_Lsb				0u
 
 	/* 0x28: Fractional Baud Rate Register, UARTFBRD */
 	uint32_t volatile UARTFBRD;
 	/* The fractional baud rate divisor. */
-#define UART0_UARTFBRD_BAUD_DIVFRAC_msb				5u
-#define UART0_UARTFBRD_BAUD_DIVFRAC_lsb				0u
+#define UART0_UARTFBRD_BAUD_DIVFRAC_Msb				5u
+#define UART0_UARTFBRD_BAUD_DIVFRAC_Lsb				0u
 
 	/* 0x2C: Line Control Register, UARTLCR_H */
 	uint32_t volatile UARTLCR_H;
 	/* Stick parity select. */
 #define UART0_UARTLCR_H_SPS					7u
 	/* Word length. */
-#define UART0_UARTLCR_H_WLEN_msb				6u
-#define UART0_UARTLCR_H_WLEN_lsb				5u
+#define UART0_UARTLCR_H_WLEN_Msb				6u
+#define UART0_UARTLCR_H_WLEN_Lsb				5u
 	/* Enable FIFOs: 0 = FIFOs are disabled (character mode) that is, the FIFOs become 1-byte-deep holding registers 1 = transmit and receive FIFO buffers are enabled (FIFO mode). */
 #define UART0_UARTLCR_H_FEN					4u
 	/* Two stop bits select. */
@@ -8003,11 +8003,11 @@ struct sdk_uart0 {
 	/* 0x34: Interrupt FIFO Level Select Register, UARTIFLS */
 	uint32_t volatile UARTIFLS;
 	/* Receive interrupt FIFO level select. */
-#define UART0_UARTIFLS_RXIFLSEL_msb				5u
-#define UART0_UARTIFLS_RXIFLSEL_lsb				3u
+#define UART0_UARTIFLS_RXIFLSEL_Msb				5u
+#define UART0_UARTIFLS_RXIFLSEL_Lsb				3u
 	/* Transmit interrupt FIFO level select. */
-#define UART0_UARTIFLS_TXIFLSEL_msb				2u
-#define UART0_UARTIFLS_TXIFLSEL_lsb				0u
+#define UART0_UARTIFLS_TXIFLSEL_Msb				2u
+#define UART0_UARTIFLS_TXIFLSEL_Lsb				0u
 
 	/* 0x38: Interrupt Mask Set/Clear Register, UARTIMSC */
 	uint32_t volatile UARTIMSC;
@@ -8124,56 +8124,56 @@ struct sdk_uart0 {
 	/* 0xFE0: UARTPeriphID0 Register */
 	uint32_t volatile UARTPERIPHID0;
 	/* These bits read back as 0x11 */
-#define UART0_UARTPERIPHID0_PARTNUMBER0_msb			7u
-#define UART0_UARTPERIPHID0_PARTNUMBER0_lsb			0u
+#define UART0_UARTPERIPHID0_PARTNUMBER0_Msb			7u
+#define UART0_UARTPERIPHID0_PARTNUMBER0_Lsb			0u
 
 	/* 0xFE4: UARTPeriphID1 Register */
 	uint32_t volatile UARTPERIPHID1;
 	/* These bits read back as 0x1 */
-#define UART0_UARTPERIPHID1_DESIGNER0_msb			7u
-#define UART0_UARTPERIPHID1_DESIGNER0_lsb			4u
+#define UART0_UARTPERIPHID1_DESIGNER0_Msb			7u
+#define UART0_UARTPERIPHID1_DESIGNER0_Lsb			4u
 	/* These bits read back as 0x0 */
-#define UART0_UARTPERIPHID1_PARTNUMBER1_msb			3u
-#define UART0_UARTPERIPHID1_PARTNUMBER1_lsb			0u
+#define UART0_UARTPERIPHID1_PARTNUMBER1_Msb			3u
+#define UART0_UARTPERIPHID1_PARTNUMBER1_Lsb			0u
 
 	/* 0xFE8: UARTPeriphID2 Register */
 	uint32_t volatile UARTPERIPHID2;
 	/* This field depends on the revision of the UART: r1p0 0x0 r1p1 0x1 r1p3 0x2 r1p4 0x2 r1p5 0x3 */
-#define UART0_UARTPERIPHID2_REVISION_msb			7u
-#define UART0_UARTPERIPHID2_REVISION_lsb			4u
+#define UART0_UARTPERIPHID2_REVISION_Msb			7u
+#define UART0_UARTPERIPHID2_REVISION_Lsb			4u
 	/* These bits read back as 0x4 */
-#define UART0_UARTPERIPHID2_DESIGNER1_msb			3u
-#define UART0_UARTPERIPHID2_DESIGNER1_lsb			0u
+#define UART0_UARTPERIPHID2_DESIGNER1_Msb			3u
+#define UART0_UARTPERIPHID2_DESIGNER1_Lsb			0u
 
 	/* 0xFEC: UARTPeriphID3 Register */
 	uint32_t volatile UARTPERIPHID3;
 	/* These bits read back as 0x00 */
-#define UART0_UARTPERIPHID3_CONFIGURATION_msb			7u
-#define UART0_UARTPERIPHID3_CONFIGURATION_lsb			0u
+#define UART0_UARTPERIPHID3_CONFIGURATION_Msb			7u
+#define UART0_UARTPERIPHID3_CONFIGURATION_Lsb			0u
 
 	/* 0xFF0: UARTPCellID0 Register */
 	uint32_t volatile UARTPCELLID0;
 	/* These bits read back as 0x0D */
-#define UART0_UARTPCELLID0_UARTPCELLID0_msb			7u
-#define UART0_UARTPCELLID0_UARTPCELLID0_lsb			0u
+#define UART0_UARTPCELLID0_UARTPCELLID0_Msb			7u
+#define UART0_UARTPCELLID0_UARTPCELLID0_Lsb			0u
 
 	/* 0xFF4: UARTPCellID1 Register */
 	uint32_t volatile UARTPCELLID1;
 	/* These bits read back as 0xF0 */
-#define UART0_UARTPCELLID1_UARTPCELLID1_msb			7u
-#define UART0_UARTPCELLID1_UARTPCELLID1_lsb			0u
+#define UART0_UARTPCELLID1_UARTPCELLID1_Msb			7u
+#define UART0_UARTPCELLID1_UARTPCELLID1_Lsb			0u
 
 	/* 0xFF8: UARTPCellID2 Register */
 	uint32_t volatile UARTPCELLID2;
 	/* These bits read back as 0x05 */
-#define UART0_UARTPCELLID2_UARTPCELLID2_msb			7u
-#define UART0_UARTPCELLID2_UARTPCELLID2_lsb			0u
+#define UART0_UARTPCELLID2_UARTPCELLID2_Msb			7u
+#define UART0_UARTPCELLID2_UARTPCELLID2_Lsb			0u
 
 	/* 0xFFC: UARTPCellID3 Register */
 	uint32_t volatile UARTPCELLID3;
 	/* These bits read back as 0xB1 */
-#define UART0_UARTPCELLID3_UARTPCELLID3_msb			7u
-#define UART0_UARTPCELLID3_UARTPCELLID3_lsb			0u
+#define UART0_UARTPCELLID3_UARTPCELLID3_Msb			7u
+#define UART0_UARTPCELLID3_UARTPCELLID3_Lsb			0u
 
 };
 
@@ -8186,18 +8186,18 @@ struct sdk_spi0 {
 	/* 0x00: Control register 0, SSPCR0 on page 3-4 */
 	uint32_t volatile SSPCR0;
 	/* Serial clock rate. The value SCR is used to generate the transmit and receive bit rate of the PrimeCell SSP. The bit rate is: F SSPCLK CPSDVSR x (1+SCR) where CPSDVSR is an even value from 2-254, programmed through the SSPCPSR register and SCR is a value from 0-255. */
-#define SPI0_SSPCR0_SCR_msb					15u
-#define SPI0_SSPCR0_SCR_lsb					8u
+#define SPI0_SSPCR0_SCR_Msb					15u
+#define SPI0_SSPCR0_SCR_Lsb					8u
 	/* SSPCLKOUT phase, applicable to Motorola SPI frame format only. */
 #define SPI0_SSPCR0_SPH						7u
 	/* SSPCLKOUT polarity, applicable to Motorola SPI frame format only. */
 #define SPI0_SSPCR0_SPO						6u
 	/* Frame format: 00 Motorola SPI frame format. */
-#define SPI0_SSPCR0_FRF_msb					5u
-#define SPI0_SSPCR0_FRF_lsb					4u
+#define SPI0_SSPCR0_FRF_Msb					5u
+#define SPI0_SSPCR0_FRF_Lsb					4u
 	/* Data Size Select: 0000 Reserved, undefined operation. */
-#define SPI0_SSPCR0_DSS_msb					3u
-#define SPI0_SSPCR0_DSS_lsb					0u
+#define SPI0_SSPCR0_DSS_Msb					3u
+#define SPI0_SSPCR0_DSS_Lsb					0u
 
 	/* 0x04: Control register 1, SSPCR1 on page 3-5 */
 	uint32_t volatile SSPCR1;
@@ -8213,8 +8213,8 @@ struct sdk_spi0 {
 	/* 0x08: Data register, SSPDR on page 3-6 */
 	uint32_t volatile SSPDR;
 	/* Transmit/Receive FIFO: Read Receive FIFO. */
-#define SPI0_SSPDR_DATA_msb					15u
-#define SPI0_SSPDR_DATA_lsb					0u
+#define SPI0_SSPDR_DATA_Msb					15u
+#define SPI0_SSPDR_DATA_Lsb					0u
 
 	/* 0x0C: Status register, SSPSR on page 3-7 */
 	uint32_t volatile SSPSR;
@@ -8232,8 +8232,8 @@ struct sdk_spi0 {
 	/* 0x10: Clock prescale register, SSPCPSR on page 3-8 */
 	uint32_t volatile SSPCPSR;
 	/* Clock prescale divisor. */
-#define SPI0_SSPCPSR_CPSDVSR_msb				7u
-#define SPI0_SSPCPSR_CPSDVSR_lsb				0u
+#define SPI0_SSPCPSR_CPSDVSR_Msb				7u
+#define SPI0_SSPCPSR_CPSDVSR_Lsb				0u
 
 	/* 0x14: Interrupt mask set or clear register, SSPIMSC on page 3-9 */
 	uint32_t volatile SSPIMSC;
@@ -8288,56 +8288,56 @@ struct sdk_spi0 {
 	/* 0xFE0: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID0;
 	/* These bits read back as 0x22 */
-#define SPI0_SSPPERIPHID0_PARTNUMBER0_msb			7u
-#define SPI0_SSPPERIPHID0_PARTNUMBER0_lsb			0u
+#define SPI0_SSPPERIPHID0_PARTNUMBER0_Msb			7u
+#define SPI0_SSPPERIPHID0_PARTNUMBER0_Lsb			0u
 
 	/* 0xFE4: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID1;
 	/* These bits read back as 0x1 */
-#define SPI0_SSPPERIPHID1_DESIGNER0_msb				7u
-#define SPI0_SSPPERIPHID1_DESIGNER0_lsb				4u
+#define SPI0_SSPPERIPHID1_DESIGNER0_Msb				7u
+#define SPI0_SSPPERIPHID1_DESIGNER0_Lsb				4u
 	/* These bits read back as 0x0 */
-#define SPI0_SSPPERIPHID1_PARTNUMBER1_msb			3u
-#define SPI0_SSPPERIPHID1_PARTNUMBER1_lsb			0u
+#define SPI0_SSPPERIPHID1_PARTNUMBER1_Msb			3u
+#define SPI0_SSPPERIPHID1_PARTNUMBER1_Lsb			0u
 
 	/* 0xFE8: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID2;
 	/* These bits return the peripheral revision */
-#define SPI0_SSPPERIPHID2_REVISION_msb				7u
-#define SPI0_SSPPERIPHID2_REVISION_lsb				4u
+#define SPI0_SSPPERIPHID2_REVISION_Msb				7u
+#define SPI0_SSPPERIPHID2_REVISION_Lsb				4u
 	/* These bits read back as 0x4 */
-#define SPI0_SSPPERIPHID2_DESIGNER1_msb				3u
-#define SPI0_SSPPERIPHID2_DESIGNER1_lsb				0u
+#define SPI0_SSPPERIPHID2_DESIGNER1_Msb				3u
+#define SPI0_SSPPERIPHID2_DESIGNER1_Lsb				0u
 
 	/* 0xFEC: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID3;
 	/* These bits read back as 0x00 */
-#define SPI0_SSPPERIPHID3_CONFIGURATION_msb			7u
-#define SPI0_SSPPERIPHID3_CONFIGURATION_lsb			0u
+#define SPI0_SSPPERIPHID3_CONFIGURATION_Msb			7u
+#define SPI0_SSPPERIPHID3_CONFIGURATION_Lsb			0u
 
 	/* 0xFF0: PrimeCell identification registers, SSPPCellID0-3 on page 3-16 */
 	uint32_t volatile SSPPCELLID0;
 	/* These bits read back as 0x0D */
-#define SPI0_SSPPCELLID0_SSPPCELLID0_msb			7u
-#define SPI0_SSPPCELLID0_SSPPCELLID0_lsb			0u
+#define SPI0_SSPPCELLID0_SSPPCELLID0_Msb			7u
+#define SPI0_SSPPCELLID0_SSPPCELLID0_Lsb			0u
 
 	/* 0xFF4: PrimeCell identification registers, SSPPCellID0-3 on page 3-16 */
 	uint32_t volatile SSPPCELLID1;
 	/* These bits read back as 0xF0 */
-#define SPI0_SSPPCELLID1_SSPPCELLID1_msb			7u
-#define SPI0_SSPPCELLID1_SSPPCELLID1_lsb			0u
+#define SPI0_SSPPCELLID1_SSPPCELLID1_Msb			7u
+#define SPI0_SSPPCELLID1_SSPPCELLID1_Lsb			0u
 
 	/* 0xFF8: PrimeCell identification registers, SSPPCellID0-3 on page 3-16 */
 	uint32_t volatile SSPPCELLID2;
 	/* These bits read back as 0x05 */
-#define SPI0_SSPPCELLID2_SSPPCELLID2_msb			7u
-#define SPI0_SSPPCELLID2_SSPPCELLID2_lsb			0u
+#define SPI0_SSPPCELLID2_SSPPCELLID2_Msb			7u
+#define SPI0_SSPPCELLID2_SSPPCELLID2_Lsb			0u
 
 	/* 0xFFC: PrimeCell identification registers, SSPPCellID0-3 on page 3-16 */
 	uint32_t volatile SSPPCELLID3;
 	/* These bits read back as 0xB1 */
-#define SPI0_SSPPCELLID3_SSPPCELLID3_msb			7u
-#define SPI0_SSPPCELLID3_SSPPCELLID3_lsb			0u
+#define SPI0_SSPPCELLID3_SSPPCELLID3_Msb			7u
+#define SPI0_SSPPCELLID3_SSPPCELLID3_Lsb			0u
 
 };
 
@@ -8380,8 +8380,8 @@ struct sdk_i2c0 {
 #define I2C0_IC_CON_IC_10BITADDR_SLAVE_ADDR_7BITS		0u
 #define I2C0_IC_CON_IC_10BITADDR_SLAVE_ADDR_10BITS		1u
 	/* These bits control at which speed the DW_apb_i2c operates; its setting is relevant only if one is operating the DW_apb_i2c in master mode. */
-#define I2C0_IC_CON_SPEED_msb					2u
-#define I2C0_IC_CON_SPEED_lsb					1u
+#define I2C0_IC_CON_SPEED_Msb					2u
+#define I2C0_IC_CON_SPEED_Lsb					1u
 #define I2C0_IC_CON_SPEED_STANDARD				1u
 #define I2C0_IC_CON_SPEED_FAST					2u
 #define I2C0_IC_CON_SPEED_HIGH					3u
@@ -8401,14 +8401,14 @@ struct sdk_i2c0 {
 #define I2C0_IC_TAR_GC_OR_START_GENERAL_CALL			0u
 #define I2C0_IC_TAR_GC_OR_START_START_BYTE			1u
 	/* This is the target address for any master transaction. */
-#define I2C0_IC_TAR_IC_TAR_msb					9u
-#define I2C0_IC_TAR_IC_TAR_lsb					0u
+#define I2C0_IC_TAR_IC_TAR_Msb					9u
+#define I2C0_IC_TAR_IC_TAR_Lsb					0u
 
 	/* 0x08: I2C Slave Address Register */
 	uint32_t volatile IC_SAR;
 	/* The IC_SAR holds the slave address when the I2C is operating as a slave. */
-#define I2C0_IC_SAR_IC_SAR_msb					9u
-#define I2C0_IC_SAR_IC_SAR_lsb					0u
+#define I2C0_IC_SAR_IC_SAR_Msb					9u
+#define I2C0_IC_SAR_IC_SAR_Lsb					0u
 
 	/* 0x0C */
 	uint8_t RESERVED0[0x10-0x0C];
@@ -8432,32 +8432,32 @@ struct sdk_i2c0 {
 #define I2C0_IC_DATA_CMD_CMD_WRITE				0u
 #define I2C0_IC_DATA_CMD_CMD_READ				1u
 	/* This register contains the data to be transmitted or received on the I2C bus. If you are writing to this register and want to perform a read, bits 7:0 (DAT) are ignored by the DW_apb_i2c. */
-#define I2C0_IC_DATA_CMD_DAT_msb				7u
-#define I2C0_IC_DATA_CMD_DAT_lsb				0u
+#define I2C0_IC_DATA_CMD_DAT_Msb				7u
+#define I2C0_IC_DATA_CMD_DAT_Lsb				0u
 
 	/* 0x14: Standard Speed I2C Clock SCL High Count Register */
 	uint32_t volatile IC_SS_SCL_HCNT;
 	/* This register must be set before any I2C bus transaction can take place to ensure proper I/O timing. */
-#define I2C0_IC_SS_SCL_HCNT_IC_SS_SCL_HCNT_msb			15u
-#define I2C0_IC_SS_SCL_HCNT_IC_SS_SCL_HCNT_lsb			0u
+#define I2C0_IC_SS_SCL_HCNT_IC_SS_SCL_HCNT_Msb			15u
+#define I2C0_IC_SS_SCL_HCNT_IC_SS_SCL_HCNT_Lsb			0u
 
 	/* 0x18: Standard Speed I2C Clock SCL Low Count Register */
 	uint32_t volatile IC_SS_SCL_LCNT;
 	/* This register must be set before any I2C bus transaction can take place to ensure proper I/O timing. */
-#define I2C0_IC_SS_SCL_LCNT_IC_SS_SCL_LCNT_msb			15u
-#define I2C0_IC_SS_SCL_LCNT_IC_SS_SCL_LCNT_lsb			0u
+#define I2C0_IC_SS_SCL_LCNT_IC_SS_SCL_LCNT_Msb			15u
+#define I2C0_IC_SS_SCL_LCNT_IC_SS_SCL_LCNT_Lsb			0u
 
 	/* 0x1C: Fast Mode or Fast Mode Plus I2C Clock SCL High Count Register */
 	uint32_t volatile IC_FS_SCL_HCNT;
 	/* This register must be set before any I2C bus transaction can take place to ensure proper I/O timing. */
-#define I2C0_IC_FS_SCL_HCNT_IC_FS_SCL_HCNT_msb			15u
-#define I2C0_IC_FS_SCL_HCNT_IC_FS_SCL_HCNT_lsb			0u
+#define I2C0_IC_FS_SCL_HCNT_IC_FS_SCL_HCNT_Msb			15u
+#define I2C0_IC_FS_SCL_HCNT_IC_FS_SCL_HCNT_Lsb			0u
 
 	/* 0x20: Fast Mode or Fast Mode Plus I2C Clock SCL Low Count Register */
 	uint32_t volatile IC_FS_SCL_LCNT;
 	/* This register must be set before any I2C bus transaction can take place to ensure proper I/O timing. */
-#define I2C0_IC_FS_SCL_LCNT_IC_FS_SCL_LCNT_msb			15u
-#define I2C0_IC_FS_SCL_LCNT_IC_FS_SCL_LCNT_lsb			0u
+#define I2C0_IC_FS_SCL_LCNT_IC_FS_SCL_LCNT_Msb			15u
+#define I2C0_IC_FS_SCL_LCNT_IC_FS_SCL_LCNT_Lsb			0u
 
 	/* 0x24 */
 	uint8_t RESERVED1[0x2C-0x24];
@@ -8630,14 +8630,14 @@ struct sdk_i2c0 {
 	/* 0x38: I2C Receive FIFO Threshold Register */
 	uint32_t volatile IC_RX_TL;
 	/* Receive FIFO Threshold Level. */
-#define I2C0_IC_RX_TL_RX_TL_msb					7u
-#define I2C0_IC_RX_TL_RX_TL_lsb					0u
+#define I2C0_IC_RX_TL_RX_TL_Msb					7u
+#define I2C0_IC_RX_TL_RX_TL_Lsb					0u
 
 	/* 0x3C: I2C Transmit FIFO Threshold Register */
 	uint32_t volatile IC_TX_TL;
 	/* Transmit FIFO Threshold Level. */
-#define I2C0_IC_TX_TL_TX_TL_msb					7u
-#define I2C0_IC_TX_TL_TX_TL_lsb					0u
+#define I2C0_IC_TX_TL_TX_TL_Msb					7u
+#define I2C0_IC_TX_TL_TX_TL_Lsb					0u
 
 	/* 0x40: Clear Combined and Individual Interrupt Register */
 	uint32_t volatile IC_CLR_INTR;
@@ -8743,29 +8743,29 @@ struct sdk_i2c0 {
 	/* 0x74: I2C Transmit FIFO Level Register This register contains the number of valid data entries in the transmit FIFO buffer. */
 	uint32_t volatile IC_TXFLR;
 	/* Transmit FIFO Level. */
-#define I2C0_IC_TXFLR_TXFLR_msb					4u
-#define I2C0_IC_TXFLR_TXFLR_lsb					0u
+#define I2C0_IC_TXFLR_TXFLR_Msb					4u
+#define I2C0_IC_TXFLR_TXFLR_Lsb					0u
 
 	/* 0x78: I2C Receive FIFO Level Register This register contains the number of valid data entries in the receive FIFO buffer. */
 	uint32_t volatile IC_RXFLR;
 	/* Receive FIFO Level. */
-#define I2C0_IC_RXFLR_RXFLR_msb					4u
-#define I2C0_IC_RXFLR_RXFLR_lsb					0u
+#define I2C0_IC_RXFLR_RXFLR_Msb					4u
+#define I2C0_IC_RXFLR_RXFLR_Lsb					0u
 
 	/* 0x7C: I2C SDA Hold Time Length Register */
 	uint32_t volatile IC_SDA_HOLD;
 	/* Sets the required SDA hold time in units of ic_clk period, when DW_apb_i2c acts as a receiver. */
-#define I2C0_IC_SDA_HOLD_IC_SDA_RX_HOLD_msb			23u
-#define I2C0_IC_SDA_HOLD_IC_SDA_RX_HOLD_lsb			16u
+#define I2C0_IC_SDA_HOLD_IC_SDA_RX_HOLD_Msb			23u
+#define I2C0_IC_SDA_HOLD_IC_SDA_RX_HOLD_Lsb			16u
 	/* Sets the required SDA hold time in units of ic_clk period, when DW_apb_i2c acts as a transmitter. */
-#define I2C0_IC_SDA_HOLD_IC_SDA_TX_HOLD_msb			15u
-#define I2C0_IC_SDA_HOLD_IC_SDA_TX_HOLD_lsb			0u
+#define I2C0_IC_SDA_HOLD_IC_SDA_TX_HOLD_Msb			15u
+#define I2C0_IC_SDA_HOLD_IC_SDA_TX_HOLD_Lsb			0u
 
 	/* 0x80: I2C Transmit Abort Source Register */
 	uint32_t volatile IC_TX_ABRT_SOURCE;
 	/* This field indicates the number of Tx FIFO Data Commands which are flushed due to TX_ABRT interrupt. */
-#define I2C0_IC_TX_ABRT_SOURCE_TX_FLUSH_CNT_msb			31u
-#define I2C0_IC_TX_ABRT_SOURCE_TX_FLUSH_CNT_lsb			23u
+#define I2C0_IC_TX_ABRT_SOURCE_TX_FLUSH_CNT_Msb			31u
+#define I2C0_IC_TX_ABRT_SOURCE_TX_FLUSH_CNT_Lsb			23u
 	/* This is a master-mode-only bit. Master has detected the transfer abort (IC_ENABLE[1]) */
 #define I2C0_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT			16u
 #define I2C0_IC_TX_ABRT_SOURCE_ABRT_USER_ABRT_ABRT_USER_ABRT_VOID	0u
@@ -8856,20 +8856,20 @@ struct sdk_i2c0 {
 	/* 0x8C: DMA Transmit Data Level Register */
 	uint32_t volatile IC_DMA_TDLR;
 	/* Transmit Data Level. */
-#define I2C0_IC_DMA_TDLR_DMATDL_msb				3u
-#define I2C0_IC_DMA_TDLR_DMATDL_lsb				0u
+#define I2C0_IC_DMA_TDLR_DMATDL_Msb				3u
+#define I2C0_IC_DMA_TDLR_DMATDL_Lsb				0u
 
 	/* 0x90: I2C Receive Data Level Register */
 	uint32_t volatile IC_DMA_RDLR;
 	/* Receive Data Level. */
-#define I2C0_IC_DMA_RDLR_DMARDL_msb				3u
-#define I2C0_IC_DMA_RDLR_DMARDL_lsb				0u
+#define I2C0_IC_DMA_RDLR_DMARDL_Msb				3u
+#define I2C0_IC_DMA_RDLR_DMARDL_Lsb				0u
 
 	/* 0x94: I2C SDA Setup Register */
 	uint32_t volatile IC_SDA_SETUP;
 	/* SDA Setup. */
-#define I2C0_IC_SDA_SETUP_SDA_SETUP_msb				7u
-#define I2C0_IC_SDA_SETUP_SDA_SETUP_lsb				0u
+#define I2C0_IC_SDA_SETUP_SDA_SETUP_Msb				7u
+#define I2C0_IC_SDA_SETUP_SDA_SETUP_Lsb				0u
 
 	/* 0x98: I2C ACK General Call Register */
 	uint32_t volatile IC_ACK_GENERAL_CALL;
@@ -8896,8 +8896,8 @@ struct sdk_i2c0 {
 	/* 0xA0: I2C SS, FS or FM+ spike suppression limit */
 	uint32_t volatile IC_FS_SPKLEN;
 	/* This register must be set before any I2C bus transaction can take place to ensure stable operation. */
-#define I2C0_IC_FS_SPKLEN_IC_FS_SPKLEN_msb			7u
-#define I2C0_IC_FS_SPKLEN_IC_FS_SPKLEN_lsb			0u
+#define I2C0_IC_FS_SPKLEN_IC_FS_SPKLEN_Msb			7u
+#define I2C0_IC_FS_SPKLEN_IC_FS_SPKLEN_Lsb			0u
 
 	/* 0xA4 */
 	uint8_t RESERVED2[0xA8-0xA4];
@@ -8913,11 +8913,11 @@ struct sdk_i2c0 {
 	/* 0xF4: Component Parameter Register 1 */
 	uint32_t volatile IC_COMP_PARAM_1;
 	/* TX Buffer Depth = 16 */
-#define I2C0_IC_COMP_PARAM_1_TX_BUFFER_DEPTH_msb		23u
-#define I2C0_IC_COMP_PARAM_1_TX_BUFFER_DEPTH_lsb		16u
+#define I2C0_IC_COMP_PARAM_1_TX_BUFFER_DEPTH_Msb		23u
+#define I2C0_IC_COMP_PARAM_1_TX_BUFFER_DEPTH_Lsb		16u
 	/* RX Buffer Depth = 16 */
-#define I2C0_IC_COMP_PARAM_1_RX_BUFFER_DEPTH_msb		15u
-#define I2C0_IC_COMP_PARAM_1_RX_BUFFER_DEPTH_lsb		8u
+#define I2C0_IC_COMP_PARAM_1_RX_BUFFER_DEPTH_Msb		15u
+#define I2C0_IC_COMP_PARAM_1_RX_BUFFER_DEPTH_Lsb		8u
 	/* Encoded parameters not visible */
 #define I2C0_IC_COMP_PARAM_1_ADD_ENCODED_PARAMS			7u
 	/* DMA handshaking signals are enabled */
@@ -8927,23 +8927,23 @@ struct sdk_i2c0 {
 	/* Programmable count values for each mode. */
 #define I2C0_IC_COMP_PARAM_1_HC_COUNT_VALUES			4u
 	/* MAX SPEED MODE = FAST MODE */
-#define I2C0_IC_COMP_PARAM_1_MAX_SPEED_MODE_msb			3u
-#define I2C0_IC_COMP_PARAM_1_MAX_SPEED_MODE_lsb			2u
+#define I2C0_IC_COMP_PARAM_1_MAX_SPEED_MODE_Msb			3u
+#define I2C0_IC_COMP_PARAM_1_MAX_SPEED_MODE_Lsb			2u
 	/* APB data bus width is 32 bits */
-#define I2C0_IC_COMP_PARAM_1_APB_DATA_WIDTH_msb			1u
-#define I2C0_IC_COMP_PARAM_1_APB_DATA_WIDTH_lsb			0u
+#define I2C0_IC_COMP_PARAM_1_APB_DATA_WIDTH_Msb			1u
+#define I2C0_IC_COMP_PARAM_1_APB_DATA_WIDTH_Lsb			0u
 
 	/* 0xF8: I2C Component Version Register */
 	uint32_t volatile IC_COMP_VERSION;
 	/*  */
-#define I2C0_IC_COMP_VERSION_IC_COMP_VERSION_msb		31u
-#define I2C0_IC_COMP_VERSION_IC_COMP_VERSION_lsb		0u
+#define I2C0_IC_COMP_VERSION_IC_COMP_VERSION_Msb		31u
+#define I2C0_IC_COMP_VERSION_IC_COMP_VERSION_Lsb		0u
 
 	/* 0xFC: I2C Component Type Register */
 	uint32_t volatile IC_COMP_TYPE;
 	/* Designware Component Type number = 0x44_57_01_40. */
-#define I2C0_IC_COMP_TYPE_IC_COMP_TYPE_msb			31u
-#define I2C0_IC_COMP_TYPE_IC_COMP_TYPE_lsb			0u
+#define I2C0_IC_COMP_TYPE_IC_COMP_TYPE_Msb			31u
+#define I2C0_IC_COMP_TYPE_IC_COMP_TYPE_Lsb			0u
 
 };
 
@@ -8955,11 +8955,11 @@ struct sdk_adc {
 	/* 0x00: ADC Control and Status */
 	uint32_t volatile CS;
 	/* Round-robin sampling. */
-#define ADC_CS_RROBIN_msb					20u
-#define ADC_CS_RROBIN_lsb					16u
+#define ADC_CS_RROBIN_Msb					20u
+#define ADC_CS_RROBIN_Lsb					16u
 	/* Select analog mux input. */
-#define ADC_CS_AINSEL_msb					14u
-#define ADC_CS_AINSEL_lsb					12u
+#define ADC_CS_AINSEL_Msb					14u
+#define ADC_CS_AINSEL_Lsb					12u
 	/* Some past ADC conversion encountered an error. */
 #define ADC_CS_ERR_STICKY					10u
 	/* The most recent ADC conversion encountered an error; result is undefined or noisy. */
@@ -8978,17 +8978,17 @@ struct sdk_adc {
 	/* 0x04: Result of most recent ADC conversion */
 	uint32_t volatile RESULT;
 	/*  */
-#define ADC_RESULT_RESULT_msb					11u
-#define ADC_RESULT_RESULT_lsb					0u
+#define ADC_RESULT_RESULT_Msb					11u
+#define ADC_RESULT_RESULT_Lsb					0u
 
 	/* 0x08: FIFO control and status */
 	uint32_t volatile FCS;
 	/* DREQ/IRQ asserted when level >= threshold */
-#define ADC_FCS_THRESH_msb					27u
-#define ADC_FCS_THRESH_lsb					24u
+#define ADC_FCS_THRESH_Msb					27u
+#define ADC_FCS_THRESH_Lsb					24u
 	/* The number of conversion results currently waiting in the FIFO */
-#define ADC_FCS_LEVEL_msb					19u
-#define ADC_FCS_LEVEL_lsb					16u
+#define ADC_FCS_LEVEL_Msb					19u
+#define ADC_FCS_LEVEL_Lsb					16u
 	/* 1 if the FIFO has been overflowed. */
 #define ADC_FCS_OVER						11u
 	/* 1 if the FIFO has been underflowed. */
@@ -9011,17 +9011,17 @@ struct sdk_adc {
 	/* 1 if this particular sample experienced a conversion error. */
 #define ADC_FIFO_ERR						15u
 	/*  */
-#define ADC_FIFO_VAL_msb					11u
-#define ADC_FIFO_VAL_lsb					0u
+#define ADC_FIFO_VAL_Msb					11u
+#define ADC_FIFO_VAL_Lsb					0u
 
 	/* 0x10: Clock divider. */
 	uint32_t volatile DIV;
 	/* Integer part of clock divisor. */
-#define ADC_DIV_INT_msb						23u
-#define ADC_DIV_INT_lsb						8u
+#define ADC_DIV_INT_Msb						23u
+#define ADC_DIV_INT_Lsb						8u
 	/* Fractional part of clock divisor. */
-#define ADC_DIV_FRAC_msb					7u
-#define ADC_DIV_FRAC_lsb					0u
+#define ADC_DIV_FRAC_Msb					7u
+#define ADC_DIV_FRAC_Lsb					0u
 
 	/* 0x14: Raw Interrupts */
 	uint32_t volatile INTR;
@@ -9057,8 +9057,8 @@ struct sdk_pwm {
 	/* Retard the phase of the counter by 1 count, while it is running. */
 #define PWM_CH0_CSR_PH_RET					6u
 	/*  */
-#define PWM_CH0_CSR_DIVMODE_msb					5u
-#define PWM_CH0_CSR_DIVMODE_lsb					4u
+#define PWM_CH0_CSR_DIVMODE_Msb					5u
+#define PWM_CH0_CSR_DIVMODE_Lsb					4u
 #define PWM_CH0_CSR_DIVMODE_DIV					0u
 #define PWM_CH0_CSR_DIVMODE_LEVEL				1u
 #define PWM_CH0_CSR_DIVMODE_RISE				2u
@@ -9075,32 +9075,32 @@ struct sdk_pwm {
 	/* 0x04: INT and FRAC form a fixed-point fractional number. */
 	uint32_t volatile CH0_DIV;
 	/*  */
-#define PWM_CH0_DIV_INT_msb					11u
-#define PWM_CH0_DIV_INT_lsb					4u
+#define PWM_CH0_DIV_INT_Msb					11u
+#define PWM_CH0_DIV_INT_Lsb					4u
 	/*  */
-#define PWM_CH0_DIV_FRAC_msb					3u
-#define PWM_CH0_DIV_FRAC_lsb					0u
+#define PWM_CH0_DIV_FRAC_Msb					3u
+#define PWM_CH0_DIV_FRAC_Lsb					0u
 
 	/* 0x08: Direct access to the PWM counter */
 	uint32_t volatile CH0_CTR;
 	/*  */
-#define PWM_CH0_CTR_CH0_CTR_msb					15u
-#define PWM_CH0_CTR_CH0_CTR_lsb					0u
+#define PWM_CH0_CTR_CH0_CTR_Msb					15u
+#define PWM_CH0_CTR_CH0_CTR_Lsb					0u
 
 	/* 0x0C: Counter compare values */
 	uint32_t volatile CH0_CC;
 	/*  */
-#define PWM_CH0_CC_B_msb					31u
-#define PWM_CH0_CC_B_lsb					16u
+#define PWM_CH0_CC_B_Msb					31u
+#define PWM_CH0_CC_B_Lsb					16u
 	/*  */
-#define PWM_CH0_CC_A_msb					15u
-#define PWM_CH0_CC_A_lsb					0u
+#define PWM_CH0_CC_A_Msb					15u
+#define PWM_CH0_CC_A_Lsb					0u
 
 	/* 0x10: Counter wrap value */
 	uint32_t volatile CH0_TOP;
 	/*  */
-#define PWM_CH0_TOP_CH0_TOP_msb					15u
-#define PWM_CH0_TOP_CH0_TOP_lsb					0u
+#define PWM_CH0_TOP_CH0_TOP_Msb					15u
+#define PWM_CH0_TOP_CH0_TOP_Lsb					0u
 
 	/* 0x14: Control and status register */
 	uint32_t volatile CH1_CSR;
@@ -9109,8 +9109,8 @@ struct sdk_pwm {
 	/* Retard the phase of the counter by 1 count, while it is running. */
 #define PWM_CH1_CSR_PH_RET					6u
 	/*  */
-#define PWM_CH1_CSR_DIVMODE_msb					5u
-#define PWM_CH1_CSR_DIVMODE_lsb					4u
+#define PWM_CH1_CSR_DIVMODE_Msb					5u
+#define PWM_CH1_CSR_DIVMODE_Lsb					4u
 #define PWM_CH1_CSR_DIVMODE_DIV					0u
 #define PWM_CH1_CSR_DIVMODE_LEVEL				1u
 #define PWM_CH1_CSR_DIVMODE_RISE				2u
@@ -9127,32 +9127,32 @@ struct sdk_pwm {
 	/* 0x18: INT and FRAC form a fixed-point fractional number. */
 	uint32_t volatile CH1_DIV;
 	/*  */
-#define PWM_CH1_DIV_INT_msb					11u
-#define PWM_CH1_DIV_INT_lsb					4u
+#define PWM_CH1_DIV_INT_Msb					11u
+#define PWM_CH1_DIV_INT_Lsb					4u
 	/*  */
-#define PWM_CH1_DIV_FRAC_msb					3u
-#define PWM_CH1_DIV_FRAC_lsb					0u
+#define PWM_CH1_DIV_FRAC_Msb					3u
+#define PWM_CH1_DIV_FRAC_Lsb					0u
 
 	/* 0x1C: Direct access to the PWM counter */
 	uint32_t volatile CH1_CTR;
 	/*  */
-#define PWM_CH1_CTR_CH1_CTR_msb					15u
-#define PWM_CH1_CTR_CH1_CTR_lsb					0u
+#define PWM_CH1_CTR_CH1_CTR_Msb					15u
+#define PWM_CH1_CTR_CH1_CTR_Lsb					0u
 
 	/* 0x20: Counter compare values */
 	uint32_t volatile CH1_CC;
 	/*  */
-#define PWM_CH1_CC_B_msb					31u
-#define PWM_CH1_CC_B_lsb					16u
+#define PWM_CH1_CC_B_Msb					31u
+#define PWM_CH1_CC_B_Lsb					16u
 	/*  */
-#define PWM_CH1_CC_A_msb					15u
-#define PWM_CH1_CC_A_lsb					0u
+#define PWM_CH1_CC_A_Msb					15u
+#define PWM_CH1_CC_A_Lsb					0u
 
 	/* 0x24: Counter wrap value */
 	uint32_t volatile CH1_TOP;
 	/*  */
-#define PWM_CH1_TOP_CH1_TOP_msb					15u
-#define PWM_CH1_TOP_CH1_TOP_lsb					0u
+#define PWM_CH1_TOP_CH1_TOP_Msb					15u
+#define PWM_CH1_TOP_CH1_TOP_Lsb					0u
 
 	/* 0x28: Control and status register */
 	uint32_t volatile CH2_CSR;
@@ -9161,8 +9161,8 @@ struct sdk_pwm {
 	/* Retard the phase of the counter by 1 count, while it is running. */
 #define PWM_CH2_CSR_PH_RET					6u
 	/*  */
-#define PWM_CH2_CSR_DIVMODE_msb					5u
-#define PWM_CH2_CSR_DIVMODE_lsb					4u
+#define PWM_CH2_CSR_DIVMODE_Msb					5u
+#define PWM_CH2_CSR_DIVMODE_Lsb					4u
 #define PWM_CH2_CSR_DIVMODE_DIV					0u
 #define PWM_CH2_CSR_DIVMODE_LEVEL				1u
 #define PWM_CH2_CSR_DIVMODE_RISE				2u
@@ -9179,32 +9179,32 @@ struct sdk_pwm {
 	/* 0x2C: INT and FRAC form a fixed-point fractional number. */
 	uint32_t volatile CH2_DIV;
 	/*  */
-#define PWM_CH2_DIV_INT_msb					11u
-#define PWM_CH2_DIV_INT_lsb					4u
+#define PWM_CH2_DIV_INT_Msb					11u
+#define PWM_CH2_DIV_INT_Lsb					4u
 	/*  */
-#define PWM_CH2_DIV_FRAC_msb					3u
-#define PWM_CH2_DIV_FRAC_lsb					0u
+#define PWM_CH2_DIV_FRAC_Msb					3u
+#define PWM_CH2_DIV_FRAC_Lsb					0u
 
 	/* 0x30: Direct access to the PWM counter */
 	uint32_t volatile CH2_CTR;
 	/*  */
-#define PWM_CH2_CTR_CH2_CTR_msb					15u
-#define PWM_CH2_CTR_CH2_CTR_lsb					0u
+#define PWM_CH2_CTR_CH2_CTR_Msb					15u
+#define PWM_CH2_CTR_CH2_CTR_Lsb					0u
 
 	/* 0x34: Counter compare values */
 	uint32_t volatile CH2_CC;
 	/*  */
-#define PWM_CH2_CC_B_msb					31u
-#define PWM_CH2_CC_B_lsb					16u
+#define PWM_CH2_CC_B_Msb					31u
+#define PWM_CH2_CC_B_Lsb					16u
 	/*  */
-#define PWM_CH2_CC_A_msb					15u
-#define PWM_CH2_CC_A_lsb					0u
+#define PWM_CH2_CC_A_Msb					15u
+#define PWM_CH2_CC_A_Lsb					0u
 
 	/* 0x38: Counter wrap value */
 	uint32_t volatile CH2_TOP;
 	/*  */
-#define PWM_CH2_TOP_CH2_TOP_msb					15u
-#define PWM_CH2_TOP_CH2_TOP_lsb					0u
+#define PWM_CH2_TOP_CH2_TOP_Msb					15u
+#define PWM_CH2_TOP_CH2_TOP_Lsb					0u
 
 	/* 0x3C: Control and status register */
 	uint32_t volatile CH3_CSR;
@@ -9213,8 +9213,8 @@ struct sdk_pwm {
 	/* Retard the phase of the counter by 1 count, while it is running. */
 #define PWM_CH3_CSR_PH_RET					6u
 	/*  */
-#define PWM_CH3_CSR_DIVMODE_msb					5u
-#define PWM_CH3_CSR_DIVMODE_lsb					4u
+#define PWM_CH3_CSR_DIVMODE_Msb					5u
+#define PWM_CH3_CSR_DIVMODE_Lsb					4u
 #define PWM_CH3_CSR_DIVMODE_DIV					0u
 #define PWM_CH3_CSR_DIVMODE_LEVEL				1u
 #define PWM_CH3_CSR_DIVMODE_RISE				2u
@@ -9231,32 +9231,32 @@ struct sdk_pwm {
 	/* 0x40: INT and FRAC form a fixed-point fractional number. */
 	uint32_t volatile CH3_DIV;
 	/*  */
-#define PWM_CH3_DIV_INT_msb					11u
-#define PWM_CH3_DIV_INT_lsb					4u
+#define PWM_CH3_DIV_INT_Msb					11u
+#define PWM_CH3_DIV_INT_Lsb					4u
 	/*  */
-#define PWM_CH3_DIV_FRAC_msb					3u
-#define PWM_CH3_DIV_FRAC_lsb					0u
+#define PWM_CH3_DIV_FRAC_Msb					3u
+#define PWM_CH3_DIV_FRAC_Lsb					0u
 
 	/* 0x44: Direct access to the PWM counter */
 	uint32_t volatile CH3_CTR;
 	/*  */
-#define PWM_CH3_CTR_CH3_CTR_msb					15u
-#define PWM_CH3_CTR_CH3_CTR_lsb					0u
+#define PWM_CH3_CTR_CH3_CTR_Msb					15u
+#define PWM_CH3_CTR_CH3_CTR_Lsb					0u
 
 	/* 0x48: Counter compare values */
 	uint32_t volatile CH3_CC;
 	/*  */
-#define PWM_CH3_CC_B_msb					31u
-#define PWM_CH3_CC_B_lsb					16u
+#define PWM_CH3_CC_B_Msb					31u
+#define PWM_CH3_CC_B_Lsb					16u
 	/*  */
-#define PWM_CH3_CC_A_msb					15u
-#define PWM_CH3_CC_A_lsb					0u
+#define PWM_CH3_CC_A_Msb					15u
+#define PWM_CH3_CC_A_Lsb					0u
 
 	/* 0x4C: Counter wrap value */
 	uint32_t volatile CH3_TOP;
 	/*  */
-#define PWM_CH3_TOP_CH3_TOP_msb					15u
-#define PWM_CH3_TOP_CH3_TOP_lsb					0u
+#define PWM_CH3_TOP_CH3_TOP_Msb					15u
+#define PWM_CH3_TOP_CH3_TOP_Lsb					0u
 
 	/* 0x50: Control and status register */
 	uint32_t volatile CH4_CSR;
@@ -9265,8 +9265,8 @@ struct sdk_pwm {
 	/* Retard the phase of the counter by 1 count, while it is running. */
 #define PWM_CH4_CSR_PH_RET					6u
 	/*  */
-#define PWM_CH4_CSR_DIVMODE_msb					5u
-#define PWM_CH4_CSR_DIVMODE_lsb					4u
+#define PWM_CH4_CSR_DIVMODE_Msb					5u
+#define PWM_CH4_CSR_DIVMODE_Lsb					4u
 #define PWM_CH4_CSR_DIVMODE_DIV					0u
 #define PWM_CH4_CSR_DIVMODE_LEVEL				1u
 #define PWM_CH4_CSR_DIVMODE_RISE				2u
@@ -9283,32 +9283,32 @@ struct sdk_pwm {
 	/* 0x54: INT and FRAC form a fixed-point fractional number. */
 	uint32_t volatile CH4_DIV;
 	/*  */
-#define PWM_CH4_DIV_INT_msb					11u
-#define PWM_CH4_DIV_INT_lsb					4u
+#define PWM_CH4_DIV_INT_Msb					11u
+#define PWM_CH4_DIV_INT_Lsb					4u
 	/*  */
-#define PWM_CH4_DIV_FRAC_msb					3u
-#define PWM_CH4_DIV_FRAC_lsb					0u
+#define PWM_CH4_DIV_FRAC_Msb					3u
+#define PWM_CH4_DIV_FRAC_Lsb					0u
 
 	/* 0x58: Direct access to the PWM counter */
 	uint32_t volatile CH4_CTR;
 	/*  */
-#define PWM_CH4_CTR_CH4_CTR_msb					15u
-#define PWM_CH4_CTR_CH4_CTR_lsb					0u
+#define PWM_CH4_CTR_CH4_CTR_Msb					15u
+#define PWM_CH4_CTR_CH4_CTR_Lsb					0u
 
 	/* 0x5C: Counter compare values */
 	uint32_t volatile CH4_CC;
 	/*  */
-#define PWM_CH4_CC_B_msb					31u
-#define PWM_CH4_CC_B_lsb					16u
+#define PWM_CH4_CC_B_Msb					31u
+#define PWM_CH4_CC_B_Lsb					16u
 	/*  */
-#define PWM_CH4_CC_A_msb					15u
-#define PWM_CH4_CC_A_lsb					0u
+#define PWM_CH4_CC_A_Msb					15u
+#define PWM_CH4_CC_A_Lsb					0u
 
 	/* 0x60: Counter wrap value */
 	uint32_t volatile CH4_TOP;
 	/*  */
-#define PWM_CH4_TOP_CH4_TOP_msb					15u
-#define PWM_CH4_TOP_CH4_TOP_lsb					0u
+#define PWM_CH4_TOP_CH4_TOP_Msb					15u
+#define PWM_CH4_TOP_CH4_TOP_Lsb					0u
 
 	/* 0x64: Control and status register */
 	uint32_t volatile CH5_CSR;
@@ -9317,8 +9317,8 @@ struct sdk_pwm {
 	/* Retard the phase of the counter by 1 count, while it is running. */
 #define PWM_CH5_CSR_PH_RET					6u
 	/*  */
-#define PWM_CH5_CSR_DIVMODE_msb					5u
-#define PWM_CH5_CSR_DIVMODE_lsb					4u
+#define PWM_CH5_CSR_DIVMODE_Msb					5u
+#define PWM_CH5_CSR_DIVMODE_Lsb					4u
 #define PWM_CH5_CSR_DIVMODE_DIV					0u
 #define PWM_CH5_CSR_DIVMODE_LEVEL				1u
 #define PWM_CH5_CSR_DIVMODE_RISE				2u
@@ -9335,32 +9335,32 @@ struct sdk_pwm {
 	/* 0x68: INT and FRAC form a fixed-point fractional number. */
 	uint32_t volatile CH5_DIV;
 	/*  */
-#define PWM_CH5_DIV_INT_msb					11u
-#define PWM_CH5_DIV_INT_lsb					4u
+#define PWM_CH5_DIV_INT_Msb					11u
+#define PWM_CH5_DIV_INT_Lsb					4u
 	/*  */
-#define PWM_CH5_DIV_FRAC_msb					3u
-#define PWM_CH5_DIV_FRAC_lsb					0u
+#define PWM_CH5_DIV_FRAC_Msb					3u
+#define PWM_CH5_DIV_FRAC_Lsb					0u
 
 	/* 0x6C: Direct access to the PWM counter */
 	uint32_t volatile CH5_CTR;
 	/*  */
-#define PWM_CH5_CTR_CH5_CTR_msb					15u
-#define PWM_CH5_CTR_CH5_CTR_lsb					0u
+#define PWM_CH5_CTR_CH5_CTR_Msb					15u
+#define PWM_CH5_CTR_CH5_CTR_Lsb					0u
 
 	/* 0x70: Counter compare values */
 	uint32_t volatile CH5_CC;
 	/*  */
-#define PWM_CH5_CC_B_msb					31u
-#define PWM_CH5_CC_B_lsb					16u
+#define PWM_CH5_CC_B_Msb					31u
+#define PWM_CH5_CC_B_Lsb					16u
 	/*  */
-#define PWM_CH5_CC_A_msb					15u
-#define PWM_CH5_CC_A_lsb					0u
+#define PWM_CH5_CC_A_Msb					15u
+#define PWM_CH5_CC_A_Lsb					0u
 
 	/* 0x74: Counter wrap value */
 	uint32_t volatile CH5_TOP;
 	/*  */
-#define PWM_CH5_TOP_CH5_TOP_msb					15u
-#define PWM_CH5_TOP_CH5_TOP_lsb					0u
+#define PWM_CH5_TOP_CH5_TOP_Msb					15u
+#define PWM_CH5_TOP_CH5_TOP_Lsb					0u
 
 	/* 0x78: Control and status register */
 	uint32_t volatile CH6_CSR;
@@ -9369,8 +9369,8 @@ struct sdk_pwm {
 	/* Retard the phase of the counter by 1 count, while it is running. */
 #define PWM_CH6_CSR_PH_RET					6u
 	/*  */
-#define PWM_CH6_CSR_DIVMODE_msb					5u
-#define PWM_CH6_CSR_DIVMODE_lsb					4u
+#define PWM_CH6_CSR_DIVMODE_Msb					5u
+#define PWM_CH6_CSR_DIVMODE_Lsb					4u
 #define PWM_CH6_CSR_DIVMODE_DIV					0u
 #define PWM_CH6_CSR_DIVMODE_LEVEL				1u
 #define PWM_CH6_CSR_DIVMODE_RISE				2u
@@ -9387,32 +9387,32 @@ struct sdk_pwm {
 	/* 0x7C: INT and FRAC form a fixed-point fractional number. */
 	uint32_t volatile CH6_DIV;
 	/*  */
-#define PWM_CH6_DIV_INT_msb					11u
-#define PWM_CH6_DIV_INT_lsb					4u
+#define PWM_CH6_DIV_INT_Msb					11u
+#define PWM_CH6_DIV_INT_Lsb					4u
 	/*  */
-#define PWM_CH6_DIV_FRAC_msb					3u
-#define PWM_CH6_DIV_FRAC_lsb					0u
+#define PWM_CH6_DIV_FRAC_Msb					3u
+#define PWM_CH6_DIV_FRAC_Lsb					0u
 
 	/* 0x80: Direct access to the PWM counter */
 	uint32_t volatile CH6_CTR;
 	/*  */
-#define PWM_CH6_CTR_CH6_CTR_msb					15u
-#define PWM_CH6_CTR_CH6_CTR_lsb					0u
+#define PWM_CH6_CTR_CH6_CTR_Msb					15u
+#define PWM_CH6_CTR_CH6_CTR_Lsb					0u
 
 	/* 0x84: Counter compare values */
 	uint32_t volatile CH6_CC;
 	/*  */
-#define PWM_CH6_CC_B_msb					31u
-#define PWM_CH6_CC_B_lsb					16u
+#define PWM_CH6_CC_B_Msb					31u
+#define PWM_CH6_CC_B_Lsb					16u
 	/*  */
-#define PWM_CH6_CC_A_msb					15u
-#define PWM_CH6_CC_A_lsb					0u
+#define PWM_CH6_CC_A_Msb					15u
+#define PWM_CH6_CC_A_Lsb					0u
 
 	/* 0x88: Counter wrap value */
 	uint32_t volatile CH6_TOP;
 	/*  */
-#define PWM_CH6_TOP_CH6_TOP_msb					15u
-#define PWM_CH6_TOP_CH6_TOP_lsb					0u
+#define PWM_CH6_TOP_CH6_TOP_Msb					15u
+#define PWM_CH6_TOP_CH6_TOP_Lsb					0u
 
 	/* 0x8C: Control and status register */
 	uint32_t volatile CH7_CSR;
@@ -9421,8 +9421,8 @@ struct sdk_pwm {
 	/* Retard the phase of the counter by 1 count, while it is running. */
 #define PWM_CH7_CSR_PH_RET					6u
 	/*  */
-#define PWM_CH7_CSR_DIVMODE_msb					5u
-#define PWM_CH7_CSR_DIVMODE_lsb					4u
+#define PWM_CH7_CSR_DIVMODE_Msb					5u
+#define PWM_CH7_CSR_DIVMODE_Lsb					4u
 #define PWM_CH7_CSR_DIVMODE_DIV					0u
 #define PWM_CH7_CSR_DIVMODE_LEVEL				1u
 #define PWM_CH7_CSR_DIVMODE_RISE				2u
@@ -9439,32 +9439,32 @@ struct sdk_pwm {
 	/* 0x90: INT and FRAC form a fixed-point fractional number. */
 	uint32_t volatile CH7_DIV;
 	/*  */
-#define PWM_CH7_DIV_INT_msb					11u
-#define PWM_CH7_DIV_INT_lsb					4u
+#define PWM_CH7_DIV_INT_Msb					11u
+#define PWM_CH7_DIV_INT_Lsb					4u
 	/*  */
-#define PWM_CH7_DIV_FRAC_msb					3u
-#define PWM_CH7_DIV_FRAC_lsb					0u
+#define PWM_CH7_DIV_FRAC_Msb					3u
+#define PWM_CH7_DIV_FRAC_Lsb					0u
 
 	/* 0x94: Direct access to the PWM counter */
 	uint32_t volatile CH7_CTR;
 	/*  */
-#define PWM_CH7_CTR_CH7_CTR_msb					15u
-#define PWM_CH7_CTR_CH7_CTR_lsb					0u
+#define PWM_CH7_CTR_CH7_CTR_Msb					15u
+#define PWM_CH7_CTR_CH7_CTR_Lsb					0u
 
 	/* 0x98: Counter compare values */
 	uint32_t volatile CH7_CC;
 	/*  */
-#define PWM_CH7_CC_B_msb					31u
-#define PWM_CH7_CC_B_lsb					16u
+#define PWM_CH7_CC_B_Msb					31u
+#define PWM_CH7_CC_B_Lsb					16u
 	/*  */
-#define PWM_CH7_CC_A_msb					15u
-#define PWM_CH7_CC_A_lsb					0u
+#define PWM_CH7_CC_A_Msb					15u
+#define PWM_CH7_CC_A_Lsb					0u
 
 	/* 0x9C: Counter wrap value */
 	uint32_t volatile CH7_TOP;
 	/*  */
-#define PWM_CH7_TOP_CH7_TOP_msb					15u
-#define PWM_CH7_TOP_CH7_TOP_lsb					0u
+#define PWM_CH7_TOP_CH7_TOP_Msb					15u
+#define PWM_CH7_TOP_CH7_TOP_Lsb					0u
 
 	/* 0xA0: This register aliases the CSR_EN bits for all channels. */
 	uint32_t volatile EN;
@@ -9595,8 +9595,8 @@ struct sdk_timer {
 	/* 0x20: Indicates the armed/disarmed status of each alarm. */
 	uint32_t volatile ARMED;
 	/*  */
-#define TIMER_ARMED_ARMED_msb					3u
-#define TIMER_ARMED_ARMED_lsb					0u
+#define TIMER_ARMED_ARMED_Msb					3u
+#define TIMER_ARMED_ARMED_Lsb					0u
 
 	/* 0x24: Raw read from bits 63:32 of time (no side effects) */
 	uint32_t volatile TIMERAWH;
@@ -9680,14 +9680,14 @@ struct sdk_watchdog {
 	/* Pause the watchdog timer when JTAG is accessing the bus fabric */
 #define WATCHDOG_CTRL_PAUSE_JTAG				24u
 	/* Indicates the number of ticks / 2 (see errata RP2040-E1) before a watchdog reset will be triggered */
-#define WATCHDOG_CTRL_TIME_msb					23u
-#define WATCHDOG_CTRL_TIME_lsb					0u
+#define WATCHDOG_CTRL_TIME_Msb					23u
+#define WATCHDOG_CTRL_TIME_Lsb					0u
 
 	/* 0x04: Load the watchdog timer. The maximum setting is 0xffffff which corresponds to 0xffffff / 2 ticks before triggering a watchdog reset (see errata RP2040-E1). */
 	uint32_t volatile LOAD;
 	/*  */
-#define WATCHDOG_LOAD_LOAD_msb					23u
-#define WATCHDOG_LOAD_LOAD_lsb					0u
+#define WATCHDOG_LOAD_LOAD_Msb					23u
+#define WATCHDOG_LOAD_LOAD_Lsb					0u
 
 	/* 0x08: Logs the reason for the last reset. */
 	uint32_t volatile REASON;
@@ -9723,15 +9723,15 @@ struct sdk_watchdog {
 	/* 0x2C: Controls the tick generator */
 	uint32_t volatile TICK;
 	/* Count down timer: the remaining number clk_tick cycles before the next tick is generated. */
-#define WATCHDOG_TICK_COUNT_msb					19u
-#define WATCHDOG_TICK_COUNT_lsb					11u
+#define WATCHDOG_TICK_COUNT_Msb					19u
+#define WATCHDOG_TICK_COUNT_Lsb					11u
 	/* Is the tick generator running? */
 #define WATCHDOG_TICK_RUNNING					10u
 	/* start / stop tick generation */
 #define WATCHDOG_TICK_ENABLE					9u
 	/* Total number of clk_tick cycles before the next tick. */
-#define WATCHDOG_TICK_CYCLES_msb				8u
-#define WATCHDOG_TICK_CYCLES_lsb				0u
+#define WATCHDOG_TICK_CYCLES_Msb				8u
+#define WATCHDOG_TICK_CYCLES_Lsb				0u
 
 };
 
@@ -9743,35 +9743,35 @@ struct sdk_rtc {
 	/* 0x00: Divider minus 1 for the 1 second counter. */
 	uint32_t volatile CLKDIV_M1;
 	/*  */
-#define RTC_CLKDIV_M1_CLKDIV_M1_msb				15u
-#define RTC_CLKDIV_M1_CLKDIV_M1_lsb				0u
+#define RTC_CLKDIV_M1_CLKDIV_M1_Msb				15u
+#define RTC_CLKDIV_M1_CLKDIV_M1_Lsb				0u
 
 	/* 0x04: RTC setup register 0 */
 	uint32_t volatile SETUP_0;
 	/* Year */
-#define RTC_SETUP_0_YEAR_msb					23u
-#define RTC_SETUP_0_YEAR_lsb					12u
+#define RTC_SETUP_0_YEAR_Msb					23u
+#define RTC_SETUP_0_YEAR_Lsb					12u
 	/* Month (1..12) */
-#define RTC_SETUP_0_MONTH_msb					11u
-#define RTC_SETUP_0_MONTH_lsb					8u
+#define RTC_SETUP_0_MONTH_Msb					11u
+#define RTC_SETUP_0_MONTH_Lsb					8u
 	/* Day of the month (1..31) */
-#define RTC_SETUP_0_DAY_msb					4u
-#define RTC_SETUP_0_DAY_lsb					0u
+#define RTC_SETUP_0_DAY_Msb					4u
+#define RTC_SETUP_0_DAY_Lsb					0u
 
 	/* 0x08: RTC setup register 1 */
 	uint32_t volatile SETUP_1;
 	/* Day of the week: 1-Monday...0-Sunday ISO 8601 mod 7 */
-#define RTC_SETUP_1_DOTW_msb					26u
-#define RTC_SETUP_1_DOTW_lsb					24u
+#define RTC_SETUP_1_DOTW_Msb					26u
+#define RTC_SETUP_1_DOTW_Lsb					24u
 	/* Hours */
-#define RTC_SETUP_1_HOUR_msb					20u
-#define RTC_SETUP_1_HOUR_lsb					16u
+#define RTC_SETUP_1_HOUR_Msb					20u
+#define RTC_SETUP_1_HOUR_Lsb					16u
 	/* Minutes */
-#define RTC_SETUP_1_MIN_msb					13u
-#define RTC_SETUP_1_MIN_lsb					8u
+#define RTC_SETUP_1_MIN_Msb					13u
+#define RTC_SETUP_1_MIN_Lsb					8u
 	/* Seconds */
-#define RTC_SETUP_1_SEC_msb					5u
-#define RTC_SETUP_1_SEC_lsb					0u
+#define RTC_SETUP_1_SEC_Msb					5u
+#define RTC_SETUP_1_SEC_Lsb					0u
 
 	/* 0x0C: RTC Control and status */
 	uint32_t volatile CTRL;
@@ -9797,14 +9797,14 @@ struct sdk_rtc {
 	/* Enable day matching */
 #define RTC_IRQ_SETUP_0_DAY_ENA					24u
 	/* Year */
-#define RTC_IRQ_SETUP_0_YEAR_msb				23u
-#define RTC_IRQ_SETUP_0_YEAR_lsb				12u
+#define RTC_IRQ_SETUP_0_YEAR_Msb				23u
+#define RTC_IRQ_SETUP_0_YEAR_Lsb				12u
 	/* Month (1..12) */
-#define RTC_IRQ_SETUP_0_MONTH_msb				11u
-#define RTC_IRQ_SETUP_0_MONTH_lsb				8u
+#define RTC_IRQ_SETUP_0_MONTH_Msb				11u
+#define RTC_IRQ_SETUP_0_MONTH_Lsb				8u
 	/* Day of the month (1..31) */
-#define RTC_IRQ_SETUP_0_DAY_msb					4u
-#define RTC_IRQ_SETUP_0_DAY_lsb					0u
+#define RTC_IRQ_SETUP_0_DAY_Msb					4u
+#define RTC_IRQ_SETUP_0_DAY_Lsb					0u
 
 	/* 0x14: Interrupt setup register 1 */
 	uint32_t volatile IRQ_SETUP_1;
@@ -9817,44 +9817,44 @@ struct sdk_rtc {
 	/* Enable second matching */
 #define RTC_IRQ_SETUP_1_SEC_ENA					28u
 	/* Day of the week */
-#define RTC_IRQ_SETUP_1_DOTW_msb				26u
-#define RTC_IRQ_SETUP_1_DOTW_lsb				24u
+#define RTC_IRQ_SETUP_1_DOTW_Msb				26u
+#define RTC_IRQ_SETUP_1_DOTW_Lsb				24u
 	/* Hours */
-#define RTC_IRQ_SETUP_1_HOUR_msb				20u
-#define RTC_IRQ_SETUP_1_HOUR_lsb				16u
+#define RTC_IRQ_SETUP_1_HOUR_Msb				20u
+#define RTC_IRQ_SETUP_1_HOUR_Lsb				16u
 	/* Minutes */
-#define RTC_IRQ_SETUP_1_MIN_msb					13u
-#define RTC_IRQ_SETUP_1_MIN_lsb					8u
+#define RTC_IRQ_SETUP_1_MIN_Msb					13u
+#define RTC_IRQ_SETUP_1_MIN_Lsb					8u
 	/* Seconds */
-#define RTC_IRQ_SETUP_1_SEC_msb					5u
-#define RTC_IRQ_SETUP_1_SEC_lsb					0u
+#define RTC_IRQ_SETUP_1_SEC_Msb					5u
+#define RTC_IRQ_SETUP_1_SEC_Lsb					0u
 
 	/* 0x18: RTC register 1. */
 	uint32_t volatile RTC_1;
 	/* Year */
-#define RTC_RTC_1_YEAR_msb					23u
-#define RTC_RTC_1_YEAR_lsb					12u
+#define RTC_RTC_1_YEAR_Msb					23u
+#define RTC_RTC_1_YEAR_Lsb					12u
 	/* Month (1..12) */
-#define RTC_RTC_1_MONTH_msb					11u
-#define RTC_RTC_1_MONTH_lsb					8u
+#define RTC_RTC_1_MONTH_Msb					11u
+#define RTC_RTC_1_MONTH_Lsb					8u
 	/* Day of the month (1..31) */
-#define RTC_RTC_1_DAY_msb					4u
-#define RTC_RTC_1_DAY_lsb					0u
+#define RTC_RTC_1_DAY_Msb					4u
+#define RTC_RTC_1_DAY_Lsb					0u
 
 	/* 0x1C: RTC register 0 */
 	uint32_t volatile RTC_0;
 	/* Day of the week */
-#define RTC_RTC_0_DOTW_msb					26u
-#define RTC_RTC_0_DOTW_lsb					24u
+#define RTC_RTC_0_DOTW_Msb					26u
+#define RTC_RTC_0_DOTW_Lsb					24u
 	/* Hours */
-#define RTC_RTC_0_HOUR_msb					20u
-#define RTC_RTC_0_HOUR_lsb					16u
+#define RTC_RTC_0_HOUR_Msb					20u
+#define RTC_RTC_0_HOUR_Lsb					16u
 	/* Minutes */
-#define RTC_RTC_0_MIN_msb					13u
-#define RTC_RTC_0_MIN_lsb					8u
+#define RTC_RTC_0_MIN_Msb					13u
+#define RTC_RTC_0_MIN_Lsb					8u
 	/* Seconds */
-#define RTC_RTC_0_SEC_msb					5u
-#define RTC_RTC_0_SEC_lsb					0u
+#define RTC_RTC_0_SEC_Msb					5u
+#define RTC_RTC_0_SEC_Lsb					0u
 
 	/* 0x20: Raw Interrupts */
 	uint32_t volatile INTR;
@@ -9886,13 +9886,13 @@ struct sdk_rosc {
 	/* 0x00: Ring Oscillator control */
 	uint32_t volatile CTRL;
 	/* On power-up this field is initialised to ENABLE */
-#define ROSC_CTRL_ENABLE_msb					23u
-#define ROSC_CTRL_ENABLE_lsb					12u
+#define ROSC_CTRL_ENABLE_Msb					23u
+#define ROSC_CTRL_ENABLE_Lsb					12u
 #define ROSC_CTRL_ENABLE_DISABLE				3358u
 #define ROSC_CTRL_ENABLE_ENABLE					4011u
 	/* Controls the number of delay stages in the ROSC ring */
-#define ROSC_CTRL_FREQ_RANGE_msb				11u
-#define ROSC_CTRL_FREQ_RANGE_lsb				0u
+#define ROSC_CTRL_FREQ_RANGE_Msb				11u
+#define ROSC_CTRL_FREQ_RANGE_Lsb				0u
 #define ROSC_CTRL_FREQ_RANGE_LOW				4004u
 #define ROSC_CTRL_FREQ_RANGE_MEDIUM				4005u
 #define ROSC_CTRL_FREQ_RANGE_HIGH				4007u
@@ -9901,40 +9901,40 @@ struct sdk_rosc {
 	/* 0x04: The FREQA & FREQB registers control the frequency by controlling the drive strength of each stage */
 	uint32_t volatile FREQA;
 	/* Set to 0x9696 to apply the settings */
-#define ROSC_FREQA_PASSWD_msb					31u
-#define ROSC_FREQA_PASSWD_lsb					16u
+#define ROSC_FREQA_PASSWD_Msb					31u
+#define ROSC_FREQA_PASSWD_Lsb					16u
 #define ROSC_FREQA_PASSWD_PASS					38550u
 	/* Stage 3 drive strength */
-#define ROSC_FREQA_DS3_msb					14u
-#define ROSC_FREQA_DS3_lsb					12u
+#define ROSC_FREQA_DS3_Msb					14u
+#define ROSC_FREQA_DS3_Lsb					12u
 	/* Stage 2 drive strength */
-#define ROSC_FREQA_DS2_msb					10u
-#define ROSC_FREQA_DS2_lsb					8u
+#define ROSC_FREQA_DS2_Msb					10u
+#define ROSC_FREQA_DS2_Lsb					8u
 	/* Stage 1 drive strength */
-#define ROSC_FREQA_DS1_msb					6u
-#define ROSC_FREQA_DS1_lsb					4u
+#define ROSC_FREQA_DS1_Msb					6u
+#define ROSC_FREQA_DS1_Lsb					4u
 	/* Stage 0 drive strength */
-#define ROSC_FREQA_DS0_msb					2u
-#define ROSC_FREQA_DS0_lsb					0u
+#define ROSC_FREQA_DS0_Msb					2u
+#define ROSC_FREQA_DS0_Lsb					0u
 
 	/* 0x08: For a detailed description see freqa register */
 	uint32_t volatile FREQB;
 	/* Set to 0x9696 to apply the settings */
-#define ROSC_FREQB_PASSWD_msb					31u
-#define ROSC_FREQB_PASSWD_lsb					16u
+#define ROSC_FREQB_PASSWD_Msb					31u
+#define ROSC_FREQB_PASSWD_Lsb					16u
 #define ROSC_FREQB_PASSWD_PASS					38550u
 	/* Stage 7 drive strength */
-#define ROSC_FREQB_DS7_msb					14u
-#define ROSC_FREQB_DS7_lsb					12u
+#define ROSC_FREQB_DS7_Msb					14u
+#define ROSC_FREQB_DS7_Lsb					12u
 	/* Stage 6 drive strength */
-#define ROSC_FREQB_DS6_msb					10u
-#define ROSC_FREQB_DS6_lsb					8u
+#define ROSC_FREQB_DS6_Msb					10u
+#define ROSC_FREQB_DS6_Lsb					8u
 	/* Stage 5 drive strength */
-#define ROSC_FREQB_DS5_msb					6u
-#define ROSC_FREQB_DS5_lsb					4u
+#define ROSC_FREQB_DS5_Msb					6u
+#define ROSC_FREQB_DS5_Lsb					4u
 	/* Stage 4 drive strength */
-#define ROSC_FREQB_DS4_msb					2u
-#define ROSC_FREQB_DS4_lsb					0u
+#define ROSC_FREQB_DS4_Msb					2u
+#define ROSC_FREQB_DS4_Lsb					0u
 
 	/* 0x0C: Ring Oscillator pause control */
 	uint32_t volatile DORMANT;
@@ -9942,22 +9942,22 @@ struct sdk_rosc {
 	/* 0x10: Controls the output divider */
 	uint32_t volatile DIV;
 	/* set to 0xaa0 + div where */
-#define ROSC_DIV_DIV_msb					11u
-#define ROSC_DIV_DIV_lsb					0u
+#define ROSC_DIV_DIV_Msb					11u
+#define ROSC_DIV_DIV_Lsb					0u
 #define ROSC_DIV_DIV_PASS					2720u
 
 	/* 0x14: Controls the phase shifted output */
 	uint32_t volatile PHASE;
 	/* set to 0xaa */
-#define ROSC_PHASE_PASSWD_msb					11u
-#define ROSC_PHASE_PASSWD_lsb					4u
+#define ROSC_PHASE_PASSWD_Msb					11u
+#define ROSC_PHASE_PASSWD_Lsb					4u
 	/* enable the phase-shifted output */
 #define ROSC_PHASE_ENABLE					3u
 	/* invert the phase-shifted output */
 #define ROSC_PHASE_FLIP						2u
 	/* phase shift the phase-shifted output by SHIFT input clocks */
-#define ROSC_PHASE_SHIFT_msb					1u
-#define ROSC_PHASE_SHIFT_lsb					0u
+#define ROSC_PHASE_SHIFT_Msb					1u
+#define ROSC_PHASE_SHIFT_Lsb					0u
 
 	/* 0x18: Ring Oscillator Status */
 	uint32_t volatile STATUS;
@@ -9978,8 +9978,8 @@ struct sdk_rosc {
 	/* 0x20: A down counter running at the ROSC frequency which counts to zero and stops. */
 	uint32_t volatile COUNT;
 	/*  */
-#define ROSC_COUNT_COUNT_msb					7u
-#define ROSC_COUNT_COUNT_lsb					0u
+#define ROSC_COUNT_COUNT_Msb					7u
+#define ROSC_COUNT_COUNT_Lsb					0u
 
 };
 
@@ -9993,8 +9993,8 @@ struct sdk_vreg_and_chip_reset {
 	/* regulation status */
 #define VREG_AND_CHIP_RESET_VREG_ROK				12u
 	/* output voltage select */
-#define VREG_AND_CHIP_RESET_VREG_VSEL_msb			7u
-#define VREG_AND_CHIP_RESET_VREG_VSEL_lsb			4u
+#define VREG_AND_CHIP_RESET_VREG_VSEL_Msb			7u
+#define VREG_AND_CHIP_RESET_VREG_VSEL_Lsb			4u
 	/* high impedance mode select */
 #define VREG_AND_CHIP_RESET_VREG_HIZ				1u
 	/* enable */
@@ -10003,8 +10003,8 @@ struct sdk_vreg_and_chip_reset {
 	/* 0x04: brown-out detection control */
 	uint32_t volatile BOD;
 	/* threshold select */
-#define VREG_AND_CHIP_RESET_BOD_VSEL_msb			7u
-#define VREG_AND_CHIP_RESET_BOD_VSEL_lsb			4u
+#define VREG_AND_CHIP_RESET_BOD_VSEL_Msb			7u
+#define VREG_AND_CHIP_RESET_BOD_VSEL_Lsb			4u
 	/* enable */
 #define VREG_AND_CHIP_RESET_BOD_EN				0u
 
@@ -10066,29 +10066,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH0_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH0_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH0_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH0_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH0_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH0_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH0_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH0_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH0_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH0_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH0_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH0_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH0_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH0_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH0_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH0_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH0_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH0_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH0_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH0_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH0_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH0_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH0_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH0_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH0_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH0_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH0_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH0_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH0_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10159,29 +10159,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH1_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH1_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH1_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH1_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH1_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH1_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH1_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH1_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH1_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH1_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH1_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH1_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH1_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH1_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH1_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH1_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH1_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH1_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH1_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH1_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH1_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH1_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH1_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH1_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH1_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH1_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH1_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH1_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH1_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10252,29 +10252,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH2_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH2_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH2_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH2_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH2_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH2_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH2_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH2_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH2_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH2_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH2_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH2_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH2_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH2_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH2_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH2_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH2_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH2_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH2_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH2_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH2_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH2_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH2_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH2_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH2_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH2_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH2_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH2_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH2_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10345,29 +10345,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH3_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH3_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH3_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH3_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH3_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH3_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH3_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH3_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH3_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH3_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH3_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH3_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH3_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH3_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH3_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH3_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH3_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH3_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH3_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH3_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH3_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH3_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH3_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH3_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH3_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH3_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH3_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH3_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH3_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10438,29 +10438,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH4_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH4_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH4_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH4_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH4_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH4_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH4_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH4_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH4_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH4_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH4_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH4_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH4_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH4_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH4_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH4_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH4_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH4_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH4_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH4_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH4_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH4_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH4_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH4_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH4_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH4_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH4_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH4_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH4_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10531,29 +10531,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH5_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH5_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH5_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH5_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH5_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH5_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH5_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH5_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH5_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH5_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH5_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH5_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH5_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH5_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH5_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH5_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH5_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH5_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH5_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH5_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH5_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH5_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH5_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH5_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH5_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH5_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH5_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH5_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH5_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10624,29 +10624,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH6_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH6_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH6_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH6_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH6_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH6_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH6_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH6_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH6_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH6_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH6_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH6_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH6_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH6_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH6_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH6_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH6_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH6_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH6_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH6_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH6_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH6_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH6_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH6_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH6_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH6_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH6_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH6_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH6_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10717,29 +10717,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH7_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH7_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH7_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH7_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH7_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH7_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH7_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH7_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH7_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH7_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH7_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH7_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH7_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH7_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH7_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH7_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH7_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH7_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH7_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH7_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH7_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH7_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH7_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH7_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH7_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH7_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH7_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH7_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH7_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10810,29 +10810,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH8_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH8_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH8_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH8_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH8_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH8_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH8_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH8_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH8_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH8_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH8_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH8_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH8_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH8_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH8_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH8_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH8_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH8_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH8_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH8_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH8_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH8_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH8_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH8_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH8_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH8_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH8_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH8_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH8_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10903,29 +10903,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH9_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH9_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH9_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH9_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH9_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH9_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH9_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH9_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH9_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH9_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH9_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH9_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH9_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH9_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH9_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH9_CTRL_TRIG_RING_SIZE_msb				9u
-#define DMA_CH9_CTRL_TRIG_RING_SIZE_lsb				6u
+#define DMA_CH9_CTRL_TRIG_RING_SIZE_Msb				9u
+#define DMA_CH9_CTRL_TRIG_RING_SIZE_Lsb				6u
 #define DMA_CH9_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH9_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH9_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH9_CTRL_TRIG_DATA_SIZE_msb				3u
-#define DMA_CH9_CTRL_TRIG_DATA_SIZE_lsb				2u
+#define DMA_CH9_CTRL_TRIG_DATA_SIZE_Msb				3u
+#define DMA_CH9_CTRL_TRIG_DATA_SIZE_Lsb				2u
 #define DMA_CH9_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH9_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH9_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -10996,29 +10996,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH10_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH10_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH10_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH10_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH10_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH10_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH10_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH10_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH10_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH10_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH10_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH10_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH10_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH10_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH10_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH10_CTRL_TRIG_RING_SIZE_msb			9u
-#define DMA_CH10_CTRL_TRIG_RING_SIZE_lsb			6u
+#define DMA_CH10_CTRL_TRIG_RING_SIZE_Msb			9u
+#define DMA_CH10_CTRL_TRIG_RING_SIZE_Lsb			6u
 #define DMA_CH10_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH10_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH10_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH10_CTRL_TRIG_DATA_SIZE_msb			3u
-#define DMA_CH10_CTRL_TRIG_DATA_SIZE_lsb			2u
+#define DMA_CH10_CTRL_TRIG_DATA_SIZE_Msb			3u
+#define DMA_CH10_CTRL_TRIG_DATA_SIZE_Lsb			2u
 #define DMA_CH10_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH10_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH10_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -11089,29 +11089,29 @@ struct sdk_dma {
 	/* In QUIET mode, the channel does not generate IRQs at the end of every transfer block. */
 #define DMA_CH11_CTRL_TRIG_IRQ_QUIET				21u
 	/* Select a Transfer Request signal. */
-#define DMA_CH11_CTRL_TRIG_TREQ_SEL_msb				20u
-#define DMA_CH11_CTRL_TRIG_TREQ_SEL_lsb				15u
+#define DMA_CH11_CTRL_TRIG_TREQ_SEL_Msb				20u
+#define DMA_CH11_CTRL_TRIG_TREQ_SEL_Lsb				15u
 #define DMA_CH11_CTRL_TRIG_TREQ_SEL_TIMER0			59u
 #define DMA_CH11_CTRL_TRIG_TREQ_SEL_TIMER1			60u
 #define DMA_CH11_CTRL_TRIG_TREQ_SEL_TIMER2			61u
 #define DMA_CH11_CTRL_TRIG_TREQ_SEL_TIMER3			62u
 #define DMA_CH11_CTRL_TRIG_TREQ_SEL_PERMANENT			63u
 	/* When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. */
-#define DMA_CH11_CTRL_TRIG_CHAIN_TO_msb				14u
-#define DMA_CH11_CTRL_TRIG_CHAIN_TO_lsb				11u
+#define DMA_CH11_CTRL_TRIG_CHAIN_TO_Msb				14u
+#define DMA_CH11_CTRL_TRIG_CHAIN_TO_Lsb				11u
 	/* Select whether RING_SIZE applies to read or write addresses. */
 #define DMA_CH11_CTRL_TRIG_RING_SEL				10u
 	/* Size of address wrap region. If 0, don't wrap. For values n > 0, only the lower n bits of the address will change. This wraps the address on a (1 << n) byte boundary, facilitating access to naturally-aligned ring buffers. */
-#define DMA_CH11_CTRL_TRIG_RING_SIZE_msb			9u
-#define DMA_CH11_CTRL_TRIG_RING_SIZE_lsb			6u
+#define DMA_CH11_CTRL_TRIG_RING_SIZE_Msb			9u
+#define DMA_CH11_CTRL_TRIG_RING_SIZE_Lsb			6u
 #define DMA_CH11_CTRL_TRIG_RING_SIZE_RING_NONE			0u
 	/* If 1, the write address increments with each transfer. */
 #define DMA_CH11_CTRL_TRIG_INCR_WRITE				5u
 	/* If 1, the read address increments with each transfer. */
 #define DMA_CH11_CTRL_TRIG_INCR_READ				4u
 	/* Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer. */
-#define DMA_CH11_CTRL_TRIG_DATA_SIZE_msb			3u
-#define DMA_CH11_CTRL_TRIG_DATA_SIZE_lsb			2u
+#define DMA_CH11_CTRL_TRIG_DATA_SIZE_Msb			3u
+#define DMA_CH11_CTRL_TRIG_DATA_SIZE_Lsb			2u
 #define DMA_CH11_CTRL_TRIG_DATA_SIZE_SIZE_BYTE			0u
 #define DMA_CH11_CTRL_TRIG_DATA_SIZE_SIZE_HALFWORD		1u
 #define DMA_CH11_CTRL_TRIG_DATA_SIZE_SIZE_WORD			2u
@@ -11162,26 +11162,26 @@ struct sdk_dma {
 	/* 0x400: Interrupt Status (raw) */
 	uint32_t volatile INTR;
 	/* Raw interrupt status for DMA Channels 0..15. */
-#define DMA_INTR_INTR_msb					15u
-#define DMA_INTR_INTR_lsb					0u
+#define DMA_INTR_INTR_Msb					15u
+#define DMA_INTR_INTR_Lsb					0u
 
 	/* 0x404: Interrupt Enables for IRQ 0 */
 	uint32_t volatile INTE0;
 	/* Set bit n to pass interrupts from channel n to DMA IRQ 0. */
-#define DMA_INTE0_INTE0_msb					15u
-#define DMA_INTE0_INTE0_lsb					0u
+#define DMA_INTE0_INTE0_Msb					15u
+#define DMA_INTE0_INTE0_Lsb					0u
 
 	/* 0x408: Force Interrupts */
 	uint32_t volatile INTF0;
 	/* Write 1s to force the corresponding bits in INTE0. */
-#define DMA_INTF0_INTF0_msb					15u
-#define DMA_INTF0_INTF0_lsb					0u
+#define DMA_INTF0_INTF0_Msb					15u
+#define DMA_INTF0_INTF0_Lsb					0u
 
 	/* 0x40C: Interrupt Status for IRQ 0 */
 	uint32_t volatile INTS0;
 	/* Indicates active channel interrupt requests which are currently causing IRQ 0 to be asserted. */
-#define DMA_INTS0_INTS0_msb					15u
-#define DMA_INTS0_INTS0_lsb					0u
+#define DMA_INTS0_INTS0_Msb					15u
+#define DMA_INTS0_INTS0_Lsb					0u
 
 	/* 0x410 */
 	uint8_t RESERVED1[0x414-0x410];
@@ -11189,62 +11189,62 @@ struct sdk_dma {
 	/* 0x414: Interrupt Enables for IRQ 1 */
 	uint32_t volatile INTE1;
 	/* Set bit n to pass interrupts from channel n to DMA IRQ 1. */
-#define DMA_INTE1_INTE1_msb					15u
-#define DMA_INTE1_INTE1_lsb					0u
+#define DMA_INTE1_INTE1_Msb					15u
+#define DMA_INTE1_INTE1_Lsb					0u
 
 	/* 0x418: Force Interrupts for IRQ 1 */
 	uint32_t volatile INTF1;
 	/* Write 1s to force the corresponding bits in INTE0. */
-#define DMA_INTF1_INTF1_msb					15u
-#define DMA_INTF1_INTF1_lsb					0u
+#define DMA_INTF1_INTF1_Msb					15u
+#define DMA_INTF1_INTF1_Lsb					0u
 
 	/* 0x41C: Interrupt Status (masked) for IRQ 1 */
 	uint32_t volatile INTS1;
 	/* Indicates active channel interrupt requests which are currently causing IRQ 1 to be asserted. */
-#define DMA_INTS1_INTS1_msb					15u
-#define DMA_INTS1_INTS1_lsb					0u
+#define DMA_INTS1_INTS1_Msb					15u
+#define DMA_INTS1_INTS1_Lsb					0u
 
 	/* 0x420: Pacing (X/Y) Fractional Timer */
 	uint32_t volatile TIMER0;
 	/* Pacing Timer Dividend. Specifies the X value for the (X/Y) fractional timer. */
-#define DMA_TIMER0_X_msb					31u
-#define DMA_TIMER0_X_lsb					16u
+#define DMA_TIMER0_X_Msb					31u
+#define DMA_TIMER0_X_Lsb					16u
 	/* Pacing Timer Divisor. Specifies the Y value for the (X/Y) fractional timer. */
-#define DMA_TIMER0_Y_msb					15u
-#define DMA_TIMER0_Y_lsb					0u
+#define DMA_TIMER0_Y_Msb					15u
+#define DMA_TIMER0_Y_Lsb					0u
 
 	/* 0x424: Pacing (X/Y) Fractional Timer */
 	uint32_t volatile TIMER1;
 	/* Pacing Timer Dividend. Specifies the X value for the (X/Y) fractional timer. */
-#define DMA_TIMER1_X_msb					31u
-#define DMA_TIMER1_X_lsb					16u
+#define DMA_TIMER1_X_Msb					31u
+#define DMA_TIMER1_X_Lsb					16u
 	/* Pacing Timer Divisor. Specifies the Y value for the (X/Y) fractional timer. */
-#define DMA_TIMER1_Y_msb					15u
-#define DMA_TIMER1_Y_lsb					0u
+#define DMA_TIMER1_Y_Msb					15u
+#define DMA_TIMER1_Y_Lsb					0u
 
 	/* 0x428: Pacing (X/Y) Fractional Timer */
 	uint32_t volatile TIMER2;
 	/* Pacing Timer Dividend. Specifies the X value for the (X/Y) fractional timer. */
-#define DMA_TIMER2_X_msb					31u
-#define DMA_TIMER2_X_lsb					16u
+#define DMA_TIMER2_X_Msb					31u
+#define DMA_TIMER2_X_Lsb					16u
 	/* Pacing Timer Divisor. Specifies the Y value for the (X/Y) fractional timer. */
-#define DMA_TIMER2_Y_msb					15u
-#define DMA_TIMER2_Y_lsb					0u
+#define DMA_TIMER2_Y_Msb					15u
+#define DMA_TIMER2_Y_Lsb					0u
 
 	/* 0x42C: Pacing (X/Y) Fractional Timer */
 	uint32_t volatile TIMER3;
 	/* Pacing Timer Dividend. Specifies the X value for the (X/Y) fractional timer. */
-#define DMA_TIMER3_X_msb					31u
-#define DMA_TIMER3_X_lsb					16u
+#define DMA_TIMER3_X_Msb					31u
+#define DMA_TIMER3_X_Lsb					16u
 	/* Pacing Timer Divisor. Specifies the Y value for the (X/Y) fractional timer. */
-#define DMA_TIMER3_Y_msb					15u
-#define DMA_TIMER3_Y_lsb					0u
+#define DMA_TIMER3_Y_Msb					15u
+#define DMA_TIMER3_Y_Lsb					0u
 
 	/* 0x430: Trigger one or more channels simultaneously */
 	uint32_t volatile MULTI_CHAN_TRIGGER;
 	/* Each bit in this register corresponds to a DMA channel. */
-#define DMA_MULTI_CHAN_TRIGGER_MULTI_CHAN_TRIGGER_msb		15u
-#define DMA_MULTI_CHAN_TRIGGER_MULTI_CHAN_TRIGGER_lsb		0u
+#define DMA_MULTI_CHAN_TRIGGER_MULTI_CHAN_TRIGGER_Msb		15u
+#define DMA_MULTI_CHAN_TRIGGER_MULTI_CHAN_TRIGGER_Lsb		0u
 
 	/* 0x434: Sniffer Control */
 	uint32_t volatile SNIFF_CTRL;
@@ -11255,8 +11255,8 @@ struct sdk_dma {
 	/* Locally perform a byte reverse on the sniffed data, before feeding into checksum. */
 #define DMA_SNIFF_CTRL_BSWAP					9u
 	/*  */
-#define DMA_SNIFF_CTRL_CALC_msb					8u
-#define DMA_SNIFF_CTRL_CALC_lsb					5u
+#define DMA_SNIFF_CTRL_CALC_Msb					8u
+#define DMA_SNIFF_CTRL_CALC_Lsb					5u
 #define DMA_SNIFF_CTRL_CALC_CRC32				0u
 #define DMA_SNIFF_CTRL_CALC_CRC32R				1u
 #define DMA_SNIFF_CTRL_CALC_CRC16				2u
@@ -11264,8 +11264,8 @@ struct sdk_dma {
 #define DMA_SNIFF_CTRL_CALC_EVEN				14u
 #define DMA_SNIFF_CTRL_CALC_SUM					15u
 	/* DMA channel for Sniffer to observe */
-#define DMA_SNIFF_CTRL_DMACH_msb				4u
-#define DMA_SNIFF_CTRL_DMACH_lsb				1u
+#define DMA_SNIFF_CTRL_DMACH_Msb				4u
+#define DMA_SNIFF_CTRL_DMACH_Lsb				1u
 	/* Enable sniffer */
 #define DMA_SNIFF_CTRL_EN					0u
 
@@ -11278,26 +11278,26 @@ struct sdk_dma {
 	/* 0x440: Debug RAF, WAF, TDF levels */
 	uint32_t volatile FIFO_LEVELS;
 	/* Current Read-Address-FIFO fill level */
-#define DMA_FIFO_LEVELS_RAF_LVL_msb				23u
-#define DMA_FIFO_LEVELS_RAF_LVL_lsb				16u
+#define DMA_FIFO_LEVELS_RAF_LVL_Msb				23u
+#define DMA_FIFO_LEVELS_RAF_LVL_Lsb				16u
 	/* Current Write-Address-FIFO fill level */
-#define DMA_FIFO_LEVELS_WAF_LVL_msb				15u
-#define DMA_FIFO_LEVELS_WAF_LVL_lsb				8u
+#define DMA_FIFO_LEVELS_WAF_LVL_Msb				15u
+#define DMA_FIFO_LEVELS_WAF_LVL_Lsb				8u
 	/* Current Transfer-Data-FIFO fill level */
-#define DMA_FIFO_LEVELS_TDF_LVL_msb				7u
-#define DMA_FIFO_LEVELS_TDF_LVL_lsb				0u
+#define DMA_FIFO_LEVELS_TDF_LVL_Msb				7u
+#define DMA_FIFO_LEVELS_TDF_LVL_Lsb				0u
 
 	/* 0x444: Abort an in-progress transfer sequence on one or more channels */
 	uint32_t volatile CHAN_ABORT;
 	/* Each bit corresponds to a channel. */
-#define DMA_CHAN_ABORT_CHAN_ABORT_msb				15u
-#define DMA_CHAN_ABORT_CHAN_ABORT_lsb				0u
+#define DMA_CHAN_ABORT_CHAN_ABORT_Msb				15u
+#define DMA_CHAN_ABORT_CHAN_ABORT_Lsb				0u
 
 	/* 0x448: The number of channels this DMA instance is equipped with. */
 	uint32_t volatile N_CHANNELS;
 	/*  */
-#define DMA_N_CHANNELS_N_CHANNELS_msb				4u
-#define DMA_N_CHANNELS_N_CHANNELS_lsb				0u
+#define DMA_N_CHANNELS_N_CHANNELS_Msb				4u
+#define DMA_N_CHANNELS_N_CHANNELS_Lsb				0u
 
 	/* 0x44C */
 	uint8_t RESERVED3[0x800-0x44C];
@@ -11305,8 +11305,8 @@ struct sdk_dma {
 	/* 0x800: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH0_DBG_CTDREQ;
 	/*  */
-#define DMA_CH0_DBG_CTDREQ_CH0_DBG_CTDREQ_msb			5u
-#define DMA_CH0_DBG_CTDREQ_CH0_DBG_CTDREQ_lsb			0u
+#define DMA_CH0_DBG_CTDREQ_CH0_DBG_CTDREQ_Msb			5u
+#define DMA_CH0_DBG_CTDREQ_CH0_DBG_CTDREQ_Lsb			0u
 
 	/* 0x804: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH0_DBG_TCR;
@@ -11317,8 +11317,8 @@ struct sdk_dma {
 	/* 0x840: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH1_DBG_CTDREQ;
 	/*  */
-#define DMA_CH1_DBG_CTDREQ_CH1_DBG_CTDREQ_msb			5u
-#define DMA_CH1_DBG_CTDREQ_CH1_DBG_CTDREQ_lsb			0u
+#define DMA_CH1_DBG_CTDREQ_CH1_DBG_CTDREQ_Msb			5u
+#define DMA_CH1_DBG_CTDREQ_CH1_DBG_CTDREQ_Lsb			0u
 
 	/* 0x844: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH1_DBG_TCR;
@@ -11329,8 +11329,8 @@ struct sdk_dma {
 	/* 0x880: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH2_DBG_CTDREQ;
 	/*  */
-#define DMA_CH2_DBG_CTDREQ_CH2_DBG_CTDREQ_msb			5u
-#define DMA_CH2_DBG_CTDREQ_CH2_DBG_CTDREQ_lsb			0u
+#define DMA_CH2_DBG_CTDREQ_CH2_DBG_CTDREQ_Msb			5u
+#define DMA_CH2_DBG_CTDREQ_CH2_DBG_CTDREQ_Lsb			0u
 
 	/* 0x884: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH2_DBG_TCR;
@@ -11341,8 +11341,8 @@ struct sdk_dma {
 	/* 0x8C0: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH3_DBG_CTDREQ;
 	/*  */
-#define DMA_CH3_DBG_CTDREQ_CH3_DBG_CTDREQ_msb			5u
-#define DMA_CH3_DBG_CTDREQ_CH3_DBG_CTDREQ_lsb			0u
+#define DMA_CH3_DBG_CTDREQ_CH3_DBG_CTDREQ_Msb			5u
+#define DMA_CH3_DBG_CTDREQ_CH3_DBG_CTDREQ_Lsb			0u
 
 	/* 0x8C4: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH3_DBG_TCR;
@@ -11353,8 +11353,8 @@ struct sdk_dma {
 	/* 0x900: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH4_DBG_CTDREQ;
 	/*  */
-#define DMA_CH4_DBG_CTDREQ_CH4_DBG_CTDREQ_msb			5u
-#define DMA_CH4_DBG_CTDREQ_CH4_DBG_CTDREQ_lsb			0u
+#define DMA_CH4_DBG_CTDREQ_CH4_DBG_CTDREQ_Msb			5u
+#define DMA_CH4_DBG_CTDREQ_CH4_DBG_CTDREQ_Lsb			0u
 
 	/* 0x904: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH4_DBG_TCR;
@@ -11365,8 +11365,8 @@ struct sdk_dma {
 	/* 0x940: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH5_DBG_CTDREQ;
 	/*  */
-#define DMA_CH5_DBG_CTDREQ_CH5_DBG_CTDREQ_msb			5u
-#define DMA_CH5_DBG_CTDREQ_CH5_DBG_CTDREQ_lsb			0u
+#define DMA_CH5_DBG_CTDREQ_CH5_DBG_CTDREQ_Msb			5u
+#define DMA_CH5_DBG_CTDREQ_CH5_DBG_CTDREQ_Lsb			0u
 
 	/* 0x944: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH5_DBG_TCR;
@@ -11377,8 +11377,8 @@ struct sdk_dma {
 	/* 0x980: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH6_DBG_CTDREQ;
 	/*  */
-#define DMA_CH6_DBG_CTDREQ_CH6_DBG_CTDREQ_msb			5u
-#define DMA_CH6_DBG_CTDREQ_CH6_DBG_CTDREQ_lsb			0u
+#define DMA_CH6_DBG_CTDREQ_CH6_DBG_CTDREQ_Msb			5u
+#define DMA_CH6_DBG_CTDREQ_CH6_DBG_CTDREQ_Lsb			0u
 
 	/* 0x984: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH6_DBG_TCR;
@@ -11389,8 +11389,8 @@ struct sdk_dma {
 	/* 0x9C0: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH7_DBG_CTDREQ;
 	/*  */
-#define DMA_CH7_DBG_CTDREQ_CH7_DBG_CTDREQ_msb			5u
-#define DMA_CH7_DBG_CTDREQ_CH7_DBG_CTDREQ_lsb			0u
+#define DMA_CH7_DBG_CTDREQ_CH7_DBG_CTDREQ_Msb			5u
+#define DMA_CH7_DBG_CTDREQ_CH7_DBG_CTDREQ_Lsb			0u
 
 	/* 0x9C4: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH7_DBG_TCR;
@@ -11401,8 +11401,8 @@ struct sdk_dma {
 	/* 0xA00: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH8_DBG_CTDREQ;
 	/*  */
-#define DMA_CH8_DBG_CTDREQ_CH8_DBG_CTDREQ_msb			5u
-#define DMA_CH8_DBG_CTDREQ_CH8_DBG_CTDREQ_lsb			0u
+#define DMA_CH8_DBG_CTDREQ_CH8_DBG_CTDREQ_Msb			5u
+#define DMA_CH8_DBG_CTDREQ_CH8_DBG_CTDREQ_Lsb			0u
 
 	/* 0xA04: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH8_DBG_TCR;
@@ -11413,8 +11413,8 @@ struct sdk_dma {
 	/* 0xA40: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH9_DBG_CTDREQ;
 	/*  */
-#define DMA_CH9_DBG_CTDREQ_CH9_DBG_CTDREQ_msb			5u
-#define DMA_CH9_DBG_CTDREQ_CH9_DBG_CTDREQ_lsb			0u
+#define DMA_CH9_DBG_CTDREQ_CH9_DBG_CTDREQ_Msb			5u
+#define DMA_CH9_DBG_CTDREQ_CH9_DBG_CTDREQ_Lsb			0u
 
 	/* 0xA44: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH9_DBG_TCR;
@@ -11425,8 +11425,8 @@ struct sdk_dma {
 	/* 0xA80: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH10_DBG_CTDREQ;
 	/*  */
-#define DMA_CH10_DBG_CTDREQ_CH10_DBG_CTDREQ_msb			5u
-#define DMA_CH10_DBG_CTDREQ_CH10_DBG_CTDREQ_lsb			0u
+#define DMA_CH10_DBG_CTDREQ_CH10_DBG_CTDREQ_Msb			5u
+#define DMA_CH10_DBG_CTDREQ_CH10_DBG_CTDREQ_Lsb			0u
 
 	/* 0xA84: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH10_DBG_TCR;
@@ -11437,8 +11437,8 @@ struct sdk_dma {
 	/* 0xAC0: Read: get channel DREQ counter (i.e. */
 	uint32_t volatile CH11_DBG_CTDREQ;
 	/*  */
-#define DMA_CH11_DBG_CTDREQ_CH11_DBG_CTDREQ_msb			5u
-#define DMA_CH11_DBG_CTDREQ_CH11_DBG_CTDREQ_lsb			0u
+#define DMA_CH11_DBG_CTDREQ_CH11_DBG_CTDREQ_Msb			5u
+#define DMA_CH11_DBG_CTDREQ_CH11_DBG_CTDREQ_Lsb			0u
 
 	/* 0xAC4: Read to get channel TRANS_COUNT reload value, i.e. */
 	uint32_t volatile CH11_DBG_TCR;
@@ -11453,23 +11453,23 @@ struct sdk_usbctrl_dpram {
 	/* 0x00: Bytes 0-3 of the SETUP packet from the host. */
 	uint32_t volatile SETUP_PACKET_LOW;
 	/*  */
-#define USBCTRL_DPRAM_SETUP_PACKET_LOW_WVALUE_msb		31u
-#define USBCTRL_DPRAM_SETUP_PACKET_LOW_WVALUE_lsb		16u
+#define USBCTRL_DPRAM_SETUP_PACKET_LOW_WVALUE_Msb		31u
+#define USBCTRL_DPRAM_SETUP_PACKET_LOW_WVALUE_Lsb		16u
 	/*  */
-#define USBCTRL_DPRAM_SETUP_PACKET_LOW_BREQUEST_msb		15u
-#define USBCTRL_DPRAM_SETUP_PACKET_LOW_BREQUEST_lsb		8u
+#define USBCTRL_DPRAM_SETUP_PACKET_LOW_BREQUEST_Msb		15u
+#define USBCTRL_DPRAM_SETUP_PACKET_LOW_BREQUEST_Lsb		8u
 	/*  */
-#define USBCTRL_DPRAM_SETUP_PACKET_LOW_BMREQUESTTYPE_msb	7u
-#define USBCTRL_DPRAM_SETUP_PACKET_LOW_BMREQUESTTYPE_lsb	0u
+#define USBCTRL_DPRAM_SETUP_PACKET_LOW_BMREQUESTTYPE_Msb	7u
+#define USBCTRL_DPRAM_SETUP_PACKET_LOW_BMREQUESTTYPE_Lsb	0u
 
 	/* 0x04: Bytes 4-7 of the setup packet from the host. */
 	uint32_t volatile SETUP_PACKET_HIGH;
 	/*  */
-#define USBCTRL_DPRAM_SETUP_PACKET_HIGH_WLENGTH_msb		31u
-#define USBCTRL_DPRAM_SETUP_PACKET_HIGH_WLENGTH_lsb		16u
+#define USBCTRL_DPRAM_SETUP_PACKET_HIGH_WLENGTH_Msb		31u
+#define USBCTRL_DPRAM_SETUP_PACKET_HIGH_WLENGTH_Lsb		16u
 	/*  */
-#define USBCTRL_DPRAM_SETUP_PACKET_HIGH_WINDEX_msb		15u
-#define USBCTRL_DPRAM_SETUP_PACKET_HIGH_WINDEX_lsb		0u
+#define USBCTRL_DPRAM_SETUP_PACKET_HIGH_WINDEX_Msb		15u
+#define USBCTRL_DPRAM_SETUP_PACKET_HIGH_WINDEX_Lsb		0u
 
 	/* 0x08:  */
 	uint32_t volatile EP1_IN_CONTROL;
@@ -11482,8 +11482,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP1_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP1_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP1_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP1_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP1_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP1_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP1_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP1_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11493,8 +11493,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP1_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP1_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP1_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP1_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP1_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x0C:  */
 	uint32_t volatile EP1_OUT_CONTROL;
@@ -11507,8 +11507,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP1_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP1_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP1_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP1_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP1_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP1_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP1_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP1_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11518,8 +11518,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP1_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP1_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP1_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP1_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP1_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x10:  */
 	uint32_t volatile EP2_IN_CONTROL;
@@ -11532,8 +11532,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP2_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP2_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP2_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP2_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP2_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP2_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP2_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP2_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11543,8 +11543,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP2_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP2_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP2_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP2_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP2_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x14:  */
 	uint32_t volatile EP2_OUT_CONTROL;
@@ -11557,8 +11557,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP2_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP2_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP2_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP2_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP2_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP2_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP2_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP2_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11568,8 +11568,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP2_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP2_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP2_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP2_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP2_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x18:  */
 	uint32_t volatile EP3_IN_CONTROL;
@@ -11582,8 +11582,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP3_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP3_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP3_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP3_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP3_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP3_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP3_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP3_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11593,8 +11593,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP3_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP3_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP3_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP3_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP3_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x1C:  */
 	uint32_t volatile EP3_OUT_CONTROL;
@@ -11607,8 +11607,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP3_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP3_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP3_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP3_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP3_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP3_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP3_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP3_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11618,8 +11618,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP3_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP3_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP3_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP3_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP3_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x20:  */
 	uint32_t volatile EP4_IN_CONTROL;
@@ -11632,8 +11632,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP4_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP4_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP4_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP4_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP4_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP4_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP4_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP4_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11643,8 +11643,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP4_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP4_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP4_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP4_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP4_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x24:  */
 	uint32_t volatile EP4_OUT_CONTROL;
@@ -11657,8 +11657,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP4_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP4_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP4_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP4_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP4_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP4_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP4_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP4_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11668,8 +11668,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP4_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP4_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP4_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP4_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP4_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x28:  */
 	uint32_t volatile EP5_IN_CONTROL;
@@ -11682,8 +11682,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP5_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP5_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP5_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP5_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP5_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP5_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP5_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP5_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11693,8 +11693,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP5_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP5_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP5_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP5_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP5_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x2C:  */
 	uint32_t volatile EP5_OUT_CONTROL;
@@ -11707,8 +11707,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP5_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP5_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP5_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP5_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP5_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP5_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP5_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP5_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11718,8 +11718,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP5_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP5_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP5_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP5_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP5_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x30:  */
 	uint32_t volatile EP6_IN_CONTROL;
@@ -11732,8 +11732,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP6_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP6_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP6_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP6_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP6_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP6_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP6_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP6_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11743,8 +11743,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP6_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP6_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP6_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP6_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP6_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x34:  */
 	uint32_t volatile EP6_OUT_CONTROL;
@@ -11757,8 +11757,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP6_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP6_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP6_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP6_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP6_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP6_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP6_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP6_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11768,8 +11768,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP6_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP6_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP6_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP6_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP6_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x38:  */
 	uint32_t volatile EP7_IN_CONTROL;
@@ -11782,8 +11782,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP7_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP7_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP7_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP7_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP7_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP7_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP7_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP7_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11793,8 +11793,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP7_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP7_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP7_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP7_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP7_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x3C:  */
 	uint32_t volatile EP7_OUT_CONTROL;
@@ -11807,8 +11807,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP7_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP7_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP7_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP7_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP7_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP7_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP7_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP7_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11818,8 +11818,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP7_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP7_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP7_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP7_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP7_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x40:  */
 	uint32_t volatile EP8_IN_CONTROL;
@@ -11832,8 +11832,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP8_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP8_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP8_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP8_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP8_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP8_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP8_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP8_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11843,8 +11843,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP8_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP8_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP8_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP8_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP8_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x44:  */
 	uint32_t volatile EP8_OUT_CONTROL;
@@ -11857,8 +11857,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP8_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP8_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP8_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP8_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP8_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP8_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP8_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP8_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11868,8 +11868,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP8_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP8_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP8_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP8_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP8_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x48:  */
 	uint32_t volatile EP9_IN_CONTROL;
@@ -11882,8 +11882,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP9_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP9_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP9_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP9_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP9_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP9_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP9_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP9_IN_CONTROL_ENDPOINT_TYPE_BULK		2u
@@ -11893,8 +11893,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP9_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP9_IN_CONTROL_BUFFER_ADDRESS_msb		15u
-#define USBCTRL_DPRAM_EP9_IN_CONTROL_BUFFER_ADDRESS_lsb		0u
+#define USBCTRL_DPRAM_EP9_IN_CONTROL_BUFFER_ADDRESS_Msb		15u
+#define USBCTRL_DPRAM_EP9_IN_CONTROL_BUFFER_ADDRESS_Lsb		0u
 
 	/* 0x4C:  */
 	uint32_t volatile EP9_OUT_CONTROL;
@@ -11907,8 +11907,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP9_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP9_OUT_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP9_OUT_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP9_OUT_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP9_OUT_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP9_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP9_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP9_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11918,8 +11918,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP9_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP9_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP9_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP9_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP9_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x50:  */
 	uint32_t volatile EP10_IN_CONTROL;
@@ -11932,8 +11932,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP10_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP10_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP10_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP10_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP10_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP10_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP10_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP10_IN_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11943,8 +11943,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP10_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP10_IN_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP10_IN_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP10_IN_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP10_IN_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x54:  */
 	uint32_t volatile EP10_OUT_CONTROL;
@@ -11957,8 +11957,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP10_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP10_OUT_CONTROL_ENDPOINT_TYPE_msb	27u
-#define USBCTRL_DPRAM_EP10_OUT_CONTROL_ENDPOINT_TYPE_lsb	26u
+#define USBCTRL_DPRAM_EP10_OUT_CONTROL_ENDPOINT_TYPE_Msb	27u
+#define USBCTRL_DPRAM_EP10_OUT_CONTROL_ENDPOINT_TYPE_Lsb	26u
 #define USBCTRL_DPRAM_EP10_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP10_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP10_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11968,8 +11968,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP10_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP10_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP10_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP10_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP10_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x58:  */
 	uint32_t volatile EP11_IN_CONTROL;
@@ -11982,8 +11982,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP11_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP11_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP11_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP11_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP11_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP11_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP11_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP11_IN_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -11993,8 +11993,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP11_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP11_IN_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP11_IN_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP11_IN_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP11_IN_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x5C:  */
 	uint32_t volatile EP11_OUT_CONTROL;
@@ -12007,8 +12007,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP11_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP11_OUT_CONTROL_ENDPOINT_TYPE_msb	27u
-#define USBCTRL_DPRAM_EP11_OUT_CONTROL_ENDPOINT_TYPE_lsb	26u
+#define USBCTRL_DPRAM_EP11_OUT_CONTROL_ENDPOINT_TYPE_Msb	27u
+#define USBCTRL_DPRAM_EP11_OUT_CONTROL_ENDPOINT_TYPE_Lsb	26u
 #define USBCTRL_DPRAM_EP11_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP11_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP11_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12018,8 +12018,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP11_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP11_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP11_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP11_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP11_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x60:  */
 	uint32_t volatile EP12_IN_CONTROL;
@@ -12032,8 +12032,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP12_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP12_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP12_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP12_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP12_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP12_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP12_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP12_IN_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12043,8 +12043,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP12_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP12_IN_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP12_IN_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP12_IN_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP12_IN_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x64:  */
 	uint32_t volatile EP12_OUT_CONTROL;
@@ -12057,8 +12057,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP12_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP12_OUT_CONTROL_ENDPOINT_TYPE_msb	27u
-#define USBCTRL_DPRAM_EP12_OUT_CONTROL_ENDPOINT_TYPE_lsb	26u
+#define USBCTRL_DPRAM_EP12_OUT_CONTROL_ENDPOINT_TYPE_Msb	27u
+#define USBCTRL_DPRAM_EP12_OUT_CONTROL_ENDPOINT_TYPE_Lsb	26u
 #define USBCTRL_DPRAM_EP12_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP12_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP12_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12068,8 +12068,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP12_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP12_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP12_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP12_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP12_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x68:  */
 	uint32_t volatile EP13_IN_CONTROL;
@@ -12082,8 +12082,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP13_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP13_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP13_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP13_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP13_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP13_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP13_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP13_IN_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12093,8 +12093,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP13_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP13_IN_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP13_IN_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP13_IN_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP13_IN_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x6C:  */
 	uint32_t volatile EP13_OUT_CONTROL;
@@ -12107,8 +12107,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP13_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP13_OUT_CONTROL_ENDPOINT_TYPE_msb	27u
-#define USBCTRL_DPRAM_EP13_OUT_CONTROL_ENDPOINT_TYPE_lsb	26u
+#define USBCTRL_DPRAM_EP13_OUT_CONTROL_ENDPOINT_TYPE_Msb	27u
+#define USBCTRL_DPRAM_EP13_OUT_CONTROL_ENDPOINT_TYPE_Lsb	26u
 #define USBCTRL_DPRAM_EP13_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP13_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP13_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12118,8 +12118,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP13_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP13_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP13_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP13_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP13_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x70:  */
 	uint32_t volatile EP14_IN_CONTROL;
@@ -12132,8 +12132,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP14_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP14_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP14_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP14_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP14_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP14_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP14_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP14_IN_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12143,8 +12143,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP14_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP14_IN_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP14_IN_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP14_IN_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP14_IN_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x74:  */
 	uint32_t volatile EP14_OUT_CONTROL;
@@ -12157,8 +12157,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP14_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP14_OUT_CONTROL_ENDPOINT_TYPE_msb	27u
-#define USBCTRL_DPRAM_EP14_OUT_CONTROL_ENDPOINT_TYPE_lsb	26u
+#define USBCTRL_DPRAM_EP14_OUT_CONTROL_ENDPOINT_TYPE_Msb	27u
+#define USBCTRL_DPRAM_EP14_OUT_CONTROL_ENDPOINT_TYPE_Lsb	26u
 #define USBCTRL_DPRAM_EP14_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP14_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP14_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12168,8 +12168,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP14_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP14_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP14_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP14_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP14_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x78:  */
 	uint32_t volatile EP15_IN_CONTROL;
@@ -12182,8 +12182,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP15_IN_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP15_IN_CONTROL_ENDPOINT_TYPE_msb		27u
-#define USBCTRL_DPRAM_EP15_IN_CONTROL_ENDPOINT_TYPE_lsb		26u
+#define USBCTRL_DPRAM_EP15_IN_CONTROL_ENDPOINT_TYPE_Msb		27u
+#define USBCTRL_DPRAM_EP15_IN_CONTROL_ENDPOINT_TYPE_Lsb		26u
 #define USBCTRL_DPRAM_EP15_IN_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP15_IN_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP15_IN_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12193,8 +12193,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP15_IN_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP15_IN_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP15_IN_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP15_IN_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP15_IN_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x7C:  */
 	uint32_t volatile EP15_OUT_CONTROL;
@@ -12207,8 +12207,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt each time both buffers are done. */
 #define USBCTRL_DPRAM_EP15_OUT_CONTROL_INTERRUPT_PER_DOUBLE_BUFF	28u
 	/*  */
-#define USBCTRL_DPRAM_EP15_OUT_CONTROL_ENDPOINT_TYPE_msb	27u
-#define USBCTRL_DPRAM_EP15_OUT_CONTROL_ENDPOINT_TYPE_lsb	26u
+#define USBCTRL_DPRAM_EP15_OUT_CONTROL_ENDPOINT_TYPE_Msb	27u
+#define USBCTRL_DPRAM_EP15_OUT_CONTROL_ENDPOINT_TYPE_Lsb	26u
 #define USBCTRL_DPRAM_EP15_OUT_CONTROL_ENDPOINT_TYPE_CONTROL	0u
 #define USBCTRL_DPRAM_EP15_OUT_CONTROL_ENDPOINT_TYPE_ISOCHRONOUS	1u
 #define USBCTRL_DPRAM_EP15_OUT_CONTROL_ENDPOINT_TYPE_BULK	2u
@@ -12218,8 +12218,8 @@ struct sdk_usbctrl_dpram {
 	/* Trigger an interrupt if a NAK is sent. */
 #define USBCTRL_DPRAM_EP15_OUT_CONTROL_INTERRUPT_ON_NAK		16u
 	/* 64 byte aligned buffer address for this EP (bits 0-5 are ignored). */
-#define USBCTRL_DPRAM_EP15_OUT_CONTROL_BUFFER_ADDRESS_msb	15u
-#define USBCTRL_DPRAM_EP15_OUT_CONTROL_BUFFER_ADDRESS_lsb	0u
+#define USBCTRL_DPRAM_EP15_OUT_CONTROL_BUFFER_ADDRESS_Msb	15u
+#define USBCTRL_DPRAM_EP15_OUT_CONTROL_BUFFER_ADDRESS_Lsb	0u
 
 	/* 0x80: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP0_IN_BUFFER_CONTROL;
@@ -12230,8 +12230,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12239,8 +12239,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12254,8 +12254,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP0_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0x84: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP0_OUT_BUFFER_CONTROL;
@@ -12266,8 +12266,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12275,8 +12275,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12290,8 +12290,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP0_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0x88: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP1_IN_BUFFER_CONTROL;
@@ -12302,8 +12302,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12311,8 +12311,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12326,8 +12326,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP1_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0x8C: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP1_OUT_BUFFER_CONTROL;
@@ -12338,8 +12338,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12347,8 +12347,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12362,8 +12362,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP1_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0x90: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP2_IN_BUFFER_CONTROL;
@@ -12374,8 +12374,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12383,8 +12383,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12398,8 +12398,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP2_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0x94: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP2_OUT_BUFFER_CONTROL;
@@ -12410,8 +12410,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12419,8 +12419,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12434,8 +12434,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP2_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0x98: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP3_IN_BUFFER_CONTROL;
@@ -12446,8 +12446,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12455,8 +12455,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12470,8 +12470,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP3_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0x9C: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP3_OUT_BUFFER_CONTROL;
@@ -12482,8 +12482,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12491,8 +12491,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12506,8 +12506,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP3_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xA0: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP4_IN_BUFFER_CONTROL;
@@ -12518,8 +12518,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12527,8 +12527,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12542,8 +12542,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP4_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xA4: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP4_OUT_BUFFER_CONTROL;
@@ -12554,8 +12554,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12563,8 +12563,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12578,8 +12578,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP4_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xA8: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP5_IN_BUFFER_CONTROL;
@@ -12590,8 +12590,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12599,8 +12599,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12614,8 +12614,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP5_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xAC: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP5_OUT_BUFFER_CONTROL;
@@ -12626,8 +12626,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12635,8 +12635,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12650,8 +12650,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP5_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xB0: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP6_IN_BUFFER_CONTROL;
@@ -12662,8 +12662,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12671,8 +12671,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12686,8 +12686,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP6_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xB4: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP6_OUT_BUFFER_CONTROL;
@@ -12698,8 +12698,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12707,8 +12707,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12722,8 +12722,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP6_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xB8: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP7_IN_BUFFER_CONTROL;
@@ -12734,8 +12734,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12743,8 +12743,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12758,8 +12758,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP7_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xBC: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP7_OUT_BUFFER_CONTROL;
@@ -12770,8 +12770,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12779,8 +12779,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12794,8 +12794,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP7_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xC0: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP8_IN_BUFFER_CONTROL;
@@ -12806,8 +12806,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12815,8 +12815,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12830,8 +12830,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP8_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xC4: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP8_OUT_BUFFER_CONTROL;
@@ -12842,8 +12842,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12851,8 +12851,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12866,8 +12866,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP8_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xC8: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP9_IN_BUFFER_CONTROL;
@@ -12878,8 +12878,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12887,8 +12887,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_AVAILABLE_1		26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12902,8 +12902,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_AVAILABLE_0		10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP9_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xCC: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP9_OUT_BUFFER_CONTROL;
@@ -12914,8 +12914,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12923,8 +12923,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12938,8 +12938,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP9_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xD0: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP10_IN_BUFFER_CONTROL;
@@ -12950,8 +12950,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12959,8 +12959,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -12974,8 +12974,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP10_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xD4: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP10_OUT_BUFFER_CONTROL;
@@ -12986,8 +12986,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -12995,8 +12995,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13010,8 +13010,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP10_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xD8: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP11_IN_BUFFER_CONTROL;
@@ -13022,8 +13022,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13031,8 +13031,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13046,8 +13046,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP11_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xDC: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP11_OUT_BUFFER_CONTROL;
@@ -13058,8 +13058,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13067,8 +13067,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13082,8 +13082,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP11_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xE0: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP12_IN_BUFFER_CONTROL;
@@ -13094,8 +13094,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13103,8 +13103,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13118,8 +13118,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP12_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xE4: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP12_OUT_BUFFER_CONTROL;
@@ -13130,8 +13130,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13139,8 +13139,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13154,8 +13154,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP12_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xE8: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP13_IN_BUFFER_CONTROL;
@@ -13166,8 +13166,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13175,8 +13175,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13190,8 +13190,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP13_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xEC: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP13_OUT_BUFFER_CONTROL;
@@ -13202,8 +13202,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13211,8 +13211,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13226,8 +13226,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP13_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xF0: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP14_IN_BUFFER_CONTROL;
@@ -13238,8 +13238,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13247,8 +13247,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13262,8 +13262,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP14_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xF4: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP14_OUT_BUFFER_CONTROL;
@@ -13274,8 +13274,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13283,8 +13283,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13298,8 +13298,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP14_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xF8: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP15_IN_BUFFER_CONTROL;
@@ -13310,8 +13310,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13319,8 +13319,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13334,8 +13334,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP15_IN_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 	/* 0xFC: Buffer control for both buffers of an endpoint. */
 	uint32_t volatile EP15_OUT_BUFFER_CONTROL;
@@ -13346,8 +13346,8 @@ struct sdk_usbctrl_dpram {
 	/* The data pid of buffer 1. */
 #define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_PID_1		29u
 	/* The number of bytes buffer 1 is offset from buffer 0 in Isochronous mode. */
-#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_msb	28u
-#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_lsb	27u
+#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Msb	28u
+#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_Lsb	27u
 #define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_128	0u
 #define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_256	1u
 #define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_DOUBLE_BUFFER_ISO_OFFSET_512	2u
@@ -13355,8 +13355,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 1 is available. */
 #define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_AVAILABLE_1	26u
 	/* The length of the data in buffer 1. */
-#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_LENGTH_1_msb	25u
-#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_LENGTH_1_lsb	16u
+#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_LENGTH_1_Msb	25u
+#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_LENGTH_1_Lsb	16u
 	/* Buffer 0 is full. For an IN transfer (TX to the host) the bit is set to indicate the data is valid. For an OUT transfer (RX from the host) this bit should be left as a 0. */
 #define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_FULL_0		15u
 	/* Buffer 0 is the last buffer of the transfer. */
@@ -13370,8 +13370,8 @@ struct sdk_usbctrl_dpram {
 	/* Buffer 0 is available. */
 #define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_AVAILABLE_0	10u
 	/* The length of the data in buffer 0. */
-#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_LENGTH_0_msb	9u
-#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_LENGTH_0_lsb	0u
+#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_LENGTH_0_Msb	9u
+#define USBCTRL_DPRAM_EP15_OUT_BUFFER_CONTROL_LENGTH_0_Lsb	0u
 
 };
 
@@ -13383,11 +13383,11 @@ struct sdk_usbctrl_regs {
 	/* 0x00: Device address and endpoint control */
 	uint32_t volatile ADDR_ENDP;
 	/* Device endpoint to send data to. */
-#define USBCTRL_REGS_ADDR_ENDP_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP_ENDPOINT_Lsb			16u
 	/* In device mode, the address that the device should respond to. */
-#define USBCTRL_REGS_ADDR_ENDP_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP_ADDRESS_Lsb			0u
 
 	/* 0x04: Interrupt endpoint 1. */
 	uint32_t volatile ADDR_ENDP1;
@@ -13396,11 +13396,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP1_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP1_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP1_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP1_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP1_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP1_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP1_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP1_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP1_ADDRESS_Lsb			0u
 
 	/* 0x08: Interrupt endpoint 2. */
 	uint32_t volatile ADDR_ENDP2;
@@ -13409,11 +13409,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP2_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP2_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP2_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP2_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP2_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP2_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP2_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP2_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP2_ADDRESS_Lsb			0u
 
 	/* 0x0C: Interrupt endpoint 3. */
 	uint32_t volatile ADDR_ENDP3;
@@ -13422,11 +13422,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP3_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP3_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP3_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP3_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP3_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP3_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP3_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP3_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP3_ADDRESS_Lsb			0u
 
 	/* 0x10: Interrupt endpoint 4. */
 	uint32_t volatile ADDR_ENDP4;
@@ -13435,11 +13435,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP4_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP4_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP4_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP4_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP4_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP4_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP4_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP4_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP4_ADDRESS_Lsb			0u
 
 	/* 0x14: Interrupt endpoint 5. */
 	uint32_t volatile ADDR_ENDP5;
@@ -13448,11 +13448,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP5_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP5_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP5_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP5_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP5_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP5_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP5_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP5_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP5_ADDRESS_Lsb			0u
 
 	/* 0x18: Interrupt endpoint 6. */
 	uint32_t volatile ADDR_ENDP6;
@@ -13461,11 +13461,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP6_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP6_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP6_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP6_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP6_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP6_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP6_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP6_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP6_ADDRESS_Lsb			0u
 
 	/* 0x1C: Interrupt endpoint 7. */
 	uint32_t volatile ADDR_ENDP7;
@@ -13474,11 +13474,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP7_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP7_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP7_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP7_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP7_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP7_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP7_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP7_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP7_ADDRESS_Lsb			0u
 
 	/* 0x20: Interrupt endpoint 8. */
 	uint32_t volatile ADDR_ENDP8;
@@ -13487,11 +13487,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP8_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP8_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP8_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP8_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP8_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP8_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP8_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP8_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP8_ADDRESS_Lsb			0u
 
 	/* 0x24: Interrupt endpoint 9. */
 	uint32_t volatile ADDR_ENDP9;
@@ -13500,11 +13500,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP9_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP9_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP9_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP9_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP9_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP9_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP9_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP9_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP9_ADDRESS_Lsb			0u
 
 	/* 0x28: Interrupt endpoint 10. */
 	uint32_t volatile ADDR_ENDP10;
@@ -13513,11 +13513,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP10_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP10_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP10_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP10_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP10_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP10_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP10_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP10_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP10_ADDRESS_Lsb			0u
 
 	/* 0x2C: Interrupt endpoint 11. */
 	uint32_t volatile ADDR_ENDP11;
@@ -13526,11 +13526,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP11_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP11_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP11_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP11_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP11_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP11_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP11_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP11_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP11_ADDRESS_Lsb			0u
 
 	/* 0x30: Interrupt endpoint 12. */
 	uint32_t volatile ADDR_ENDP12;
@@ -13539,11 +13539,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP12_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP12_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP12_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP12_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP12_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP12_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP12_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP12_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP12_ADDRESS_Lsb			0u
 
 	/* 0x34: Interrupt endpoint 13. */
 	uint32_t volatile ADDR_ENDP13;
@@ -13552,11 +13552,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP13_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP13_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP13_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP13_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP13_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP13_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP13_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP13_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP13_ADDRESS_Lsb			0u
 
 	/* 0x38: Interrupt endpoint 14. */
 	uint32_t volatile ADDR_ENDP14;
@@ -13565,11 +13565,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP14_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP14_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP14_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP14_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP14_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP14_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP14_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP14_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP14_ADDRESS_Lsb			0u
 
 	/* 0x3C: Interrupt endpoint 15. */
 	uint32_t volatile ADDR_ENDP15;
@@ -13578,11 +13578,11 @@ struct sdk_usbctrl_regs {
 	/* Direction of the interrupt endpoint. */
 #define USBCTRL_REGS_ADDR_ENDP15_INTEP_DIR			25u
 	/* Endpoint number of the interrupt endpoint */
-#define USBCTRL_REGS_ADDR_ENDP15_ENDPOINT_msb			19u
-#define USBCTRL_REGS_ADDR_ENDP15_ENDPOINT_lsb			16u
+#define USBCTRL_REGS_ADDR_ENDP15_ENDPOINT_Msb			19u
+#define USBCTRL_REGS_ADDR_ENDP15_ENDPOINT_Lsb			16u
 	/* Device address */
-#define USBCTRL_REGS_ADDR_ENDP15_ADDRESS_msb			6u
-#define USBCTRL_REGS_ADDR_ENDP15_ADDRESS_lsb			0u
+#define USBCTRL_REGS_ADDR_ENDP15_ADDRESS_Msb			6u
+#define USBCTRL_REGS_ADDR_ENDP15_ADDRESS_Lsb			0u
 
 	/* 0x40: Main control register */
 	uint32_t volatile MAIN_CTRL;
@@ -13596,14 +13596,14 @@ struct sdk_usbctrl_regs {
 	/* 0x44: Set the SOF (Start of Frame) frame number in the host controller. */
 	uint32_t volatile SOF_WR;
 	/*  */
-#define USBCTRL_REGS_SOF_WR_COUNT_msb				10u
-#define USBCTRL_REGS_SOF_WR_COUNT_lsb				0u
+#define USBCTRL_REGS_SOF_WR_COUNT_Msb				10u
+#define USBCTRL_REGS_SOF_WR_COUNT_Lsb				0u
 
 	/* 0x48: Read the last SOF (Start of Frame) frame number seen. */
 	uint32_t volatile SOF_RD;
 	/*  */
-#define USBCTRL_REGS_SOF_RD_COUNT_msb				10u
-#define USBCTRL_REGS_SOF_RD_COUNT_lsb				0u
+#define USBCTRL_REGS_SOF_RD_COUNT_Msb				10u
+#define USBCTRL_REGS_SOF_RD_COUNT_Lsb				0u
 
 	/* 0x4C: SIE control register */
 	uint32_t volatile SIE_CTRL;
@@ -13687,21 +13687,21 @@ struct sdk_usbctrl_regs {
 	/* VBUS over current detected */
 #define USBCTRL_REGS_SIE_STATUS_VBUS_OVER_CURR			10u
 	/* Host: device speed. */
-#define USBCTRL_REGS_SIE_STATUS_SPEED_msb			9u
-#define USBCTRL_REGS_SIE_STATUS_SPEED_lsb			8u
+#define USBCTRL_REGS_SIE_STATUS_SPEED_Msb			9u
+#define USBCTRL_REGS_SIE_STATUS_SPEED_Lsb			8u
 	/* Bus in suspended state. */
 #define USBCTRL_REGS_SIE_STATUS_SUSPENDED			4u
 	/* USB bus line state */
-#define USBCTRL_REGS_SIE_STATUS_LINE_STATE_msb			3u
-#define USBCTRL_REGS_SIE_STATUS_LINE_STATE_lsb			2u
+#define USBCTRL_REGS_SIE_STATUS_LINE_STATE_Msb			3u
+#define USBCTRL_REGS_SIE_STATUS_LINE_STATE_Lsb			2u
 	/* Device: VBUS Detected */
 #define USBCTRL_REGS_SIE_STATUS_VBUS_DETECTED			0u
 
 	/* 0x54: interrupt endpoint control register */
 	uint32_t volatile INT_EP_CTRL;
 	/* Host: Enable interrupt endpoint 1 -> 15 */
-#define USBCTRL_REGS_INT_EP_CTRL_INT_EP_ACTIVE_msb		15u
-#define USBCTRL_REGS_INT_EP_CTRL_INT_EP_ACTIVE_lsb		1u
+#define USBCTRL_REGS_INT_EP_CTRL_INT_EP_ACTIVE_Msb		15u
+#define USBCTRL_REGS_INT_EP_CTRL_INT_EP_ACTIVE_Lsb		1u
 
 	/* 0x58: Buffer status register. A bit set here indicates that a buffer has completed on the endpoint (if the buffer interrupt is enabled). */
 	uint32_t volatile BUFF_STATUS;
@@ -13981,11 +13981,11 @@ struct sdk_usbctrl_regs {
 	/* 0x6C: Used by the host controller. */
 	uint32_t volatile NAK_POLL;
 	/* NAK polling interval for a full speed device */
-#define USBCTRL_REGS_NAK_POLL_DELAY_FS_msb			25u
-#define USBCTRL_REGS_NAK_POLL_DELAY_FS_lsb			16u
+#define USBCTRL_REGS_NAK_POLL_DELAY_FS_Msb			25u
+#define USBCTRL_REGS_NAK_POLL_DELAY_FS_Lsb			16u
 	/* NAK polling interval for a low speed device */
-#define USBCTRL_REGS_NAK_POLL_DELAY_LS_msb			9u
-#define USBCTRL_REGS_NAK_POLL_DELAY_LS_lsb			0u
+#define USBCTRL_REGS_NAK_POLL_DELAY_LS_Msb			9u
+#define USBCTRL_REGS_NAK_POLL_DELAY_LS_Lsb			0u
 
 	/* 0x70: Device: bits are set when the `IRQ_ON_NAK` or `IRQ_ON_STALL` bits are set. */
 	uint32_t volatile EP_STATUS_STALL_NAK;
@@ -14159,11 +14159,11 @@ struct sdk_usbctrl_regs {
 	/* 0x84: Used to adjust trim values of USB phy pull down resistors. */
 	uint32_t volatile USBPHY_TRIM;
 	/* Value to drive to USB PHY */
-#define USBCTRL_REGS_USBPHY_TRIM_DM_PULLDN_TRIM_msb		12u
-#define USBCTRL_REGS_USBPHY_TRIM_DM_PULLDN_TRIM_lsb		8u
+#define USBCTRL_REGS_USBPHY_TRIM_DM_PULLDN_TRIM_Msb		12u
+#define USBCTRL_REGS_USBPHY_TRIM_DM_PULLDN_TRIM_Lsb		8u
 	/* Value to drive to USB PHY */
-#define USBCTRL_REGS_USBPHY_TRIM_DP_PULLDN_TRIM_msb		4u
-#define USBCTRL_REGS_USBPHY_TRIM_DP_PULLDN_TRIM_lsb		0u
+#define USBCTRL_REGS_USBPHY_TRIM_DP_PULLDN_TRIM_Msb		4u
+#define USBCTRL_REGS_USBPHY_TRIM_DP_PULLDN_TRIM_Lsb		0u
 
 	/* 0x88 */
 	uint8_t RESERVED0[0x8C-0x88];
@@ -14351,71 +14351,71 @@ struct sdk_pio0 {
 	/* 0x00: PIO control register */
 	uint32_t volatile CTRL;
 	/* Restart a state machine's clock divider from an initial phase of 0. Clock dividers are free-running, so once started, their output (including fractional jitter) is completely determined by the integer/fractional divisor configured in SMx_CLKDIV. */
-#define PIO0_CTRL_CLKDIV_RESTART_msb				11u
-#define PIO0_CTRL_CLKDIV_RESTART_lsb				8u
+#define PIO0_CTRL_CLKDIV_RESTART_Msb				11u
+#define PIO0_CTRL_CLKDIV_RESTART_Lsb				8u
 	/* Write 1 to instantly clear internal SM state which may be otherwise difficult to access and will affect future execution. */
-#define PIO0_CTRL_SM_RESTART_msb				7u
-#define PIO0_CTRL_SM_RESTART_lsb				4u
+#define PIO0_CTRL_SM_RESTART_Msb				7u
+#define PIO0_CTRL_SM_RESTART_Lsb				4u
 	/* Enable/disable each of the four state machines by writing 1/0 to each of these four bits. */
-#define PIO0_CTRL_SM_ENABLE_msb					3u
-#define PIO0_CTRL_SM_ENABLE_lsb					0u
+#define PIO0_CTRL_SM_ENABLE_Msb					3u
+#define PIO0_CTRL_SM_ENABLE_Lsb					0u
 
 	/* 0x04: FIFO status register */
 	uint32_t volatile FSTAT;
 	/* State machine TX FIFO is empty */
-#define PIO0_FSTAT_TXEMPTY_msb					27u
-#define PIO0_FSTAT_TXEMPTY_lsb					24u
+#define PIO0_FSTAT_TXEMPTY_Msb					27u
+#define PIO0_FSTAT_TXEMPTY_Lsb					24u
 	/* State machine TX FIFO is full */
-#define PIO0_FSTAT_TXFULL_msb					19u
-#define PIO0_FSTAT_TXFULL_lsb					16u
+#define PIO0_FSTAT_TXFULL_Msb					19u
+#define PIO0_FSTAT_TXFULL_Lsb					16u
 	/* State machine RX FIFO is empty */
-#define PIO0_FSTAT_RXEMPTY_msb					11u
-#define PIO0_FSTAT_RXEMPTY_lsb					8u
+#define PIO0_FSTAT_RXEMPTY_Msb					11u
+#define PIO0_FSTAT_RXEMPTY_Lsb					8u
 	/* State machine RX FIFO is full */
-#define PIO0_FSTAT_RXFULL_msb					3u
-#define PIO0_FSTAT_RXFULL_lsb					0u
+#define PIO0_FSTAT_RXFULL_Msb					3u
+#define PIO0_FSTAT_RXFULL_Lsb					0u
 
 	/* 0x08: FIFO debug register */
 	uint32_t volatile FDEBUG;
 	/* State machine has stalled on empty TX FIFO during a blocking PULL, or an OUT with autopull enabled. */
-#define PIO0_FDEBUG_TXSTALL_msb					27u
-#define PIO0_FDEBUG_TXSTALL_lsb					24u
+#define PIO0_FDEBUG_TXSTALL_Msb					27u
+#define PIO0_FDEBUG_TXSTALL_Lsb					24u
 	/* TX FIFO overflow (i.e. write-on-full by the system) has occurred. */
-#define PIO0_FDEBUG_TXOVER_msb					19u
-#define PIO0_FDEBUG_TXOVER_lsb					16u
+#define PIO0_FDEBUG_TXOVER_Msb					19u
+#define PIO0_FDEBUG_TXOVER_Lsb					16u
 	/* RX FIFO underflow (i.e. read-on-empty by the system) has occurred. */
-#define PIO0_FDEBUG_RXUNDER_msb					11u
-#define PIO0_FDEBUG_RXUNDER_lsb					8u
+#define PIO0_FDEBUG_RXUNDER_Msb					11u
+#define PIO0_FDEBUG_RXUNDER_Lsb					8u
 	/* State machine has stalled on full RX FIFO during a blocking PUSH, or an IN with autopush enabled. */
-#define PIO0_FDEBUG_RXSTALL_msb					3u
-#define PIO0_FDEBUG_RXSTALL_lsb					0u
+#define PIO0_FDEBUG_RXSTALL_Msb					3u
+#define PIO0_FDEBUG_RXSTALL_Lsb					0u
 
 	/* 0x0C: FIFO levels */
 	uint32_t volatile FLEVEL;
 	/*  */
-#define PIO0_FLEVEL_RX3_msb					31u
-#define PIO0_FLEVEL_RX3_lsb					28u
+#define PIO0_FLEVEL_RX3_Msb					31u
+#define PIO0_FLEVEL_RX3_Lsb					28u
 	/*  */
-#define PIO0_FLEVEL_TX3_msb					27u
-#define PIO0_FLEVEL_TX3_lsb					24u
+#define PIO0_FLEVEL_TX3_Msb					27u
+#define PIO0_FLEVEL_TX3_Lsb					24u
 	/*  */
-#define PIO0_FLEVEL_RX2_msb					23u
-#define PIO0_FLEVEL_RX2_lsb					20u
+#define PIO0_FLEVEL_RX2_Msb					23u
+#define PIO0_FLEVEL_RX2_Lsb					20u
 	/*  */
-#define PIO0_FLEVEL_TX2_msb					19u
-#define PIO0_FLEVEL_TX2_lsb					16u
+#define PIO0_FLEVEL_TX2_Msb					19u
+#define PIO0_FLEVEL_TX2_Lsb					16u
 	/*  */
-#define PIO0_FLEVEL_RX1_msb					15u
-#define PIO0_FLEVEL_RX1_lsb					12u
+#define PIO0_FLEVEL_RX1_Msb					15u
+#define PIO0_FLEVEL_RX1_Lsb					12u
 	/*  */
-#define PIO0_FLEVEL_TX1_msb					11u
-#define PIO0_FLEVEL_TX1_lsb					8u
+#define PIO0_FLEVEL_TX1_Msb					11u
+#define PIO0_FLEVEL_TX1_Lsb					8u
 	/*  */
-#define PIO0_FLEVEL_RX0_msb					7u
-#define PIO0_FLEVEL_RX0_lsb					4u
+#define PIO0_FLEVEL_RX0_Msb					7u
+#define PIO0_FLEVEL_RX0_Lsb					4u
 	/*  */
-#define PIO0_FLEVEL_TX0_msb					3u
-#define PIO0_FLEVEL_TX0_lsb					0u
+#define PIO0_FLEVEL_TX0_Msb					3u
+#define PIO0_FLEVEL_TX0_Lsb					0u
 
 	/* 0x10: Direct write access to the TX FIFO for this state machine. */
 	uint32_t volatile TXF0;
@@ -14444,14 +14444,14 @@ struct sdk_pio0 {
 	/* 0x30: State machine IRQ flags register. */
 	uint32_t volatile IRQ;
 	/*  */
-#define PIO0_IRQ_IRQ_msb					7u
-#define PIO0_IRQ_IRQ_lsb					0u
+#define PIO0_IRQ_IRQ_Msb					7u
+#define PIO0_IRQ_IRQ_Lsb					0u
 
 	/* 0x34: Writing a 1 to each of these bits will forcibly assert the corresponding IRQ. */
 	uint32_t volatile IRQ_FORCE;
 	/*  */
-#define PIO0_IRQ_FORCE_IRQ_FORCE_msb				7u
-#define PIO0_IRQ_FORCE_IRQ_FORCE_lsb				0u
+#define PIO0_IRQ_FORCE_IRQ_FORCE_Msb				7u
+#define PIO0_IRQ_FORCE_IRQ_FORCE_Lsb				0u
 
 	/* 0x38: There is a 2-flipflop synchronizer on each GPIO input, which protects PIO logic from metastabilities. This increases input delay, and for fast synchronous IO (e.g. SPI) these synchronizers may need to be bypassed. */
 	uint32_t volatile INPUT_SYNC_BYPASS;
@@ -14465,215 +14465,215 @@ struct sdk_pio0 {
 	/* 0x44: The PIO hardware has some free parameters that may vary between chip products. */
 	uint32_t volatile DBG_CFGINFO;
 	/* The size of the instruction memory, measured in units of one instruction */
-#define PIO0_DBG_CFGINFO_IMEM_SIZE_msb				21u
-#define PIO0_DBG_CFGINFO_IMEM_SIZE_lsb				16u
+#define PIO0_DBG_CFGINFO_IMEM_SIZE_Msb				21u
+#define PIO0_DBG_CFGINFO_IMEM_SIZE_Lsb				16u
 	/* The number of state machines this PIO instance is equipped with. */
-#define PIO0_DBG_CFGINFO_SM_COUNT_msb				11u
-#define PIO0_DBG_CFGINFO_SM_COUNT_lsb				8u
+#define PIO0_DBG_CFGINFO_SM_COUNT_Msb				11u
+#define PIO0_DBG_CFGINFO_SM_COUNT_Lsb				8u
 	/* The depth of the state machine TX/RX FIFOs, measured in words. */
-#define PIO0_DBG_CFGINFO_FIFO_DEPTH_msb				5u
-#define PIO0_DBG_CFGINFO_FIFO_DEPTH_lsb				0u
+#define PIO0_DBG_CFGINFO_FIFO_DEPTH_Msb				5u
+#define PIO0_DBG_CFGINFO_FIFO_DEPTH_Lsb				0u
 
 	/* 0x48: Write-only access to instruction memory location 0 */
 	uint32_t volatile INSTR_MEM0;
 	/*  */
-#define PIO0_INSTR_MEM0_INSTR_MEM0_msb				15u
-#define PIO0_INSTR_MEM0_INSTR_MEM0_lsb				0u
+#define PIO0_INSTR_MEM0_INSTR_MEM0_Msb				15u
+#define PIO0_INSTR_MEM0_INSTR_MEM0_Lsb				0u
 
 	/* 0x4C: Write-only access to instruction memory location 1 */
 	uint32_t volatile INSTR_MEM1;
 	/*  */
-#define PIO0_INSTR_MEM1_INSTR_MEM1_msb				15u
-#define PIO0_INSTR_MEM1_INSTR_MEM1_lsb				0u
+#define PIO0_INSTR_MEM1_INSTR_MEM1_Msb				15u
+#define PIO0_INSTR_MEM1_INSTR_MEM1_Lsb				0u
 
 	/* 0x50: Write-only access to instruction memory location 2 */
 	uint32_t volatile INSTR_MEM2;
 	/*  */
-#define PIO0_INSTR_MEM2_INSTR_MEM2_msb				15u
-#define PIO0_INSTR_MEM2_INSTR_MEM2_lsb				0u
+#define PIO0_INSTR_MEM2_INSTR_MEM2_Msb				15u
+#define PIO0_INSTR_MEM2_INSTR_MEM2_Lsb				0u
 
 	/* 0x54: Write-only access to instruction memory location 3 */
 	uint32_t volatile INSTR_MEM3;
 	/*  */
-#define PIO0_INSTR_MEM3_INSTR_MEM3_msb				15u
-#define PIO0_INSTR_MEM3_INSTR_MEM3_lsb				0u
+#define PIO0_INSTR_MEM3_INSTR_MEM3_Msb				15u
+#define PIO0_INSTR_MEM3_INSTR_MEM3_Lsb				0u
 
 	/* 0x58: Write-only access to instruction memory location 4 */
 	uint32_t volatile INSTR_MEM4;
 	/*  */
-#define PIO0_INSTR_MEM4_INSTR_MEM4_msb				15u
-#define PIO0_INSTR_MEM4_INSTR_MEM4_lsb				0u
+#define PIO0_INSTR_MEM4_INSTR_MEM4_Msb				15u
+#define PIO0_INSTR_MEM4_INSTR_MEM4_Lsb				0u
 
 	/* 0x5C: Write-only access to instruction memory location 5 */
 	uint32_t volatile INSTR_MEM5;
 	/*  */
-#define PIO0_INSTR_MEM5_INSTR_MEM5_msb				15u
-#define PIO0_INSTR_MEM5_INSTR_MEM5_lsb				0u
+#define PIO0_INSTR_MEM5_INSTR_MEM5_Msb				15u
+#define PIO0_INSTR_MEM5_INSTR_MEM5_Lsb				0u
 
 	/* 0x60: Write-only access to instruction memory location 6 */
 	uint32_t volatile INSTR_MEM6;
 	/*  */
-#define PIO0_INSTR_MEM6_INSTR_MEM6_msb				15u
-#define PIO0_INSTR_MEM6_INSTR_MEM6_lsb				0u
+#define PIO0_INSTR_MEM6_INSTR_MEM6_Msb				15u
+#define PIO0_INSTR_MEM6_INSTR_MEM6_Lsb				0u
 
 	/* 0x64: Write-only access to instruction memory location 7 */
 	uint32_t volatile INSTR_MEM7;
 	/*  */
-#define PIO0_INSTR_MEM7_INSTR_MEM7_msb				15u
-#define PIO0_INSTR_MEM7_INSTR_MEM7_lsb				0u
+#define PIO0_INSTR_MEM7_INSTR_MEM7_Msb				15u
+#define PIO0_INSTR_MEM7_INSTR_MEM7_Lsb				0u
 
 	/* 0x68: Write-only access to instruction memory location 8 */
 	uint32_t volatile INSTR_MEM8;
 	/*  */
-#define PIO0_INSTR_MEM8_INSTR_MEM8_msb				15u
-#define PIO0_INSTR_MEM8_INSTR_MEM8_lsb				0u
+#define PIO0_INSTR_MEM8_INSTR_MEM8_Msb				15u
+#define PIO0_INSTR_MEM8_INSTR_MEM8_Lsb				0u
 
 	/* 0x6C: Write-only access to instruction memory location 9 */
 	uint32_t volatile INSTR_MEM9;
 	/*  */
-#define PIO0_INSTR_MEM9_INSTR_MEM9_msb				15u
-#define PIO0_INSTR_MEM9_INSTR_MEM9_lsb				0u
+#define PIO0_INSTR_MEM9_INSTR_MEM9_Msb				15u
+#define PIO0_INSTR_MEM9_INSTR_MEM9_Lsb				0u
 
 	/* 0x70: Write-only access to instruction memory location 10 */
 	uint32_t volatile INSTR_MEM10;
 	/*  */
-#define PIO0_INSTR_MEM10_INSTR_MEM10_msb			15u
-#define PIO0_INSTR_MEM10_INSTR_MEM10_lsb			0u
+#define PIO0_INSTR_MEM10_INSTR_MEM10_Msb			15u
+#define PIO0_INSTR_MEM10_INSTR_MEM10_Lsb			0u
 
 	/* 0x74: Write-only access to instruction memory location 11 */
 	uint32_t volatile INSTR_MEM11;
 	/*  */
-#define PIO0_INSTR_MEM11_INSTR_MEM11_msb			15u
-#define PIO0_INSTR_MEM11_INSTR_MEM11_lsb			0u
+#define PIO0_INSTR_MEM11_INSTR_MEM11_Msb			15u
+#define PIO0_INSTR_MEM11_INSTR_MEM11_Lsb			0u
 
 	/* 0x78: Write-only access to instruction memory location 12 */
 	uint32_t volatile INSTR_MEM12;
 	/*  */
-#define PIO0_INSTR_MEM12_INSTR_MEM12_msb			15u
-#define PIO0_INSTR_MEM12_INSTR_MEM12_lsb			0u
+#define PIO0_INSTR_MEM12_INSTR_MEM12_Msb			15u
+#define PIO0_INSTR_MEM12_INSTR_MEM12_Lsb			0u
 
 	/* 0x7C: Write-only access to instruction memory location 13 */
 	uint32_t volatile INSTR_MEM13;
 	/*  */
-#define PIO0_INSTR_MEM13_INSTR_MEM13_msb			15u
-#define PIO0_INSTR_MEM13_INSTR_MEM13_lsb			0u
+#define PIO0_INSTR_MEM13_INSTR_MEM13_Msb			15u
+#define PIO0_INSTR_MEM13_INSTR_MEM13_Lsb			0u
 
 	/* 0x80: Write-only access to instruction memory location 14 */
 	uint32_t volatile INSTR_MEM14;
 	/*  */
-#define PIO0_INSTR_MEM14_INSTR_MEM14_msb			15u
-#define PIO0_INSTR_MEM14_INSTR_MEM14_lsb			0u
+#define PIO0_INSTR_MEM14_INSTR_MEM14_Msb			15u
+#define PIO0_INSTR_MEM14_INSTR_MEM14_Lsb			0u
 
 	/* 0x84: Write-only access to instruction memory location 15 */
 	uint32_t volatile INSTR_MEM15;
 	/*  */
-#define PIO0_INSTR_MEM15_INSTR_MEM15_msb			15u
-#define PIO0_INSTR_MEM15_INSTR_MEM15_lsb			0u
+#define PIO0_INSTR_MEM15_INSTR_MEM15_Msb			15u
+#define PIO0_INSTR_MEM15_INSTR_MEM15_Lsb			0u
 
 	/* 0x88: Write-only access to instruction memory location 16 */
 	uint32_t volatile INSTR_MEM16;
 	/*  */
-#define PIO0_INSTR_MEM16_INSTR_MEM16_msb			15u
-#define PIO0_INSTR_MEM16_INSTR_MEM16_lsb			0u
+#define PIO0_INSTR_MEM16_INSTR_MEM16_Msb			15u
+#define PIO0_INSTR_MEM16_INSTR_MEM16_Lsb			0u
 
 	/* 0x8C: Write-only access to instruction memory location 17 */
 	uint32_t volatile INSTR_MEM17;
 	/*  */
-#define PIO0_INSTR_MEM17_INSTR_MEM17_msb			15u
-#define PIO0_INSTR_MEM17_INSTR_MEM17_lsb			0u
+#define PIO0_INSTR_MEM17_INSTR_MEM17_Msb			15u
+#define PIO0_INSTR_MEM17_INSTR_MEM17_Lsb			0u
 
 	/* 0x90: Write-only access to instruction memory location 18 */
 	uint32_t volatile INSTR_MEM18;
 	/*  */
-#define PIO0_INSTR_MEM18_INSTR_MEM18_msb			15u
-#define PIO0_INSTR_MEM18_INSTR_MEM18_lsb			0u
+#define PIO0_INSTR_MEM18_INSTR_MEM18_Msb			15u
+#define PIO0_INSTR_MEM18_INSTR_MEM18_Lsb			0u
 
 	/* 0x94: Write-only access to instruction memory location 19 */
 	uint32_t volatile INSTR_MEM19;
 	/*  */
-#define PIO0_INSTR_MEM19_INSTR_MEM19_msb			15u
-#define PIO0_INSTR_MEM19_INSTR_MEM19_lsb			0u
+#define PIO0_INSTR_MEM19_INSTR_MEM19_Msb			15u
+#define PIO0_INSTR_MEM19_INSTR_MEM19_Lsb			0u
 
 	/* 0x98: Write-only access to instruction memory location 20 */
 	uint32_t volatile INSTR_MEM20;
 	/*  */
-#define PIO0_INSTR_MEM20_INSTR_MEM20_msb			15u
-#define PIO0_INSTR_MEM20_INSTR_MEM20_lsb			0u
+#define PIO0_INSTR_MEM20_INSTR_MEM20_Msb			15u
+#define PIO0_INSTR_MEM20_INSTR_MEM20_Lsb			0u
 
 	/* 0x9C: Write-only access to instruction memory location 21 */
 	uint32_t volatile INSTR_MEM21;
 	/*  */
-#define PIO0_INSTR_MEM21_INSTR_MEM21_msb			15u
-#define PIO0_INSTR_MEM21_INSTR_MEM21_lsb			0u
+#define PIO0_INSTR_MEM21_INSTR_MEM21_Msb			15u
+#define PIO0_INSTR_MEM21_INSTR_MEM21_Lsb			0u
 
 	/* 0xA0: Write-only access to instruction memory location 22 */
 	uint32_t volatile INSTR_MEM22;
 	/*  */
-#define PIO0_INSTR_MEM22_INSTR_MEM22_msb			15u
-#define PIO0_INSTR_MEM22_INSTR_MEM22_lsb			0u
+#define PIO0_INSTR_MEM22_INSTR_MEM22_Msb			15u
+#define PIO0_INSTR_MEM22_INSTR_MEM22_Lsb			0u
 
 	/* 0xA4: Write-only access to instruction memory location 23 */
 	uint32_t volatile INSTR_MEM23;
 	/*  */
-#define PIO0_INSTR_MEM23_INSTR_MEM23_msb			15u
-#define PIO0_INSTR_MEM23_INSTR_MEM23_lsb			0u
+#define PIO0_INSTR_MEM23_INSTR_MEM23_Msb			15u
+#define PIO0_INSTR_MEM23_INSTR_MEM23_Lsb			0u
 
 	/* 0xA8: Write-only access to instruction memory location 24 */
 	uint32_t volatile INSTR_MEM24;
 	/*  */
-#define PIO0_INSTR_MEM24_INSTR_MEM24_msb			15u
-#define PIO0_INSTR_MEM24_INSTR_MEM24_lsb			0u
+#define PIO0_INSTR_MEM24_INSTR_MEM24_Msb			15u
+#define PIO0_INSTR_MEM24_INSTR_MEM24_Lsb			0u
 
 	/* 0xAC: Write-only access to instruction memory location 25 */
 	uint32_t volatile INSTR_MEM25;
 	/*  */
-#define PIO0_INSTR_MEM25_INSTR_MEM25_msb			15u
-#define PIO0_INSTR_MEM25_INSTR_MEM25_lsb			0u
+#define PIO0_INSTR_MEM25_INSTR_MEM25_Msb			15u
+#define PIO0_INSTR_MEM25_INSTR_MEM25_Lsb			0u
 
 	/* 0xB0: Write-only access to instruction memory location 26 */
 	uint32_t volatile INSTR_MEM26;
 	/*  */
-#define PIO0_INSTR_MEM26_INSTR_MEM26_msb			15u
-#define PIO0_INSTR_MEM26_INSTR_MEM26_lsb			0u
+#define PIO0_INSTR_MEM26_INSTR_MEM26_Msb			15u
+#define PIO0_INSTR_MEM26_INSTR_MEM26_Lsb			0u
 
 	/* 0xB4: Write-only access to instruction memory location 27 */
 	uint32_t volatile INSTR_MEM27;
 	/*  */
-#define PIO0_INSTR_MEM27_INSTR_MEM27_msb			15u
-#define PIO0_INSTR_MEM27_INSTR_MEM27_lsb			0u
+#define PIO0_INSTR_MEM27_INSTR_MEM27_Msb			15u
+#define PIO0_INSTR_MEM27_INSTR_MEM27_Lsb			0u
 
 	/* 0xB8: Write-only access to instruction memory location 28 */
 	uint32_t volatile INSTR_MEM28;
 	/*  */
-#define PIO0_INSTR_MEM28_INSTR_MEM28_msb			15u
-#define PIO0_INSTR_MEM28_INSTR_MEM28_lsb			0u
+#define PIO0_INSTR_MEM28_INSTR_MEM28_Msb			15u
+#define PIO0_INSTR_MEM28_INSTR_MEM28_Lsb			0u
 
 	/* 0xBC: Write-only access to instruction memory location 29 */
 	uint32_t volatile INSTR_MEM29;
 	/*  */
-#define PIO0_INSTR_MEM29_INSTR_MEM29_msb			15u
-#define PIO0_INSTR_MEM29_INSTR_MEM29_lsb			0u
+#define PIO0_INSTR_MEM29_INSTR_MEM29_Msb			15u
+#define PIO0_INSTR_MEM29_INSTR_MEM29_Lsb			0u
 
 	/* 0xC0: Write-only access to instruction memory location 30 */
 	uint32_t volatile INSTR_MEM30;
 	/*  */
-#define PIO0_INSTR_MEM30_INSTR_MEM30_msb			15u
-#define PIO0_INSTR_MEM30_INSTR_MEM30_lsb			0u
+#define PIO0_INSTR_MEM30_INSTR_MEM30_Msb			15u
+#define PIO0_INSTR_MEM30_INSTR_MEM30_Lsb			0u
 
 	/* 0xC4: Write-only access to instruction memory location 31 */
 	uint32_t volatile INSTR_MEM31;
 	/*  */
-#define PIO0_INSTR_MEM31_INSTR_MEM31_msb			15u
-#define PIO0_INSTR_MEM31_INSTR_MEM31_lsb			0u
+#define PIO0_INSTR_MEM31_INSTR_MEM31_Msb			15u
+#define PIO0_INSTR_MEM31_INSTR_MEM31_Lsb			0u
 
 	/* 0xC8: Clock divisor register for state machine 0 */
 	uint32_t volatile SM0_CLKDIV;
 	/* Effective frequency is sysclk/(int + frac/256). */
-#define PIO0_SM0_CLKDIV_INT_msb					31u
-#define PIO0_SM0_CLKDIV_INT_lsb					16u
+#define PIO0_SM0_CLKDIV_INT_Msb					31u
+#define PIO0_SM0_CLKDIV_INT_Lsb					16u
 	/* Fractional part of clock divisor */
-#define PIO0_SM0_CLKDIV_FRAC_msb				15u
-#define PIO0_SM0_CLKDIV_FRAC_lsb				8u
+#define PIO0_SM0_CLKDIV_FRAC_Msb				15u
+#define PIO0_SM0_CLKDIV_FRAC_Lsb				8u
 
 	/* 0xCC: Execution/behavioural settings for state machine 0 */
 	uint32_t volatile SM0_EXECCTRL;
@@ -14684,28 +14684,28 @@ struct sdk_pio0 {
 	/* If 1, side-set data is asserted to pin directions, instead of pin values */
 #define PIO0_SM0_EXECCTRL_SIDE_PINDIR				29u
 	/* The GPIO number to use as condition for JMP PIN. */
-#define PIO0_SM0_EXECCTRL_JMP_PIN_msb				28u
-#define PIO0_SM0_EXECCTRL_JMP_PIN_lsb				24u
+#define PIO0_SM0_EXECCTRL_JMP_PIN_Msb				28u
+#define PIO0_SM0_EXECCTRL_JMP_PIN_Lsb				24u
 	/* Which data bit to use for inline OUT enable */
-#define PIO0_SM0_EXECCTRL_OUT_EN_SEL_msb			23u
-#define PIO0_SM0_EXECCTRL_OUT_EN_SEL_lsb			19u
+#define PIO0_SM0_EXECCTRL_OUT_EN_SEL_Msb			23u
+#define PIO0_SM0_EXECCTRL_OUT_EN_SEL_Lsb			19u
 	/* If 1, use a bit of OUT data as an auxiliary write enable */
 #define PIO0_SM0_EXECCTRL_INLINE_OUT_EN				18u
 	/* Continuously assert the most recent OUT/SET to the pins */
 #define PIO0_SM0_EXECCTRL_OUT_STICKY				17u
 	/* After reaching this address, execution is wrapped to wrap_bottom. */
-#define PIO0_SM0_EXECCTRL_WRAP_TOP_msb				16u
-#define PIO0_SM0_EXECCTRL_WRAP_TOP_lsb				12u
+#define PIO0_SM0_EXECCTRL_WRAP_TOP_Msb				16u
+#define PIO0_SM0_EXECCTRL_WRAP_TOP_Lsb				12u
 	/* After reaching wrap_top, execution is wrapped to this address. */
-#define PIO0_SM0_EXECCTRL_WRAP_BOTTOM_msb			11u
-#define PIO0_SM0_EXECCTRL_WRAP_BOTTOM_lsb			7u
+#define PIO0_SM0_EXECCTRL_WRAP_BOTTOM_Msb			11u
+#define PIO0_SM0_EXECCTRL_WRAP_BOTTOM_Lsb			7u
 	/* Comparison used for the MOV x, STATUS instruction. */
 #define PIO0_SM0_EXECCTRL_STATUS_SEL				4u
 #define PIO0_SM0_EXECCTRL_STATUS_SEL_TXLEVEL			0u
 #define PIO0_SM0_EXECCTRL_STATUS_SEL_RXLEVEL			1u
 	/* Comparison level for the MOV x, STATUS instruction */
-#define PIO0_SM0_EXECCTRL_STATUS_N_msb				3u
-#define PIO0_SM0_EXECCTRL_STATUS_N_lsb				0u
+#define PIO0_SM0_EXECCTRL_STATUS_N_Msb				3u
+#define PIO0_SM0_EXECCTRL_STATUS_N_Lsb				0u
 
 	/* 0xD0: Control behaviour of the input/output shift registers for state machine 0 */
 	uint32_t volatile SM0_SHIFTCTRL;
@@ -14714,11 +14714,11 @@ struct sdk_pio0 {
 	/* When 1, TX FIFO steals the RX FIFO's storage, and becomes twice as deep. */
 #define PIO0_SM0_SHIFTCTRL_FJOIN_TX				30u
 	/* Number of bits shifted out of OSR before autopull, or conditional pull (PULL IFEMPTY), will take place. */
-#define PIO0_SM0_SHIFTCTRL_PULL_THRESH_msb			29u
-#define PIO0_SM0_SHIFTCTRL_PULL_THRESH_lsb			25u
+#define PIO0_SM0_SHIFTCTRL_PULL_THRESH_Msb			29u
+#define PIO0_SM0_SHIFTCTRL_PULL_THRESH_Lsb			25u
 	/* Number of bits shifted into ISR before autopush, or conditional push (PUSH IFFULL), will take place. */
-#define PIO0_SM0_SHIFTCTRL_PUSH_THRESH_msb			24u
-#define PIO0_SM0_SHIFTCTRL_PUSH_THRESH_lsb			20u
+#define PIO0_SM0_SHIFTCTRL_PUSH_THRESH_Msb			24u
+#define PIO0_SM0_SHIFTCTRL_PUSH_THRESH_Lsb			20u
 	/* 1 = shift out of output shift register to right. */
 #define PIO0_SM0_SHIFTCTRL_OUT_SHIFTDIR				19u
 	/* 1 = shift input shift register to right (data enters from left). */
@@ -14731,47 +14731,47 @@ struct sdk_pio0 {
 	/* 0xD4: Current instruction address of state machine 0 */
 	uint32_t volatile SM0_ADDR;
 	/*  */
-#define PIO0_SM0_ADDR_SM0_ADDR_msb				4u
-#define PIO0_SM0_ADDR_SM0_ADDR_lsb				0u
+#define PIO0_SM0_ADDR_SM0_ADDR_Msb				4u
+#define PIO0_SM0_ADDR_SM0_ADDR_Lsb				0u
 
 	/* 0xD8: Read to see the instruction currently addressed by state machine 0's program counter */
 	uint32_t volatile SM0_INSTR;
 	/*  */
-#define PIO0_SM0_INSTR_SM0_INSTR_msb				15u
-#define PIO0_SM0_INSTR_SM0_INSTR_lsb				0u
+#define PIO0_SM0_INSTR_SM0_INSTR_Msb				15u
+#define PIO0_SM0_INSTR_SM0_INSTR_Lsb				0u
 
 	/* 0xDC: State machine pin control */
 	uint32_t volatile SM0_PINCTRL;
 	/* The number of MSBs of the Delay/Side-set instruction field which are used for side-set. Inclusive of the enable bit, if present. Minimum of 0 (all delay bits, no side-set) and maximum of 5 (all side-set, no delay). */
-#define PIO0_SM0_PINCTRL_SIDESET_COUNT_msb			31u
-#define PIO0_SM0_PINCTRL_SIDESET_COUNT_lsb			29u
+#define PIO0_SM0_PINCTRL_SIDESET_COUNT_Msb			31u
+#define PIO0_SM0_PINCTRL_SIDESET_COUNT_Lsb			29u
 	/* The number of pins asserted by a SET. */
-#define PIO0_SM0_PINCTRL_SET_COUNT_msb				28u
-#define PIO0_SM0_PINCTRL_SET_COUNT_lsb				26u
+#define PIO0_SM0_PINCTRL_SET_COUNT_Msb				28u
+#define PIO0_SM0_PINCTRL_SET_COUNT_Lsb				26u
 	/* The number of pins asserted by an OUT PINS, OUT PINDIRS or MOV PINS instruction. */
-#define PIO0_SM0_PINCTRL_OUT_COUNT_msb				25u
-#define PIO0_SM0_PINCTRL_OUT_COUNT_lsb				20u
+#define PIO0_SM0_PINCTRL_OUT_COUNT_Msb				25u
+#define PIO0_SM0_PINCTRL_OUT_COUNT_Lsb				20u
 	/* The pin which is mapped to the least-significant bit of a state machine's IN data bus. */
-#define PIO0_SM0_PINCTRL_IN_BASE_msb				19u
-#define PIO0_SM0_PINCTRL_IN_BASE_lsb				15u
+#define PIO0_SM0_PINCTRL_IN_BASE_Msb				19u
+#define PIO0_SM0_PINCTRL_IN_BASE_Lsb				15u
 	/* The lowest-numbered pin that will be affected by a side-set operation. The MSBs of an instruction's side-set/delay field (up to 5, determined by SIDESET_COUNT) are used for side-set data, with the remaining LSBs used for delay. */
-#define PIO0_SM0_PINCTRL_SIDESET_BASE_msb			14u
-#define PIO0_SM0_PINCTRL_SIDESET_BASE_lsb			10u
+#define PIO0_SM0_PINCTRL_SIDESET_BASE_Msb			14u
+#define PIO0_SM0_PINCTRL_SIDESET_BASE_Lsb			10u
 	/* The lowest-numbered pin that will be affected by a SET PINS or SET PINDIRS instruction. */
-#define PIO0_SM0_PINCTRL_SET_BASE_msb				9u
-#define PIO0_SM0_PINCTRL_SET_BASE_lsb				5u
+#define PIO0_SM0_PINCTRL_SET_BASE_Msb				9u
+#define PIO0_SM0_PINCTRL_SET_BASE_Lsb				5u
 	/* The lowest-numbered pin that will be affected by an OUT PINS, OUT PINDIRS or MOV PINS instruction. */
-#define PIO0_SM0_PINCTRL_OUT_BASE_msb				4u
-#define PIO0_SM0_PINCTRL_OUT_BASE_lsb				0u
+#define PIO0_SM0_PINCTRL_OUT_BASE_Msb				4u
+#define PIO0_SM0_PINCTRL_OUT_BASE_Lsb				0u
 
 	/* 0xE0: Clock divisor register for state machine 1 */
 	uint32_t volatile SM1_CLKDIV;
 	/* Effective frequency is sysclk/(int + frac/256). */
-#define PIO0_SM1_CLKDIV_INT_msb					31u
-#define PIO0_SM1_CLKDIV_INT_lsb					16u
+#define PIO0_SM1_CLKDIV_INT_Msb					31u
+#define PIO0_SM1_CLKDIV_INT_Lsb					16u
 	/* Fractional part of clock divisor */
-#define PIO0_SM1_CLKDIV_FRAC_msb				15u
-#define PIO0_SM1_CLKDIV_FRAC_lsb				8u
+#define PIO0_SM1_CLKDIV_FRAC_Msb				15u
+#define PIO0_SM1_CLKDIV_FRAC_Lsb				8u
 
 	/* 0xE4: Execution/behavioural settings for state machine 1 */
 	uint32_t volatile SM1_EXECCTRL;
@@ -14782,28 +14782,28 @@ struct sdk_pio0 {
 	/* If 1, side-set data is asserted to pin directions, instead of pin values */
 #define PIO0_SM1_EXECCTRL_SIDE_PINDIR				29u
 	/* The GPIO number to use as condition for JMP PIN. */
-#define PIO0_SM1_EXECCTRL_JMP_PIN_msb				28u
-#define PIO0_SM1_EXECCTRL_JMP_PIN_lsb				24u
+#define PIO0_SM1_EXECCTRL_JMP_PIN_Msb				28u
+#define PIO0_SM1_EXECCTRL_JMP_PIN_Lsb				24u
 	/* Which data bit to use for inline OUT enable */
-#define PIO0_SM1_EXECCTRL_OUT_EN_SEL_msb			23u
-#define PIO0_SM1_EXECCTRL_OUT_EN_SEL_lsb			19u
+#define PIO0_SM1_EXECCTRL_OUT_EN_SEL_Msb			23u
+#define PIO0_SM1_EXECCTRL_OUT_EN_SEL_Lsb			19u
 	/* If 1, use a bit of OUT data as an auxiliary write enable */
 #define PIO0_SM1_EXECCTRL_INLINE_OUT_EN				18u
 	/* Continuously assert the most recent OUT/SET to the pins */
 #define PIO0_SM1_EXECCTRL_OUT_STICKY				17u
 	/* After reaching this address, execution is wrapped to wrap_bottom. */
-#define PIO0_SM1_EXECCTRL_WRAP_TOP_msb				16u
-#define PIO0_SM1_EXECCTRL_WRAP_TOP_lsb				12u
+#define PIO0_SM1_EXECCTRL_WRAP_TOP_Msb				16u
+#define PIO0_SM1_EXECCTRL_WRAP_TOP_Lsb				12u
 	/* After reaching wrap_top, execution is wrapped to this address. */
-#define PIO0_SM1_EXECCTRL_WRAP_BOTTOM_msb			11u
-#define PIO0_SM1_EXECCTRL_WRAP_BOTTOM_lsb			7u
+#define PIO0_SM1_EXECCTRL_WRAP_BOTTOM_Msb			11u
+#define PIO0_SM1_EXECCTRL_WRAP_BOTTOM_Lsb			7u
 	/* Comparison used for the MOV x, STATUS instruction. */
 #define PIO0_SM1_EXECCTRL_STATUS_SEL				4u
 #define PIO0_SM1_EXECCTRL_STATUS_SEL_TXLEVEL			0u
 #define PIO0_SM1_EXECCTRL_STATUS_SEL_RXLEVEL			1u
 	/* Comparison level for the MOV x, STATUS instruction */
-#define PIO0_SM1_EXECCTRL_STATUS_N_msb				3u
-#define PIO0_SM1_EXECCTRL_STATUS_N_lsb				0u
+#define PIO0_SM1_EXECCTRL_STATUS_N_Msb				3u
+#define PIO0_SM1_EXECCTRL_STATUS_N_Lsb				0u
 
 	/* 0xE8: Control behaviour of the input/output shift registers for state machine 1 */
 	uint32_t volatile SM1_SHIFTCTRL;
@@ -14812,11 +14812,11 @@ struct sdk_pio0 {
 	/* When 1, TX FIFO steals the RX FIFO's storage, and becomes twice as deep. */
 #define PIO0_SM1_SHIFTCTRL_FJOIN_TX				30u
 	/* Number of bits shifted out of OSR before autopull, or conditional pull (PULL IFEMPTY), will take place. */
-#define PIO0_SM1_SHIFTCTRL_PULL_THRESH_msb			29u
-#define PIO0_SM1_SHIFTCTRL_PULL_THRESH_lsb			25u
+#define PIO0_SM1_SHIFTCTRL_PULL_THRESH_Msb			29u
+#define PIO0_SM1_SHIFTCTRL_PULL_THRESH_Lsb			25u
 	/* Number of bits shifted into ISR before autopush, or conditional push (PUSH IFFULL), will take place. */
-#define PIO0_SM1_SHIFTCTRL_PUSH_THRESH_msb			24u
-#define PIO0_SM1_SHIFTCTRL_PUSH_THRESH_lsb			20u
+#define PIO0_SM1_SHIFTCTRL_PUSH_THRESH_Msb			24u
+#define PIO0_SM1_SHIFTCTRL_PUSH_THRESH_Lsb			20u
 	/* 1 = shift out of output shift register to right. */
 #define PIO0_SM1_SHIFTCTRL_OUT_SHIFTDIR				19u
 	/* 1 = shift input shift register to right (data enters from left). */
@@ -14829,47 +14829,47 @@ struct sdk_pio0 {
 	/* 0xEC: Current instruction address of state machine 1 */
 	uint32_t volatile SM1_ADDR;
 	/*  */
-#define PIO0_SM1_ADDR_SM1_ADDR_msb				4u
-#define PIO0_SM1_ADDR_SM1_ADDR_lsb				0u
+#define PIO0_SM1_ADDR_SM1_ADDR_Msb				4u
+#define PIO0_SM1_ADDR_SM1_ADDR_Lsb				0u
 
 	/* 0xF0: Read to see the instruction currently addressed by state machine 1's program counter */
 	uint32_t volatile SM1_INSTR;
 	/*  */
-#define PIO0_SM1_INSTR_SM1_INSTR_msb				15u
-#define PIO0_SM1_INSTR_SM1_INSTR_lsb				0u
+#define PIO0_SM1_INSTR_SM1_INSTR_Msb				15u
+#define PIO0_SM1_INSTR_SM1_INSTR_Lsb				0u
 
 	/* 0xF4: State machine pin control */
 	uint32_t volatile SM1_PINCTRL;
 	/* The number of MSBs of the Delay/Side-set instruction field which are used for side-set. Inclusive of the enable bit, if present. Minimum of 0 (all delay bits, no side-set) and maximum of 5 (all side-set, no delay). */
-#define PIO0_SM1_PINCTRL_SIDESET_COUNT_msb			31u
-#define PIO0_SM1_PINCTRL_SIDESET_COUNT_lsb			29u
+#define PIO0_SM1_PINCTRL_SIDESET_COUNT_Msb			31u
+#define PIO0_SM1_PINCTRL_SIDESET_COUNT_Lsb			29u
 	/* The number of pins asserted by a SET. */
-#define PIO0_SM1_PINCTRL_SET_COUNT_msb				28u
-#define PIO0_SM1_PINCTRL_SET_COUNT_lsb				26u
+#define PIO0_SM1_PINCTRL_SET_COUNT_Msb				28u
+#define PIO0_SM1_PINCTRL_SET_COUNT_Lsb				26u
 	/* The number of pins asserted by an OUT PINS, OUT PINDIRS or MOV PINS instruction. */
-#define PIO0_SM1_PINCTRL_OUT_COUNT_msb				25u
-#define PIO0_SM1_PINCTRL_OUT_COUNT_lsb				20u
+#define PIO0_SM1_PINCTRL_OUT_COUNT_Msb				25u
+#define PIO0_SM1_PINCTRL_OUT_COUNT_Lsb				20u
 	/* The pin which is mapped to the least-significant bit of a state machine's IN data bus. */
-#define PIO0_SM1_PINCTRL_IN_BASE_msb				19u
-#define PIO0_SM1_PINCTRL_IN_BASE_lsb				15u
+#define PIO0_SM1_PINCTRL_IN_BASE_Msb				19u
+#define PIO0_SM1_PINCTRL_IN_BASE_Lsb				15u
 	/* The lowest-numbered pin that will be affected by a side-set operation. The MSBs of an instruction's side-set/delay field (up to 5, determined by SIDESET_COUNT) are used for side-set data, with the remaining LSBs used for delay. */
-#define PIO0_SM1_PINCTRL_SIDESET_BASE_msb			14u
-#define PIO0_SM1_PINCTRL_SIDESET_BASE_lsb			10u
+#define PIO0_SM1_PINCTRL_SIDESET_BASE_Msb			14u
+#define PIO0_SM1_PINCTRL_SIDESET_BASE_Lsb			10u
 	/* The lowest-numbered pin that will be affected by a SET PINS or SET PINDIRS instruction. */
-#define PIO0_SM1_PINCTRL_SET_BASE_msb				9u
-#define PIO0_SM1_PINCTRL_SET_BASE_lsb				5u
+#define PIO0_SM1_PINCTRL_SET_BASE_Msb				9u
+#define PIO0_SM1_PINCTRL_SET_BASE_Lsb				5u
 	/* The lowest-numbered pin that will be affected by an OUT PINS, OUT PINDIRS or MOV PINS instruction. */
-#define PIO0_SM1_PINCTRL_OUT_BASE_msb				4u
-#define PIO0_SM1_PINCTRL_OUT_BASE_lsb				0u
+#define PIO0_SM1_PINCTRL_OUT_BASE_Msb				4u
+#define PIO0_SM1_PINCTRL_OUT_BASE_Lsb				0u
 
 	/* 0xF8: Clock divisor register for state machine 2 */
 	uint32_t volatile SM2_CLKDIV;
 	/* Effective frequency is sysclk/(int + frac/256). */
-#define PIO0_SM2_CLKDIV_INT_msb					31u
-#define PIO0_SM2_CLKDIV_INT_lsb					16u
+#define PIO0_SM2_CLKDIV_INT_Msb					31u
+#define PIO0_SM2_CLKDIV_INT_Lsb					16u
 	/* Fractional part of clock divisor */
-#define PIO0_SM2_CLKDIV_FRAC_msb				15u
-#define PIO0_SM2_CLKDIV_FRAC_lsb				8u
+#define PIO0_SM2_CLKDIV_FRAC_Msb				15u
+#define PIO0_SM2_CLKDIV_FRAC_Lsb				8u
 
 	/* 0xFC: Execution/behavioural settings for state machine 2 */
 	uint32_t volatile SM2_EXECCTRL;
@@ -14880,28 +14880,28 @@ struct sdk_pio0 {
 	/* If 1, side-set data is asserted to pin directions, instead of pin values */
 #define PIO0_SM2_EXECCTRL_SIDE_PINDIR				29u
 	/* The GPIO number to use as condition for JMP PIN. */
-#define PIO0_SM2_EXECCTRL_JMP_PIN_msb				28u
-#define PIO0_SM2_EXECCTRL_JMP_PIN_lsb				24u
+#define PIO0_SM2_EXECCTRL_JMP_PIN_Msb				28u
+#define PIO0_SM2_EXECCTRL_JMP_PIN_Lsb				24u
 	/* Which data bit to use for inline OUT enable */
-#define PIO0_SM2_EXECCTRL_OUT_EN_SEL_msb			23u
-#define PIO0_SM2_EXECCTRL_OUT_EN_SEL_lsb			19u
+#define PIO0_SM2_EXECCTRL_OUT_EN_SEL_Msb			23u
+#define PIO0_SM2_EXECCTRL_OUT_EN_SEL_Lsb			19u
 	/* If 1, use a bit of OUT data as an auxiliary write enable */
 #define PIO0_SM2_EXECCTRL_INLINE_OUT_EN				18u
 	/* Continuously assert the most recent OUT/SET to the pins */
 #define PIO0_SM2_EXECCTRL_OUT_STICKY				17u
 	/* After reaching this address, execution is wrapped to wrap_bottom. */
-#define PIO0_SM2_EXECCTRL_WRAP_TOP_msb				16u
-#define PIO0_SM2_EXECCTRL_WRAP_TOP_lsb				12u
+#define PIO0_SM2_EXECCTRL_WRAP_TOP_Msb				16u
+#define PIO0_SM2_EXECCTRL_WRAP_TOP_Lsb				12u
 	/* After reaching wrap_top, execution is wrapped to this address. */
-#define PIO0_SM2_EXECCTRL_WRAP_BOTTOM_msb			11u
-#define PIO0_SM2_EXECCTRL_WRAP_BOTTOM_lsb			7u
+#define PIO0_SM2_EXECCTRL_WRAP_BOTTOM_Msb			11u
+#define PIO0_SM2_EXECCTRL_WRAP_BOTTOM_Lsb			7u
 	/* Comparison used for the MOV x, STATUS instruction. */
 #define PIO0_SM2_EXECCTRL_STATUS_SEL				4u
 #define PIO0_SM2_EXECCTRL_STATUS_SEL_TXLEVEL			0u
 #define PIO0_SM2_EXECCTRL_STATUS_SEL_RXLEVEL			1u
 	/* Comparison level for the MOV x, STATUS instruction */
-#define PIO0_SM2_EXECCTRL_STATUS_N_msb				3u
-#define PIO0_SM2_EXECCTRL_STATUS_N_lsb				0u
+#define PIO0_SM2_EXECCTRL_STATUS_N_Msb				3u
+#define PIO0_SM2_EXECCTRL_STATUS_N_Lsb				0u
 
 	/* 0x100: Control behaviour of the input/output shift registers for state machine 2 */
 	uint32_t volatile SM2_SHIFTCTRL;
@@ -14910,11 +14910,11 @@ struct sdk_pio0 {
 	/* When 1, TX FIFO steals the RX FIFO's storage, and becomes twice as deep. */
 #define PIO0_SM2_SHIFTCTRL_FJOIN_TX				30u
 	/* Number of bits shifted out of OSR before autopull, or conditional pull (PULL IFEMPTY), will take place. */
-#define PIO0_SM2_SHIFTCTRL_PULL_THRESH_msb			29u
-#define PIO0_SM2_SHIFTCTRL_PULL_THRESH_lsb			25u
+#define PIO0_SM2_SHIFTCTRL_PULL_THRESH_Msb			29u
+#define PIO0_SM2_SHIFTCTRL_PULL_THRESH_Lsb			25u
 	/* Number of bits shifted into ISR before autopush, or conditional push (PUSH IFFULL), will take place. */
-#define PIO0_SM2_SHIFTCTRL_PUSH_THRESH_msb			24u
-#define PIO0_SM2_SHIFTCTRL_PUSH_THRESH_lsb			20u
+#define PIO0_SM2_SHIFTCTRL_PUSH_THRESH_Msb			24u
+#define PIO0_SM2_SHIFTCTRL_PUSH_THRESH_Lsb			20u
 	/* 1 = shift out of output shift register to right. */
 #define PIO0_SM2_SHIFTCTRL_OUT_SHIFTDIR				19u
 	/* 1 = shift input shift register to right (data enters from left). */
@@ -14927,47 +14927,47 @@ struct sdk_pio0 {
 	/* 0x104: Current instruction address of state machine 2 */
 	uint32_t volatile SM2_ADDR;
 	/*  */
-#define PIO0_SM2_ADDR_SM2_ADDR_msb				4u
-#define PIO0_SM2_ADDR_SM2_ADDR_lsb				0u
+#define PIO0_SM2_ADDR_SM2_ADDR_Msb				4u
+#define PIO0_SM2_ADDR_SM2_ADDR_Lsb				0u
 
 	/* 0x108: Read to see the instruction currently addressed by state machine 2's program counter */
 	uint32_t volatile SM2_INSTR;
 	/*  */
-#define PIO0_SM2_INSTR_SM2_INSTR_msb				15u
-#define PIO0_SM2_INSTR_SM2_INSTR_lsb				0u
+#define PIO0_SM2_INSTR_SM2_INSTR_Msb				15u
+#define PIO0_SM2_INSTR_SM2_INSTR_Lsb				0u
 
 	/* 0x10C: State machine pin control */
 	uint32_t volatile SM2_PINCTRL;
 	/* The number of MSBs of the Delay/Side-set instruction field which are used for side-set. Inclusive of the enable bit, if present. Minimum of 0 (all delay bits, no side-set) and maximum of 5 (all side-set, no delay). */
-#define PIO0_SM2_PINCTRL_SIDESET_COUNT_msb			31u
-#define PIO0_SM2_PINCTRL_SIDESET_COUNT_lsb			29u
+#define PIO0_SM2_PINCTRL_SIDESET_COUNT_Msb			31u
+#define PIO0_SM2_PINCTRL_SIDESET_COUNT_Lsb			29u
 	/* The number of pins asserted by a SET. */
-#define PIO0_SM2_PINCTRL_SET_COUNT_msb				28u
-#define PIO0_SM2_PINCTRL_SET_COUNT_lsb				26u
+#define PIO0_SM2_PINCTRL_SET_COUNT_Msb				28u
+#define PIO0_SM2_PINCTRL_SET_COUNT_Lsb				26u
 	/* The number of pins asserted by an OUT PINS, OUT PINDIRS or MOV PINS instruction. */
-#define PIO0_SM2_PINCTRL_OUT_COUNT_msb				25u
-#define PIO0_SM2_PINCTRL_OUT_COUNT_lsb				20u
+#define PIO0_SM2_PINCTRL_OUT_COUNT_Msb				25u
+#define PIO0_SM2_PINCTRL_OUT_COUNT_Lsb				20u
 	/* The pin which is mapped to the least-significant bit of a state machine's IN data bus. */
-#define PIO0_SM2_PINCTRL_IN_BASE_msb				19u
-#define PIO0_SM2_PINCTRL_IN_BASE_lsb				15u
+#define PIO0_SM2_PINCTRL_IN_BASE_Msb				19u
+#define PIO0_SM2_PINCTRL_IN_BASE_Lsb				15u
 	/* The lowest-numbered pin that will be affected by a side-set operation. The MSBs of an instruction's side-set/delay field (up to 5, determined by SIDESET_COUNT) are used for side-set data, with the remaining LSBs used for delay. */
-#define PIO0_SM2_PINCTRL_SIDESET_BASE_msb			14u
-#define PIO0_SM2_PINCTRL_SIDESET_BASE_lsb			10u
+#define PIO0_SM2_PINCTRL_SIDESET_BASE_Msb			14u
+#define PIO0_SM2_PINCTRL_SIDESET_BASE_Lsb			10u
 	/* The lowest-numbered pin that will be affected by a SET PINS or SET PINDIRS instruction. */
-#define PIO0_SM2_PINCTRL_SET_BASE_msb				9u
-#define PIO0_SM2_PINCTRL_SET_BASE_lsb				5u
+#define PIO0_SM2_PINCTRL_SET_BASE_Msb				9u
+#define PIO0_SM2_PINCTRL_SET_BASE_Lsb				5u
 	/* The lowest-numbered pin that will be affected by an OUT PINS, OUT PINDIRS or MOV PINS instruction. */
-#define PIO0_SM2_PINCTRL_OUT_BASE_msb				4u
-#define PIO0_SM2_PINCTRL_OUT_BASE_lsb				0u
+#define PIO0_SM2_PINCTRL_OUT_BASE_Msb				4u
+#define PIO0_SM2_PINCTRL_OUT_BASE_Lsb				0u
 
 	/* 0x110: Clock divisor register for state machine 3 */
 	uint32_t volatile SM3_CLKDIV;
 	/* Effective frequency is sysclk/(int + frac/256). */
-#define PIO0_SM3_CLKDIV_INT_msb					31u
-#define PIO0_SM3_CLKDIV_INT_lsb					16u
+#define PIO0_SM3_CLKDIV_INT_Msb					31u
+#define PIO0_SM3_CLKDIV_INT_Lsb					16u
 	/* Fractional part of clock divisor */
-#define PIO0_SM3_CLKDIV_FRAC_msb				15u
-#define PIO0_SM3_CLKDIV_FRAC_lsb				8u
+#define PIO0_SM3_CLKDIV_FRAC_Msb				15u
+#define PIO0_SM3_CLKDIV_FRAC_Lsb				8u
 
 	/* 0x114: Execution/behavioural settings for state machine 3 */
 	uint32_t volatile SM3_EXECCTRL;
@@ -14978,28 +14978,28 @@ struct sdk_pio0 {
 	/* If 1, side-set data is asserted to pin directions, instead of pin values */
 #define PIO0_SM3_EXECCTRL_SIDE_PINDIR				29u
 	/* The GPIO number to use as condition for JMP PIN. */
-#define PIO0_SM3_EXECCTRL_JMP_PIN_msb				28u
-#define PIO0_SM3_EXECCTRL_JMP_PIN_lsb				24u
+#define PIO0_SM3_EXECCTRL_JMP_PIN_Msb				28u
+#define PIO0_SM3_EXECCTRL_JMP_PIN_Lsb				24u
 	/* Which data bit to use for inline OUT enable */
-#define PIO0_SM3_EXECCTRL_OUT_EN_SEL_msb			23u
-#define PIO0_SM3_EXECCTRL_OUT_EN_SEL_lsb			19u
+#define PIO0_SM3_EXECCTRL_OUT_EN_SEL_Msb			23u
+#define PIO0_SM3_EXECCTRL_OUT_EN_SEL_Lsb			19u
 	/* If 1, use a bit of OUT data as an auxiliary write enable */
 #define PIO0_SM3_EXECCTRL_INLINE_OUT_EN				18u
 	/* Continuously assert the most recent OUT/SET to the pins */
 #define PIO0_SM3_EXECCTRL_OUT_STICKY				17u
 	/* After reaching this address, execution is wrapped to wrap_bottom. */
-#define PIO0_SM3_EXECCTRL_WRAP_TOP_msb				16u
-#define PIO0_SM3_EXECCTRL_WRAP_TOP_lsb				12u
+#define PIO0_SM3_EXECCTRL_WRAP_TOP_Msb				16u
+#define PIO0_SM3_EXECCTRL_WRAP_TOP_Lsb				12u
 	/* After reaching wrap_top, execution is wrapped to this address. */
-#define PIO0_SM3_EXECCTRL_WRAP_BOTTOM_msb			11u
-#define PIO0_SM3_EXECCTRL_WRAP_BOTTOM_lsb			7u
+#define PIO0_SM3_EXECCTRL_WRAP_BOTTOM_Msb			11u
+#define PIO0_SM3_EXECCTRL_WRAP_BOTTOM_Lsb			7u
 	/* Comparison used for the MOV x, STATUS instruction. */
 #define PIO0_SM3_EXECCTRL_STATUS_SEL				4u
 #define PIO0_SM3_EXECCTRL_STATUS_SEL_TXLEVEL			0u
 #define PIO0_SM3_EXECCTRL_STATUS_SEL_RXLEVEL			1u
 	/* Comparison level for the MOV x, STATUS instruction */
-#define PIO0_SM3_EXECCTRL_STATUS_N_msb				3u
-#define PIO0_SM3_EXECCTRL_STATUS_N_lsb				0u
+#define PIO0_SM3_EXECCTRL_STATUS_N_Msb				3u
+#define PIO0_SM3_EXECCTRL_STATUS_N_Lsb				0u
 
 	/* 0x118: Control behaviour of the input/output shift registers for state machine 3 */
 	uint32_t volatile SM3_SHIFTCTRL;
@@ -15008,11 +15008,11 @@ struct sdk_pio0 {
 	/* When 1, TX FIFO steals the RX FIFO's storage, and becomes twice as deep. */
 #define PIO0_SM3_SHIFTCTRL_FJOIN_TX				30u
 	/* Number of bits shifted out of OSR before autopull, or conditional pull (PULL IFEMPTY), will take place. */
-#define PIO0_SM3_SHIFTCTRL_PULL_THRESH_msb			29u
-#define PIO0_SM3_SHIFTCTRL_PULL_THRESH_lsb			25u
+#define PIO0_SM3_SHIFTCTRL_PULL_THRESH_Msb			29u
+#define PIO0_SM3_SHIFTCTRL_PULL_THRESH_Lsb			25u
 	/* Number of bits shifted into ISR before autopush, or conditional push (PUSH IFFULL), will take place. */
-#define PIO0_SM3_SHIFTCTRL_PUSH_THRESH_msb			24u
-#define PIO0_SM3_SHIFTCTRL_PUSH_THRESH_lsb			20u
+#define PIO0_SM3_SHIFTCTRL_PUSH_THRESH_Msb			24u
+#define PIO0_SM3_SHIFTCTRL_PUSH_THRESH_Lsb			20u
 	/* 1 = shift out of output shift register to right. */
 #define PIO0_SM3_SHIFTCTRL_OUT_SHIFTDIR				19u
 	/* 1 = shift input shift register to right (data enters from left). */
@@ -15025,38 +15025,38 @@ struct sdk_pio0 {
 	/* 0x11C: Current instruction address of state machine 3 */
 	uint32_t volatile SM3_ADDR;
 	/*  */
-#define PIO0_SM3_ADDR_SM3_ADDR_msb				4u
-#define PIO0_SM3_ADDR_SM3_ADDR_lsb				0u
+#define PIO0_SM3_ADDR_SM3_ADDR_Msb				4u
+#define PIO0_SM3_ADDR_SM3_ADDR_Lsb				0u
 
 	/* 0x120: Read to see the instruction currently addressed by state machine 3's program counter */
 	uint32_t volatile SM3_INSTR;
 	/*  */
-#define PIO0_SM3_INSTR_SM3_INSTR_msb				15u
-#define PIO0_SM3_INSTR_SM3_INSTR_lsb				0u
+#define PIO0_SM3_INSTR_SM3_INSTR_Msb				15u
+#define PIO0_SM3_INSTR_SM3_INSTR_Lsb				0u
 
 	/* 0x124: State machine pin control */
 	uint32_t volatile SM3_PINCTRL;
 	/* The number of MSBs of the Delay/Side-set instruction field which are used for side-set. Inclusive of the enable bit, if present. Minimum of 0 (all delay bits, no side-set) and maximum of 5 (all side-set, no delay). */
-#define PIO0_SM3_PINCTRL_SIDESET_COUNT_msb			31u
-#define PIO0_SM3_PINCTRL_SIDESET_COUNT_lsb			29u
+#define PIO0_SM3_PINCTRL_SIDESET_COUNT_Msb			31u
+#define PIO0_SM3_PINCTRL_SIDESET_COUNT_Lsb			29u
 	/* The number of pins asserted by a SET. */
-#define PIO0_SM3_PINCTRL_SET_COUNT_msb				28u
-#define PIO0_SM3_PINCTRL_SET_COUNT_lsb				26u
+#define PIO0_SM3_PINCTRL_SET_COUNT_Msb				28u
+#define PIO0_SM3_PINCTRL_SET_COUNT_Lsb				26u
 	/* The number of pins asserted by an OUT PINS, OUT PINDIRS or MOV PINS instruction. */
-#define PIO0_SM3_PINCTRL_OUT_COUNT_msb				25u
-#define PIO0_SM3_PINCTRL_OUT_COUNT_lsb				20u
+#define PIO0_SM3_PINCTRL_OUT_COUNT_Msb				25u
+#define PIO0_SM3_PINCTRL_OUT_COUNT_Lsb				20u
 	/* The pin which is mapped to the least-significant bit of a state machine's IN data bus. */
-#define PIO0_SM3_PINCTRL_IN_BASE_msb				19u
-#define PIO0_SM3_PINCTRL_IN_BASE_lsb				15u
+#define PIO0_SM3_PINCTRL_IN_BASE_Msb				19u
+#define PIO0_SM3_PINCTRL_IN_BASE_Lsb				15u
 	/* The lowest-numbered pin that will be affected by a side-set operation. The MSBs of an instruction's side-set/delay field (up to 5, determined by SIDESET_COUNT) are used for side-set data, with the remaining LSBs used for delay. */
-#define PIO0_SM3_PINCTRL_SIDESET_BASE_msb			14u
-#define PIO0_SM3_PINCTRL_SIDESET_BASE_lsb			10u
+#define PIO0_SM3_PINCTRL_SIDESET_BASE_Msb			14u
+#define PIO0_SM3_PINCTRL_SIDESET_BASE_Lsb			10u
 	/* The lowest-numbered pin that will be affected by a SET PINS or SET PINDIRS instruction. */
-#define PIO0_SM3_PINCTRL_SET_BASE_msb				9u
-#define PIO0_SM3_PINCTRL_SET_BASE_lsb				5u
+#define PIO0_SM3_PINCTRL_SET_BASE_Msb				9u
+#define PIO0_SM3_PINCTRL_SET_BASE_Lsb				5u
 	/* The lowest-numbered pin that will be affected by an OUT PINS, OUT PINDIRS or MOV PINS instruction. */
-#define PIO0_SM3_PINCTRL_OUT_BASE_msb				4u
-#define PIO0_SM3_PINCTRL_OUT_BASE_lsb				0u
+#define PIO0_SM3_PINCTRL_OUT_BASE_Msb				4u
+#define PIO0_SM3_PINCTRL_OUT_BASE_Lsb				0u
 
 	/* 0x128: Raw Interrupts */
 	uint32_t volatile INTR;
@@ -15260,14 +15260,14 @@ struct sdk_sio {
 	/* 0x04: Input value for GPIO pins */
 	uint32_t volatile GPIO_IN;
 	/* Input value for GPIO0...29 */
-#define SIO_GPIO_IN_GPIO_IN_msb					29u
-#define SIO_GPIO_IN_GPIO_IN_lsb					0u
+#define SIO_GPIO_IN_GPIO_IN_Msb					29u
+#define SIO_GPIO_IN_GPIO_IN_Lsb					0u
 
 	/* 0x08: Input value for QSPI pins */
 	uint32_t volatile GPIO_HI_IN;
 	/* Input value on QSPI IO in order 0..5: SCLK, SSn, SD0, SD1, SD2, SD3 */
-#define SIO_GPIO_HI_IN_GPIO_HI_IN_msb				5u
-#define SIO_GPIO_HI_IN_GPIO_HI_IN_lsb				0u
+#define SIO_GPIO_HI_IN_GPIO_HI_IN_Msb				5u
+#define SIO_GPIO_HI_IN_GPIO_HI_IN_Lsb				0u
 
 	/* 0x0C */
 	uint8_t RESERVED0[0x10-0x0C];
@@ -15275,98 +15275,98 @@ struct sdk_sio {
 	/* 0x10: GPIO output value */
 	uint32_t volatile GPIO_OUT;
 	/* Set output level (1/0 -> high/low) for GPIO0...29. */
-#define SIO_GPIO_OUT_GPIO_OUT_msb				29u
-#define SIO_GPIO_OUT_GPIO_OUT_lsb				0u
+#define SIO_GPIO_OUT_GPIO_OUT_Msb				29u
+#define SIO_GPIO_OUT_GPIO_OUT_Lsb				0u
 
 	/* 0x14: GPIO output value set */
 	uint32_t volatile GPIO_OUT_SET;
 	/* Perform an atomic bit-set on GPIO_OUT, i.e. */
-#define SIO_GPIO_OUT_SET_GPIO_OUT_SET_msb			29u
-#define SIO_GPIO_OUT_SET_GPIO_OUT_SET_lsb			0u
+#define SIO_GPIO_OUT_SET_GPIO_OUT_SET_Msb			29u
+#define SIO_GPIO_OUT_SET_GPIO_OUT_SET_Lsb			0u
 
 	/* 0x18: GPIO output value clear */
 	uint32_t volatile GPIO_OUT_CLR;
 	/* Perform an atomic bit-clear on GPIO_OUT, i.e. */
-#define SIO_GPIO_OUT_CLR_GPIO_OUT_CLR_msb			29u
-#define SIO_GPIO_OUT_CLR_GPIO_OUT_CLR_lsb			0u
+#define SIO_GPIO_OUT_CLR_GPIO_OUT_CLR_Msb			29u
+#define SIO_GPIO_OUT_CLR_GPIO_OUT_CLR_Lsb			0u
 
 	/* 0x1C: GPIO output value XOR */
 	uint32_t volatile GPIO_OUT_XOR;
 	/* Perform an atomic bitwise XOR on GPIO_OUT, i.e. */
-#define SIO_GPIO_OUT_XOR_GPIO_OUT_XOR_msb			29u
-#define SIO_GPIO_OUT_XOR_GPIO_OUT_XOR_lsb			0u
+#define SIO_GPIO_OUT_XOR_GPIO_OUT_XOR_Msb			29u
+#define SIO_GPIO_OUT_XOR_GPIO_OUT_XOR_Lsb			0u
 
 	/* 0x20: GPIO output enable */
 	uint32_t volatile GPIO_OE;
 	/* Set output enable (1/0 -> output/input) for GPIO0...29. */
-#define SIO_GPIO_OE_GPIO_OE_msb					29u
-#define SIO_GPIO_OE_GPIO_OE_lsb					0u
+#define SIO_GPIO_OE_GPIO_OE_Msb					29u
+#define SIO_GPIO_OE_GPIO_OE_Lsb					0u
 
 	/* 0x24: GPIO output enable set */
 	uint32_t volatile GPIO_OE_SET;
 	/* Perform an atomic bit-set on GPIO_OE, i.e. */
-#define SIO_GPIO_OE_SET_GPIO_OE_SET_msb				29u
-#define SIO_GPIO_OE_SET_GPIO_OE_SET_lsb				0u
+#define SIO_GPIO_OE_SET_GPIO_OE_SET_Msb				29u
+#define SIO_GPIO_OE_SET_GPIO_OE_SET_Lsb				0u
 
 	/* 0x28: GPIO output enable clear */
 	uint32_t volatile GPIO_OE_CLR;
 	/* Perform an atomic bit-clear on GPIO_OE, i.e. */
-#define SIO_GPIO_OE_CLR_GPIO_OE_CLR_msb				29u
-#define SIO_GPIO_OE_CLR_GPIO_OE_CLR_lsb				0u
+#define SIO_GPIO_OE_CLR_GPIO_OE_CLR_Msb				29u
+#define SIO_GPIO_OE_CLR_GPIO_OE_CLR_Lsb				0u
 
 	/* 0x2C: GPIO output enable XOR */
 	uint32_t volatile GPIO_OE_XOR;
 	/* Perform an atomic bitwise XOR on GPIO_OE, i.e. */
-#define SIO_GPIO_OE_XOR_GPIO_OE_XOR_msb				29u
-#define SIO_GPIO_OE_XOR_GPIO_OE_XOR_lsb				0u
+#define SIO_GPIO_OE_XOR_GPIO_OE_XOR_Msb				29u
+#define SIO_GPIO_OE_XOR_GPIO_OE_XOR_Lsb				0u
 
 	/* 0x30: QSPI output value */
 	uint32_t volatile GPIO_HI_OUT;
 	/* Set output level (1/0 -> high/low) for QSPI IO0...5. */
-#define SIO_GPIO_HI_OUT_GPIO_HI_OUT_msb				5u
-#define SIO_GPIO_HI_OUT_GPIO_HI_OUT_lsb				0u
+#define SIO_GPIO_HI_OUT_GPIO_HI_OUT_Msb				5u
+#define SIO_GPIO_HI_OUT_GPIO_HI_OUT_Lsb				0u
 
 	/* 0x34: QSPI output value set */
 	uint32_t volatile GPIO_HI_OUT_SET;
 	/* Perform an atomic bit-set on GPIO_HI_OUT, i.e. */
-#define SIO_GPIO_HI_OUT_SET_GPIO_HI_OUT_SET_msb			5u
-#define SIO_GPIO_HI_OUT_SET_GPIO_HI_OUT_SET_lsb			0u
+#define SIO_GPIO_HI_OUT_SET_GPIO_HI_OUT_SET_Msb			5u
+#define SIO_GPIO_HI_OUT_SET_GPIO_HI_OUT_SET_Lsb			0u
 
 	/* 0x38: QSPI output value clear */
 	uint32_t volatile GPIO_HI_OUT_CLR;
 	/* Perform an atomic bit-clear on GPIO_HI_OUT, i.e. */
-#define SIO_GPIO_HI_OUT_CLR_GPIO_HI_OUT_CLR_msb			5u
-#define SIO_GPIO_HI_OUT_CLR_GPIO_HI_OUT_CLR_lsb			0u
+#define SIO_GPIO_HI_OUT_CLR_GPIO_HI_OUT_CLR_Msb			5u
+#define SIO_GPIO_HI_OUT_CLR_GPIO_HI_OUT_CLR_Lsb			0u
 
 	/* 0x3C: QSPI output value XOR */
 	uint32_t volatile GPIO_HI_OUT_XOR;
 	/* Perform an atomic bitwise XOR on GPIO_HI_OUT, i.e. */
-#define SIO_GPIO_HI_OUT_XOR_GPIO_HI_OUT_XOR_msb			5u
-#define SIO_GPIO_HI_OUT_XOR_GPIO_HI_OUT_XOR_lsb			0u
+#define SIO_GPIO_HI_OUT_XOR_GPIO_HI_OUT_XOR_Msb			5u
+#define SIO_GPIO_HI_OUT_XOR_GPIO_HI_OUT_XOR_Lsb			0u
 
 	/* 0x40: QSPI output enable */
 	uint32_t volatile GPIO_HI_OE;
 	/* Set output enable (1/0 -> output/input) for QSPI IO0...5. */
-#define SIO_GPIO_HI_OE_GPIO_HI_OE_msb				5u
-#define SIO_GPIO_HI_OE_GPIO_HI_OE_lsb				0u
+#define SIO_GPIO_HI_OE_GPIO_HI_OE_Msb				5u
+#define SIO_GPIO_HI_OE_GPIO_HI_OE_Lsb				0u
 
 	/* 0x44: QSPI output enable set */
 	uint32_t volatile GPIO_HI_OE_SET;
 	/* Perform an atomic bit-set on GPIO_HI_OE, i.e. */
-#define SIO_GPIO_HI_OE_SET_GPIO_HI_OE_SET_msb			5u
-#define SIO_GPIO_HI_OE_SET_GPIO_HI_OE_SET_lsb			0u
+#define SIO_GPIO_HI_OE_SET_GPIO_HI_OE_SET_Msb			5u
+#define SIO_GPIO_HI_OE_SET_GPIO_HI_OE_SET_Lsb			0u
 
 	/* 0x48: QSPI output enable clear */
 	uint32_t volatile GPIO_HI_OE_CLR;
 	/* Perform an atomic bit-clear on GPIO_HI_OE, i.e. */
-#define SIO_GPIO_HI_OE_CLR_GPIO_HI_OE_CLR_msb			5u
-#define SIO_GPIO_HI_OE_CLR_GPIO_HI_OE_CLR_lsb			0u
+#define SIO_GPIO_HI_OE_CLR_GPIO_HI_OE_CLR_Msb			5u
+#define SIO_GPIO_HI_OE_CLR_GPIO_HI_OE_CLR_Lsb			0u
 
 	/* 0x4C: QSPI output enable XOR */
 	uint32_t volatile GPIO_HI_OE_XOR;
 	/* Perform an atomic bitwise XOR on GPIO_HI_OE, i.e. */
-#define SIO_GPIO_HI_OE_XOR_GPIO_HI_OE_XOR_msb			5u
-#define SIO_GPIO_HI_OE_XOR_GPIO_HI_OE_XOR_lsb			0u
+#define SIO_GPIO_HI_OE_XOR_GPIO_HI_OE_XOR_Msb			5u
+#define SIO_GPIO_HI_OE_XOR_GPIO_HI_OE_XOR_Lsb			0u
 
 	/* 0x50: Status register for inter-core FIFOs (mailboxes). */
 	uint32_t volatile FIFO_ST;
@@ -15460,8 +15460,8 @@ struct sdk_sio {
 	/* Only present on INTERP0 on each core. */
 #define SIO_INTERP0_CTRL_LANE0_BLEND				21u
 	/* ORed into bits 29:28 of the lane result presented to the processor on the bus. */
-#define SIO_INTERP0_CTRL_LANE0_FORCE_MSB_msb			20u
-#define SIO_INTERP0_CTRL_LANE0_FORCE_MSB_lsb			19u
+#define SIO_INTERP0_CTRL_LANE0_FORCE_MSB_Msb			20u
+#define SIO_INTERP0_CTRL_LANE0_FORCE_MSB_Lsb			19u
 	/* If 1, mask + shift is bypassed for LANE0 result. */
 #define SIO_INTERP0_CTRL_LANE0_ADD_RAW				18u
 	/* If 1, feed the opposite lane's result into this lane's accumulator on POP. */
@@ -15471,20 +15471,20 @@ struct sdk_sio {
 	/* If SIGNED is set, the shifted and masked accumulator value is sign-extended to 32 bits */
 #define SIO_INTERP0_CTRL_LANE0_SIGNED				15u
 	/* The most-significant bit allowed to pass by the mask (inclusive) */
-#define SIO_INTERP0_CTRL_LANE0_MASK_MSB_msb			14u
-#define SIO_INTERP0_CTRL_LANE0_MASK_MSB_lsb			10u
+#define SIO_INTERP0_CTRL_LANE0_MASK_MSB_Msb			14u
+#define SIO_INTERP0_CTRL_LANE0_MASK_MSB_Lsb			10u
 	/* The least-significant bit allowed to pass by the mask (inclusive) */
-#define SIO_INTERP0_CTRL_LANE0_MASK_LSB_msb			9u
-#define SIO_INTERP0_CTRL_LANE0_MASK_LSB_lsb			5u
+#define SIO_INTERP0_CTRL_LANE0_MASK_LSB_Msb			9u
+#define SIO_INTERP0_CTRL_LANE0_MASK_LSB_Lsb			5u
 	/* Logical right-shift applied to accumulator before masking */
-#define SIO_INTERP0_CTRL_LANE0_SHIFT_msb			4u
-#define SIO_INTERP0_CTRL_LANE0_SHIFT_lsb			0u
+#define SIO_INTERP0_CTRL_LANE0_SHIFT_Msb			4u
+#define SIO_INTERP0_CTRL_LANE0_SHIFT_Lsb			0u
 
 	/* 0xB0: Control register for lane 1 */
 	uint32_t volatile INTERP0_CTRL_LANE1;
 	/* ORed into bits 29:28 of the lane result presented to the processor on the bus. */
-#define SIO_INTERP0_CTRL_LANE1_FORCE_MSB_msb			20u
-#define SIO_INTERP0_CTRL_LANE1_FORCE_MSB_lsb			19u
+#define SIO_INTERP0_CTRL_LANE1_FORCE_MSB_Msb			20u
+#define SIO_INTERP0_CTRL_LANE1_FORCE_MSB_Lsb			19u
 	/* If 1, mask + shift is bypassed for LANE1 result. */
 #define SIO_INTERP0_CTRL_LANE1_ADD_RAW				18u
 	/* If 1, feed the opposite lane's result into this lane's accumulator on POP. */
@@ -15494,26 +15494,26 @@ struct sdk_sio {
 	/* If SIGNED is set, the shifted and masked accumulator value is sign-extended to 32 bits */
 #define SIO_INTERP0_CTRL_LANE1_SIGNED				15u
 	/* The most-significant bit allowed to pass by the mask (inclusive) */
-#define SIO_INTERP0_CTRL_LANE1_MASK_MSB_msb			14u
-#define SIO_INTERP0_CTRL_LANE1_MASK_MSB_lsb			10u
+#define SIO_INTERP0_CTRL_LANE1_MASK_MSB_Msb			14u
+#define SIO_INTERP0_CTRL_LANE1_MASK_MSB_Lsb			10u
 	/* The least-significant bit allowed to pass by the mask (inclusive) */
-#define SIO_INTERP0_CTRL_LANE1_MASK_LSB_msb			9u
-#define SIO_INTERP0_CTRL_LANE1_MASK_LSB_lsb			5u
+#define SIO_INTERP0_CTRL_LANE1_MASK_LSB_Msb			9u
+#define SIO_INTERP0_CTRL_LANE1_MASK_LSB_Lsb			5u
 	/* Logical right-shift applied to accumulator before masking */
-#define SIO_INTERP0_CTRL_LANE1_SHIFT_msb			4u
-#define SIO_INTERP0_CTRL_LANE1_SHIFT_lsb			0u
+#define SIO_INTERP0_CTRL_LANE1_SHIFT_Msb			4u
+#define SIO_INTERP0_CTRL_LANE1_SHIFT_Lsb			0u
 
 	/* 0xB4: Values written here are atomically added to ACCUM0 */
 	uint32_t volatile INTERP0_ACCUM0_ADD;
 	/*  */
-#define SIO_INTERP0_ACCUM0_ADD_INTERP0_ACCUM0_ADD_msb		23u
-#define SIO_INTERP0_ACCUM0_ADD_INTERP0_ACCUM0_ADD_lsb		0u
+#define SIO_INTERP0_ACCUM0_ADD_INTERP0_ACCUM0_ADD_Msb		23u
+#define SIO_INTERP0_ACCUM0_ADD_INTERP0_ACCUM0_ADD_Lsb		0u
 
 	/* 0xB8: Values written here are atomically added to ACCUM1 */
 	uint32_t volatile INTERP0_ACCUM1_ADD;
 	/*  */
-#define SIO_INTERP0_ACCUM1_ADD_INTERP0_ACCUM1_ADD_msb		23u
-#define SIO_INTERP0_ACCUM1_ADD_INTERP0_ACCUM1_ADD_lsb		0u
+#define SIO_INTERP0_ACCUM1_ADD_INTERP0_ACCUM1_ADD_Msb		23u
+#define SIO_INTERP0_ACCUM1_ADD_INTERP0_ACCUM1_ADD_Lsb		0u
 
 	/* 0xBC: On write, the lower 16 bits go to BASE0, upper bits to BASE1 simultaneously. */
 	uint32_t volatile INTERP0_BASE_1AND0;
@@ -15562,8 +15562,8 @@ struct sdk_sio {
 	/* Only present on INTERP1 on each core. */
 #define SIO_INTERP1_CTRL_LANE0_CLAMP				22u
 	/* ORed into bits 29:28 of the lane result presented to the processor on the bus. */
-#define SIO_INTERP1_CTRL_LANE0_FORCE_MSB_msb			20u
-#define SIO_INTERP1_CTRL_LANE0_FORCE_MSB_lsb			19u
+#define SIO_INTERP1_CTRL_LANE0_FORCE_MSB_Msb			20u
+#define SIO_INTERP1_CTRL_LANE0_FORCE_MSB_Lsb			19u
 	/* If 1, mask + shift is bypassed for LANE0 result. */
 #define SIO_INTERP1_CTRL_LANE0_ADD_RAW				18u
 	/* If 1, feed the opposite lane's result into this lane's accumulator on POP. */
@@ -15573,20 +15573,20 @@ struct sdk_sio {
 	/* If SIGNED is set, the shifted and masked accumulator value is sign-extended to 32 bits */
 #define SIO_INTERP1_CTRL_LANE0_SIGNED				15u
 	/* The most-significant bit allowed to pass by the mask (inclusive) */
-#define SIO_INTERP1_CTRL_LANE0_MASK_MSB_msb			14u
-#define SIO_INTERP1_CTRL_LANE0_MASK_MSB_lsb			10u
+#define SIO_INTERP1_CTRL_LANE0_MASK_MSB_Msb			14u
+#define SIO_INTERP1_CTRL_LANE0_MASK_MSB_Lsb			10u
 	/* The least-significant bit allowed to pass by the mask (inclusive) */
-#define SIO_INTERP1_CTRL_LANE0_MASK_LSB_msb			9u
-#define SIO_INTERP1_CTRL_LANE0_MASK_LSB_lsb			5u
+#define SIO_INTERP1_CTRL_LANE0_MASK_LSB_Msb			9u
+#define SIO_INTERP1_CTRL_LANE0_MASK_LSB_Lsb			5u
 	/* Logical right-shift applied to accumulator before masking */
-#define SIO_INTERP1_CTRL_LANE0_SHIFT_msb			4u
-#define SIO_INTERP1_CTRL_LANE0_SHIFT_lsb			0u
+#define SIO_INTERP1_CTRL_LANE0_SHIFT_Msb			4u
+#define SIO_INTERP1_CTRL_LANE0_SHIFT_Lsb			0u
 
 	/* 0xF0: Control register for lane 1 */
 	uint32_t volatile INTERP1_CTRL_LANE1;
 	/* ORed into bits 29:28 of the lane result presented to the processor on the bus. */
-#define SIO_INTERP1_CTRL_LANE1_FORCE_MSB_msb			20u
-#define SIO_INTERP1_CTRL_LANE1_FORCE_MSB_lsb			19u
+#define SIO_INTERP1_CTRL_LANE1_FORCE_MSB_Msb			20u
+#define SIO_INTERP1_CTRL_LANE1_FORCE_MSB_Lsb			19u
 	/* If 1, mask + shift is bypassed for LANE1 result. */
 #define SIO_INTERP1_CTRL_LANE1_ADD_RAW				18u
 	/* If 1, feed the opposite lane's result into this lane's accumulator on POP. */
@@ -15596,26 +15596,26 @@ struct sdk_sio {
 	/* If SIGNED is set, the shifted and masked accumulator value is sign-extended to 32 bits */
 #define SIO_INTERP1_CTRL_LANE1_SIGNED				15u
 	/* The most-significant bit allowed to pass by the mask (inclusive) */
-#define SIO_INTERP1_CTRL_LANE1_MASK_MSB_msb			14u
-#define SIO_INTERP1_CTRL_LANE1_MASK_MSB_lsb			10u
+#define SIO_INTERP1_CTRL_LANE1_MASK_MSB_Msb			14u
+#define SIO_INTERP1_CTRL_LANE1_MASK_MSB_Lsb			10u
 	/* The least-significant bit allowed to pass by the mask (inclusive) */
-#define SIO_INTERP1_CTRL_LANE1_MASK_LSB_msb			9u
-#define SIO_INTERP1_CTRL_LANE1_MASK_LSB_lsb			5u
+#define SIO_INTERP1_CTRL_LANE1_MASK_LSB_Msb			9u
+#define SIO_INTERP1_CTRL_LANE1_MASK_LSB_Lsb			5u
 	/* Logical right-shift applied to accumulator before masking */
-#define SIO_INTERP1_CTRL_LANE1_SHIFT_msb			4u
-#define SIO_INTERP1_CTRL_LANE1_SHIFT_lsb			0u
+#define SIO_INTERP1_CTRL_LANE1_SHIFT_Msb			4u
+#define SIO_INTERP1_CTRL_LANE1_SHIFT_Lsb			0u
 
 	/* 0xF4: Values written here are atomically added to ACCUM0 */
 	uint32_t volatile INTERP1_ACCUM0_ADD;
 	/*  */
-#define SIO_INTERP1_ACCUM0_ADD_INTERP1_ACCUM0_ADD_msb		23u
-#define SIO_INTERP1_ACCUM0_ADD_INTERP1_ACCUM0_ADD_lsb		0u
+#define SIO_INTERP1_ACCUM0_ADD_INTERP1_ACCUM0_ADD_Msb		23u
+#define SIO_INTERP1_ACCUM0_ADD_INTERP1_ACCUM0_ADD_Lsb		0u
 
 	/* 0xF8: Values written here are atomically added to ACCUM1 */
 	uint32_t volatile INTERP1_ACCUM1_ADD;
 	/*  */
-#define SIO_INTERP1_ACCUM1_ADD_INTERP1_ACCUM1_ADD_msb		23u
-#define SIO_INTERP1_ACCUM1_ADD_INTERP1_ACCUM1_ADD_lsb		0u
+#define SIO_INTERP1_ACCUM1_ADD_INTERP1_ACCUM1_ADD_Msb		23u
+#define SIO_INTERP1_ACCUM1_ADD_INTERP1_ACCUM1_ADD_Lsb		0u
 
 	/* 0xFC: On write, the lower 16 bits go to BASE0, upper bits to BASE1 simultaneously. */
 	uint32_t volatile INTERP1_BASE_1AND0;
@@ -15740,14 +15740,14 @@ struct sdk_ppb {
 	/* 0xE014: Use the SysTick Reload Value Register to specify the start value to load into the current value register when the counter reaches 0. */
 	uint32_t volatile SYST_RVR;
 	/* Value to load into the SysTick Current Value Register when the counter reaches 0. */
-#define PPB_SYST_RVR_RELOAD_msb					23u
-#define PPB_SYST_RVR_RELOAD_lsb					0u
+#define PPB_SYST_RVR_RELOAD_Msb					23u
+#define PPB_SYST_RVR_RELOAD_Lsb					0u
 
 	/* 0xE018: Use the SysTick Current Value Register to find the current value in the register. */
 	uint32_t volatile SYST_CVR;
 	/* Reads return the current value of the SysTick counter. */
-#define PPB_SYST_CVR_CURRENT_msb				23u
-#define PPB_SYST_CVR_CURRENT_lsb				0u
+#define PPB_SYST_CVR_CURRENT_Msb				23u
+#define PPB_SYST_CVR_CURRENT_Lsb				0u
 
 	/* 0xE01C: Use the SysTick Calibration Value Register to enable software to scale to any required speed using divide and multiply. */
 	uint32_t volatile SYST_CALIB;
@@ -15756,8 +15756,8 @@ struct sdk_ppb {
 	/* If reads as 1, the calibration value for 10ms is inexact (due to clock frequency). */
 #define PPB_SYST_CALIB_SKEW					30u
 	/* An optional Reload value to be used for 10ms (100Hz) timing, subject to system clock skew errors. */
-#define PPB_SYST_CALIB_TENMS_msb				23u
-#define PPB_SYST_CALIB_TENMS_lsb				0u
+#define PPB_SYST_CALIB_TENMS_Msb				23u
+#define PPB_SYST_CALIB_TENMS_Lsb				0u
 
 	/* 0xE020 */
 	uint8_t RESERVED1[0xE100-0xE020];
@@ -15765,8 +15765,8 @@ struct sdk_ppb {
 	/* 0xE100: Use the Interrupt Set-Enable Register to enable interrupts and determine which interrupts are currently enabled. */
 	uint32_t volatile NVIC_ISER;
 	/* Interrupt set-enable bits. */
-#define PPB_NVIC_ISER_SETENA_msb				31u
-#define PPB_NVIC_ISER_SETENA_lsb				0u
+#define PPB_NVIC_ISER_SETENA_Msb				31u
+#define PPB_NVIC_ISER_SETENA_Lsb				0u
 
 	/* 0xE104 */
 	uint8_t RESERVED2[0xE180-0xE104];
@@ -15774,8 +15774,8 @@ struct sdk_ppb {
 	/* 0xE180: Use the Interrupt Clear-Enable Registers to disable interrupts and determine which interrupts are currently enabled. */
 	uint32_t volatile NVIC_ICER;
 	/* Interrupt clear-enable bits. */
-#define PPB_NVIC_ICER_CLRENA_msb				31u
-#define PPB_NVIC_ICER_CLRENA_lsb				0u
+#define PPB_NVIC_ICER_CLRENA_Msb				31u
+#define PPB_NVIC_ICER_CLRENA_Lsb				0u
 
 	/* 0xE184 */
 	uint8_t RESERVED3[0xE200-0xE184];
@@ -15783,8 +15783,8 @@ struct sdk_ppb {
 	/* 0xE200: The NVIC_ISPR forces interrupts into the pending state, and shows which interrupts are pending. */
 	uint32_t volatile NVIC_ISPR;
 	/* Interrupt set-pending bits. */
-#define PPB_NVIC_ISPR_SETPEND_msb				31u
-#define PPB_NVIC_ISPR_SETPEND_lsb				0u
+#define PPB_NVIC_ISPR_SETPEND_Msb				31u
+#define PPB_NVIC_ISPR_SETPEND_Lsb				0u
 
 	/* 0xE204 */
 	uint8_t RESERVED4[0xE280-0xE204];
@@ -15792,8 +15792,8 @@ struct sdk_ppb {
 	/* 0xE280: Use the Interrupt Clear-Pending Register to clear pending interrupts and determine which interrupts are currently pending. */
 	uint32_t volatile NVIC_ICPR;
 	/* Interrupt clear-pending bits. */
-#define PPB_NVIC_ICPR_CLRPEND_msb				31u
-#define PPB_NVIC_ICPR_CLRPEND_lsb				0u
+#define PPB_NVIC_ICPR_CLRPEND_Msb				31u
+#define PPB_NVIC_ICPR_CLRPEND_Lsb				0u
 
 	/* 0xE284 */
 	uint8_t RESERVED5[0xE400-0xE284];
@@ -15801,122 +15801,122 @@ struct sdk_ppb {
 	/* 0xE400: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR0;
 	/* Priority of interrupt 3 */
-#define PPB_NVIC_IPR0_IP_3_msb					31u
-#define PPB_NVIC_IPR0_IP_3_lsb					30u
+#define PPB_NVIC_IPR0_IP_3_Msb					31u
+#define PPB_NVIC_IPR0_IP_3_Lsb					30u
 	/* Priority of interrupt 2 */
-#define PPB_NVIC_IPR0_IP_2_msb					23u
-#define PPB_NVIC_IPR0_IP_2_lsb					22u
+#define PPB_NVIC_IPR0_IP_2_Msb					23u
+#define PPB_NVIC_IPR0_IP_2_Lsb					22u
 	/* Priority of interrupt 1 */
-#define PPB_NVIC_IPR0_IP_1_msb					15u
-#define PPB_NVIC_IPR0_IP_1_lsb					14u
+#define PPB_NVIC_IPR0_IP_1_Msb					15u
+#define PPB_NVIC_IPR0_IP_1_Lsb					14u
 	/* Priority of interrupt 0 */
-#define PPB_NVIC_IPR0_IP_0_msb					7u
-#define PPB_NVIC_IPR0_IP_0_lsb					6u
+#define PPB_NVIC_IPR0_IP_0_Msb					7u
+#define PPB_NVIC_IPR0_IP_0_Lsb					6u
 
 	/* 0xE404: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR1;
 	/* Priority of interrupt 7 */
-#define PPB_NVIC_IPR1_IP_7_msb					31u
-#define PPB_NVIC_IPR1_IP_7_lsb					30u
+#define PPB_NVIC_IPR1_IP_7_Msb					31u
+#define PPB_NVIC_IPR1_IP_7_Lsb					30u
 	/* Priority of interrupt 6 */
-#define PPB_NVIC_IPR1_IP_6_msb					23u
-#define PPB_NVIC_IPR1_IP_6_lsb					22u
+#define PPB_NVIC_IPR1_IP_6_Msb					23u
+#define PPB_NVIC_IPR1_IP_6_Lsb					22u
 	/* Priority of interrupt 5 */
-#define PPB_NVIC_IPR1_IP_5_msb					15u
-#define PPB_NVIC_IPR1_IP_5_lsb					14u
+#define PPB_NVIC_IPR1_IP_5_Msb					15u
+#define PPB_NVIC_IPR1_IP_5_Lsb					14u
 	/* Priority of interrupt 4 */
-#define PPB_NVIC_IPR1_IP_4_msb					7u
-#define PPB_NVIC_IPR1_IP_4_lsb					6u
+#define PPB_NVIC_IPR1_IP_4_Msb					7u
+#define PPB_NVIC_IPR1_IP_4_Lsb					6u
 
 	/* 0xE408: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR2;
 	/* Priority of interrupt 11 */
-#define PPB_NVIC_IPR2_IP_11_msb					31u
-#define PPB_NVIC_IPR2_IP_11_lsb					30u
+#define PPB_NVIC_IPR2_IP_11_Msb					31u
+#define PPB_NVIC_IPR2_IP_11_Lsb					30u
 	/* Priority of interrupt 10 */
-#define PPB_NVIC_IPR2_IP_10_msb					23u
-#define PPB_NVIC_IPR2_IP_10_lsb					22u
+#define PPB_NVIC_IPR2_IP_10_Msb					23u
+#define PPB_NVIC_IPR2_IP_10_Lsb					22u
 	/* Priority of interrupt 9 */
-#define PPB_NVIC_IPR2_IP_9_msb					15u
-#define PPB_NVIC_IPR2_IP_9_lsb					14u
+#define PPB_NVIC_IPR2_IP_9_Msb					15u
+#define PPB_NVIC_IPR2_IP_9_Lsb					14u
 	/* Priority of interrupt 8 */
-#define PPB_NVIC_IPR2_IP_8_msb					7u
-#define PPB_NVIC_IPR2_IP_8_lsb					6u
+#define PPB_NVIC_IPR2_IP_8_Msb					7u
+#define PPB_NVIC_IPR2_IP_8_Lsb					6u
 
 	/* 0xE40C: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR3;
 	/* Priority of interrupt 15 */
-#define PPB_NVIC_IPR3_IP_15_msb					31u
-#define PPB_NVIC_IPR3_IP_15_lsb					30u
+#define PPB_NVIC_IPR3_IP_15_Msb					31u
+#define PPB_NVIC_IPR3_IP_15_Lsb					30u
 	/* Priority of interrupt 14 */
-#define PPB_NVIC_IPR3_IP_14_msb					23u
-#define PPB_NVIC_IPR3_IP_14_lsb					22u
+#define PPB_NVIC_IPR3_IP_14_Msb					23u
+#define PPB_NVIC_IPR3_IP_14_Lsb					22u
 	/* Priority of interrupt 13 */
-#define PPB_NVIC_IPR3_IP_13_msb					15u
-#define PPB_NVIC_IPR3_IP_13_lsb					14u
+#define PPB_NVIC_IPR3_IP_13_Msb					15u
+#define PPB_NVIC_IPR3_IP_13_Lsb					14u
 	/* Priority of interrupt 12 */
-#define PPB_NVIC_IPR3_IP_12_msb					7u
-#define PPB_NVIC_IPR3_IP_12_lsb					6u
+#define PPB_NVIC_IPR3_IP_12_Msb					7u
+#define PPB_NVIC_IPR3_IP_12_Lsb					6u
 
 	/* 0xE410: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR4;
 	/* Priority of interrupt 19 */
-#define PPB_NVIC_IPR4_IP_19_msb					31u
-#define PPB_NVIC_IPR4_IP_19_lsb					30u
+#define PPB_NVIC_IPR4_IP_19_Msb					31u
+#define PPB_NVIC_IPR4_IP_19_Lsb					30u
 	/* Priority of interrupt 18 */
-#define PPB_NVIC_IPR4_IP_18_msb					23u
-#define PPB_NVIC_IPR4_IP_18_lsb					22u
+#define PPB_NVIC_IPR4_IP_18_Msb					23u
+#define PPB_NVIC_IPR4_IP_18_Lsb					22u
 	/* Priority of interrupt 17 */
-#define PPB_NVIC_IPR4_IP_17_msb					15u
-#define PPB_NVIC_IPR4_IP_17_lsb					14u
+#define PPB_NVIC_IPR4_IP_17_Msb					15u
+#define PPB_NVIC_IPR4_IP_17_Lsb					14u
 	/* Priority of interrupt 16 */
-#define PPB_NVIC_IPR4_IP_16_msb					7u
-#define PPB_NVIC_IPR4_IP_16_lsb					6u
+#define PPB_NVIC_IPR4_IP_16_Msb					7u
+#define PPB_NVIC_IPR4_IP_16_Lsb					6u
 
 	/* 0xE414: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR5;
 	/* Priority of interrupt 23 */
-#define PPB_NVIC_IPR5_IP_23_msb					31u
-#define PPB_NVIC_IPR5_IP_23_lsb					30u
+#define PPB_NVIC_IPR5_IP_23_Msb					31u
+#define PPB_NVIC_IPR5_IP_23_Lsb					30u
 	/* Priority of interrupt 22 */
-#define PPB_NVIC_IPR5_IP_22_msb					23u
-#define PPB_NVIC_IPR5_IP_22_lsb					22u
+#define PPB_NVIC_IPR5_IP_22_Msb					23u
+#define PPB_NVIC_IPR5_IP_22_Lsb					22u
 	/* Priority of interrupt 21 */
-#define PPB_NVIC_IPR5_IP_21_msb					15u
-#define PPB_NVIC_IPR5_IP_21_lsb					14u
+#define PPB_NVIC_IPR5_IP_21_Msb					15u
+#define PPB_NVIC_IPR5_IP_21_Lsb					14u
 	/* Priority of interrupt 20 */
-#define PPB_NVIC_IPR5_IP_20_msb					7u
-#define PPB_NVIC_IPR5_IP_20_lsb					6u
+#define PPB_NVIC_IPR5_IP_20_Msb					7u
+#define PPB_NVIC_IPR5_IP_20_Lsb					6u
 
 	/* 0xE418: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR6;
 	/* Priority of interrupt 27 */
-#define PPB_NVIC_IPR6_IP_27_msb					31u
-#define PPB_NVIC_IPR6_IP_27_lsb					30u
+#define PPB_NVIC_IPR6_IP_27_Msb					31u
+#define PPB_NVIC_IPR6_IP_27_Lsb					30u
 	/* Priority of interrupt 26 */
-#define PPB_NVIC_IPR6_IP_26_msb					23u
-#define PPB_NVIC_IPR6_IP_26_lsb					22u
+#define PPB_NVIC_IPR6_IP_26_Msb					23u
+#define PPB_NVIC_IPR6_IP_26_Lsb					22u
 	/* Priority of interrupt 25 */
-#define PPB_NVIC_IPR6_IP_25_msb					15u
-#define PPB_NVIC_IPR6_IP_25_lsb					14u
+#define PPB_NVIC_IPR6_IP_25_Msb					15u
+#define PPB_NVIC_IPR6_IP_25_Lsb					14u
 	/* Priority of interrupt 24 */
-#define PPB_NVIC_IPR6_IP_24_msb					7u
-#define PPB_NVIC_IPR6_IP_24_lsb					6u
+#define PPB_NVIC_IPR6_IP_24_Msb					7u
+#define PPB_NVIC_IPR6_IP_24_Lsb					6u
 
 	/* 0xE41C: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR7;
 	/* Priority of interrupt 31 */
-#define PPB_NVIC_IPR7_IP_31_msb					31u
-#define PPB_NVIC_IPR7_IP_31_lsb					30u
+#define PPB_NVIC_IPR7_IP_31_Msb					31u
+#define PPB_NVIC_IPR7_IP_31_Lsb					30u
 	/* Priority of interrupt 30 */
-#define PPB_NVIC_IPR7_IP_30_msb					23u
-#define PPB_NVIC_IPR7_IP_30_lsb					22u
+#define PPB_NVIC_IPR7_IP_30_Msb					23u
+#define PPB_NVIC_IPR7_IP_30_Lsb					22u
 	/* Priority of interrupt 29 */
-#define PPB_NVIC_IPR7_IP_29_msb					15u
-#define PPB_NVIC_IPR7_IP_29_lsb					14u
+#define PPB_NVIC_IPR7_IP_29_Msb					15u
+#define PPB_NVIC_IPR7_IP_29_Lsb					14u
 	/* Priority of interrupt 28 */
-#define PPB_NVIC_IPR7_IP_28_msb					7u
-#define PPB_NVIC_IPR7_IP_28_lsb					6u
+#define PPB_NVIC_IPR7_IP_28_Msb					7u
+#define PPB_NVIC_IPR7_IP_28_Lsb					6u
 
 	/* 0xE420 */
 	uint8_t RESERVED6[0xED00-0xE420];
@@ -15924,20 +15924,20 @@ struct sdk_ppb {
 	/* 0xED00: Read the CPU ID Base Register to determine: the ID number of the processor core, the version number of the processor core, the implementation details of the processor core. */
 	uint32_t volatile CPUID;
 	/* Implementor code: 0x41 = ARM */
-#define PPB_CPUID_IMPLEMENTER_msb				31u
-#define PPB_CPUID_IMPLEMENTER_lsb				24u
+#define PPB_CPUID_IMPLEMENTER_Msb				31u
+#define PPB_CPUID_IMPLEMENTER_Lsb				24u
 	/* Major revision number n in the rnpm revision status: */
-#define PPB_CPUID_VARIANT_msb					23u
-#define PPB_CPUID_VARIANT_lsb					20u
+#define PPB_CPUID_VARIANT_Msb					23u
+#define PPB_CPUID_VARIANT_Lsb					20u
 	/* Constant that defines the architecture of the processor: */
-#define PPB_CPUID_ARCHITECTURE_msb				19u
-#define PPB_CPUID_ARCHITECTURE_lsb				16u
+#define PPB_CPUID_ARCHITECTURE_Msb				19u
+#define PPB_CPUID_ARCHITECTURE_Lsb				16u
 	/* Number of processor within family: 0xC60 = Cortex-M0+ */
-#define PPB_CPUID_PARTNO_msb					15u
-#define PPB_CPUID_PARTNO_lsb					4u
+#define PPB_CPUID_PARTNO_Msb					15u
+#define PPB_CPUID_PARTNO_Lsb					4u
 	/* Minor revision number m in the rnpm revision status: */
-#define PPB_CPUID_REVISION_msb					3u
-#define PPB_CPUID_REVISION_lsb					0u
+#define PPB_CPUID_REVISION_Msb					3u
+#define PPB_CPUID_REVISION_Lsb					0u
 
 	/* 0xED04: Use the Interrupt Control State Register to set a pending Non-Maskable Interrupt (NMI), set or clear a pending PendSV, set or clear a pending SysTick, check for pending exceptions, check the vector number of the highest priority pended exception, check the vector number of the active exception. */
 	uint32_t volatile ICSR;
@@ -15956,23 +15956,23 @@ struct sdk_ppb {
 	/* External interrupt pending flag */
 #define PPB_ICSR_ISRPENDING					22u
 	/* Indicates the exception number for the highest priority pending exception: 0 = no pending exceptions. */
-#define PPB_ICSR_VECTPENDING_msb				20u
-#define PPB_ICSR_VECTPENDING_lsb				12u
+#define PPB_ICSR_VECTPENDING_Msb				20u
+#define PPB_ICSR_VECTPENDING_Lsb				12u
 	/* Active exception number field. */
-#define PPB_ICSR_VECTACTIVE_msb					8u
-#define PPB_ICSR_VECTACTIVE_lsb					0u
+#define PPB_ICSR_VECTACTIVE_Msb					8u
+#define PPB_ICSR_VECTACTIVE_Lsb					0u
 
 	/* 0xED08: The VTOR holds the vector table offset address. */
 	uint32_t volatile VTOR;
 	/* Bits [31:8] of the indicate the vector table offset address. */
-#define PPB_VTOR_TBLOFF_msb					31u
-#define PPB_VTOR_TBLOFF_lsb					8u
+#define PPB_VTOR_TBLOFF_Msb					31u
+#define PPB_VTOR_TBLOFF_Lsb					8u
 
 	/* 0xED0C: Use the Application Interrupt and Reset Control Register to: determine data endianness, clear all active state information from debug halt mode, request a system reset. */
 	uint32_t volatile AIRCR;
 	/* Register key: */
-#define PPB_AIRCR_VECTKEY_msb					31u
-#define PPB_AIRCR_VECTKEY_lsb					16u
+#define PPB_AIRCR_VECTKEY_Msb					31u
+#define PPB_AIRCR_VECTKEY_Lsb					16u
 	/* Data endianness implemented: */
 #define PPB_AIRCR_ENDIANESS					15u
 	/* Writing 1 to this bit causes the SYSRESETREQ signal to the outer system to be asserted to request a reset. */
@@ -16002,17 +16002,17 @@ struct sdk_ppb {
 	/* 0xED1C: System handlers are a special class of exception handler that can have their priority set to any of the priority levels. */
 	uint32_t volatile SHPR2;
 	/* Priority of system handler 11, SVCall */
-#define PPB_SHPR2_PRI_11_msb					31u
-#define PPB_SHPR2_PRI_11_lsb					30u
+#define PPB_SHPR2_PRI_11_Msb					31u
+#define PPB_SHPR2_PRI_11_Lsb					30u
 
 	/* 0xED20: System handlers are a special class of exception handler that can have their priority set to any of the priority levels. */
 	uint32_t volatile SHPR3;
 	/* Priority of system handler 15, SysTick */
-#define PPB_SHPR3_PRI_15_msb					31u
-#define PPB_SHPR3_PRI_15_lsb					30u
+#define PPB_SHPR3_PRI_15_Msb					31u
+#define PPB_SHPR3_PRI_15_Lsb					30u
 	/* Priority of system handler 14, PendSV */
-#define PPB_SHPR3_PRI_14_msb					23u
-#define PPB_SHPR3_PRI_14_lsb					22u
+#define PPB_SHPR3_PRI_14_Msb					23u
+#define PPB_SHPR3_PRI_14_Lsb					22u
 
 	/* 0xED24: Use the System Handler Control and State Register to determine or clear the pending status of SVCall. */
 	uint32_t volatile SHCSR;
@@ -16025,11 +16025,11 @@ struct sdk_ppb {
 	/* 0xED90: Read the MPU Type Register to determine if the processor implements an MPU, and how many regions the MPU supports. */
 	uint32_t volatile MPU_TYPE;
 	/* Instruction region. */
-#define PPB_MPU_TYPE_IREGION_msb				23u
-#define PPB_MPU_TYPE_IREGION_lsb				16u
+#define PPB_MPU_TYPE_IREGION_Msb				23u
+#define PPB_MPU_TYPE_IREGION_Lsb				16u
 	/* Number of regions supported by the MPU. */
-#define PPB_MPU_TYPE_DREGION_msb				15u
-#define PPB_MPU_TYPE_DREGION_lsb				8u
+#define PPB_MPU_TYPE_DREGION_Msb				15u
+#define PPB_MPU_TYPE_DREGION_Lsb				8u
 	/* Indicates support for separate instruction and data address maps. */
 #define PPB_MPU_TYPE_SEPARATE					0u
 
@@ -16045,31 +16045,31 @@ struct sdk_ppb {
 	/* 0xED98: Use the MPU Region Number Register to select the region currently accessed by MPU_RBAR and MPU_RASR. */
 	uint32_t volatile MPU_RNR;
 	/* Indicates the MPU region referenced by the MPU_RBAR and MPU_RASR registers. */
-#define PPB_MPU_RNR_REGION_msb					3u
-#define PPB_MPU_RNR_REGION_lsb					0u
+#define PPB_MPU_RNR_REGION_Msb					3u
+#define PPB_MPU_RNR_REGION_Lsb					0u
 
 	/* 0xED9C: Read the MPU Region Base Address Register to determine the base address of the region identified by MPU_RNR. */
 	uint32_t volatile MPU_RBAR;
 	/* Base address of the region. */
-#define PPB_MPU_RBAR_ADDR_msb					31u
-#define PPB_MPU_RBAR_ADDR_lsb					8u
+#define PPB_MPU_RBAR_ADDR_Msb					31u
+#define PPB_MPU_RBAR_ADDR_Lsb					8u
 	/* On writes, indicates whether the write must update the base address of the region identified by the REGION field, updating the MPU_RNR to indicate this new region. */
 #define PPB_MPU_RBAR_VALID					4u
 	/* On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. */
-#define PPB_MPU_RBAR_REGION_msb					3u
-#define PPB_MPU_RBAR_REGION_lsb					0u
+#define PPB_MPU_RBAR_REGION_Msb					3u
+#define PPB_MPU_RBAR_REGION_Lsb					0u
 
 	/* 0xEDA0: Use the MPU Region Attribute and Size Register to define the size, access behaviour and memory type of the region identified by MPU_RNR, and enable that region. */
 	uint32_t volatile MPU_RASR;
 	/* The MPU Region Attribute field. */
-#define PPB_MPU_RASR_ATTRS_msb					31u
-#define PPB_MPU_RASR_ATTRS_lsb					16u
+#define PPB_MPU_RASR_ATTRS_Msb					31u
+#define PPB_MPU_RASR_ATTRS_Lsb					16u
 	/* Subregion Disable. */
-#define PPB_MPU_RASR_SRD_msb					15u
-#define PPB_MPU_RASR_SRD_lsb					8u
+#define PPB_MPU_RASR_SRD_Msb					15u
+#define PPB_MPU_RASR_SRD_Lsb					8u
 	/* Indicates the region size. Region size in bytes = 2^(SIZE+1). The minimum permitted value is 7 (b00111) = 256Bytes */
-#define PPB_MPU_RASR_SIZE_msb					5u
-#define PPB_MPU_RASR_SIZE_lsb					1u
+#define PPB_MPU_RASR_SIZE_Msb					5u
+#define PPB_MPU_RASR_SIZE_Lsb					1u
 	/* Enables the region. */
 #define PPB_MPU_RASR_ENABLE					0u
 

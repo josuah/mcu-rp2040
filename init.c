@@ -2,6 +2,11 @@
 #include "registers.h"
 #include "functions.h"
 
+/*
+ * Thanks to <alex@taradov.com> who made some simple SDK which
+ * helped me to understand how RESETS.RESET works.
+ */
+
 extern int main(void);
 extern void __reset_handler(void);
 
@@ -52,37 +57,36 @@ void (*__vectors[])(void) = {
 	&__stop_program,		/* 0x28 -6 Reserved */
 	&__stop_program,		/* 0x2C -5 ARM SVCall */
 	&__stop_program,		/* 0x30 -4 ARM DebugMonitor */
-	&__stop_program,		/* 0x34 -2 ARM PendSV */
-	&__stop_program,		/* 0x38 -1 ARM SysTick */
-	&__stop_program,		/* 0x3C #0 TIMER_IRQ_0 */
-	&__stop_program,		/* 0x40 #1 TIMER_IRQ_1 */
-	&__stop_program,		/* 0x44 #2 TIMER_IRQ_2 */
-	&__stop_program,		/* 0x48 #3 TIMER_IRQ_3 */
-	&__stop_program,		/* 0x4C #4 PWM_IRQ_WRAP */
-	&__stop_program,		/* 0x50 #5 USBCTRL_IRQ */
-	&__stop_program,		/* 0x54 #6 XIP_IRQ */
-	&__stop_program,		/* 0x58 #7 PIO0_IRQ_0 */
-	&__stop_program,		/* 0x5C #8 PIO0_IRQ_1 */
-	&__stop_program,		/* 0x60 #9 PIO1_IRQ_0 */
-	&__stop_program,		/* 0x64 #10 PIO1_IRQ_1 */
-	&__stop_program,		/* 0x68 #11 DMA_IRQ_0 */
-	&__stop_program,		/* 0x6C #12 DMA_IRQ_1 */
-	&__stop_program,		/* 0x70 #13 IO_IRQ_BANK0 */
-	&__stop_program,		/* 0x74 #14 IO_IRQ_QSPI */
-	&__stop_program,		/* 0x78 #15 SIO_IRQ_PROC0 */
-	&__stop_program,		/* 0x7C #16 SIO_IRQ_PROC1 */
-	&__stop_program,		/* 0x80 #17 CLOCKS_IRQ */
-	&__stop_program,		/* 0x84 #18 SPI0_IRQ */
-	&__stop_program,		/* 0x88 #19 SPI1_IRQ */
-	&__stop_program,		/* 0x8C #20 UART0_IRQ */
-	&__stop_program,		/* 0x90 #21 UART1_IRQ */
-	&__stop_program,		/* 0x94 #22 ADC_IRQ_FIFO */
-	&__stop_program,		/* 0x98 #23 I2C0_IRQ */
-	&__stop_program,		/* 0x9C #24 I2C1_IRQ */
-	&__stop_program,		/* 0xA0 #25 RTC_IRQ */
+	&__stop_program,		/* 0x34 -3 Reserved */
+	&__stop_program,		/* 0x38 -2 ARM PendSV */
+	&__stop_program,		/* 0x3C -1 ARM SysTick */
+	&__stop_program,		/* 0x40 #0 TIMER_IRQ_0 */
+	&__stop_program,		/* 0x44 #1 TIMER_IRQ_1 */
+	&__stop_program,		/* 0x48 #2 TIMER_IRQ_2 */
+	&__stop_program,		/* 0x4C #3 TIMER_IRQ_3 */
+	&__stop_program,		/* 0x50 #4 PWM_IRQ_WRAP */
+	&__stop_program,		/* 0x54 #5 USBCTRL_IRQ */
+	&__stop_program,		/* 0x58 #6 XIP_IRQ */
+	&__stop_program,		/* 0x5C #7 PIO0_IRQ_0 */
+	&__stop_program,		/* 0x60 #8 PIO0_IRQ_1 */
+	&__stop_program,		/* 0x64 #9 PIO1_IRQ_0 */
+	&__stop_program,		/* 0x68 #10 PIO1_IRQ_1 */
+	&__stop_program,		/* 0x6C #11 DMA_IRQ_0 */
+	&__stop_program,		/* 0x70 #12 DMA_IRQ_1 */
+	&__stop_program,		/* 0x74 #13 IO_IRQ_BANK0 */
+	&__stop_program,		/* 0x78 #14 IO_IRQ_QSPI */
+	&__stop_program,		/* 0x7C #15 SIO_IRQ_PROC0 */
+	&__stop_program,		/* 0x80 #16 SIO_IRQ_PROC1 */
+	&__stop_program,		/* 0x84 #17 CLOCKS_IRQ */
+	&__stop_program,		/* 0x88 #18 SPI0_IRQ */
+	&__stop_program,		/* 0x8C #19 SPI1_IRQ */
+	&__stop_program,		/* 0x90 #20 UART0_IRQ */
+	&__stop_program,		/* 0x94 #21 UART1_IRQ */
+	&__stop_program,		/* 0x98 #22 ADC_IRQ_FIFO */
+	&__stop_program,		/* 0x9C #23 I2C0_IRQ */
+	&__stop_program,		/* 0xA0 #24 I2C1_IRQ */
+	&__stop_program,		/* 0xA4 #25 RTC_IRQ */
 };
-
-#define XOSC_MHZ 12
 
 void
 __reset_handler(void)
@@ -93,25 +97,6 @@ __reset_handler(void)
 	src = &__data_load_start;
 	for (dst = &__data_start; dst < &__data_end; *dst++ = *src++);
 	for (dst = &__bss_start; dst < &__bss_end; *dst++ = 0);
-
-	/* configure the PLL to the SDK's default */
-	RESETS->RESET |= BIT(RESETS_RESET_PLL_USB);
-	RESETS->RESET &= ~BIT(RESETS_RESET_PLL_USB);
-	PLL_USB->CS = 1;
-	PLL_USB->FBDIV_INT = 400 / XOSC_MHZ;
-	PLL_USB->PWR &= ~(PLL_PWR_PD | PLL_PWR_VCOPD);
-	while (!(PLL_USB->CS & PLL_CS_LOCK));
-	PLL_USB->PRIM = BITS(PLL_PRIM_POSTDIV1, 6) | BITS(PLL_PRIM_POSTDIV2, 2);
-	PLL_USB->PWR &= ~BIT(PLL_PWR_POSTDIVPD);
-
-	/* configure `usb`, `adc` and `peri` clocks */
-	CLOCKS->CLK_USB_CTRL |= CLOCKS_CLK_USB_CTRL_ENABLE;
-	CLOCKS->CLK_ADC_CTRL |= CLOCKS_CLK_ADC_CTRL_ENABLE;
-	CLOCKS->CLK_PERI_CTRL |= CLOCKS_CLK_PERI_CTRL_ENABLE;
-
-	/* reset goddamn everything! */
-	RESETS->RESET &= 0xFFFFFFFF;
-	while (!RESETS->RESET_DONE);
 
 	main();
 	__stop_program();
