@@ -2,6 +2,8 @@ RP2040
 ======
 <https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf>
 
+`git clone git://git.josuah.net/sdk-rp2040`
+
 ![rp2040](/image/rp2040.png)
 
 Difficult to use from bare metal? (not that much)
