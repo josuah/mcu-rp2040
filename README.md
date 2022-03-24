@@ -269,24 +269,26 @@ Would you like a different interface like SWD? That is also completely
 possible through projects like https://github.com/majbthrd/pico-debug/
 can help.
 
-Lack of standard interfaces
----------------------------
-After trying it out, the RP2040 has much fewer over-engineering
-than it looks.
+Use of CMSIS-DAPv2
+------------------
+While most tools around use CMSIS-DAPv1, which works fine, RP2040
+having two cores motivated the engineering team to use the CMSIS-DAPv2
+interface, which features the "multi-drop" extension, allowing to debug
+multiple targets through the same link.
 
-From my point of view I saw a single catch to that crazy set of
-features: for $1: the lack of a standard interface for debugging:
-CMSIS-DAP was replaced by a custom protocol.
+This was probably to make debugging multiple cores easier.
 
-While the recommanded way using one board to debug another
-(the [picoprobe](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf) project),
-this also means the standard ARM tools like ST-Link or J-Link
-will not work, and a custom fork of OpenOCD not yet upstreamed
-is the only way to access the debug interface of the RP2040 for
-now.
+> Debug access is via independent DAPs (one per core) attached to
+> a shared multidrop SWD bus (SWD v2). Each DAP will only respond to
+> debug commands if correctly addressed by a SWD TARGETSEL command;
+> all others tristate their outputs.  Additionally, a Rescue DP (see
+> Section 2.3.4.2) is available which is connected to system control
+> features. Default addresses of each debug port are given below:
 
-Maybe there are reasons why they avoided the ARM way, I might
-just have missed their article about that, but here we are now.
+This means you cannot use your ST-Link or J-Link to debug the RP2040,
+and instead need to use an FTDI chip (+ bit-banging), or another
+RP2040 debugging another: the
+[picoprobe](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
 
 Not as convenient as STM32?
 ---------------------------
