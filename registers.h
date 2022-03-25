@@ -2,9 +2,9 @@
 #define REGISTERS_H
 
 
-#define XIP_CTRL ((struct sdk_xip_ctrl *)0x14000000)
+#define XIP_CTRL ((struct mcu_xip_ctrl *)0x14000000)
 
-struct sdk_xip_ctrl {
+struct mcu_xip_ctrl {
 
 	/* 0x00: Cache control */
 	uint32_t volatile CTRL;
@@ -53,9 +53,9 @@ struct sdk_xip_ctrl {
 };
 
 
-#define XIP_SSI ((struct sdk_xip_ssi *)0x18000000)
+#define XIP_SSI ((struct mcu_xip_ssi *)0x18000000)
 
-struct sdk_xip_ssi {
+struct mcu_xip_ssi {
 
 	/* 0x00: Control register 0 */
 	uint32_t volatile CTRLR0;
@@ -323,9 +323,9 @@ struct sdk_xip_ssi {
 };
 
 
-#define SYSINFO ((struct sdk_sysinfo *)0x40000000)
+#define SYSINFO ((struct mcu_sysinfo *)0x40000000)
 
-struct sdk_sysinfo {
+struct mcu_sysinfo {
 
 	/* 0x00: JEDEC JEP-106 compliant chip identifier. */
 	uint32_t volatile CHIP_ID;
@@ -355,9 +355,9 @@ struct sdk_sysinfo {
 };
 
 
-#define SYSCFG ((struct sdk_syscfg *)0x40004000)
+#define SYSCFG ((struct mcu_syscfg *)0x40004000)
 
-struct sdk_syscfg {
+struct mcu_syscfg {
 
 	/* 0x00: Processor core 0 NMI source mask */
 	uint32_t volatile PROC0_NMI_MASK;
@@ -431,11 +431,11 @@ struct sdk_syscfg {
 };
 
 
-#define CLOCKS ((struct sdk_clocks *)0x40008000)
+#define CLOCKS ((struct mcu_clocks *)0x40008000)
 
-struct sdk_clocks {
+struct mcu_clocks {
 
-	struct sdk_clocks_clk {
+	struct mcu_clocks_clk {
 
 		/* 0x00: Clock control, can be changed on-the-fly (except for auxsrc) */
 		uint32_t volatile CTRL;
@@ -963,9 +963,9 @@ struct sdk_clocks {
 };
 
 
-#define RESETS ((struct sdk_resets *)0x4000C000)
+#define RESETS ((struct mcu_resets *)0x4000C000)
 
-struct sdk_resets {
+struct mcu_resets {
 
 	/* 0x00: Reset control. */
 	uint32_t volatile RESET;
@@ -1129,9 +1129,9 @@ struct sdk_resets {
 };
 
 
-#define PSM ((struct sdk_psm *)0x40010000)
+#define PSM ((struct mcu_psm *)0x40010000)
 
-struct sdk_psm {
+struct mcu_psm {
 
 	/* 0x00: Force block out of reset (i.e. power it on) */
 	uint32_t volatile FRCE_ON;
@@ -1284,11 +1284,11 @@ struct sdk_psm {
 };
 
 
-#define IO_BANK0 ((struct sdk_io_bank0 *)0x40014000)
+#define IO_BANK0 ((struct mcu_io_bank0 *)0x40014000)
 
-struct sdk_io_bank0 {
+struct mcu_io_bank0 {
 
-	struct sdk_io_bank0_gpio {
+	struct mcu_io_bank0_gpio {
 
 		/* 0x00: GPIO status */
 		uint32_t volatile STATUS;
@@ -3882,9 +3882,9 @@ struct sdk_io_bank0 {
 };
 
 
-#define IO_QSPI ((struct sdk_io_qspi *)0x40018000)
+#define IO_QSPI ((struct mcu_io_qspi *)0x40018000)
 
-struct sdk_io_qspi {
+struct mcu_io_qspi {
 
 	/* 0x00: GPIO status */
 	uint32_t volatile GPIO_QSPI_SCLK_STATUS;
@@ -4735,9 +4735,9 @@ struct sdk_io_qspi {
 };
 
 
-#define PADS_BANK0 ((struct sdk_pads_bank0 *)0x4001C000)
+#define PADS_BANK0 ((struct mcu_pads_bank0 *)0x4001C000)
 
-struct sdk_pads_bank0 {
+struct mcu_pads_bank0 {
 
 	/* 0x00: Voltage select. */
 	uint32_t volatile VOLTAGE_SELECT;
@@ -5453,9 +5453,9 @@ struct sdk_pads_bank0 {
 };
 
 
-#define PADS_QSPI ((struct sdk_pads_qspi *)0x40020000)
+#define PADS_QSPI ((struct mcu_pads_qspi *)0x40020000)
 
-struct sdk_pads_qspi {
+struct mcu_pads_qspi {
 
 	/* 0x00: Voltage select. */
 	uint32_t volatile VOLTAGE_SELECT;
@@ -5599,9 +5599,9 @@ struct sdk_pads_qspi {
 };
 
 
-#define XOSC ((struct sdk_xosc *)0x40024000)
+#define XOSC ((struct mcu_xosc *)0x40024000)
 
-struct sdk_xosc {
+struct mcu_xosc {
 
 	/* 0x00: Crystal Oscillator Control */
 	uint32_t volatile CTRL;
@@ -5657,10 +5657,10 @@ struct sdk_xosc {
 };
 
 
-#define PLL_SYS ((struct sdk_pll *)0x40028000)
-#define PLL_USB ((struct sdk_pll *)0x4002C000)
+#define PLL_SYS ((struct mcu_pll *)0x40028000)
+#define PLL_USB ((struct mcu_pll *)0x4002C000)
 
-struct sdk_pll {
+struct mcu_pll {
 
 	/* 0x00: Control and Status */
 	uint32_t volatile CS;
@@ -5701,9 +5701,9 @@ struct sdk_pll {
 };
 
 
-#define BUSCTRL ((struct sdk_busctrl *)0x40030000)
+#define BUSCTRL ((struct mcu_busctrl *)0x40030000)
 
-struct sdk_busctrl {
+struct mcu_busctrl {
 
 	/* 0x00: Set the priority of each master for bus arbitration. */
 	uint32_t volatile BUS_PRIORITY;
@@ -5852,10 +5852,10 @@ struct sdk_busctrl {
 };
 
 
-#define UART0 ((struct sdk_uart *)0x40034000)
-#define UART1 ((struct sdk_uart *)0x40038000)
+#define UART0 ((struct mcu_uart *)0x40034000)
+#define UART1 ((struct mcu_uart *)0x40038000)
 
-struct sdk_uart {
+struct mcu_uart {
 
 	/* 0x00: Data Register, UARTDR */
 	uint32_t volatile UARTDR;
@@ -6150,10 +6150,10 @@ struct sdk_uart {
 };
 
 
-#define SPI0 ((struct sdk_spi *)0x4003C000)
-#define SPI1 ((struct sdk_spi *)0x40040000)
+#define SPI0 ((struct mcu_spi *)0x4003C000)
+#define SPI1 ((struct mcu_spi *)0x40040000)
 
-struct sdk_spi {
+struct mcu_spi {
 
 	/* 0x00: Control register 0, SSPCR0 on page 3-4 */
 	uint32_t volatile SSPCR0;
@@ -6314,10 +6314,10 @@ struct sdk_spi {
 };
 
 
-#define I2C0 ((struct sdk_i2c *)0x40044000)
-#define I2C1 ((struct sdk_i2c *)0x40048000)
+#define I2C0 ((struct mcu_i2c *)0x40044000)
+#define I2C1 ((struct mcu_i2c *)0x40048000)
 
-struct sdk_i2c {
+struct mcu_i2c {
 
 	/* 0x00: I2C Control Register. */
 	uint32_t volatile IC_CON;
@@ -6920,9 +6920,9 @@ struct sdk_i2c {
 };
 
 
-#define ADC ((struct sdk_adc *)0x4004C000)
+#define ADC ((struct mcu_adc *)0x4004C000)
 
-struct sdk_adc {
+struct mcu_adc {
 
 	/* 0x00: ADC Control and Status */
 	uint32_t volatile CS;
@@ -7018,9 +7018,9 @@ struct sdk_adc {
 };
 
 
-#define PWM ((struct sdk_pwm *)0x40050000)
+#define PWM ((struct mcu_pwm *)0x40050000)
 
-struct sdk_pwm {
+struct mcu_pwm {
 
 	/* 0x00: Control and status register */
 	uint32_t volatile CH0_CSR;
@@ -7536,9 +7536,9 @@ struct sdk_pwm {
 };
 
 
-#define TIMER ((struct sdk_timer *)0x40054000)
+#define TIMER ((struct mcu_timer *)0x40054000)
 
-struct sdk_timer {
+struct mcu_timer {
 
 	/* 0x00: Write to bits 63:32 of time */
 	uint32_t volatile TIMEHW;
@@ -7635,9 +7635,9 @@ struct sdk_timer {
 };
 
 
-#define WATCHDOG ((struct sdk_watchdog *)0x40058000)
+#define WATCHDOG ((struct mcu_watchdog *)0x40058000)
 
-struct sdk_watchdog {
+struct mcu_watchdog {
 
 	/* 0x00: Watchdog control */
 	uint32_t volatile CTRL;
@@ -7708,9 +7708,9 @@ struct sdk_watchdog {
 };
 
 
-#define RTC ((struct sdk_rtc *)0x4005C000)
+#define RTC ((struct mcu_rtc *)0x4005C000)
 
-struct sdk_rtc {
+struct mcu_rtc {
 
 	/* 0x00: Divider minus 1 for the 1 second counter. */
 	uint32_t volatile CLKDIV_M1;
@@ -7851,9 +7851,9 @@ struct sdk_rtc {
 };
 
 
-#define ROSC ((struct sdk_rosc *)0x40060000)
+#define ROSC ((struct mcu_rosc *)0x40060000)
 
-struct sdk_rosc {
+struct mcu_rosc {
 
 	/* 0x00: Ring Oscillator control */
 	uint32_t volatile CTRL;
@@ -7956,9 +7956,9 @@ struct sdk_rosc {
 };
 
 
-#define VREG_AND_CHIP_RESET ((struct sdk_vreg_and_chip_reset *)0x40064000)
+#define VREG_AND_CHIP_RESET ((struct mcu_vreg_and_chip_reset *)0x40064000)
 
-struct sdk_vreg_and_chip_reset {
+struct mcu_vreg_and_chip_reset {
 
 	/* 0x00: Voltage regulator control and status */
 	uint32_t volatile VREG;
@@ -7994,9 +7994,9 @@ struct sdk_vreg_and_chip_reset {
 };
 
 
-#define TBMAN ((struct sdk_tbman *)0x4006C000)
+#define TBMAN ((struct mcu_tbman *)0x4006C000)
 
-struct sdk_tbman {
+struct mcu_tbman {
 
 	/* 0x00: Indicates the type of platform in use */
 	uint32_t volatile PLATFORM;
@@ -8008,9 +8008,9 @@ struct sdk_tbman {
 };
 
 
-#define DMA ((struct sdk_dma *)0x50000000)
+#define DMA ((struct mcu_dma *)0x50000000)
 
-struct sdk_dma {
+struct mcu_dma {
 
 	/* 0x00: DMA Channel 0 Read Address pointer */
 	uint32_t volatile CH0_READ_ADDR;
@@ -9418,9 +9418,9 @@ struct sdk_dma {
 };
 
 
-#define USBCTRL_DPRAM ((struct sdk_usbctrl_dpram *)0x50100000)
+#define USBCTRL_DPRAM ((struct mcu_usbctrl_dpram *)0x50100000)
 
-struct sdk_usbctrl_dpram {
+struct mcu_usbctrl_dpram {
 
 	/* 0x00: Bytes 0-3 of the SETUP packet from the host. */
 	uint32_t volatile SETUP_PACKET_LOW;
@@ -11348,9 +11348,9 @@ struct sdk_usbctrl_dpram {
 };
 
 
-#define USBCTRL_REGS ((struct sdk_usbctrl_regs *)0x50110000)
+#define USBCTRL_REGS ((struct mcu_usbctrl_regs *)0x50110000)
 
-struct sdk_usbctrl_regs {
+struct mcu_usbctrl_regs {
 
 	/* 0x00: Device address and endpoint control */
 	uint32_t volatile ADDR_ENDP;
@@ -12315,10 +12315,10 @@ struct sdk_usbctrl_regs {
 };
 
 
-#define PIO0 ((struct sdk_pio *)0x50200000)
-#define PIO1 ((struct sdk_pio *)0x50300000)
+#define PIO0 ((struct mcu_pio *)0x50200000)
+#define PIO1 ((struct mcu_pio *)0x50300000)
 
-struct sdk_pio {
+struct mcu_pio {
 
 	/* 0x00: PIO control register */
 	uint32_t volatile CTRL;
@@ -13222,9 +13222,9 @@ struct sdk_pio {
 };
 
 
-#define SIO ((struct sdk_sio *)0xD0000000)
+#define SIO ((struct mcu_sio *)0xD0000000)
 
-struct sdk_sio {
+struct mcu_sio {
 
 	/* 0x00: Processor core identifier */
 	uint32_t volatile CPUID;
@@ -13691,9 +13691,9 @@ struct sdk_sio {
 };
 
 
-#define PPB ((struct sdk_ppb *)0xE0000000)
+#define PPB ((struct mcu_ppb *)0xE0000000)
 
-struct sdk_ppb {
+struct mcu_ppb {
 
 	/* 0x180 */
 	uint8_t RESERVED0[0xE010u-0x180u];

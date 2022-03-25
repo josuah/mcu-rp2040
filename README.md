@@ -2,7 +2,7 @@ RP2040
 ======
 <https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf>
 
-`git clone git://git.josuah.net/sdk-rp2040`
+`git clone git://git.josuah.net/mcu-rp2040`
 
 ![rp2040](/image/rp2040.png)
 
@@ -107,9 +107,9 @@ Some registers definitions needed for that C file:
 ```
 $ cat rp2040.h
 
-#define RESETS ((struct sdk_resets *)0x4000C000)
+#define RESETS ((struct mcu_resets *)0x4000C000)
 
-struct sdk_resets {
+struct mcu_resets {
 
 	/* 0x00: Reset control. */
 	uint32_t volatile RESET;
@@ -127,11 +127,11 @@ struct sdk_resets {
 	/* ... */
 };
 
-#define IO_BANK0 ((struct sdk_io_bank0 *)0x40014000)
+#define IO_BANK0 ((struct mcu_io_bank0 *)0x40014000)
 
-struct sdk_io_bank0 {
+struct mcu_io_bank0 {
 
-	struct sdk_io_bank0_gpio {
+	struct mcu_io_bank0_gpio {
 
 		/* 0x00: GPIO status */
 		uint32_t volatile STATUS;
@@ -146,9 +146,9 @@ struct sdk_io_bank0 {
 	/* ... */
 };
 
-#define SIO ((struct sdk_sio *)0xD0000000)
+#define SIO ((struct mcu_sio *)0xD0000000)
 
-struct sdk_sio {
+struct mcu_sio {
 
 	/* 0x00: Processor core identifier */
 	uint32_t volatile CPUID;

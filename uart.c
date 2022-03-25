@@ -3,7 +3,7 @@
 #include "functions.h"
 
 void
-uart_init(struct sdk_uart *uart, uint8_t pin_rx, uint8_t pin_tx)
+uart_init(struct mcu_uart *uart, uint8_t pin_rx, uint8_t pin_tx)
 {
 	RESETS->RESET &= ~RESETS_RESET_IO_BANK0; // TODO: realy needed?
 	RESETS->RESET &= ~RESETS_RESET_PADS_BANK0; // TODO: really needed?

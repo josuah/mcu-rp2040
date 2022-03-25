@@ -6,7 +6,7 @@ AS = arm-none-eabi-as -mthumb
 LD = arm-none-eabi-ld
 AR = arm-none-eabi-ar
 GDB = arm-none-eabi-gdb
-OPENOCD = openocd -f interface/stlink.cfg -f target/rp2040.cfg
+OPENOCD = openocd -f interface/stlink.cfg -f target/rp2040-core0.cfg
 SDK_OBJ = ${SDK}/init.o ${SDK}/gpio.o ${SDK}/uart.o
 SDK_CFLAGS = -ffunction-sections -fdata-sections
 SDK_LDFLAGS = -Map=firmware.map --gc-sections -T${SDK}/script.ld -nostdlib -static
