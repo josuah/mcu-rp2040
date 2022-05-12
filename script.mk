@@ -7,7 +7,8 @@ LD = arm-none-eabi-ld
 AR = arm-none-eabi-ar
 GDB = arm-none-eabi-gdb
 OPENOCD = openocd -f interface/stlink.cfg -f target/rp2040-core0.cfg
-SDK_OBJ = ${SDK}/init.o ${SDK}/gpio.o ${SDK}/uart.o
+SDK_OBJ = ${SDK}/init.o ${SDK}/libc.o ${SDK}/gpio.o ${SDK}/uart.o ${SDK}/spi.o \
+	${SDK}/arm32_aeabi_divmod.o
 SDK_CFLAGS = -ffunction-sections -fdata-sections
 SDK_LDFLAGS = -Map=firmware.map --gc-sections -T${SDK}/script.ld -nostdlib -static
 SDK_CPPFLAGS = -I${SDK}
@@ -24,9 +25,6 @@ ocd:
 gdb:
 	${GDB} -x ${SDK}/script.gdb
 
-firmware.elf: ${SDK_OBJ} ${OBJ}
-	${LD} ${SDK_LDFLAGS} ${LDFLAGS} -o $@ ${SDK_OBJ} ${OBJ}
-
 flash.avrdude: firmware.hex
 	${AVRDUDE} -qu -P ${PORT} -U flash:w:firmware.hex
 
@@ -38,6 +36,9 @@ flash.mount: firmware.uf2
 
 flash.openocd: firmware.hex
 	${OPENOCD} -c 'program firmware.hex verify reset exit'
+
+firmware.elf: ${SDK_OBJ} ${OBJ}
+	${LD} ${SDK_LDFLAGS} ${LDFLAGS} -o $@ ${SDK_OBJ} ${OBJ}
 
 .SUFFIXES: .c .s .S .o .elf .bin .asm .hex .uf2
 

@@ -6158,101 +6158,104 @@ struct mcu_spi {
 	/* 0x00: Control register 0, SSPCR0 on page 3-4 */
 	uint32_t volatile SSPCR0;
 	/* Serial clock rate. The value SCR is used to generate the transmit and receive bit rate of the PrimeCell SSP. The bit rate is: F SSPCLK CPSDVSR x (1+SCR) where CPSDVSR is an even value from 2-254, programmed through the SSPCPSR register and SCR is a value from 0-255. */
-#define SPI0_SSPCR0_SCR_Msk					(0xFFu << 8)
-#define SPI0_SSPCR0_SCR_Pos					8u
+#define SPI_SSPCR0_SCR_Msk					(0xFFu << 8)
+#define SPI_SSPCR0_SCR_Pos					8u
 	/* SSPCLKOUT phase, applicable to Motorola SPI frame format only. */
-#define SPI0_SSPCR0_SPH						(1u << 7)
+#define SPI_SSPCR0_SPH						(1u << 7)
 	/* SSPCLKOUT polarity, applicable to Motorola SPI frame format only. */
-#define SPI0_SSPCR0_SPO						(1u << 6)
+#define SPI_SSPCR0_SPO						(1u << 6)
 	/* Frame format: 00 Motorola SPI frame format. */
-#define SPI0_SSPCR0_FRF_Msk					(0x3u << 4)
-#define SPI0_SSPCR0_FRF_Pos					4u
+#define SPI_SSPCR0_FRF_Msk					(0x3u << 4)
+#define SPI_SSPCR0_FRF_Pos					4u
+#define SPI_SSPCR0_FRF_MOTOROLA					(0x0u << 4)
+#define SPI_SSPCR0_FRF_TI_SYNC_SERIAL				(0x1u << 4)
+#define SPI_SSPCR0_FRF_NATIONAL_MICROWIRE			(0x2u << 4)
 	/* Data Size Select: 0000 Reserved, undefined operation. */
-#define SPI0_SSPCR0_DSS_Msk					(0xFu << 0)
-#define SPI0_SSPCR0_DSS_Pos					0u
+#define SPI_SSPCR0_DSS_Msk					(0xFu << 0)
+#define SPI_SSPCR0_DSS_Pos					0u
 
 	/* 0x04: Control register 1, SSPCR1 on page 3-5 */
 	uint32_t volatile SSPCR1;
 	/* Slave-mode output disable. */
-#define SPI0_SSPCR1_SOD						(1u << 3)
+#define SPI_SSPCR1_SOD						(1u << 3)
 	/* Master or slave mode select. */
-#define SPI0_SSPCR1_MS						(1u << 2)
+#define SPI_SSPCR1_MS						(1u << 2)
 	/* Synchronous serial port enable: 0 SSP operation disabled. */
-#define SPI0_SSPCR1_SSE						(1u << 1)
+#define SPI_SSPCR1_SSE						(1u << 1)
 	/* Loop back mode: 0 Normal serial port operation enabled. */
-#define SPI0_SSPCR1_LBM						(1u << 0)
+#define SPI_SSPCR1_LBM						(1u << 0)
 
 	/* 0x08: Data register, SSPDR on page 3-6 */
 	uint32_t volatile SSPDR;
 	/* Transmit/Receive FIFO: Read Receive FIFO. */
-#define SPI0_SSPDR_DATA_Msk					(0xFFFFu << 0)
-#define SPI0_SSPDR_DATA_Pos					0u
+#define SPI_SSPDR_DATA_Msk					(0xFFFFu << 0)
+#define SPI_SSPDR_DATA_Pos					0u
 
 	/* 0x0C: Status register, SSPSR on page 3-7 */
 	uint32_t volatile SSPSR;
 	/* PrimeCell SSP busy flag, RO: 0 SSP is idle. */
-#define SPI0_SSPSR_BSY						(1u << 4)
+#define SPI_SSPSR_BSY						(1u << 4)
 	/* Receive FIFO full, RO: 0 Receive FIFO is not full. */
-#define SPI0_SSPSR_RFF						(1u << 3)
+#define SPI_SSPSR_RFF						(1u << 3)
 	/* Receive FIFO not empty, RO: 0 Receive FIFO is empty. */
-#define SPI0_SSPSR_RNE						(1u << 2)
+#define SPI_SSPSR_RNE						(1u << 2)
 	/* Transmit FIFO not full, RO: 0 Transmit FIFO is full. */
-#define SPI0_SSPSR_TNF						(1u << 1)
+#define SPI_SSPSR_TNF						(1u << 1)
 	/* Transmit FIFO empty, RO: 0 Transmit FIFO is not empty. */
-#define SPI0_SSPSR_TFE						(1u << 0)
+#define SPI_SSPSR_TFE						(1u << 0)
 
 	/* 0x10: Clock prescale register, SSPCPSR on page 3-8 */
 	uint32_t volatile SSPCPSR;
 	/* Clock prescale divisor. */
-#define SPI0_SSPCPSR_CPSDVSR_Msk				(0xFFu << 0)
-#define SPI0_SSPCPSR_CPSDVSR_Pos				0u
+#define SPI_SSPCPSR_CPSDVSR_Msk				(0xFFu << 0)
+#define SPI_SSPCPSR_CPSDVSR_Pos				0u
 
 	/* 0x14: Interrupt mask set or clear register, SSPIMSC on page 3-9 */
 	uint32_t volatile SSPIMSC;
 	/* Transmit FIFO interrupt mask: 0 Transmit FIFO half empty or less condition interrupt is masked. */
-#define SPI0_SSPIMSC_TXIM					(1u << 3)
+#define SPI_SSPIMSC_TXIM					(1u << 3)
 	/* Receive FIFO interrupt mask: 0 Receive FIFO half full or less condition interrupt is masked. */
-#define SPI0_SSPIMSC_RXIM					(1u << 2)
+#define SPI_SSPIMSC_RXIM					(1u << 2)
 	/* Receive timeout interrupt mask: 0 Receive FIFO not empty and no read prior to timeout period interrupt is masked. */
-#define SPI0_SSPIMSC_RTIM					(1u << 1)
+#define SPI_SSPIMSC_RTIM					(1u << 1)
 	/* Receive overrun interrupt mask: 0 Receive FIFO written to while full condition interrupt is masked. */
-#define SPI0_SSPIMSC_RORIM					(1u << 0)
+#define SPI_SSPIMSC_RORIM					(1u << 0)
 
 	/* 0x18: Raw interrupt status register, SSPRIS on page 3-10 */
 	uint32_t volatile SSPRIS;
 	/* Gives the raw interrupt state, prior to masking, of the SSPTXINTR interrupt */
-#define SPI0_SSPRIS_TXRIS					(1u << 3)
+#define SPI_SSPRIS_TXRIS					(1u << 3)
 	/* Gives the raw interrupt state, prior to masking, of the SSPRXINTR interrupt */
-#define SPI0_SSPRIS_RXRIS					(1u << 2)
+#define SPI_SSPRIS_RXRIS					(1u << 2)
 	/* Gives the raw interrupt state, prior to masking, of the SSPRTINTR interrupt */
-#define SPI0_SSPRIS_RTRIS					(1u << 1)
+#define SPI_SSPRIS_RTRIS					(1u << 1)
 	/* Gives the raw interrupt state, prior to masking, of the SSPRORINTR interrupt */
-#define SPI0_SSPRIS_RORRIS					(1u << 0)
+#define SPI_SSPRIS_RORRIS					(1u << 0)
 
 	/* 0x1C: Masked interrupt status register, SSPMIS on page 3-11 */
 	uint32_t volatile SSPMIS;
 	/* Gives the transmit FIFO masked interrupt state, after masking, of the SSPTXINTR interrupt */
-#define SPI0_SSPMIS_TXMIS					(1u << 3)
+#define SPI_SSPMIS_TXMIS					(1u << 3)
 	/* Gives the receive FIFO masked interrupt state, after masking, of the SSPRXINTR interrupt */
-#define SPI0_SSPMIS_RXMIS					(1u << 2)
+#define SPI_SSPMIS_RXMIS					(1u << 2)
 	/* Gives the receive timeout masked interrupt state, after masking, of the SSPRTINTR interrupt */
-#define SPI0_SSPMIS_RTMIS					(1u << 1)
+#define SPI_SSPMIS_RTMIS					(1u << 1)
 	/* Gives the receive over run masked interrupt status, after masking, of the SSPRORINTR interrupt */
-#define SPI0_SSPMIS_RORMIS					(1u << 0)
+#define SPI_SSPMIS_RORMIS					(1u << 0)
 
 	/* 0x20: Interrupt clear register, SSPICR on page 3-11 */
 	uint32_t volatile SSPICR;
 	/* Clears the SSPRTINTR interrupt */
-#define SPI0_SSPICR_RTIC					(1u << 1)
+#define SPI_SSPICR_RTIC					(1u << 1)
 	/* Clears the SSPRORINTR interrupt */
-#define SPI0_SSPICR_RORIC					(1u << 0)
+#define SPI_SSPICR_RORIC					(1u << 0)
 
 	/* 0x24: DMA control register, SSPDMACR on page 3-12 */
 	uint32_t volatile SSPDMACR;
 	/* Transmit DMA Enable. */
-#define SPI0_SSPDMACR_TXDMAE					(1u << 1)
+#define SPI_SSPDMACR_TXDMAE					(1u << 1)
 	/* Receive DMA Enable. */
-#define SPI0_SSPDMACR_RXDMAE					(1u << 0)
+#define SPI_SSPDMACR_RXDMAE					(1u << 0)
 
 	/* 0x28 */
 	uint8_t RESERVED0[0xFE0u-0x28u];
@@ -6260,56 +6263,56 @@ struct mcu_spi {
 	/* 0xFE0: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID0;
 	/* These bits read back as 0x22 */
-#define SPI0_SSPPERIPHID0_PARTNUMBER0_Msk			(0xFFu << 0)
-#define SPI0_SSPPERIPHID0_PARTNUMBER0_Pos			0u
+#define SPI_SSPPERIPHID0_PARTNUMBER0_Msk			(0xFFu << 0)
+#define SPI_SSPPERIPHID0_PARTNUMBER0_Pos			0u
 
 	/* 0xFE4: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID1;
 	/* These bits read back as 0x1 */
-#define SPI0_SSPPERIPHID1_DESIGNER0_Msk				(0xFu << 4)
-#define SPI0_SSPPERIPHID1_DESIGNER0_Pos				4u
+#define SPI_SSPPERIPHID1_DESIGNER0_Msk				(0xFu << 4)
+#define SPI_SSPPERIPHID1_DESIGNER0_Pos				4u
 	/* These bits read back as 0x0 */
-#define SPI0_SSPPERIPHID1_PARTNUMBER1_Msk			(0xFu << 0)
-#define SPI0_SSPPERIPHID1_PARTNUMBER1_Pos			0u
+#define SPI_SSPPERIPHID1_PARTNUMBER1_Msk			(0xFu << 0)
+#define SPI_SSPPERIPHID1_PARTNUMBER1_Pos			0u
 
 	/* 0xFE8: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID2;
 	/* These bits return the peripheral revision */
-#define SPI0_SSPPERIPHID2_REVISION_Msk				(0xFu << 4)
-#define SPI0_SSPPERIPHID2_REVISION_Pos				4u
+#define SPI_SSPPERIPHID2_REVISION_Msk				(0xFu << 4)
+#define SPI_SSPPERIPHID2_REVISION_Pos				4u
 	/* These bits read back as 0x4 */
-#define SPI0_SSPPERIPHID2_DESIGNER1_Msk				(0xFu << 0)
-#define SPI0_SSPPERIPHID2_DESIGNER1_Pos				0u
+#define SPI_SSPPERIPHID2_DESIGNER1_Msk				(0xFu << 0)
+#define SPI_SSPPERIPHID2_DESIGNER1_Pos				0u
 
 	/* 0xFEC: Peripheral identification registers, SSPPeriphID0-3 on page 3-13 */
 	uint32_t volatile SSPPERIPHID3;
 	/* These bits read back as 0x00 */
-#define SPI0_SSPPERIPHID3_CONFIGURATION_Msk			(0xFFu << 0)
-#define SPI0_SSPPERIPHID3_CONFIGURATION_Pos			0u
+#define SPI_SSPPERIPHID3_CONFIGURATION_Msk			(0xFFu << 0)
+#define SPI_SSPPERIPHID3_CONFIGURATION_Pos			0u
 
 	/* 0xFF0: PrimeCell identification registers, SSPPCellID0-3 on page 3-16 */
 	uint32_t volatile SSPPCELLID0;
 	/* These bits read back as 0x0D */
-#define SPI0_SSPPCELLID0_SSPPCELLID0_Msk			(0xFFu << 0)
-#define SPI0_SSPPCELLID0_SSPPCELLID0_Pos			0u
+#define SPI_SSPPCELLID0_SSPPCELLID0_Msk			(0xFFu << 0)
+#define SPI_SSPPCELLID0_SSPPCELLID0_Pos			0u
 
 	/* 0xFF4: PrimeCell identification registers, SSPPCellID0-3 on page 3-16 */
 	uint32_t volatile SSPPCELLID1;
 	/* These bits read back as 0xF0 */
-#define SPI0_SSPPCELLID1_SSPPCELLID1_Msk			(0xFFu << 0)
-#define SPI0_SSPPCELLID1_SSPPCELLID1_Pos			0u
+#define SPI_SSPPCELLID1_SSPPCELLID1_Msk			(0xFFu << 0)
+#define SPI_SSPPCELLID1_SSPPCELLID1_Pos			0u
 
 	/* 0xFF8: PrimeCell identification registers, SSPPCellID0-3 on page 3-16 */
 	uint32_t volatile SSPPCELLID2;
 	/* These bits read back as 0x05 */
-#define SPI0_SSPPCELLID2_SSPPCELLID2_Msk			(0xFFu << 0)
-#define SPI0_SSPPCELLID2_SSPPCELLID2_Pos			0u
+#define SPI_SSPPCELLID2_SSPPCELLID2_Msk			(0xFFu << 0)
+#define SPI_SSPPCELLID2_SSPPCELLID2_Pos			0u
 
 	/* 0xFFC: PrimeCell identification registers, SSPPCellID0-3 on page 3-16 */
 	uint32_t volatile SSPPCELLID3;
 	/* These bits read back as 0xB1 */
-#define SPI0_SSPPCELLID3_SSPPCELLID3_Msk			(0xFFu << 0)
-#define SPI0_SSPPCELLID3_SSPPCELLID3_Pos			0u
+#define SPI_SSPPCELLID3_SSPPCELLID3_Msk			(0xFFu << 0)
+#define SPI_SSPPCELLID3_SSPPCELLID3_Pos			0u
 
 };
 

@@ -10,7 +10,7 @@ main(void)
 	gpio_init();
 
 	gpio_set_mode_output(LED);
-	for (;;)
-		gpio_set_pin_up(LED);
-		
+	gpio_set_pin_up(LED);
+
+	spi_init(SPI0, 1000000);
 }
