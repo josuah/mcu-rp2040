@@ -16,8 +16,8 @@ main(void)
 	gpio_set_mode_output(LED);
 
 	spi_init(SPI0, 1000000, SPI_SCK, SPI_CSN, SPI_RX, SPI_TX);
-//	gpio_set_pin_high(LED);
+	gpio_set_pin_high(LED);
 
 	for (;;)
-		SPI0->SSPDR = 0xB0;
+		SPI0->SSPDR = 0xFF;
 }
