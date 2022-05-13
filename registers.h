@@ -433,6 +433,19 @@ struct mcu_syscfg {
 
 #define CLOCKS ((struct mcu_clocks *)0x40008000)
 
+enum {
+	CLK_GPOUT0,
+	CLK_GPOUT1,
+	CLK_GPOUT2,
+	CLK_GPOUT3,
+	CLK_REF,
+	CLK_SYS,
+	CLK_PERI,
+	CLK_USB,
+	CLK_ADC,
+	CLK_RTC
+};
+
 struct mcu_clocks {
 
 	struct mcu_clocks_clk {

@@ -18,13 +18,13 @@ __reset_handler(void)
 }
 
 /* so that the debugger can immediately see which fault was triggered */
-void __null_handler(void)		{ for (int volatile i = 0;; i++); }
-void __isr_hard_fault(void)		{ for (int volatile i = 0;; i++); }
-void __isr_memory_management(void)	{ for (int volatile i = 0;; i++); }
-void __isr_non_maskable_interrupt(void)	{ for (int volatile i = 0;; i++); }
-void __isr_bus_fault(void)		{ for (int volatile i = 0;; i++); }
-void __isr_usage_fault(void)		{ for (int volatile i = 0;; i++); }
-void __isr_secure_fault(void)		{ for (int volatile i = 0;; i++); }
+void __null_handler(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
+void __isr_hard_fault(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
+void __isr_memory_management(void)	{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
+void __isr_non_maskable_interrupt(void)	{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
+void __isr_bus_fault(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
+void __isr_usage_fault(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
+void __isr_secure_fault(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
 
 /*
  * Boot stage 2 bootloader: padded and checksummed version of
