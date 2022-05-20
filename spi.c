@@ -36,9 +36,12 @@ spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	/* set the number of bits per frames */
 	 | (8 - 1) << SPI_SSPCR0_DSS_Pos;
 
-	/* enable all interrupts */
+	/* enable all interrupts generation */
 	spi->SSPIMSC = SPI_SSPIMSC_TXIM | SPI_SSPIMSC_RXIM
 	 | SPI_SSPIMSC_RTIM | SPI_SSPIMSC_RORIM;
+
+	/* enable interrupts triggering */
+	M0PLUS->NVIC_ISER |= 1u << (18 + id);
 
 	/* the result of the division is expected to be >1 */
 	spi->SSPCPSR = 2; // CLK_PERI_HZ /  baud_rate_hz;

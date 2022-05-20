@@ -13707,7 +13707,7 @@ struct mcu_sio {
 };
 
 
-#define PPB ((struct mcu_ppb *)0xE0000000)
+#define M0PLUS ((struct mcu_ppb *)0xE0000000)
 
 struct mcu_ppb {
 
@@ -13717,35 +13717,35 @@ struct mcu_ppb {
 	/* 0xE010: Use the SysTick Control and Status Register to enable the SysTick features. */
 	uint32_t volatile SYST_CSR;
 	/* Returns 1 if timer counted to 0 since last time this was read. */
-#define PPB_SYST_CSR_COUNTFLAG					(1u << 16)
+#define M0PLUS_SYST_CSR_COUNTFLAG				(1u << 16)
 	/* SysTick clock source. */
-#define PPB_SYST_CSR_CLKSOURCE					(1u << 2)
+#define M0PLUS_SYST_CSR_CLKSOURCE				(1u << 2)
 	/* Enables SysTick exception request: */
-#define PPB_SYST_CSR_TICKINT					(1u << 1)
+#define M0PLUS_SYST_CSR_TICKINT					(1u << 1)
 	/* Enable SysTick counter: */
-#define PPB_SYST_CSR_ENABLE					(1u << 0)
+#define M0PLUS_SYST_CSR_ENABLE					(1u << 0)
 
 	/* 0xE014: Use the SysTick Reload Value Register to specify the start value to load into the current value register when the counter reaches 0. */
 	uint32_t volatile SYST_RVR;
 	/* Value to load into the SysTick Current Value Register when the counter reaches 0. */
-#define PPB_SYST_RVR_RELOAD_Msk					(0xFFFFFFu << 0)
-#define PPB_SYST_RVR_RELOAD_Pos					0u
+#define M0PLUS_SYST_RVR_RELOAD_Msk				(0xFFFFFFu << 0)
+#define M0PLUS_SYST_RVR_RELOAD_Pos				0u
 
 	/* 0xE018: Use the SysTick Current Value Register to find the current value in the register. */
 	uint32_t volatile SYST_CVR;
 	/* Reads return the current value of the SysTick counter. */
-#define PPB_SYST_CVR_CURRENT_Msk				(0xFFFFFFu << 0)
-#define PPB_SYST_CVR_CURRENT_Pos				0u
+#define M0PLUS_SYST_CVR_CURRENT_Msk				(0xFFFFFFu << 0)
+#define M0PLUS_SYST_CVR_CURRENT_Pos				0u
 
 	/* 0xE01C: Use the SysTick Calibration Value Register to enable software to scale to any required speed using divide and multiply. */
 	uint32_t volatile SYST_CALIB;
 	/* If reads as 1, the Reference clock is not provided - the CLKSOURCE bit of the SysTick Control and Status register will be forced to 1 and cannot be cleared to 0. */
-#define PPB_SYST_CALIB_NOREF					(1u << 31)
+#define M0PLUS_SYST_CALIB_NOREF					(1u << 31)
 	/* If reads as 1, the calibration value for 10ms is inexact (due to clock frequency). */
-#define PPB_SYST_CALIB_SKEW					(1u << 30)
+#define M0PLUS_SYST_CALIB_SKEW					(1u << 30)
 	/* An optional Reload value to be used for 10ms (100Hz) timing, subject to system clock skew errors. */
-#define PPB_SYST_CALIB_TENMS_Msk				(0xFFFFFFu << 0)
-#define PPB_SYST_CALIB_TENMS_Pos				0u
+#define M0PLUS_SYST_CALIB_TENMS_Msk				(0xFFFFFFu << 0)
+#define M0PLUS_SYST_CALIB_TENMS_Pos				0u
 
 	/* 0xE020 */
 	uint8_t RESERVED1[0xE100u-0xE020u];
@@ -13753,8 +13753,8 @@ struct mcu_ppb {
 	/* 0xE100: Use the Interrupt Set-Enable Register to enable interrupts and determine which interrupts are currently enabled. */
 	uint32_t volatile NVIC_ISER;
 	/* Interrupt set-enable bits. */
-#define PPB_NVIC_ISER_SETENA_Msk				(0xFFFFFFFFu << 0)
-#define PPB_NVIC_ISER_SETENA_Pos				0u
+#define M0PLUS_NVIC_ISER_SETENA_Msk				(0xFFFFFFFFu << 0)
+#define M0PLUS_NVIC_ISER_SETENA_Pos				0u
 
 	/* 0xE104 */
 	uint8_t RESERVED2[0xE180u-0xE104u];
@@ -13762,8 +13762,8 @@ struct mcu_ppb {
 	/* 0xE180: Use the Interrupt Clear-Enable Registers to disable interrupts and determine which interrupts are currently enabled. */
 	uint32_t volatile NVIC_ICER;
 	/* Interrupt clear-enable bits. */
-#define PPB_NVIC_ICER_CLRENA_Msk				(0xFFFFFFFFu << 0)
-#define PPB_NVIC_ICER_CLRENA_Pos				0u
+#define M0PLUS_NVIC_ICER_CLRENA_Msk				(0xFFFFFFFFu << 0)
+#define M0PLUS_NVIC_ICER_CLRENA_Pos				0u
 
 	/* 0xE184 */
 	uint8_t RESERVED3[0xE200u-0xE184u];
@@ -13771,8 +13771,8 @@ struct mcu_ppb {
 	/* 0xE200: The NVIC_ISPR forces interrupts into the pending state, and shows which interrupts are pending. */
 	uint32_t volatile NVIC_ISPR;
 	/* Interrupt set-pending bits. */
-#define PPB_NVIC_ISPR_SETPEND_Msk				(0xFFFFFFFFu << 0)
-#define PPB_NVIC_ISPR_SETPEND_Pos				0u
+#define M0PLUS_NVIC_ISPR_SETPEND_Msk				(0xFFFFFFFFu << 0)
+#define M0PLUS_NVIC_ISPR_SETPEND_Pos				0u
 
 	/* 0xE204 */
 	uint8_t RESERVED4[0xE280u-0xE204u];
@@ -13780,8 +13780,8 @@ struct mcu_ppb {
 	/* 0xE280: Use the Interrupt Clear-Pending Register to clear pending interrupts and determine which interrupts are currently pending. */
 	uint32_t volatile NVIC_ICPR;
 	/* Interrupt clear-pending bits. */
-#define PPB_NVIC_ICPR_CLRPEND_Msk				(0xFFFFFFFFu << 0)
-#define PPB_NVIC_ICPR_CLRPEND_Pos				0u
+#define M0PLUS_NVIC_ICPR_CLRPEND_Msk				(0xFFFFFFFFu << 0)
+#define M0PLUS_NVIC_ICPR_CLRPEND_Pos				0u
 
 	/* 0xE284 */
 	uint8_t RESERVED5[0xE400u-0xE284u];
@@ -13789,122 +13789,122 @@ struct mcu_ppb {
 	/* 0xE400: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR0;
 	/* Priority of interrupt 3 */
-#define PPB_NVIC_IPR0_IP_3_Msk					(0x3u << 30)
-#define PPB_NVIC_IPR0_IP_3_Pos					30u
+#define M0PLUS_NVIC_IPR0_IP_3_Msk				(0x3u << 30)
+#define M0PLUS_NVIC_IPR0_IP_3_Pos				30u
 	/* Priority of interrupt 2 */
-#define PPB_NVIC_IPR0_IP_2_Msk					(0x3u << 22)
-#define PPB_NVIC_IPR0_IP_2_Pos					22u
+#define M0PLUS_NVIC_IPR0_IP_2_Msk				(0x3u << 22)
+#define M0PLUS_NVIC_IPR0_IP_2_Pos				22u
 	/* Priority of interrupt 1 */
-#define PPB_NVIC_IPR0_IP_1_Msk					(0x3u << 14)
-#define PPB_NVIC_IPR0_IP_1_Pos					14u
+#define M0PLUS_NVIC_IPR0_IP_1_Msk				(0x3u << 14)
+#define M0PLUS_NVIC_IPR0_IP_1_Pos				14u
 	/* Priority of interrupt 0 */
-#define PPB_NVIC_IPR0_IP_0_Msk					(0x3u << 6)
-#define PPB_NVIC_IPR0_IP_0_Pos					6u
+#define M0PLUS_NVIC_IPR0_IP_0_Msk				(0x3u << 6)
+#define M0PLUS_NVIC_IPR0_IP_0_Pos				6u
 
 	/* 0xE404: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR1;
 	/* Priority of interrupt 7 */
-#define PPB_NVIC_IPR1_IP_7_Msk					(0x3u << 30)
-#define PPB_NVIC_IPR1_IP_7_Pos					30u
+#define M0PLUS_NVIC_IPR1_IP_7_Msk				(0x3u << 30)
+#define M0PLUS_NVIC_IPR1_IP_7_Pos				30u
 	/* Priority of interrupt 6 */
-#define PPB_NVIC_IPR1_IP_6_Msk					(0x3u << 22)
-#define PPB_NVIC_IPR1_IP_6_Pos					22u
+#define M0PLUS_NVIC_IPR1_IP_6_Msk				(0x3u << 22)
+#define M0PLUS_NVIC_IPR1_IP_6_Pos				22u
 	/* Priority of interrupt 5 */
-#define PPB_NVIC_IPR1_IP_5_Msk					(0x3u << 14)
-#define PPB_NVIC_IPR1_IP_5_Pos					14u
+#define M0PLUS_NVIC_IPR1_IP_5_Msk				(0x3u << 14)
+#define M0PLUS_NVIC_IPR1_IP_5_Pos				14u
 	/* Priority of interrupt 4 */
-#define PPB_NVIC_IPR1_IP_4_Msk					(0x3u << 6)
-#define PPB_NVIC_IPR1_IP_4_Pos					6u
+#define M0PLUS_NVIC_IPR1_IP_4_Msk				(0x3u << 6)
+#define M0PLUS_NVIC_IPR1_IP_4_Pos				6u
 
 	/* 0xE408: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR2;
 	/* Priority of interrupt 11 */
-#define PPB_NVIC_IPR2_IP_11_Msk					(0x3u << 30)
-#define PPB_NVIC_IPR2_IP_11_Pos					30u
+#define M0PLUS_NVIC_IPR2_IP_11_Msk				(0x3u << 30)
+#define M0PLUS_NVIC_IPR2_IP_11_Pos				30u
 	/* Priority of interrupt 10 */
-#define PPB_NVIC_IPR2_IP_10_Msk					(0x3u << 22)
-#define PPB_NVIC_IPR2_IP_10_Pos					22u
+#define M0PLUS_NVIC_IPR2_IP_10_Msk				(0x3u << 22)
+#define M0PLUS_NVIC_IPR2_IP_10_Pos				22u
 	/* Priority of interrupt 9 */
-#define PPB_NVIC_IPR2_IP_9_Msk					(0x3u << 14)
-#define PPB_NVIC_IPR2_IP_9_Pos					14u
+#define M0PLUS_NVIC_IPR2_IP_9_Msk				(0x3u << 14)
+#define M0PLUS_NVIC_IPR2_IP_9_Pos				14u
 	/* Priority of interrupt 8 */
-#define PPB_NVIC_IPR2_IP_8_Msk					(0x3u << 6)
-#define PPB_NVIC_IPR2_IP_8_Pos					6u
+#define M0PLUS_NVIC_IPR2_IP_8_Msk				(0x3u << 6)
+#define M0PLUS_NVIC_IPR2_IP_8_Pos				6u
 
 	/* 0xE40C: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR3;
 	/* Priority of interrupt 15 */
-#define PPB_NVIC_IPR3_IP_15_Msk					(0x3u << 30)
-#define PPB_NVIC_IPR3_IP_15_Pos					30u
+#define M0PLUS_NVIC_IPR3_IP_15_Msk				(0x3u << 30)
+#define M0PLUS_NVIC_IPR3_IP_15_Pos				30u
 	/* Priority of interrupt 14 */
-#define PPB_NVIC_IPR3_IP_14_Msk					(0x3u << 22)
-#define PPB_NVIC_IPR3_IP_14_Pos					22u
+#define M0PLUS_NVIC_IPR3_IP_14_Msk				(0x3u << 22)
+#define M0PLUS_NVIC_IPR3_IP_14_Pos				22u
 	/* Priority of interrupt 13 */
-#define PPB_NVIC_IPR3_IP_13_Msk					(0x3u << 14)
-#define PPB_NVIC_IPR3_IP_13_Pos					14u
+#define M0PLUS_NVIC_IPR3_IP_13_Msk				(0x3u << 14)
+#define M0PLUS_NVIC_IPR3_IP_13_Pos				14u
 	/* Priority of interrupt 12 */
-#define PPB_NVIC_IPR3_IP_12_Msk					(0x3u << 6)
-#define PPB_NVIC_IPR3_IP_12_Pos					6u
+#define M0PLUS_NVIC_IPR3_IP_12_Msk				(0x3u << 6)
+#define M0PLUS_NVIC_IPR3_IP_12_Pos				6u
 
 	/* 0xE410: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR4;
 	/* Priority of interrupt 19 */
-#define PPB_NVIC_IPR4_IP_19_Msk					(0x3u << 30)
-#define PPB_NVIC_IPR4_IP_19_Pos					30u
+#define M0PLUS_NVIC_IPR4_IP_19_Msk				(0x3u << 30)
+#define M0PLUS_NVIC_IPR4_IP_19_Pos				30u
 	/* Priority of interrupt 18 */
-#define PPB_NVIC_IPR4_IP_18_Msk					(0x3u << 22)
-#define PPB_NVIC_IPR4_IP_18_Pos					22u
+#define M0PLUS_NVIC_IPR4_IP_18_Msk				(0x3u << 22)
+#define M0PLUS_NVIC_IPR4_IP_18_Pos				22u
 	/* Priority of interrupt 17 */
-#define PPB_NVIC_IPR4_IP_17_Msk					(0x3u << 14)
-#define PPB_NVIC_IPR4_IP_17_Pos					14u
+#define M0PLUS_NVIC_IPR4_IP_17_Msk				(0x3u << 14)
+#define M0PLUS_NVIC_IPR4_IP_17_Pos				14u
 	/* Priority of interrupt 16 */
-#define PPB_NVIC_IPR4_IP_16_Msk					(0x3u << 6)
-#define PPB_NVIC_IPR4_IP_16_Pos					6u
+#define M0PLUS_NVIC_IPR4_IP_16_Msk				(0x3u << 6)
+#define M0PLUS_NVIC_IPR4_IP_16_Pos				6u
 
 	/* 0xE414: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR5;
 	/* Priority of interrupt 23 */
-#define PPB_NVIC_IPR5_IP_23_Msk					(0x3u << 30)
-#define PPB_NVIC_IPR5_IP_23_Pos					30u
+#define M0PLUS_NVIC_IPR5_IP_23_Msk				(0x3u << 30)
+#define M0PLUS_NVIC_IPR5_IP_23_Pos				30u
 	/* Priority of interrupt 22 */
-#define PPB_NVIC_IPR5_IP_22_Msk					(0x3u << 22)
-#define PPB_NVIC_IPR5_IP_22_Pos					22u
+#define M0PLUS_NVIC_IPR5_IP_22_Msk				(0x3u << 22)
+#define M0PLUS_NVIC_IPR5_IP_22_Pos				22u
 	/* Priority of interrupt 21 */
-#define PPB_NVIC_IPR5_IP_21_Msk					(0x3u << 14)
-#define PPB_NVIC_IPR5_IP_21_Pos					14u
+#define M0PLUS_NVIC_IPR5_IP_21_Msk				(0x3u << 14)
+#define M0PLUS_NVIC_IPR5_IP_21_Pos				14u
 	/* Priority of interrupt 20 */
-#define PPB_NVIC_IPR5_IP_20_Msk					(0x3u << 6)
-#define PPB_NVIC_IPR5_IP_20_Pos					6u
+#define M0PLUS_NVIC_IPR5_IP_20_Msk				(0x3u << 6)
+#define M0PLUS_NVIC_IPR5_IP_20_Pos				6u
 
 	/* 0xE418: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR6;
 	/* Priority of interrupt 27 */
-#define PPB_NVIC_IPR6_IP_27_Msk					(0x3u << 30)
-#define PPB_NVIC_IPR6_IP_27_Pos					30u
+#define M0PLUS_NVIC_IPR6_IP_27_Msk				(0x3u << 30)
+#define M0PLUS_NVIC_IPR6_IP_27_Pos				30u
 	/* Priority of interrupt 26 */
-#define PPB_NVIC_IPR6_IP_26_Msk					(0x3u << 22)
-#define PPB_NVIC_IPR6_IP_26_Pos					22u
+#define M0PLUS_NVIC_IPR6_IP_26_Msk				(0x3u << 22)
+#define M0PLUS_NVIC_IPR6_IP_26_Pos				22u
 	/* Priority of interrupt 25 */
-#define PPB_NVIC_IPR6_IP_25_Msk					(0x3u << 14)
-#define PPB_NVIC_IPR6_IP_25_Pos					14u
+#define M0PLUS_NVIC_IPR6_IP_25_Msk				(0x3u << 14)
+#define M0PLUS_NVIC_IPR6_IP_25_Pos				14u
 	/* Priority of interrupt 24 */
-#define PPB_NVIC_IPR6_IP_24_Msk					(0x3u << 6)
-#define PPB_NVIC_IPR6_IP_24_Pos					6u
+#define M0PLUS_NVIC_IPR6_IP_24_Msk				(0x3u << 6)
+#define M0PLUS_NVIC_IPR6_IP_24_Pos				6u
 
 	/* 0xE41C: Use the Interrupt Priority Registers to assign a priority from 0 to 3 to each of the available interrupts. */
 	uint32_t volatile NVIC_IPR7;
 	/* Priority of interrupt 31 */
-#define PPB_NVIC_IPR7_IP_31_Msk					(0x3u << 30)
-#define PPB_NVIC_IPR7_IP_31_Pos					30u
+#define M0PLUS_NVIC_IPR7_IP_31_Msk				(0x3u << 30)
+#define M0PLUS_NVIC_IPR7_IP_31_Pos				30u
 	/* Priority of interrupt 30 */
-#define PPB_NVIC_IPR7_IP_30_Msk					(0x3u << 22)
-#define PPB_NVIC_IPR7_IP_30_Pos					22u
+#define M0PLUS_NVIC_IPR7_IP_30_Msk				(0x3u << 22)
+#define M0PLUS_NVIC_IPR7_IP_30_Pos				22u
 	/* Priority of interrupt 29 */
-#define PPB_NVIC_IPR7_IP_29_Msk					(0x3u << 14)
-#define PPB_NVIC_IPR7_IP_29_Pos					14u
+#define M0PLUS_NVIC_IPR7_IP_29_Msk				(0x3u << 14)
+#define M0PLUS_NVIC_IPR7_IP_29_Pos				14u
 	/* Priority of interrupt 28 */
-#define PPB_NVIC_IPR7_IP_28_Msk					(0x3u << 6)
-#define PPB_NVIC_IPR7_IP_28_Pos					6u
+#define M0PLUS_NVIC_IPR7_IP_28_Msk				(0x3u << 6)
+#define M0PLUS_NVIC_IPR7_IP_28_Pos				6u
 
 	/* 0xE420 */
 	uint8_t RESERVED6[0xED00u-0xE420u];
@@ -13912,77 +13912,77 @@ struct mcu_ppb {
 	/* 0xED00: Read the CPU ID Base Register to determine: the ID number of the processor core, the version number of the processor core, the implementation details of the processor core. */
 	uint32_t volatile CPUID;
 	/* Implementor code: 0x41 = ARM */
-#define PPB_CPUID_IMPLEMENTER_Msk				(0xFFu << 24)
-#define PPB_CPUID_IMPLEMENTER_Pos				24u
+#define M0PLUS_CPUID_IMPLEMENTER_Msk				(0xFFu << 24)
+#define M0PLUS_CPUID_IMPLEMENTER_Pos				24u
 	/* Major revision number n in the rnpm revision status: */
-#define PPB_CPUID_VARIANT_Msk					(0xFu << 20)
-#define PPB_CPUID_VARIANT_Pos					20u
+#define M0PLUS_CPUID_VARIANT_Msk				(0xFu << 20)
+#define M0PLUS_CPUID_VARIANT_Pos				20u
 	/* Constant that defines the architecture of the processor: */
-#define PPB_CPUID_ARCHITECTURE_Msk				(0xFu << 16)
-#define PPB_CPUID_ARCHITECTURE_Pos				16u
+#define M0PLUS_CPUID_ARCHITECTURE_Msk				(0xFu << 16)
+#define M0PLUS_CPUID_ARCHITECTURE_Pos				16u
 	/* Number of processor within family: 0xC60 = Cortex-M0+ */
-#define PPB_CPUID_PARTNO_Msk					(0xFFFu << 4)
-#define PPB_CPUID_PARTNO_Pos					4u
+#define M0PLUS_CPUID_PARTNO_Msk					(0xFFFu << 4)
+#define M0PLUS_CPUID_PARTNO_Pos					4u
 	/* Minor revision number m in the rnpm revision status: */
-#define PPB_CPUID_REVISION_Msk					(0xFu << 0)
-#define PPB_CPUID_REVISION_Pos					0u
+#define M0PLUS_CPUID_REVISION_Msk				(0xFu << 0)
+#define M0PLUS_CPUID_REVISION_Pos				0u
 
 	/* 0xED04: Use the Interrupt Control State Register to set a pending Non-Maskable Interrupt (NMI), set or clear a pending PendSV, set or clear a pending SysTick, check for pending exceptions, check the vector number of the highest priority pended exception, check the vector number of the active exception. */
 	uint32_t volatile ICSR;
 	/* Setting this bit will activate an NMI. */
-#define PPB_ICSR_NMIPENDSET					(1u << 31)
+#define M0PLUS_ICSR_NMIPENDSET					(1u << 31)
 	/* PendSV set-pending bit. */
-#define PPB_ICSR_PENDSVSET					(1u << 28)
+#define M0PLUS_ICSR_PENDSVSET					(1u << 28)
 	/* PendSV clear-pending bit. */
-#define PPB_ICSR_PENDSVCLR					(1u << 27)
+#define M0PLUS_ICSR_PENDSVCLR					(1u << 27)
 	/* SysTick exception set-pending bit. */
-#define PPB_ICSR_PENDSTSET					(1u << 26)
+#define M0PLUS_ICSR_PENDSTSET					(1u << 26)
 	/* SysTick exception clear-pending bit. */
-#define PPB_ICSR_PENDSTCLR					(1u << 25)
+#define M0PLUS_ICSR_PENDSTCLR					(1u << 25)
 	/* The system can only access this bit when the core is halted. */
-#define PPB_ICSR_ISRPREEMPT					(1u << 23)
+#define M0PLUS_ICSR_ISRPREEMPT					(1u << 23)
 	/* External interrupt pending flag */
-#define PPB_ICSR_ISRPENDING					(1u << 22)
+#define M0PLUS_ICSR_ISRPENDING					(1u << 22)
 	/* Indicates the exception number for the highest priority pending exception: 0 = no pending exceptions. */
-#define PPB_ICSR_VECTPENDING_Msk				(0x1FFu << 12)
-#define PPB_ICSR_VECTPENDING_Pos				12u
+#define M0PLUS_ICSR_VECTPENDING_Msk				(0x1FFu << 12)
+#define M0PLUS_ICSR_VECTPENDING_Pos				12u
 	/* Active exception number field. */
-#define PPB_ICSR_VECTACTIVE_Msk					(0x1FFu << 0)
-#define PPB_ICSR_VECTACTIVE_Pos					0u
+#define M0PLUS_ICSR_VECTACTIVE_Msk				(0x1FFu << 0)
+#define M0PLUS_ICSR_VECTACTIVE_Pos				0u
 
 	/* 0xED08: The VTOR holds the vector table offset address. */
 	uint32_t volatile VTOR;
 	/* Bits [31:8] of the indicate the vector table offset address. */
-#define PPB_VTOR_TBLOFF_Msk					(0xFFFFFFu << 8)
-#define PPB_VTOR_TBLOFF_Pos					8u
+#define M0PLUS_VTOR_TBLOFF_Msk					(0xFFFFFFu << 8)
+#define M0PLUS_VTOR_TBLOFF_Pos					8u
 
 	/* 0xED0C: Use the Application Interrupt and Reset Control Register to: determine data endianness, clear all active state information from debug halt mode, request a system reset. */
 	uint32_t volatile AIRCR;
 	/* Register key: */
-#define PPB_AIRCR_VECTKEY_Msk					(0xFFFFu << 16)
-#define PPB_AIRCR_VECTKEY_Pos					16u
+#define M0PLUS_AIRCR_VECTKEY_Msk				(0xFFFFu << 16)
+#define M0PLUS_AIRCR_VECTKEY_Pos				16u
 	/* Data endianness implemented: */
-#define PPB_AIRCR_ENDIANESS					(1u << 15)
+#define M0PLUS_AIRCR_ENDIANESS					(1u << 15)
 	/* Writing 1 to this bit causes the SYSRESETREQ signal to the outer system to be asserted to request a reset. */
-#define PPB_AIRCR_SYSRESETREQ					(1u << 2)
+#define M0PLUS_AIRCR_SYSRESETREQ				(1u << 2)
 	/* Clears all active state information for fixed and configurable exceptions. */
-#define PPB_AIRCR_VECTCLRACTIVE					(1u << 1)
+#define M0PLUS_AIRCR_VECTCLRACTIVE				(1u << 1)
 
 	/* 0xED10: System Control Register. */
 	uint32_t volatile SCR;
 	/* Send Event on Pending bit: */
-#define PPB_SCR_SEVONPEND					(1u << 4)
+#define M0PLUS_SCR_SEVONPEND					(1u << 4)
 	/* Controls whether the processor uses sleep or deep sleep as its low power mode: */
-#define PPB_SCR_SLEEPDEEP					(1u << 2)
+#define M0PLUS_SCR_SLEEPDEEP					(1u << 2)
 	/* Indicates sleep-on-exit when returning from Handler mode to Thread mode: */
-#define PPB_SCR_SLEEPONEXIT					(1u << 1)
+#define M0PLUS_SCR_SLEEPONEXIT					(1u << 1)
 
 	/* 0xED14: The Configuration and Control Register permanently enables stack alignment and causes unaligned accesses to result in a Hard Fault. */
 	uint32_t volatile CCR;
 	/* Always reads as one, indicates 8-byte stack alignment on exception entry. */
-#define PPB_CCR_STKALIGN					(1u << 9)
+#define M0PLUS_CCR_STKALIGN					(1u << 9)
 	/* Always reads as one, indicates that all unaligned accesses generate a HardFault. */
-#define PPB_CCR_UNALIGN_TRP					(1u << 3)
+#define M0PLUS_CCR_UNALIGN_TRP					(1u << 3)
 
 	/* 0xED18 */
 	uint8_t RESERVED7[0xED1Cu-0xED18u];
@@ -13990,22 +13990,22 @@ struct mcu_ppb {
 	/* 0xED1C: System handlers are a special class of exception handler that can have their priority set to any of the priority levels. */
 	uint32_t volatile SHPR2;
 	/* Priority of system handler 11, SVCall */
-#define PPB_SHPR2_PRI_11_Msk					(0x3u << 30)
-#define PPB_SHPR2_PRI_11_Pos					30u
+#define M0PLUS_SHPR2_PRI_11_Msk					(0x3u << 30)
+#define M0PLUS_SHPR2_PRI_11_Pos					30u
 
 	/* 0xED20: System handlers are a special class of exception handler that can have their priority set to any of the priority levels. */
 	uint32_t volatile SHPR3;
 	/* Priority of system handler 15, SysTick */
-#define PPB_SHPR3_PRI_15_Msk					(0x3u << 30)
-#define PPB_SHPR3_PRI_15_Pos					30u
+#define M0PLUS_SHPR3_PRI_15_Msk					(0x3u << 30)
+#define M0PLUS_SHPR3_PRI_15_Pos					30u
 	/* Priority of system handler 14, PendSV */
-#define PPB_SHPR3_PRI_14_Msk					(0x3u << 22)
-#define PPB_SHPR3_PRI_14_Pos					22u
+#define M0PLUS_SHPR3_PRI_14_Msk					(0x3u << 22)
+#define M0PLUS_SHPR3_PRI_14_Pos					22u
 
 	/* 0xED24: Use the System Handler Control and State Register to determine or clear the pending status of SVCall. */
 	uint32_t volatile SHCSR;
 	/* Reads as 1 if SVCall is Pending. */
-#define PPB_SHCSR_SVCALLPENDED					(1u << 15)
+#define M0PLUS_SHCSR_SVCALLPENDED				(1u << 15)
 
 	/* 0xED28 */
 	uint8_t RESERVED8[0xED90u-0xED28u];
@@ -14013,53 +14013,53 @@ struct mcu_ppb {
 	/* 0xED90: Read the MPU Type Register to determine if the processor implements an MPU, and how many regions the MPU supports. */
 	uint32_t volatile MPU_TYPE;
 	/* Instruction region. */
-#define PPB_MPU_TYPE_IREGION_Msk				(0xFFu << 16)
-#define PPB_MPU_TYPE_IREGION_Pos				16u
+#define M0PLUS_MPU_TYPE_IREGION_Msk				(0xFFu << 16)
+#define M0PLUS_MPU_TYPE_IREGION_Pos				16u
 	/* Number of regions supported by the MPU. */
-#define PPB_MPU_TYPE_DREGION_Msk				(0xFFu << 8)
-#define PPB_MPU_TYPE_DREGION_Pos				8u
+#define M0PLUS_MPU_TYPE_DREGION_Msk				(0xFFu << 8)
+#define M0PLUS_MPU_TYPE_DREGION_Pos				8u
 	/* Indicates support for separate instruction and data address maps. */
-#define PPB_MPU_TYPE_SEPARATE					(1u << 0)
+#define M0PLUS_MPU_TYPE_SEPARATE				(1u << 0)
 
 	/* 0xED94: Use the MPU Control Register to enable and disable the MPU, and to control whether the default memory map is enabled as a background region for privileged accesses, and whether the MPU is enabled for HardFaults and NMIs. */
 	uint32_t volatile MPU_CTRL;
 	/* Controls whether the default memory map is enabled as a background region for privileged accesses. */
-#define PPB_MPU_CTRL_PRIVDEFENA					(1u << 2)
+#define M0PLUS_MPU_CTRL_PRIVDEFENA				(1u << 2)
 	/* Controls the use of the MPU for HardFaults and NMIs. */
-#define PPB_MPU_CTRL_HFNMIENA					(1u << 1)
+#define M0PLUS_MPU_CTRL_HFNMIENA				(1u << 1)
 	/* Enables the MPU. */
-#define PPB_MPU_CTRL_ENABLE					(1u << 0)
+#define M0PLUS_MPU_CTRL_ENABLE					(1u << 0)
 
 	/* 0xED98: Use the MPU Region Number Register to select the region currently accessed by MPU_RBAR and MPU_RASR. */
 	uint32_t volatile MPU_RNR;
 	/* Indicates the MPU region referenced by the MPU_RBAR and MPU_RASR registers. */
-#define PPB_MPU_RNR_REGION_Msk					(0xFu << 0)
-#define PPB_MPU_RNR_REGION_Pos					0u
+#define M0PLUS_MPU_RNR_REGION_Msk				(0xFu << 0)
+#define M0PLUS_MPU_RNR_REGION_Pos				0u
 
 	/* 0xED9C: Read the MPU Region Base Address Register to determine the base address of the region identified by MPU_RNR. */
 	uint32_t volatile MPU_RBAR;
 	/* Base address of the region. */
-#define PPB_MPU_RBAR_ADDR_Msk					(0xFFFFFFu << 8)
-#define PPB_MPU_RBAR_ADDR_Pos					8u
+#define M0PLUS_MPU_RBAR_ADDR_Msk				(0xFFFFFFu << 8)
+#define M0PLUS_MPU_RBAR_ADDR_Pos				8u
 	/* On writes, indicates whether the write must update the base address of the region identified by the REGION field, updating the MPU_RNR to indicate this new region. */
-#define PPB_MPU_RBAR_VALID					(1u << 4)
+#define M0PLUS_MPU_RBAR_VALID					(1u << 4)
 	/* On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. */
-#define PPB_MPU_RBAR_REGION_Msk					(0xFu << 0)
-#define PPB_MPU_RBAR_REGION_Pos					0u
+#define M0PLUS_MPU_RBAR_REGION_Msk				(0xFu << 0)
+#define M0PLUS_MPU_RBAR_REGION_Pos				0u
 
 	/* 0xEDA0: Use the MPU Region Attribute and Size Register to define the size, access behaviour and memory type of the region identified by MPU_RNR, and enable that region. */
 	uint32_t volatile MPU_RASR;
 	/* The MPU Region Attribute field. */
-#define PPB_MPU_RASR_ATTRS_Msk					(0xFFFFu << 16)
-#define PPB_MPU_RASR_ATTRS_Pos					16u
+#define M0PLUS_MPU_RASR_ATTRS_Msk				(0xFFFFu << 16)
+#define M0PLUS_MPU_RASR_ATTRS_Pos				16u
 	/* Subregion Disable. */
-#define PPB_MPU_RASR_SRD_Msk					(0xFFu << 8)
-#define PPB_MPU_RASR_SRD_Pos					8u
+#define M0PLUS_MPU_RASR_SRD_Msk					(0xFFu << 8)
+#define M0PLUS_MPU_RASR_SRD_Pos					8u
 	/* Indicates the region size. Region size in bytes = 2^(SIZE+1). The minimum permitted value is 7 (b00111) = 256Bytes */
-#define PPB_MPU_RASR_SIZE_Msk					(0x1Fu << 1)
-#define PPB_MPU_RASR_SIZE_Pos					1u
+#define M0PLUS_MPU_RASR_SIZE_Msk				(0x1Fu << 1)
+#define M0PLUS_MPU_RASR_SIZE_Pos				1u
 	/* Enables the region. */
-#define PPB_MPU_RASR_ENABLE					(1u << 0)
+#define M0PLUS_MPU_RASR_ENABLE					(1u << 0)
 
 };
 
