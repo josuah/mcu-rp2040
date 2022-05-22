@@ -19,13 +19,13 @@ gpio_set_mode_output(uint8_t pin)
 }
 
 void
-gpio_set_pin_high(uint8_t pin)
+gpio_set_pin(uint8_t pin)
 {
 	SIO->GPIO_OUT_SET = 1u << pin;
 }
 
 void
-gpio_set_pin_low(uint8_t pin)
+gpio_clear_pin(uint8_t pin)
 {
 	SIO->GPIO_OUT_CLR = 1u << pin;
 }

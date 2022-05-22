@@ -6,7 +6,7 @@ AS = arm-none-eabi-as -mthumb
 LD = arm-none-eabi-ld
 AR = arm-none-eabi-ar
 GDB = arm-none-eabi-gdb
-OPENOCD = openocd -f interface/stlink.cfg -f target/rp2040-core0.cfg
+OPENOCD = openocd -f board/pico-debug.cfg
 SDK_OBJ = ${SDK}/init.o ${SDK}/libc.o ${SDK}/gpio.o ${SDK}/uart.o ${SDK}/spi.o \
 	${SDK}/arm32_aeabi_divmod.o
 SDK_CFLAGS = -ffunction-sections -fdata-sections
@@ -43,10 +43,7 @@ firmware.elf: ${SDK_OBJ} ${OBJ}
 .SUFFIXES: .c .s .S .o .elf .bin .asm .hex .uf2
 
 .c.o:
-.S.o:
-
-.c.s:
-	${CC} ${SDK_CPPFLAGS} ${CPPFLAGS} ${SDK_CFLAGS} ${CFLAGS} -S -o $@ $<
+	${CC} ${SDK_CPPFLAGS} ${CPPFLAGS} ${SDK_CFLAGS} ${CFLAGS} -c -o $@ $<
 
 .S.s:
 	${CPP} ${SDK_CPPFLAGS} ${CPPFLAGS} -o $@ $<

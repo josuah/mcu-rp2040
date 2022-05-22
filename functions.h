@@ -14,13 +14,20 @@ extern void __stop_program(void);
 
 extern void gpio_init(void);
 extern void gpio_set_mode_output(uint8_t pin);
-extern void gpio_set_pin_high(uint8_t pin);
-extern void gpio_set_pin_low(uint8_t pin);
+extern void gpio_set_pin(uint8_t pin);
+extern void gpio_clear_pin(uint8_t pin);
 
 /** SPI **/
 
 /* the clock speed might not be exact due to integer division */
 extern void spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	uint8_t pin_sck, uint8_t pin_csn, uint8_t pin_rx, uint8_t pin_tx);
+
+/* interrupt handler for SPI events */
+void spi_interrupt(struct mcu_spi *spi, uint8_t id);
+
+/* submit a write, then processed by the SPI interrupts */
+void spi_queue_write(struct mcu_spi *spi, uint8_t *buf, size_t len);
+
 
 #endif

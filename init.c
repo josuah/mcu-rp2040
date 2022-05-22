@@ -17,14 +17,26 @@ __reset_handler(void)
 	for (int volatile i = 0 ;; i++);
 }
 
+void
+__isr_spi0(void)
+{
+	spi_interrupt(SPI0, 0);
+}
+
+void
+__isr_spi1(void)
+{
+	spi_interrupt(SPI1, 1);
+}
+
 /* so that the debugger can immediately see which fault was triggered */
-void __null_handler(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
-void __isr_hard_fault(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
-void __isr_memory_management(void)	{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
-void __isr_non_maskable_interrupt(void)	{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
-void __isr_bus_fault(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
-void __isr_usage_fault(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
-void __isr_secure_fault(void)		{ for (int volatile i = 0;; i++) gpio_set_pin_high(25); }
+void __null_handler(void)		{ for (int volatile i = 0;; i++); }
+void __isr_hard_fault(void)		{ for (int volatile i = 0;; i++); }
+void __isr_memory_management(void)	{ for (int volatile i = 0;; i++); }
+void __isr_non_maskable_interrupt(void)	{ for (int volatile i = 0;; i++); }
+void __isr_bus_fault(void)		{ for (int volatile i = 0;; i++); }
+void __isr_usage_fault(void)		{ for (int volatile i = 0;; i++); }
+void __isr_secure_fault(void)		{ for (int volatile i = 0;; i++); }
 
 /*
  * Boot stage 2 bootloader: padded and checksummed version of
@@ -92,8 +104,8 @@ void (*__vectors[])(void) = {
 	&__null_handler,		/* 0x7C #15 SIO_IRQ_PROC0 */
 	&__null_handler,		/* 0x80 #16 SIO_IRQ_PROC1 */
 	&__null_handler,		/* 0x84 #17 CLOCKS_IRQ */
-	&__null_handler,		/* 0x88 #18 SPI0_IRQ */
-	&__null_handler,		/* 0x8C #19 SPI1_IRQ */
+	&__isr_spi0,			/* 0x88 #18 SPI0_IRQ */
+	&__isr_spi1,			/* 0x8C #19 SPI1_IRQ */
 	&__null_handler,		/* 0x90 #20 UART0_IRQ */
 	&__null_handler,		/* 0x94 #21 UART1_IRQ */
 	&__null_handler,		/* 0x98 #22 ADC_IRQ_FIFO */
