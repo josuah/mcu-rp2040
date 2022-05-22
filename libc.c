@@ -136,7 +136,7 @@ fmtint(char *s, size_t sz, int64_t i64, uint8_t b)
 		*--s = digits[0];
 		return s;
 	}
-	for (uint64_t u64 = i64 > 0 ? i64 : -i64; u64 > 0; u64 /= b)
+	for (uint64_t u64 = (unsigned)(i64 > 0 ? i64 : -i64); u64 > 0; u64 /= b)
 		*--s = digits[u64 % b];
 	if (i64 < 0)
 		*--s = '-';

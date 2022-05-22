@@ -17,6 +17,14 @@ main(void)
 
 	spi_init(SPI0, 1000000, SPI_SCK, SPI_CSN, SPI_RX, SPI_TX);
 
-	spi_queue_write(SPI0, "0123456789", 10);
-	for (;;);
+	for (;;)
+		if (spi_write_completed(SPI0))
+			spi_queue_write(SPI0, (uint8_t *)"0000000000", 10);
+}
+
+extern void
+spi_handle_byte(struct mcu_spi *spi, uint8_t byte)
+{
+        gpio_set_pin(25);
+        gpio_clear_pin(25);
 }

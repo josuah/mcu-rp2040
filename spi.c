@@ -6,7 +6,6 @@
 struct spi_buffer {
 	uint8_t *buf;
 	size_t len;
-	int volatile status;
 } spi_tx[2] = {0};
 
 void
@@ -44,7 +43,7 @@ spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	 | (8 - 1) << SPI_SSPCR0_DSS_Pos;
 
 	/* the result of the division is expected to be >1 */
-	spi->SSPCPSR = 2; // CLK_PERI_HZ /  baud_rate_hz;
+	spi->SSPCPSR = 40; //CLK_PERI_HZ /  baud_rate_hz;
 
 	/* enable interrupts generation for the RX events */
 	spi->SSPIMSC = SPI_SSPIMSC_RXIM | SPI_SSPIMSC_RTIM | SPI_SSPIMSC_RORIM;
@@ -60,60 +59,48 @@ void
 spi_queue_write(struct mcu_spi *spi, uint8_t *buf, size_t len)
 {
 	uint8_t id = (spi == SPI1);
+	struct spi_buffer *tx = spi_tx + id;
 
 	/* enable interrupt generation for TX events */
-	spi->SSPIMSC = SPI_SSPIMSC_TXIM;
+	spi->SSPIMSC |= SPI_SSPIMSC_TXIM;
 
 	/* save the buffer to transmit */
-	spi_tx[id].buf = buf;
-	spi_tx[id].len = len;
-	spi_tx[id].status = 1;
+	tx->buf = buf;
+	tx->len = len;
+
+	/* initiate the transfer right away */
+	spi_interrupt(spi, id);
 }
 
 int
-spi_write_is_done(struct mcu_spi *spi)
+spi_write_completed(struct mcu_spi *spi)
 {
 	uint8_t id = (spi == SPI1);
-	return spi_tx[id].status == 0;
-}
-
-void
-spi_interrupt_tx_buffer_ready(struct mcu_spi *spi, uint8_t id)
-{
-	if (spi_tx[id].len == 0) {
-		/* announce that the reception is complete */
-		spi_tx[id].status = 0;
-
-		/* stop rx-related interrupts */
-		spi->SSPIMSC &= ~(SPI_SSPIMSC_RXIM | SPI_SSPIMSC_RTIM
-		  | SPI_SSPIMSC_RORIM);
-	} else {
-		spi->SSPDR = *spi_tx[id].buf++;
-		spi_tx[id].len--;
-	}
-}
-
-void
-spi_interrupt_rx_fn(struct mcu_spi *spi, uint8_t byte)
-{
+	return spi_tx[id].len == 0;
 }
 
 void
 spi_interrupt(struct mcu_spi *spi, uint8_t id)
 {
-	assert(spi == SPI0 || spi == SPI1);
-	assert(id < 2);
+	struct spi_buffer *tx = spi_tx + id;
 
-	/* only proess a single byte per interrupt,
-	 * the next interrupt will process the next byte */
+	/* if we only proess a single byte per interrupt,
+	 * it is slower than processing one event in loop */
 
-	gpio_set_pin(25);
+	/* fill the TX FIFO */
+	while (spi->SSPSR & SPI_SSPSR_TNF) {
+		if (tx->len == 0) {
+			/* stop TX-related interrupts */
+			spi->SSPIMSC &= ~SPI_SSPIMSC_TXIM;
+			break;
+		} else {
+			spi->SSPDR = *tx->buf++;
+			tx->len--;
+		}
+	}
 
-	if (spi->SSPSR & SPI_SSPSR_TNF)
-		/* send the next byte of the write buffer */
-		spi_interrupt_tx_buffer_ready(spi, id);
-
+	/* empty the RX FIFO */
 	if (spi->SSPSR & SPI_SSPSR_RNE)
 		/* let the programmer handle incoming data in real time */
-		spi_interrupt_rx_fn(spi, (uint8_t)spi->SSPDR);
+		spi_handle_byte(spi, (uint8_t)spi->SSPDR);
 }
