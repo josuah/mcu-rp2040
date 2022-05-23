@@ -36,8 +36,11 @@ size_t strlen(char const *str);
 #ifdef NDEBUG
 #define assert(expr)	0
 #else /* endless loop visible in-place with a debugger */
-#define assert(expr)	if (!(expr)) for (char volatile i ;; i++)
+#define assert(expr)	if (!(expr)) for (;;) alert()
 #endif
+
+/* provided by the programmer for blinking a led or anything */
+void alert(void);
 
 /* <ctype.h> */
 
@@ -56,5 +59,9 @@ int toupper(int c);
 /* <util.h> */
 
 char *fmtint(char *s, size_t sz, int64_t i64, uint8_t b);
+
+/* <arpa/inet.h> */
+
+uint32_t htonl(uint32_t u32);
 
 #endif

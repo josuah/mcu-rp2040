@@ -1,6 +1,156 @@
+/* Send requests to a Wishbone B4 bus as master through SPI */
 #include "libc.h"
 #include "registers.h"
 #include "functions.h"
+
+enum wb_state {
+	WB_STATE_START = 0,
+	WB_STATE_PUT_COMMAND_SEL = 0,
+	WB_STATE_PUT_ADDRESS,
+	WB_STATE_PUT_DATA_0,
+	WB_STATE_PUT_DATA_1,
+	WB_STATE_PUT_DATA_2,
+	WB_STATE_PUT_DATA_3,
+	WB_STATE_WAIT_ACK,
+	WB_STATE_GET_DATA_0,
+	WB_STATE_GET_DATA_1,
+	WB_STATE_GET_DATA_2,
+	WB_STATE_GET_DATA_3,
+	WB_STATE_DONE,
+};
+
+struct {
+	enum wb_state state;
+	size_t skip;
+	uint8_t wb_we_o;
+	uint8_t wb_adr_o;
+	uint8_t wb_we_sel_o;
+	uint32_t wb_dat_o;
+	uint32_t wb_dat_i;
+	uint8_t done;
+} wb;
+
+void
+wb_pack(uint8_t we, uint16_t addr, uint8_t size, uint32_t data)
+{
+	wb.wb_we_o = we;
+	wb.wb_we_sel_o = (uint8_t)(we << 7);
+	wb.wb_adr_o = (uint8_t)(addr >> 2);
+	wb.wb_dat_o = data;
+
+	switch (size) {
+	case 1:
+		wb.wb_we_sel_o |= (uint8_t)(0x1u << (addr & 0x3));
+		break;
+	case 2:
+		wb.wb_we_sel_o |= (uint8_t)(0x3u << (addr & 0x2));
+		break;
+	case 4:
+		wb.wb_we_sel_o |= (uint8_t)(0x7u);
+		break;
+	default:
+		assert(!"invalid size given");
+	}
+}
+
+static inline void
+wb_write(uint16_t addr, uint8_t size, uint32_t data)
+{
+	wb_pack(1, addr, size, data);
+	spi_io_callback(SPI0, 0x00, (uint8_t *)&SPI0->SSPDR);
+}
+
+void
+wb_write_u8(uint16_t addr, uint8_t data)
+{
+	wb_write(addr, sizeof data, data);
+}
+
+void
+wb_write_u16(uint16_t addr, uint16_t data)
+{
+	wb_write(addr, sizeof data, data);
+}
+
+void
+wb_write_u32(uint16_t addr, uint32_t data)
+{
+	wb_write(addr, sizeof data, data);
+}
+
+static inline uint32_t
+wb_read(uint16_t addr, uint8_t size)
+{
+	wb.state = WB_STATE_START;
+	wb_pack(0, addr, size, 0x00);
+	spi_io_callback(SPI0, 0x00, (uint8_t *)&SPI0->SSPDR);
+	while (wb.state != WB_STATE_DONE);
+	return wb.wb_dat_i;
+}
+
+uint8_t
+wb_read_u8(uint16_t addr)
+{
+	return (uint8_t)wb_read(addr, sizeof(uint8_t));
+}
+
+uint16_t
+wb_read_u16(uint16_t addr)
+{
+	return (uint16_t)wb_read(addr, sizeof(uint16_t));
+}
+
+uint32_t
+wb_read_u32(uint16_t addr)
+{
+	return wb_read(addr, sizeof(uint16_t));
+}
+
+void
+spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx)
+{
+	assert(spi == SPI0);
+
+	switch (wb.state++) {
+	case WB_STATE_PUT_COMMAND_SEL:
+		*tx = wb.wb_we_sel_o;
+		wb.state++;
+		break;
+	case WB_STATE_PUT_ADDRESS:
+		*tx = wb.wb_adr_o;
+		wb.state = wb.wb_we_o ? wb.state + 1 : WB_STATE_WAIT_ACK;
+		break;
+	case WB_STATE_PUT_DATA_0:
+	case WB_STATE_PUT_DATA_1:
+	case WB_STATE_PUT_DATA_2:
+	case WB_STATE_PUT_DATA_3:
+		*tx = (uint8_t)(wb.wb_dat_o >> 24);
+		wb.wb_dat_o = (uint32_t)(wb.wb_dat_o << 24);
+		wb.state++;
+		break;
+	case WB_STATE_WAIT_ACK:
+		if (rx == 0x00) {
+			if (wb.wb_we_o) {
+				*tx = 0x00;
+				wb.state = WB_STATE_DONE;
+			} else {
+				wb.state = wb.state + 1;
+			}
+		}
+		break;
+	case WB_STATE_GET_DATA_0:
+	case WB_STATE_GET_DATA_1:
+	case WB_STATE_GET_DATA_2:
+		*tx = 0x00;
+		/* fallthrough */
+	case WB_STATE_GET_DATA_3:
+		wb.wb_dat_i = (uint32_t)(wb.wb_dat_i << 8) | rx;
+		wb.state++;
+		break;
+	case WB_STATE_DONE:
+		assert(!"not reached");
+	}
+}
 
 #define LED		25
 
@@ -8,6 +158,17 @@
 #define SPI_CSN		17
 #define SPI_SCK		18
 #define SPI_TX		19
+
+void
+alert(void)
+{
+	static uint32_t i = 0;
+
+	if (i++ > (uint32_t)-1 / 2)
+		gpio_set_pin(LED);
+	else
+		gpio_set_pin(LED);
+}
 
 int
 main(void)
@@ -18,13 +179,5 @@ main(void)
 	spi_init(SPI0, 1000000, SPI_SCK, SPI_CSN, SPI_RX, SPI_TX);
 
 	for (;;)
-		if (spi_write_completed(SPI0))
-			spi_queue_write(SPI0, (uint8_t *)"0000000000", 10);
-}
-
-extern void
-spi_handle_byte(struct mcu_spi *spi, uint8_t byte)
-{
-        gpio_set_pin(25);
-        gpio_clear_pin(25);
+		wb_write_u32(0x0000, 0x12345678);
 }

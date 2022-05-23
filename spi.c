@@ -3,11 +3,6 @@
 #include "functions.h"
 #include "cm0plus.h"
 
-struct spi_buffer {
-	uint8_t *buf;
-	size_t len;
-} spi_tx[2] = {0};
-
 void
 spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	uint8_t pin_sck, uint8_t pin_csn, uint8_t pin_rx, uint8_t pin_tx)
@@ -43,10 +38,11 @@ spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	 | (8 - 1) << SPI_SSPCR0_DSS_Pos;
 
 	/* the result of the division is expected to be >1 */
-	spi->SSPCPSR = 40; //CLK_PERI_HZ /  baud_rate_hz;
+	spi->SSPCPSR = 80; //CLK_PERI_HZ /  baud_rate_hz;
 
-	/* enable interrupts generation for the RX events */
-	spi->SSPIMSC = SPI_SSPIMSC_RXIM | SPI_SSPIMSC_RTIM | SPI_SSPIMSC_RORIM;
+	/* enable interrupts generation for RX/TX events */
+	spi->SSPIMSC = SPI_SSPIMSC_RXIM | SPI_SSPIMSC_RTIM | SPI_SSPIMSC_RORIM
+	  | SPI_SSPIMSC_TXIM;
 
 	/* enable the SPI module *after* (#4.4.4) it was configured */
 	spi->SSPCR1 = SPI_SSPCR1_SSE;
@@ -56,51 +52,10 @@ spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 }
 
 void
-spi_queue_write(struct mcu_spi *spi, uint8_t *buf, size_t len)
-{
-	uint8_t id = (spi == SPI1);
-	struct spi_buffer *tx = spi_tx + id;
-
-	/* enable interrupt generation for TX events */
-	spi->SSPIMSC |= SPI_SSPIMSC_TXIM;
-
-	/* save the buffer to transmit */
-	tx->buf = buf;
-	tx->len = len;
-
-	/* initiate the transfer right away */
-	spi_interrupt(spi, id);
-}
-
-int
-spi_write_completed(struct mcu_spi *spi)
-{
-	uint8_t id = (spi == SPI1);
-	return spi_tx[id].len == 0;
-}
-
-void
 spi_interrupt(struct mcu_spi *spi, uint8_t id)
 {
-	struct spi_buffer *tx = spi_tx + id;
-
-	/* if we only proess a single byte per interrupt,
-	 * it is slower than processing one event in loop */
-
-	/* fill the TX FIFO */
-	while (spi->SSPSR & SPI_SSPSR_TNF) {
-		if (tx->len == 0) {
-			/* stop TX-related interrupts */
-			spi->SSPIMSC &= ~SPI_SSPIMSC_TXIM;
-			break;
-		} else {
-			spi->SSPDR = *tx->buf++;
-			tx->len--;
-		}
-	}
-
-	/* empty the RX FIFO */
-	if (spi->SSPSR & SPI_SSPSR_RNE)
-		/* let the programmer handle incoming data in real time */
-		spi_handle_byte(spi, (uint8_t)spi->SSPDR);
+	/* on every byte, call the handler */
+	if (spi->SSPSR & SPI_SSPSR_TNF)
+		/* let the programmer decide what to send in real-time */
+		spi_io_callback(spi, (uint8_t)spi->SSPDR, (uint8_t *)&spi->SSPDR);
 }

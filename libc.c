@@ -142,3 +142,13 @@ fmtint(char *s, size_t sz, int64_t i64, uint8_t b)
 		*--s = '-';
 	return s;
 }
+
+uint32_t
+htonl(uint32_t u32)
+{
+	uint8_t buf[4] = {
+		(uint8_t)(u32 << 24), (uint8_t)(u32 << 16),
+		(uint8_t)(u32 << 8), (uint8_t)(u32 << 0)
+	};
+	return *(uint32_t *)buf;
+}

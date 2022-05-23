@@ -19,9 +19,6 @@ extern void gpio_clear_pin(uint8_t pin);
 
 /** SPI **/
 
-/* user provided function */
-int spi_write_completed(struct mcu_spi *spi);
-
 /* submit a write, then processed by the SPI interrupts */
 extern void spi_interrupt(struct mcu_spi *spi, uint8_t id);
 
@@ -30,9 +27,6 @@ extern void spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	uint8_t pin_sck, uint8_t pin_csn, uint8_t pin_rx, uint8_t pin_tx);
 
 /* interrupt handler for SPI events */
-void spi_handle_byte(struct mcu_spi *spi, uint8_t id);
-
-/* submit a write, then processed by the SPI interrupts */
-void spi_queue_write(struct mcu_spi *spi, uint8_t *buf, size_t len);
+void spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx);
 
 #endif
