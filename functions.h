@@ -20,13 +20,17 @@ extern void gpio_clear_pin(uint8_t pin);
 /** SPI **/
 
 /* submit a write, then processed by the SPI interrupts */
-extern void spi_interrupt(struct mcu_spi *spi, uint8_t id);
+extern void spi_interrupt(struct mcu_spi *spi);
 
 /* the clock speed might not be exact due to integer division */
 extern void spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	uint8_t pin_sck, uint8_t pin_csn, uint8_t pin_rx, uint8_t pin_tx);
 
 /* interrupt handler for SPI events */
-void spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx);
+extern void spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx);
+
+/* set SPI interrupts on or off */
+extern void spi_enable_interrupts(struct mcu_spi *spi);
+extern void spi_disable_interrupts(struct mcu_spi *spi);
 
 #endif

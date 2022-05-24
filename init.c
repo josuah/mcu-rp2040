@@ -20,13 +20,13 @@ __reset_handler(void)
 void
 __isr_spi0(void)
 {
-	spi_interrupt(SPI0, 0);
+	spi_interrupt(SPI0);
 }
 
 void
 __isr_spi1(void)
 {
-	spi_interrupt(SPI1, 1);
+	spi_interrupt(SPI1);
 }
 
 /* so that the debugger can immediately see which fault was triggered */

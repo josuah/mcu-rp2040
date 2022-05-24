@@ -40,22 +40,30 @@ spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	/* the result of the division is expected to be >1 */
 	spi->SSPCPSR = 80; //CLK_PERI_HZ /  baud_rate_hz;
 
-	/* enable interrupts generation for RX/TX events */
-	spi->SSPIMSC = SPI_SSPIMSC_RXIM | SPI_SSPIMSC_RTIM | SPI_SSPIMSC_RORIM
-	  | SPI_SSPIMSC_TXIM;
-
 	/* enable the SPI module *after* (#4.4.4) it was configured */
 	spi->SSPCR1 = SPI_SSPCR1_SSE;
 
-	/* enable interrupts triggering */
+	/* enable interrupts */
 	NVIC->ISER |= 1u << (18 + id);
 }
 
 void
-spi_interrupt(struct mcu_spi *spi, uint8_t id)
+spi_interrupt(struct mcu_spi *spi)
 {
 	/* on every byte, call the handler */
 	if (spi->SSPSR & SPI_SSPSR_TNF)
 		/* let the programmer decide what to send in real-time */
 		spi_io_callback(spi, (uint8_t)spi->SSPDR, (uint8_t *)&spi->SSPDR);
+}
+
+void
+spi_enable_interrupts(struct mcu_spi *spi)
+{
+	spi->SSPIMSC = 0xFF;
+}
+
+void
+spi_disable_interrupts(struct mcu_spi *spi)
+{
+	spi->SSPIMSC = 0x00;
 }
