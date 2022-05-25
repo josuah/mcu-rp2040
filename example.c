@@ -23,7 +23,7 @@ struct {
 	size_t skip;
 	uint8_t wb_we_o;
 	uint8_t wb_adr_o;
-	uint8_t wb_we_sel_o;
+	uint8_t wb_sel_o;
 	uint32_t wb_dat_o;
 	uint32_t wb_dat_i;
 	uint8_t done;
@@ -34,19 +34,18 @@ wb_pack(uint8_t we, uint16_t addr, uint8_t size, uint32_t data)
 {
 	switch (size) {
 	case 1:
-		wb.wb_we_sel_o |= (uint8_t)(0x1u << (addr & 0x3));
+		wb.wb_sel_o = (uint8_t)(0x1u << (addr & 0x3));
 		break;
 	case 2:
-		wb.wb_we_sel_o |= (uint8_t)(0x3u << (addr & 0x2));
+		wb.wb_sel_o = (uint8_t)(0x3u << (addr & 0x2));
 		break;
 	case 4:
-		wb.wb_we_sel_o |= (uint8_t)(0x7u);
+		wb.wb_sel_o = (uint8_t)(0x7u);
 		break;
 	default:
 		assert(!"invalid size given");
 	}
 	wb.wb_we_o = we;
-	wb.wb_we_sel_o = (uint8_t)(we << 7);
 	wb.wb_adr_o = (uint8_t)(addr >> 2);
 	wb.wb_dat_o = data;
 	wb.state = WB_STATE_PUT_COMMAND;
@@ -114,7 +113,7 @@ spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx)
 
 	switch (wb.state) {
 	case WB_STATE_PUT_COMMAND:
-		*tx = wb.wb_we_sel_o;
+		*tx = (uint8_t)(wb.wb_we_o << 7) | wb.wb_sel_o;
 		wb.state++;
 		break;
 	case WB_STATE_PUT_ADDRESS:
@@ -177,9 +176,8 @@ main(void)
 
 	spi_init(SPI0, 1000000, SPI_SCK, SPI_CSN, SPI_RX, SPI_TX);
 
-	for (;;) {
-		wb_write_u32(0x0000, 0xAAAAAAAA);
-		gpio_set_pin(25);
-		gpio_clear_pin(25);
-	}
+	for (volatile uint32_t i = 0; i < 0xFFFFF; i++);
+	for (;;) wb_write_u32(0x0000, 0xAAAAAAAA);
+
+	return 0;
 }
