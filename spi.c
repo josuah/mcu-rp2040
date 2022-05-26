@@ -59,8 +59,7 @@ spi_interrupt(struct mcu_spi *spi)
 void
 spi_enable_interrupts(struct mcu_spi *spi)
 {
-	/* TODO: set appropriate interrupts only to avoid missing any write */
-	spi->SSPIMSC = 0xFF;
+	spi->SSPIMSC = SPI_SSPIMSC_TXIM;
 }
 
 void
