@@ -173,10 +173,9 @@ main(void)
 {
 	gpio_init();
 	gpio_set_mode_output(LED);
-
 	spi_init(SPI0, 1000000, SPI_SCK, SPI_CSN, SPI_RX, SPI_TX);
+	gpio_set_pin(LED);
 
-	for (volatile uint32_t i = 0; i < 0xFFFFF; i++);
 	for (;;) wb_write_u32(0x0000, 0xAAAAAAAA);
 
 	return 0;

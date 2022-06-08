@@ -38,7 +38,7 @@ spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	 | (8 - 1) << SPI_SSPCR0_DSS_Pos;
 
 	/* the result of the division is expected to be >1 */
-	spi->SSPCPSR = 80; //CLK_PERI_HZ /  baud_rate_hz;
+	spi->SSPCPSR = 2; // 125000000 /  baud_rate_hz;
 
 	/* enable the SPI module *after* (#4.4.4) it was configured */
 	spi->SSPCR1 = SPI_SSPCR1_SSE;
@@ -51,9 +51,10 @@ void
 spi_interrupt(struct mcu_spi *spi)
 {
 	/* on every byte, call the handler */
-	if (spi->SSPSR & SPI_SSPSR_TNF)
+	if (spi->SSPSR & SPI_SSPSR_TNF) {
 		/* let the programmer decide what to send in real-time */
 		spi_io_callback(spi, (uint8_t)spi->SSPDR, (uint8_t *)&spi->SSPDR);
+	}
 }
 
 void
