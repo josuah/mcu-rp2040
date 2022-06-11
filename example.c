@@ -130,7 +130,7 @@ spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx)
 		break;
 	case WB_STATE_WAIT_ACK:
 		*tx = 0x00;
-		if (rx == 0x00)
+		if (rx == 0xFF)
 			wb.state = wb.wb_we_o ? WB_STATE_IDLE : wb.state + 1;
 		break;
 	case WB_STATE_GET_DATA_0:
