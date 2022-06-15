@@ -23,7 +23,7 @@ extern void gpio_clear_pin(uint8_t pin);
 extern void spi_interrupt(struct mcu_spi *spi);
 
 /* the clock speed might not be exact due to integer division */
-extern void spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
+extern void spi_init(struct mcu_spi *spi, uint8_t clock_divider,
 	uint8_t pin_sck, uint8_t pin_csn, uint8_t pin_rx, uint8_t pin_tx);
 
 /* interrupt handler for SPI events */

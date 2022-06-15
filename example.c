@@ -3,6 +3,14 @@
 #include "registers.h"
 #include "functions.h"
 
+#define LED		25
+#define TRIGGER		22
+
+#define SPI_RX		16
+#define SPI_CSN		17
+#define SPI_SCK		18
+#define SPI_TX		19
+
 enum wb_state {
 	WB_STATE_PUT_COMMAND,
 	WB_STATE_PUT_ADDRESS,
@@ -111,6 +119,8 @@ spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx)
 {
 	assert(spi == SPI0);
 
+	gpio_clear_pin(LED);
+
 	switch (wb.state) {
 	case WB_STATE_PUT_COMMAND:
 		*tx = (uint8_t)(wb.wb_we_o << 7) | wb.wb_sel_o;
@@ -150,13 +160,6 @@ spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx)
 	}
 }
 
-#define LED		25
-
-#define SPI_RX		16
-#define SPI_CSN		17
-#define SPI_SCK		18
-#define SPI_TX		19
-
 void
 alert(void)
 {
@@ -173,10 +176,11 @@ main(void)
 {
 	gpio_init();
 	gpio_set_mode_output(LED);
-	spi_init(SPI0, 1000000, SPI_SCK, SPI_CSN, SPI_RX, SPI_TX);
-	gpio_set_pin(LED);
+	gpio_set_mode_output(TRIGGER);
+	spi_init(SPI0, 254, SPI_SCK, SPI_CSN, SPI_RX, SPI_TX);
 
-	for (;;) wb_write_u32(0x0000, 0xAAAAAAAA);
+	for (uint32_t i = 0; i < 0x40000; i++) gpio_clear_pin(LED);
+	for (;;) wb_write_u32(0x0000, 0xF4F4F4F4);
 
 	return 0;
 }

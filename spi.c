@@ -4,7 +4,7 @@
 #include "cm0plus.h"
 
 void
-spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
+spi_init(struct mcu_spi *spi, uint8_t clock_divider,
 	uint8_t pin_sck, uint8_t pin_csn, uint8_t pin_rx, uint8_t pin_tx)
 {
 	uint8_t id = (spi == SPI1);
@@ -34,11 +34,15 @@ spi_init(struct mcu_spi *spi, uint32_t baud_rate_hz,
 	spi->SSPCR0 = 0
 	/* set SPI mode */
 	 | SPI_SSPCR0_FRF_MOTOROLA
+	/* propagate signals on positive edge (posege) */
+	 | SPI_SSPCR0_SPH
 	/* set the number of bits per frames */
 	 | (8 - 1) << SPI_SSPCR0_DSS_Pos;
 
 	/* the result of the division is expected to be >1 */
-	spi->SSPCPSR = 2; // 125000000 /  baud_rate_hz;
+	assert(clock_divider >= 2 && clock_divider <= 254);
+	clock_divider &= 0xFE;
+	spi->SSPCPSR = clock_divider;
 
 	/* enable the SPI module *after* (#4.4.4) it was configured */
 	spi->SSPCR1 = SPI_SSPCR1_SSE;
