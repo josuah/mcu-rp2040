@@ -1,7 +1,7 @@
-/* Send requests to a Wishbone B4 bus as master through SPI */
 #include "libc.h"
-#include "registers.h"
-#include "functions.h"
+#include "librp2040.h"
+
+/* Send requests to a Wishbone B4 bus as master through SPI */
 
 #define LED		25
 #define TRIGGER		22
@@ -119,8 +119,6 @@ spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx)
 {
 	assert(spi == SPI0);
 
-	gpio_clear_pin(LED);
-
 	switch (wb.state) {
 	case WB_STATE_PUT_COMMAND:
 		*tx = (uint8_t)(wb.wb_we_o << 7) | wb.wb_sel_o;
@@ -179,7 +177,8 @@ main(void)
 	gpio_set_mode_output(TRIGGER);
 	spi_init(SPI0, 254, SPI_SCK, SPI_CSN, SPI_RX, SPI_TX);
 
-	for (uint32_t i = 0; i < 0x40000; i++) gpio_clear_pin(LED);
+	for (uint32_t i = 0; i < 0x10000; i++) gpio_clear_pin(LED);
+	gpio_set_pin(LED);
 	for (;;) wb_write_u32(0x0000, 0xF4F4F4F4);
 
 	return 0;

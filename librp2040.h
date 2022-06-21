@@ -1,5 +1,41 @@
-#ifndef REGISTERS_H
-#define REGISTERS_H
+#ifndef LIBRP2040_H
+#define LIBRP2040_H
+
+/* functions declarations at the end */
+
+
+#define NVIC ((struct mcu_nvic *)0xE000E100)
+
+struct mcu_nvic {
+
+	/* 0x00: Interrupt Set Enable Register */
+	uint32_t volatile ISER;
+
+	/* 0x04 */
+	uint8_t RESERVED1[0x80-0x04];
+
+	/* 0x80: Interrupt Clear Enable Register */
+	uint32_t volatile ICER;
+
+	/* 0x84 */
+	uint8_t RESERVED2[0x100-0x84];
+
+	/* 0x100: Interrupt Set-Pending Register */
+	uint32_t volatile ISPR;
+
+	/* 0x104 */
+	uint8_t RESERVED3[0x180-0x104];
+
+	/* 0x180: Interrupt Clear-Pending Register */
+	uint32_t volatile ICPR;
+
+	/* 0x184 */
+	uint8_t RESERVED4[0x300-0x184];
+
+	/* 0x300: Interrupt Priority Registers */
+	uint32_t volatile IPR[8];
+
+};
 
 
 #define XIP_CTRL ((struct mcu_xip_ctrl *)0x14000000)
@@ -14062,5 +14098,44 @@ struct mcu_ppb {
 #define M0PLUS_MPU_RASR_ENABLE					(1u << 0)
 
 };
+
+
+/* MACROS */
+
+#define FIELD(reg, fld)		(((reg) & fld##_Msk) >> fld##_Pos)
+
+extern void __stop_program(void);
+
+
+/* CLOCKS */
+
+#define CLK_SYS_HZ 125000000
+#define CLK_PERI_HZ CLK_SYS_HZ
+
+
+/* GPIO */
+
+extern void gpio_init(void);
+extern void gpio_set_mode_output(uint8_t pin);
+extern void gpio_set_pin(uint8_t pin);
+extern void gpio_clear_pin(uint8_t pin);
+
+
+/* SPI */
+
+/* submit a write, then processed by the SPI interrupts */
+extern void spi_interrupt(struct mcu_spi *spi);
+
+/* the clock speed might not be exact due to integer division */
+extern void spi_init(struct mcu_spi *spi, uint8_t clock_divider,
+	uint8_t pin_sck, uint8_t pin_csn, uint8_t pin_rx, uint8_t pin_tx);
+
+/* interrupt handler for SPI events */
+extern void spi_io_callback(struct mcu_spi *spi, uint8_t rx, uint8_t volatile *tx);
+
+/* set SPI interrupts on or off */
+extern void spi_enable_interrupts(struct mcu_spi *spi);
+extern void spi_disable_interrupts(struct mcu_spi *spi);
+
 
 #endif

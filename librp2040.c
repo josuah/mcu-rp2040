@@ -1,6 +1,9 @@
 #include "libc.h"
-#include "registers.h"
-#include "functions.h"
+#include "librp2040.h"
+
+
+/// INIT ///
+
 
 extern int main(void);
 extern char __data_start, __data_end, __data_load_start;
@@ -41,7 +44,7 @@ void __isr_secure_fault(void)		{ for (int volatile i = 0;; i++); }
 /*
  * Boot stage 2 bootloader: padded and checksummed version of
  * pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
- * It is placed at the top of the ROM by the linker script
+ * It is placed at the lowest address of the ROM by the linker script
  */
 char __bootloader[] = {
 	0x00, 0xb5, 0x32, 0x4b, 0x21, 0x20, 0x58, 0x60, 0x98, 0x68, 0x02, 0x21,
@@ -113,3 +116,137 @@ void (*__vectors[])(void) = {
 	&__null_handler,		/* 0xA0 #24 I2C1_IRQ */
 	&__null_handler,		/* 0xA4 #25 RTC_IRQ */
 };
+
+
+/// GPIO ///
+
+
+void
+gpio_init(void)
+{
+	RESETS->RESET &= ~RESETS_RESET_IO_BANK0;
+	RESETS->RESET &= ~RESETS_RESET_PADS_BANK0;
+	while ((RESETS->RESET_DONE & RESETS_RESET_DONE_IO_BANK0) == 0);
+	while ((RESETS->RESET_DONE & RESETS_RESET_DONE_PADS_BANK0) == 0);
+}
+
+void
+gpio_set_mode_output(uint8_t pin)
+{
+	SIO->GPIO_OE_SET = 1u << pin;
+	IO_BANK0->GPIO[pin].CTRL = IO_BANK0_GPIO_CTRL_FUNCSEL_SIO;
+}
+
+void
+gpio_set_pin(uint8_t pin)
+{
+	SIO->GPIO_OUT_SET = 1u << pin;
+}
+
+void
+gpio_clear_pin(uint8_t pin)
+{
+	SIO->GPIO_OUT_CLR = 1u << pin;
+}
+
+
+/// SPI ///
+
+
+void
+spi_init(struct mcu_spi *spi, uint8_t clock_divider,
+	uint8_t pin_sck, uint8_t pin_csn, uint8_t pin_rx, uint8_t pin_tx)
+{
+	uint8_t id = (spi == SPI1);
+
+	/* enable the peripheral clock, used by the TX/RX logic */
+	CLOCKS->CLK[CLK_PERI].CTRL = CLOCKS_CLK_PERI_CTRL_ENABLE;
+
+	/* take I/O, and SPI out of reset */
+	RESETS->RESET &= ~RESETS_RESET_IO_BANK0;
+	RESETS->RESET &= ~RESETS_RESET_PADS_BANK0;
+	RESETS->RESET &= ~(RESETS_RESET_SPI0 << id);
+	while (~RESETS->RESET_DONE & RESETS_RESET_DONE_IO_BANK0);
+	while (~RESETS->RESET_DONE & RESETS_RESET_DONE_PADS_BANK0);
+	while (~RESETS->RESET_DONE & (RESETS_RESET_DONE_SPI0 << id));
+
+	/* setup the ports function multiplexing */
+	IO_BANK0->GPIO[pin_sck].CTRL = IO_BANK0_GPIO_CTRL_FUNCSEL_SPI;
+	IO_BANK0->GPIO[pin_csn].CTRL = IO_BANK0_GPIO_CTRL_FUNCSEL_SPI;
+	IO_BANK0->GPIO[pin_rx].CTRL = IO_BANK0_GPIO_CTRL_FUNCSEL_SPI;
+	IO_BANK0->GPIO[pin_tx].CTRL = IO_BANK0_GPIO_CTRL_FUNCSEL_SPI;
+
+	/* set the direction of pins to input or output */
+	SIO->GPIO_OE_SET = 1u << pin_sck | 1u << pin_csn | 1u << pin_tx;
+	SIO->GPIO_OE_CLR = 1u << pin_rx;
+
+	/* assume an incoming SSPCLK clock derived from CLK_PERI at 125MHz */
+	spi->SSPCR0 = 0
+	/* set SPI mode */
+	 | SPI_SSPCR0_FRF_MOTOROLA
+	/* propagate signals on positive edge (posege) */
+	 | SPI_SSPCR0_SPH
+	/* set the number of bits per frames */
+	 | (8 - 1) << SPI_SSPCR0_DSS_Pos;
+
+	/* the result of the division is expected to be >1 */
+	assert(clock_divider >= 2 && clock_divider <= 254);
+	clock_divider &= 0xFE;
+	spi->SSPCPSR = clock_divider;
+
+	/* enable the SPI module *after* (#4.4.4) it was configured */
+	spi->SSPCR1 = SPI_SSPCR1_SSE;
+
+	/* enable interrupts */
+	NVIC->ISER |= 1u << (18 + id);
+}
+
+void
+spi_interrupt(struct mcu_spi *spi)
+{
+	/* on every byte, call the handler */
+	if (spi->SSPSR & SPI_SSPSR_TNF) {
+		/* let the programmer decide what to send in real-time */
+		spi_io_callback(spi, (uint8_t)spi->SSPDR, (uint8_t *)&spi->SSPDR);
+	}
+}
+
+void
+spi_enable_interrupts(struct mcu_spi *spi)
+{
+	spi->SSPIMSC = SPI_SSPIMSC_TXIM;
+}
+
+void
+spi_disable_interrupts(struct mcu_spi *spi)
+{
+	spi->SSPIMSC = 0x00;
+}
+
+
+/// UART ///
+
+
+void
+uart_init(struct mcu_uart *uart, uint8_t pin_rx, uint8_t pin_tx)
+{
+	RESETS->RESET &= ~RESETS_RESET_IO_BANK0; // TODO: realy needed?
+	RESETS->RESET &= ~RESETS_RESET_PADS_BANK0; // TODO: really needed?
+	while ((RESETS->RESET_DONE & RESETS_RESET_DONE_IO_BANK0) == 0);
+	while ((RESETS->RESET_DONE & RESETS_RESET_DONE_PADS_BANK0) == 0);
+
+	if (uart == UART0) {
+		RESETS->RESET &= ~RESETS_RESET_UART0;
+		while ((RESETS->RESET_DONE & RESETS_RESET_DONE_UART0) == 0);
+		
+	}
+	if (uart == UART1) {
+		RESETS->RESET &= ~RESETS_RESET_UART1;
+		while ((RESETS->RESET_DONE & RESETS_RESET_DONE_UART1) == 0);
+	}
+
+	IO_BANK0->GPIO[pin_rx].CTRL = IO_BANK0_GPIO_CTRL_FUNCSEL_UART;
+	IO_BANK0->GPIO[pin_tx].CTRL = IO_BANK0_GPIO_CTRL_FUNCSEL_UART;
+
+	;
+}
